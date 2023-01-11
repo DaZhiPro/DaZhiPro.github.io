@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>first article | DaZhi&#39;s Home</title>
+  <title>DaZhi&#39;s Home</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -658,14 +658,14 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/15.jpg')">
+  background-position: center center;position: relative;background-image:url('/medias/1.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        first article
+        
       </span>
     </div>
     
@@ -681,11 +681,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 0 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 1.3k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 1分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 5分钟 |
           </span>
   
           
@@ -708,7 +708,20 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        
+        <h3 id="先验-后验-和-似然函数的关系"><a href="#先验-后验-和-似然函数的关系" class="headerlink" title="先验 后验 和 似然函数的关系"></a><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/157677467">先验 后验 和 似然函数的关系</a></h3><h3 id="常见的概率分布模型"><a href="#常见的概率分布模型" class="headerlink" title="常见的概率分布模型"></a>常见的概率分布模型</h3><p>概率分布就是一个公式，给定X，就能计算出在这一点X的概率（或者连续随机变量的话就是这一点的概率密度）</p>
+<p><em><strong>伯努利分布</strong></em><br>描述一个像素的灰度值大于或者小于128的概率<br>$$<br>P\left( x\ &#x3D;\ 0 \right) \ &#x3D;\ 1\ -\ \lambda \ \ \ \left( 0:\text{灰度值小于}128 \right)<br>$$<br>$$<br>P\left( x\ &#x3D;\ 1 \right) \ \ &#x3D;\ \lambda \ \left( 1:\text{灰度值大于}128 \right)<br>$$<br>$$<br>\text{或者统一为}<br>$$<br>$$<br>P\left( x \right) \ &#x3D;\ \lambda ^x\ *\ \left( 1-\lambda \right) ^{1-x}<br>$$</p>
+<p><em><strong>贝塔分布</strong></em><br>一个连续的分布，<br>$\text{由单变量}\lambda \text{定义的连续分布，}\lambda &#x3D;\left[ 0,1 \right] ,\text{适合表示伯努利分布的参数}\lambda \text{的不确定性}$</p>
+<p><em><strong>分类分布</strong></em><br>一个离散的分布，用来表示$k$个可能的结果的概率$\lambda _k$<br><em><strong>狄利克雷分布</strong></em><br>一个连续的分布，用于表示$k$个连续值($\lambda <em>{1…K}$)的取值情况，其中$\sum</em>{k&#x3D;1}^K{\lambda _k}&#x3D;1$，适合表示分类分布参数$\lambda _k$的分布</p>
+<h3 id="拟合概率模型的方法——极大似然、最大后验、贝叶斯方法"><a href="#拟合概率模型的方法——极大似然、最大后验、贝叶斯方法" class="headerlink" title="拟合概率模型的方法——极大似然、最大后验、贝叶斯方法"></a>拟合概率模型的方法——极大似然、最大后验、贝叶斯方法</h3><p><em><strong>基本概念</strong></em><br>$<br>\text{先验\ }P\left( \theta \right) :\text{不考虑样本，这个分布的参数应该满足什么样的分布}<br>$<br>$<br>\text{后验\ }P\left( \theta |x \right) :\text{在已知样本}x\text{的结果的前提下，分布的参数是}\theta \text{的概率是多少}<br>$<br>$<br>\text{似然\ }P\left( x|\theta \right) :\ \text{好像就是实际的分布，就是说实际的分布的参数假如说是}\theta \ \text{的话，那么}x\text{的概率是啥}<br>$</p>
+<h4 id="最大似然拟合概率模型-ML"><a href="#最大似然拟合概率模型-ML" class="headerlink" title="最大似然拟合概率模型 ML"></a>最大似然拟合概率模型 ML</h4><p>顾名思义就是说最大化 $P\left( x|\theta \right) &#x3D;P\left( x_{1..n}|\theta \right) &#x3D;\prod_{i&#x3D;1}^n{P\left( x_i|\theta \right)}$，求解其中的未知量$\theta$ </p>
+<p>$$<br>\argmax_{\theta}P\left( x|\theta \right)<br>$$<br>$$<br>&#x3D;\argmax_{\theta}P\left( x_{1..n}|\theta \right)<br>$$<br>$$<br>&#x3D;\argmax_{\theta}\prod_i^n{P\left( x_i|\theta \right)}<br>$$<br>$$<br>&#x3D;\argmax_{\theta}\ \sum{\log \left( P\left( x_i|\theta \right) \right)}<br>$$</p>
+<h4 id="最大后验拟合概率模型-MAP"><a href="#最大后验拟合概率模型-MAP" class="headerlink" title="最大后验拟合概率模型 MAP"></a>最大后验拟合概率模型 MAP</h4><p>顾名思义就是最大化后验<br>$$<br>\argmax_{\theta}P\left( \theta |x \right)<br>$$<br>$$<br>&#x3D;\argmax_{\theta}\frac{P\left( x|\theta \right) \ \times \ P\left( \theta \right)}{P\left( x \right)}<br>$$<br>$$<br>&#x3D;\argmax_{\theta}P\left( x|\theta \right) \ *\ P\left( \theta \right)<br>$$</p>
+<p>他有个好处就是可以利用到先验的知识，不像极大似然估计只知道用样本的数据进行拟合，这个还考虑到了先验的概率，但是先验的参数怎么确定呢，有利也有弊，后验方式是先验和极大似然方式的加权平均</p>
+<h4 id="贝叶斯方式"><a href="#贝叶斯方式" class="headerlink" title="贝叶斯方式"></a>贝叶斯方式</h4><p>其实我们的最终目的不是求参数$\theta$,而是给定一个新数据$x^*$要计算$P(x^*|X _{1..I})$的概率 ($X _{1..I}$ 表示已有的抽样的数据) ，之前都是找出一个概率最大的$\theta$,其实这个$\theta$也满足一个分布，我们直接对他进行每个概率都给他乘上，然后加权一下就好了<br>$$<br>P\left( x^*|X _{1..I} \right) \ &#x3D;\ \int{P\left( x^*|\theta \right) \ *\ P\left( \theta |x \right) \ d\theta}<br>$$<br>贝叶斯方式去除了计算参数$\theta$的误差，更加合理</p>
+<p><em><strong>小tip</strong></em>：<br><strong>正定矩阵</strong>： $\text{正定矩阵}\varSigma \text{满足：\ }Z^T<em>\ \Sigma \ </em>\ Z\ \text{恒为正}$<br>方差： 用来衡量单个随机变量的离散程度<br>协方差： 用来衡量两个随机变量的相似程度<br>协方差矩阵；用来衡量了 一个具有多个随机变量的 分布 的离散程度</p>
+<h3 id="生成模型和判别模型"><a href="#生成模型和判别模型" class="headerlink" title="生成模型和判别模型"></a>生成模型和判别模型</h3><p><em><strong>判别模型</strong></em>： 比较简单直接计算 $P(w|x) 这里的w叫做全局状态(我理解就是y)$ 大概就是先估计一下w的分布，比如说在例子通过轮胎像素的个数，来估计车身的大小的样例中，w估计就是一元正态分布<br>$P(w|x,\theta) &#x3D; Norm_w[a + bx,\sigma^2] 这里的\theta就是一些需要确定得超参数，包括a,b,\sigma,所以只要求出\theta的估计值就可以进行推理(我立即的是预测)了。\<br>确定超参数有好多算法，比如可以用MAP算法求\argmax_{\theta}P\left( x|\theta \right) \ *\ P\left( \theta \right)$ </p>
+<p><em><strong>生成模型</strong></em>：假如说是一个分类问题，就拟合分类为0的数据的模型，然后拟合分类为1的数据的模型，然后对于一个给定的数据，带入到两个模型，看看哪个概率打， 就属于哪个【这是w为离散的情况，好理解些】<br>【w连续的情况】 $要计算的是 P(x|w,\theta) 就是说在每一个全局状态w下，存在x这种数据的概率,通过样本{x_i,w_i} 可以计算出参数\theta从而求得P(x|w)&#x2F;&#x2F;<br>这种情况需要先预估w的分布，然后用现有的w_i样本去拟合这个分布，得到P(w) 这样就可以利用贝叶斯公式计算出后验P(w|x) &#x3D; P(x|w) * p(w) &#x2F; p(x)$</p>
+
       </div>
       <div class="post-tags-categories">
         
@@ -721,7 +734,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2023/01/11/first-article/" target="_blank" title="first article">https://dazhipro.github.io/2023/01/11/first-article/</a>
+    <a href="/2023/01/11/2-ji-suan-ji-shi-jue/ji-suan-ji-shi-jue-bi-ji/" target="_blank" title="">https://dazhipro.github.io/2023/01/11/2-ji-suan-ji-shi-jue/ji-suan-ji-shi-jue-bi-ji/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -743,17 +756,17 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/3.jpg" class="lazyload placeholder" data-srcset="/medias/3.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/2023/01/11/1-kai-fa/django/gai-shu/" class="post-nav-link">
+    <a href="/2023/01/11/2-ji-suan-ji-shi-jue/cnn/04-fan-xiang-chuan-bo/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">Django 概述</div>
+        <div class="title-text"></div>
       </div>
       
       <!-- <div class="content">
-        新建第一个hello world
-安装Django： python -m pip install Djangohttps
+        等后续补充
+
       </div> -->
     </a>
   </div>
@@ -764,15 +777,16 @@
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/3.jpg" class="lazyload placeholder" data-srcset="/medias/3.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
-    <a href="/2023/01/10/hello-world/" class="post-nav-link">
+    <a href="/2023/01/11/1-kai-fa/django/gai-shu/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Hello World</div>
+        <div class="title-text">Django 概述</div>
       </div>
       <!-- <div class="content">
-        Welcome to Hexo! This is your very first post. Check documen
+        新建第一个hello world
+安装Django： python -m pip install Djangohttps
       </div> -->
     </a>
   </div>
@@ -1090,7 +1104,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!--  -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%88%E9%AA%8C-%E5%90%8E%E9%AA%8C-%E5%92%8C-%E4%BC%BC%E7%84%B6%E5%87%BD%E6%95%B0%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">先验 后验 和 似然函数的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83%E6%A8%A1%E5%9E%8B"><span class="toc-text">常见的概率分布模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%9F%E5%90%88%E6%A6%82%E7%8E%87%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95%E2%80%94%E2%80%94%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E3%80%81%E6%9C%80%E5%A4%A7%E5%90%8E%E9%AA%8C%E3%80%81%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%96%B9%E6%B3%95"><span class="toc-text">拟合概率模型的方法——极大似然、最大后验、贝叶斯方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E4%BC%BC%E7%84%B6%E6%8B%9F%E5%90%88%E6%A6%82%E7%8E%87%E6%A8%A1%E5%9E%8B-ML"><span class="toc-text">最大似然拟合概率模型 ML</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E5%90%8E%E9%AA%8C%E6%8B%9F%E5%90%88%E6%A6%82%E7%8E%87%E6%A8%A1%E5%9E%8B-MAP"><span class="toc-text">最大后验拟合概率模型 MAP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%96%B9%E5%BC%8F"><span class="toc-text">贝叶斯方式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B%E5%92%8C%E5%88%A4%E5%88%AB%E6%A8%A1%E5%9E%8B"><span class="toc-text">生成模型和判别模型</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>

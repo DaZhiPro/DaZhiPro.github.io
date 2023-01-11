@@ -4,6 +4,71 @@
   
     
     <entry>
+      <title></title>
+      <link href="/2023/01/11/2-ji-suan-ji-shi-jue/lstm/lstm/"/>
+      <url>/2023/01/11/2-ji-suan-ji-shi-jue/lstm/lstm/</url>
+      
+        <content type="html"><![CDATA[<p>LSTM 又叫长 短时记忆神经网络，问了解决RNN不能处理 <code>从较长的前文中推断下一个单词的问题</code> 而提出的<br><code>从较长的前文中推断下一个单词的问题</code>比如：”I grew up in France… I speak fluent <em>French</em>.”不能从这句中推出French，因为中间隔了好多词</p><h4 id="遗忘门："><a href="#遗忘门：" class="headerlink" title="遗忘门："></a>遗忘门：</h4><p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212224503-712213887.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212224503-712213887.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><h4 id="输入门："><a href="#输入门：" class="headerlink" title="输入门："></a>输入门：</h4><p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212311075-209010384.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212311075-209010384.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><h4 id="想下一个cell的输出："><a href="#想下一个cell的输出：" class="headerlink" title="想下一个cell的输出："></a>想下一个cell的输出：</h4><p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212423984-1696402345.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212423984-1696402345.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><h4 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h4><p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212440327-44970240.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212440327-44970240.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p><a href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/#fn1">参考链接1</a><br><a href="https://zhuanlan.zhihu.com/p/84333843">中文版参考链接</a><br><a href="https://www.bilibili.com/video/BV1J94y1f7u5?p=28&vd_source=a25e4be5f25feef1532666f6ee51cce1">李宏毅RNN教程</a> </p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2023/01/11/2-ji-suan-ji-shi-jue/gan/gan-gai-shu/"/>
+      <url>/2023/01/11/2-ji-suan-ji-shi-jue/gan/gan-gai-shu/</url>
+      
+        <content type="html"><![CDATA[<p>GAN(Generative Adversarial Network) 生成对抗网络</p><h4 id="1-为什么要有这个东西？"><a href="#1-为什么要有这个东西？" class="headerlink" title="1. 为什么要有这个东西？"></a>1. 为什么要有这个东西？</h4><p>   为了解决相同输入x，不同输出y的情形,每一个输出都是对的，唯一可以知道的是他服从某一个分布。 </p><p>   李宏毅中的例子是根据游戏的前三帧，去预测下一帧，当前三帧游戏人物走到路口的时候，下一帧可能左拐也可能右拐，无法得到一个确切的输出，只能得到一个概率分布。<br>   也可以用于扩充样本。</p><h4 id="2-生成对抗网络是什么？"><a href="#2-生成对抗网络是什么？" class="headerlink" title="2. 生成对抗网络是什么？"></a>2. 生成对抗网络是什么？</h4><p>   一个生成对抗网络主要包含 生成器 + 判别器</p><ol><li><p><code>生成器(G)</code>的主要作用就是根据一个输入z（满足某个分布的向量）随机生成输出y（满足另一个分布）</p></li><li><p><code>判别器(D)</code>的主要作用是判断G的某一堆输出y_s与最终要生成的数据的相似程度 相似度越高打分越高</p></li><li><p>直观理解：</p><p>3.1 正常的network都是给定一个 x,得到一个 y, 记作<code>&#123;f(x) = y&#125;</code></p><p>3.2 这里为了使得给定一个x得到不同的y，同时再给定一个z1(满足某种简单的分布Z)，这样便成了 <code>f(x,z1) = y</code>。</p><p>3.3 因为z服从一个分布Z，那么y也服从一个分布Y，这样的话对于一个输入x得到的输出就是一个分布，而不是确定的值，等到预测的时候 给定x, 同时从Z分中随机选取一个z1，就能得到一个满足Y分布的结果</p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129161135195-2104431847.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129161135195-2104431847.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p></li></ol><h4 id="4-如何保证分布Y就是我们想要的-概率分布呢？"><a href="#4-如何保证分布Y就是我们想要的-概率分布呢？" class="headerlink" title="4. 如何保证分布Y就是我们想要的 概率分布呢？"></a>4. 如何保证分布Y就是我们想要的 概率分布呢？</h4><p>使用 判别器D 建立一个分类的network，他的输入是 生成器G 的输出，和我们已知的样本分布，输出是一个值，表示他和所需要生成的样本的差异程度，用这个值来表示 生成器G 表现好不好<br><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129165154824-1146175719.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129165154824-1146175719.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p>   真正计算的时候： 从real_data (标签1) 和 generated_data(标签0) 中随机抽取出若干个输入network分类，设定loss使得real_data得分尽可能高，generated_data 的分尽可能低</p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129201624345-504111067.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129201624345-504111067.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p>   同时可以从理论上推导这个 loss Function和 JS Diversion 是有关联的，直观理解也好理解，只有分布相似，差异小才难分，然后那个maxV才不会太大，所有Diversion越小，maxV越小【具体推导见GAN原paper：<a href="https://arxiv.org/abs/1406.2661">https://arxiv.org/abs/1406.2661</a> 】</p><h4 id="5-整体优化目标是什么，如何训练？"><a href="#5-整体优化目标是什么，如何训练？" class="headerlink" title="5. 整体优化目标是什么，如何训练？"></a>5. 整体优化目标是什么，如何训练？</h4><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129205011815-1057653954.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129205011815-1057653954.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><h4 id="6-GAN-是很难train的，原因是什么？"><a href="#6-GAN-是很难train的，原因是什么？" class="headerlink" title="6. GAN 是很难train的，原因是什么？"></a>6. GAN 是很难train的，原因是什么？</h4><ol><li><p>真实数据和生成的数据的分布存在重合很难 （1.所有图像空间中动漫的分布很小很小，存在交集就更难了 2.即使分布存在交集，我们sample出来的点构成的分布未必存在交集）</p></li><li><p>JS Diversion的特性是只要没有重合那两个分布的距离就是固定的log2</p></li></ol><p>所以可以看出JS divergence 不好，后人改用了W distance（Wasserstein distance）来衡量两个分布之间的距离，它的定义是通过移动一个分</p><p>布P中的样本点使其满足另一个分布Q，所需要移动的最小距离就是W distance</p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129213001543-1442672159.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129213001543-1442672159.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p><em><strong>6.1 那W distance 如何计算</strong></em></p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129214907059-345839759.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129214907059-345839759.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p><em><strong>lipschitz 条件</strong></em></p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129215424056-2087370460.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129215424056-2087370460.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p><em><strong>6.2 如何使得函数D满足上述条件</strong></em></p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129220105514-1144868367.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129220105514-1144868367.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><h4 id="7-生成器-和-判别器-必须水平相当才能训练起来，怎么保证双方水平相当呢？"><a href="#7-生成器-和-判别器-必须水平相当才能训练起来，怎么保证双方水平相当呢？" class="headerlink" title="7. 生成器 和 判别器 必须水平相当才能训练起来，怎么保证双方水平相当呢？"></a>7. 生成器 和 判别器 必须水平相当才能训练起来，怎么保证双方水平相当呢？</h4><p>一些tip</p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129223448387-1713605195.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129223448387-1713605195.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><h4 id="8-怎么评估一个GAN的好坏，评估其生成的图片的质量的好坏"><a href="#8-怎么评估一个GAN的好坏，评估其生成的图片的质量的好坏" class="headerlink" title="8. 怎么评估一个GAN的好坏，评估其生成的图片的质量的好坏"></a>8. 怎么评估一个GAN的好坏，评估其生成的图片的质量的好坏</h4><p><strong><strong>评估图像质量</strong></strong></p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129231650951-2123842083.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129231650951-2123842083.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p><em><strong>评估图像多样性</strong></em></p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129231619137-1629877941.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129231619137-1629877941.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p>   综合质量和多样性的话就是Inception Score</p><p><em><strong>这种评估手段无法检测出的一些问题</strong></em></p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129225216914-758335728.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129225216914-758335728.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><h4 id="9-有条件生成对抗网络"><a href="#9-有条件生成对抗网络" class="headerlink" title="9. 有条件生成对抗网络"></a>9. 有条件生成对抗网络</h4><p><img src="https://img2023.cnblogs.com/blog/2851436/202212/2851436-20221201105722166-1866872542.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202212/2851436-20221201105722166-1866872542.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p><em><strong>conditional GAN 的应用</strong></em></p><ol><li>文字产生图像–&gt; AI 绘图</li><li>图像长生图像–&gt; Pix2Pix 图像转换 与正常不同的是对于相同的输入可以产生不同的输出</li><li>语音产生图像</li><li>图像产生动图</li><li>…</li></ol><h4 id="10-几种常见的GAN"><a href="#10-几种常见的GAN" class="headerlink" title="10. 几种常见的GAN"></a>10. 几种常见的GAN</h4><ol><li>原生GAN</li><li>DCGAN：G 使用的是反向卷积网络（一维的输入变为二维的输出）</li><li>WGAN ： 改进了损失函数，解决了原本的损失函数难以敏感的反应两个不相交的分布的距离这一问题</li></ol>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2023/01/11/2-ji-suan-ji-shi-jue/cnn/si-kao-ju-zhen-cheng-fa-de-ti-du-ji-suan-tui-dao-guo-cheng/"/>
+      <url>/2023/01/11/2-ji-suan-ji-shi-jue/cnn/si-kao-ju-zhen-cheng-fa-de-ti-du-ji-suan-tui-dao-guo-cheng/</url>
+      
+        <content type="html"><![CDATA[<p>神经网络中的反向传播中的梯度计算一直是让我和头疼的问题，翻了好多资料，现在记录下自己目前的所得</p><ol start="0"><li><p>结论<br>$$<br>\text{设\ }y\ &#x3D;\ f\left( X\ <em>\ W \right) \ ,\ C&#x3D;X\ </em>\ W,\text{则有:}<br>$$<br>$$<br>\frac{\partial y}{\partial W_{i,j}}&#x3D;X^T\frac{\partial y}{\partial C}<br>$$<br>$$<br>\frac{\partial y}{\partial X_{i,j}}&#x3D;\frac{\partial y}{\partial C}W^T<br>$$</p></li><li><p><a href="https://www.cnblogs.com/milaohu/p/7337330.html?utm_source=itdadao&utm_medium=referral">转载自大佬笔记</a></p></li></ol><p><img src="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221021155540030-886714468.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221021155540030-886714468.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp"></p><ol start="2"><li><p><a href="https://www.matrixcalculus.org/">一个可以计算梯度的在线工具</a><br>虽然现在我自己还没玩明白hhh，但是功能应该是很强大</p></li><li><p><a href="https://blog.csdn.net/m0_63238256/article/details/126632188">一个具体推导的例子</a></p></li></ol><hr><ol start="4"><li><p>更新一个更简单的方式：<br> 根据矩阵乘法反向推导更加简单</p><p> 比如 正向D &#x3D; X * W (X:  n * m   W: m * k  D:  n * k)<br> dD 的shape肯定和D一样<br> 同理，dW 的shape肯定是m * k,同时dw肯定有dD和X组成，那么根据矩阵乘法原理必须是 x.T.dot(dD)才行</p></li></ol>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2023/01/11/2-ji-suan-ji-shi-jue/cnn/04-fan-xiang-chuan-bo/"/>
+      <url>/2023/01/11/2-ji-suan-ji-shi-jue/cnn/04-fan-xiang-chuan-bo/</url>
+      
+        <content type="html"><![CDATA[<p>等后续补充</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2023/01/11/2-ji-suan-ji-shi-jue/ji-suan-ji-shi-jue-bi-ji/"/>
+      <url>/2023/01/11/2-ji-suan-ji-shi-jue/ji-suan-ji-shi-jue-bi-ji/</url>
+      
+        <content type="html"><![CDATA[<h3 id="先验-后验-和-似然函数的关系"><a href="#先验-后验-和-似然函数的关系" class="headerlink" title="先验 后验 和 似然函数的关系"></a><a href="https://zhuanlan.zhihu.com/p/157677467">先验 后验 和 似然函数的关系</a></h3><h3 id="常见的概率分布模型"><a href="#常见的概率分布模型" class="headerlink" title="常见的概率分布模型"></a>常见的概率分布模型</h3><p>概率分布就是一个公式，给定X，就能计算出在这一点X的概率（或者连续随机变量的话就是这一点的概率密度）</p><p><em><strong>伯努利分布</strong></em><br>描述一个像素的灰度值大于或者小于128的概率<br>$$<br>P\left( x\ &#x3D;\ 0 \right) \ &#x3D;\ 1\ -\ \lambda \ \ \ \left( 0:\text{灰度值小于}128 \right)<br>$$<br>$$<br>P\left( x\ &#x3D;\ 1 \right) \ \ &#x3D;\ \lambda \ \left( 1:\text{灰度值大于}128 \right)<br>$$<br>$$<br>\text{或者统一为}<br>$$<br>$$<br>P\left( x \right) \ &#x3D;\ \lambda ^x\ *\ \left( 1-\lambda \right) ^{1-x}<br>$$</p><p><em><strong>贝塔分布</strong></em><br>一个连续的分布，<br>$\text{由单变量}\lambda \text{定义的连续分布，}\lambda &#x3D;\left[ 0,1 \right] ,\text{适合表示伯努利分布的参数}\lambda \text{的不确定性}$</p><p><em><strong>分类分布</strong></em><br>一个离散的分布，用来表示$k$个可能的结果的概率$\lambda _k$<br><em><strong>狄利克雷分布</strong></em><br>一个连续的分布，用于表示$k$个连续值($\lambda <em>{1…K}$)的取值情况，其中$\sum</em>{k&#x3D;1}^K{\lambda _k}&#x3D;1$，适合表示分类分布参数$\lambda _k$的分布</p><h3 id="拟合概率模型的方法——极大似然、最大后验、贝叶斯方法"><a href="#拟合概率模型的方法——极大似然、最大后验、贝叶斯方法" class="headerlink" title="拟合概率模型的方法——极大似然、最大后验、贝叶斯方法"></a>拟合概率模型的方法——极大似然、最大后验、贝叶斯方法</h3><p><em><strong>基本概念</strong></em><br>$<br>\text{先验\ }P\left( \theta \right) :\text{不考虑样本，这个分布的参数应该满足什么样的分布}<br>$<br>$<br>\text{后验\ }P\left( \theta |x \right) :\text{在已知样本}x\text{的结果的前提下，分布的参数是}\theta \text{的概率是多少}<br>$<br>$<br>\text{似然\ }P\left( x|\theta \right) :\ \text{好像就是实际的分布，就是说实际的分布的参数假如说是}\theta \ \text{的话，那么}x\text{的概率是啥}<br>$</p><h4 id="最大似然拟合概率模型-ML"><a href="#最大似然拟合概率模型-ML" class="headerlink" title="最大似然拟合概率模型 ML"></a>最大似然拟合概率模型 ML</h4><p>顾名思义就是说最大化 $P\left( x|\theta \right) &#x3D;P\left( x_{1..n}|\theta \right) &#x3D;\prod_{i&#x3D;1}^n{P\left( x_i|\theta \right)}$，求解其中的未知量$\theta$ </p><p>$$<br>\argmax_{\theta}P\left( x|\theta \right)<br>$$<br>$$<br>&#x3D;\argmax_{\theta}P\left( x_{1..n}|\theta \right)<br>$$<br>$$<br>&#x3D;\argmax_{\theta}\prod_i^n{P\left( x_i|\theta \right)}<br>$$<br>$$<br>&#x3D;\argmax_{\theta}\ \sum{\log \left( P\left( x_i|\theta \right) \right)}<br>$$</p><h4 id="最大后验拟合概率模型-MAP"><a href="#最大后验拟合概率模型-MAP" class="headerlink" title="最大后验拟合概率模型 MAP"></a>最大后验拟合概率模型 MAP</h4><p>顾名思义就是最大化后验<br>$$<br>\argmax_{\theta}P\left( \theta |x \right)<br>$$<br>$$<br>&#x3D;\argmax_{\theta}\frac{P\left( x|\theta \right) \ \times \ P\left( \theta \right)}{P\left( x \right)}<br>$$<br>$$<br>&#x3D;\argmax_{\theta}P\left( x|\theta \right) \ *\ P\left( \theta \right)<br>$$</p><p>他有个好处就是可以利用到先验的知识，不像极大似然估计只知道用样本的数据进行拟合，这个还考虑到了先验的概率，但是先验的参数怎么确定呢，有利也有弊，后验方式是先验和极大似然方式的加权平均</p><h4 id="贝叶斯方式"><a href="#贝叶斯方式" class="headerlink" title="贝叶斯方式"></a>贝叶斯方式</h4><p>其实我们的最终目的不是求参数$\theta$,而是给定一个新数据$x^*$要计算$P(x^*|X _{1..I})$的概率 ($X _{1..I}$ 表示已有的抽样的数据) ，之前都是找出一个概率最大的$\theta$,其实这个$\theta$也满足一个分布，我们直接对他进行每个概率都给他乘上，然后加权一下就好了<br>$$<br>P\left( x^*|X _{1..I} \right) \ &#x3D;\ \int{P\left( x^*|\theta \right) \ *\ P\left( \theta |x \right) \ d\theta}<br>$$<br>贝叶斯方式去除了计算参数$\theta$的误差，更加合理</p><p><em><strong>小tip</strong></em>：<br><strong>正定矩阵</strong>： $\text{正定矩阵}\varSigma \text{满足：\ }Z^T<em>\ \Sigma \ </em>\ Z\ \text{恒为正}$<br>方差： 用来衡量单个随机变量的离散程度<br>协方差： 用来衡量两个随机变量的相似程度<br>协方差矩阵；用来衡量了 一个具有多个随机变量的 分布 的离散程度</p><h3 id="生成模型和判别模型"><a href="#生成模型和判别模型" class="headerlink" title="生成模型和判别模型"></a>生成模型和判别模型</h3><p><em><strong>判别模型</strong></em>： 比较简单直接计算 $P(w|x) 这里的w叫做全局状态(我理解就是y)$ 大概就是先估计一下w的分布，比如说在例子通过轮胎像素的个数，来估计车身的大小的样例中，w估计就是一元正态分布<br>$P(w|x,\theta) &#x3D; Norm_w[a + bx,\sigma^2] 这里的\theta就是一些需要确定得超参数，包括a,b,\sigma,所以只要求出\theta的估计值就可以进行推理(我立即的是预测)了。\<br>确定超参数有好多算法，比如可以用MAP算法求\argmax_{\theta}P\left( x|\theta \right) \ *\ P\left( \theta \right)$ </p><p><em><strong>生成模型</strong></em>：假如说是一个分类问题，就拟合分类为0的数据的模型，然后拟合分类为1的数据的模型，然后对于一个给定的数据，带入到两个模型，看看哪个概率打， 就属于哪个【这是w为离散的情况，好理解些】<br>【w连续的情况】 $要计算的是 P(x|w,\theta) 就是说在每一个全局状态w下，存在x这种数据的概率,通过样本{x_i,w_i} 可以计算出参数\theta从而求得P(x|w)&#x2F;&#x2F;<br>这种情况需要先预估w的分布，然后用现有的w_i样本去拟合这个分布，得到P(w) 这样就可以利用贝叶斯公式计算出后验P(w|x) &#x3D; P(x|w) * p(w) &#x2F; p(x)$</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Django 概述</title>
       <link href="/2023/01/11/1-kai-fa/django/gai-shu/"/>
       <url>/2023/01/11/1-kai-fa/django/gai-shu/</url>
@@ -51,6 +116,143 @@
         <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
       
       
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>卷积和池化</title>
+      <link href="/2022/10/05/2-ji-suan-ji-shi-jue/cnn/05-juan-ji-chi-hua/"/>
+      <url>/2022/10/05/2-ji-suan-ji-shi-jue/cnn/05-juan-ji-chi-hua/</url>
+      
+        <content type="html"><![CDATA[<p>卷积 输入和输出的关系</p><p>输入 N * N * D    卷积核 K * K * D2 stride(步长)、pad（周围填充）<br>输出尺寸 &#x3D; ( N + 2 * pad - K ) &#x2F; stride + 1 </p><p><img src="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221024164713580-84738276.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221024164713580-84738276.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p>反卷积输入输出公式</p><p>pytorch 的反卷积公式：<br><img src="https://img2023.cnblogs.com/blog/2851436/202212/2851436-20221206225435318-1923273135.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202212/2851436-20221206225435318-1923273135.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p>注一般取值：</p><p>output_padding  :   stride - 1<br>padding         :   (kernel_size - 1) &#x2F; 2 </p><p>查看源码可以发现：</p><ul><li>Input: :math:$(N, C_{in}, L_{in})$</li><li>Output: :math:$(N, C_{out}, L_{out})$ where<br>$$<br>  L_{out} &#x3D; (L_{in} - 1) \times \text{stride} - 2 \times \text{padding} + \text{dilation}<br>      \times (\text{kernel_size} - 1) + \text{output_padding} + 1</li></ul><p>$$<br>通常dilation &#x3D; 1 简化为：<br>$$<br>L_{out}&#x3D;\left( L_{in}-1 \right) \times \text{stride}-2\times \text{padding}+\text{kernel_size}+\text{output_padding}<br>$$</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器视觉 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CS231 </tag>
+            
+            <tag> CNN </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>损失函数和优化</title>
+      <link href="/2022/10/04/2-ji-suan-ji-shi-jue/cnn/03-sun-shi-han-shu-he-you-hua/"/>
+      <url>/2022/10/04/2-ji-suan-ji-shi-jue/cnn/03-sun-shi-han-shu-he-you-hua/</url>
+      
+        <content type="html"><![CDATA[<h3 id="损失函数作用"><a href="#损失函数作用" class="headerlink" title="损失函数作用"></a>损失函数作用</h3><p>损失函数是一个衡量预测值和真实值之间差异的函数<br><img src="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221015220021130-696525952.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221015220021130-696525952.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p>Li表示第 i 张图片，预测值的十个输出与真实值之间的差异</p><h4 id="1-hinge-损失函数-应用于SVM"><a href="#1-hinge-损失函数-应用于SVM" class="headerlink" title="1. hinge 损失函数(应用于SVM)"></a>1. hinge 损失函数(应用于SVM)</h4><ol><li>基本思想</li></ol><ul><li>理想的输出的结果 对应的真实标签的得分应该是很高的， 比其他所有类别都高出一定的阈值，这样才好，此时损失值为0</li><li>否则的话就要受到惩罚</li></ul><p><img src="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221015221024642-823893558.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221015221024642-823893558.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><ol start="2"><li><p>符号说明：Li表示第i张图片预测值(10个)与真实值产生的误差S 表示 输出的预测的得分，S_y_i表示输出的真实值对应的得分，S_j表示其他类别的得分</p></li><li><p>特性</p></li></ol><ul><li>最小为0（得分最高，且超出一定阈值），最大为无穷（得分为负无穷）</li><li>对结果的轻微扰动不敏感，如car类4.9时已经损失值为0，轻微改变仍是0</li><li>训练最开始时损失函数为 c-1 （c表示种类数，此例c&#x3D;10）{训练最开始W一般为0-1之前很小的均匀分布的值，第一次输出得到的打分也大概相等，这样c-1 次max(0,$s_j - s_{yi}$+1) &#x3D; c-1}</li><li>使得loss&#x3D;&#x3D;0的W不唯一，但根据奥斯卡姆剃刀原理，我们选取最简单的W，为此可以加上一些惩罚项（正则项）。损失函数变为<img src="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221015223631767-95832827.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221015223631767-95832827.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></li><li>如何衡量W简单与否呢?可以使用L1范数、L2范数等等</li></ul><ol><li>向量化实现<br><img src="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221015223331177-380895889.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221015223331177-380895889.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></li></ol><h4 id="2-交叉熵损失函数（应用于Softmax-loss）"><a href="#2-交叉熵损失函数（应用于Softmax-loss）" class="headerlink" title="2. 交叉熵损失函数（应用于Softmax loss）"></a>2. 交叉熵损失函数（应用于Softmax loss）</h4><ol><li><p>基本思想<br>真实出现的一定是概率最大的，所以真实值对应的标签概率化后概率应该尽可能大<br><img src="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221015224350184-1972939571.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221015224350184-1972939571.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p></li><li><p>计算过程<br><img src="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221015224453793-99163284.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221015224453793-99163284.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p></li><li><p>特性</p></li></ol><ul><li>最小是0，最大是无穷</li><li>对打分的 小的扰动敏感</li><li>初始损失函数 -log(1&#x2F;c)&#x3D;log(c),c表示种类</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器视觉 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 计算机视觉 </tag>
+            
+            <tag> 损失函数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>简单分类器</title>
+      <link href="/2022/10/03/2-ji-suan-ji-shi-jue/cnn/02-jian-dan-fen-lei-qi/"/>
+      <url>/2022/10/03/2-ji-suan-ji-shi-jue/cnn/02-jian-dan-fen-lei-qi/</url>
+      
+        <content type="html"><![CDATA[<h3 id="最近邻算法"><a href="#最近邻算法" class="headerlink" title="最近邻算法"></a>最近邻算法</h3><ol><li>思想：</li></ol><ul><li>训练：只是记录下每个样本的位置和标签</li><li>预测：遍历每个点，看一下距离该点最近的样本点的标签是啥，那他就是哪一类</li><li></li></ul><h3 id="K近邻算法"><a href="#K近邻算法" class="headerlink" title="K近邻算法"></a>K近邻算法</h3><ol><li>思想：</li></ol><ul><li>训练：只是记录下每个样本的位置和标签</li><li>预测：遍历每个点，看一下距离该点最近的K个样本点的标签较多的是啥，那他就是哪一类，如果各类数量一样无法区分</li></ul><ol start="2"><li>实现</li></ol><ul><li>可以多使用模块化思想，数据输入、预处理和分类器模型分开来写，这样方便分类器的复用</li><li>向量化运算可以大大缩短循环所需的时间</li><li>np.sum(a,axis&#x3D;0) 假设a原本是2 × 3 × 4，对第一维求和后变为 3 × 4</li><li>np.sort(), np.argmin(a)找到a数组中最小的数的索引</li><li>numpy.array_split:将numpy数组分为n份，对于不整除的前面是 1 &#x2F;&#x2F; n + 1 ..后面是1 &#x2F;&#x2F; n</li><li>np.concatenate((a,b,c),axis &#x3D; 0) 将numpy数组a,b,c拼接</li></ul><p>训练完计算准确率常用：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">num_correct = np.<span class="built_in">sum</span>(y_test_pred == y_test)</span><br><span class="line">accuracy = <span class="built_in">float</span>(num_correct) / num_test</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Got %d / %d correct =&gt; accuracy: %f&#x27;</span> % (num_correct, num_test, accuracy))</span><br></pre></td></tr></table></figure><h3 id="线性分类器"><a href="#线性分类器" class="headerlink" title="线性分类器"></a>线性分类器</h3><p>类似于模板匹配<br>CIFAR10 图片分类任务，是个很经典的数据集，图片大小是 <code>32*32*3</code> , 类别是十类<br><img src="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221015214914968-516055086.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221015214914968-516055086.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p>输入 1*3072的数据  输出十个数（表示十各类的得分）<br>F(x,W) &#x3D; Wx + b,就是要找一些数能够使得图片x所对应的标签得分更高<br><img src="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221015215106537-457567375.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221015215106537-457567375.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"><br>将W可视化后也可以看到大概W就是每类图片的一个公共的特征</p><p>现在只是有了一个打分，但是如何衡量这个打分的好坏，需要量化，我们把这个评价其打分好坏的量化函数叫做<strong>损失函数</strong></p><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ol><li><p>关于划分训练集和测试集</p><ol><li>比较好的思路是划分训练集+验证集+测试集，然后用训练集训练，通过验证集调节超参，调到最好的超参后在测试集上测试准确率，这样的话在模型调节完之前一直接触不到测试集，测试集才能更加好的拟合数据集之外的真实数据</li><li>还有一个思路<em><strong>K折交叉验证</strong></em>，意思是划分为训练集 + 测试集，但是训练集划分为K份，用其中的K-1份进行训练，1份用作验证集调参。（一般用于数据较少的时候，少于一万条？)</li></ol></li><li><p>关于调节超参<br>最好有一个随着超参的每一个值变化，模型准确率变化的图，这样能够更好的描述该参数最好的取值是多少</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器视觉 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CS231 </tag>
+            
+            <tag> CNN </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CNN 概述</title>
+      <link href="/2022/10/02/2-ji-suan-ji-shi-jue/cnn/01-gai-shu/"/>
+      <url>/2022/10/02/2-ji-suan-ji-shi-jue/cnn/01-gai-shu/</url>
+      
+        <content type="html"><![CDATA[<p>斯坦福CS231 视频 </p><p><a href="https://www.bilibili.com/video/BV1nJ411z7fe/?spm_id_from=333.999.0.0&vd_source=a25e4be5f25feef1532666f6ee51cce1">视频</a><br><a href="https://cs231n.github.io/">作业笔记</a></p><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="导论"><a href="#导论" class="headerlink" title="导论"></a>导论</h3><ol><li>计算机视觉很火 随着传感器(摄像头的的增多）网上80%都是视频</li><li>视频理解很难：可以类比物理学中的暗物质，占据宇宙（网络）中绝大部分，但是很难理解</li><li>比较直观的应用就是短视频平台中需要对用户上传的视频进行分类（好、坏 or 进一步分为搞笑、科普、测评、商务等等）</li><li>2012年 ImageNet 大规模图像分类挑战赛上，CNN第一次崭露头角，将错误率从 26% 降到 16%，人脸检测从2001年的Adabost就开始了，效果还不错</li><li>最厉害的境界是对场景的理解</li></ol><h3 id="研究的问题"><a href="#研究的问题" class="headerlink" title="研究的问题"></a>研究的问题</h3><ol><li>图像分类</li><li>目标检测</li><li>图像分割</li><li>图像摘要</li><li>医疗诊断</li><li>自动驾驶</li></ol><h3 id="Python和Numpy基础教程"><a href="#Python和Numpy基础教程" class="headerlink" title="Python和Numpy基础教程"></a><a href="https://cs231n.github.io/python-numpy-tutorial/">Python和Numpy基础教程</a></h3><p><em><strong>Python</strong></em></p><ol><li>列表表达式 <code>even_squares = [x ** 2 for x in nums if x % 2 == 0]</code></li><li>输入输出 <code>a=int(input(&quot;请输入一个整数&quot;))</code>  <code>print(bin(7),bin(15),&#39;以上两位按位与之后&#39;,7&amp;15)</code></li><li>循环<br><code>for i in range(2,a//2+1):</code><br><code>for idx, animal in enumerate(animals):</code> &#x2F;&#x2F;带索引的循环</li></ol><hr><p><em><strong>Numpy</strong></em></p><ol><li>Matrix *   <code>a.dot(b)</code> or <code>np.dot(a,b)</code></li><li>点乘（对应位置相乘）  a * b</li><li>求矩阵每一列的和  <code>np.sum(x, axis=0)</code></li><li>矩阵转置 <code>V.T</code></li><li><a href="https://numpy.org/doc/stable/user/basics.broadcasting.html">关于广播</a>:会从后往前扫描每一个维度，要么相同，要么有一方维度是1，可以广播此维度</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器视觉 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CS231 </tag>
+            
+            <tag> CNN </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Numpy 技巧</title>
+      <link href="/2022/10/01/2-ji-suan-ji-shi-jue/cnn/00numpy-ji-qiao/"/>
+      <url>/2022/10/01/2-ji-suan-ji-shi-jue/cnn/00numpy-ji-qiao/</url>
+      
+        <content type="html"><![CDATA[<h3 id="构造列表筛选功能"><a href="#构造列表筛选功能" class="headerlink" title="构造列表筛选功能"></a>构造列表筛选功能</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.array(<span class="built_in">range</span>(<span class="number">6</span>)).reshape(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">mask = np.array([<span class="number">1</span>,<span class="number">2</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;原数组\n&#x27;</span>,a)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;筛选数组&#x27;</span>,mask)</span><br></pre></td></tr></table></figure><p>原数组<br>    [[0 1 2]<br>    [3 4 5]]<br>筛选数组 [1 2]</p><h4 id="要求实现"><a href="#要求实现" class="headerlink" title="要求实现"></a>要求实现</h4><p>筛选出原数组，第i行的第mask[i]个元素</p><ol><li>循环实现</li><li>向量实现</li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 循环实现</span></span><br><span class="line">b=[]</span><br><span class="line"><span class="keyword">for</span> idx,x <span class="keyword">in</span> <span class="built_in">enumerate</span>(mask):</span><br><span class="line">    b.append(a[idx,x])</span><br><span class="line">np.array(b)</span><br></pre></td></tr></table></figure><pre><code>array([1, 5])</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 2. 向量实现</span></span><br><span class="line">a[<span class="built_in">range</span>(<span class="built_in">len</span>(mask)),mask]</span><br></pre></td></tr></table></figure><pre><code>array([1, 5])</code></pre><h3 id="Numpy-一百题"><a href="#Numpy-一百题" class="headerlink" title="Numpy 一百题"></a><a href="https://github.com/rougier/numpy-100">Numpy 一百题</a></h3><p>以下为笔记</p><ol><li>数组逆序 <code>Z[::-1]</code> ：取自缩写 of Z[1:10:2]</li><li>查找非0元素的下标  np.nonzero([1,2,3,0,3,0]) </li><li>创建 3 * 3 的单位矩阵 np.eye(3)</li><li>创建 3 * 3 * 3 的随机数矩阵 np.random.random((3,3,3))</li><li>数组周围增加一个边界 np.pad(Z, pad_width&#x3D;1, mode&#x3D;’constant’, constant_values&#x3D;0)</li><li>print(0.3 &#x3D;&#x3D; 3 * 0.1) # False<br>print(0 * np.nan) # np.nan<br>print(np.inf &gt; np.nan) #False</li><li>numpy.diag(v, k&#x3D;0): v 是 2d 则提取对角线元素，v是1d则构建对角矩阵 ， k&#x3D;1 表示主对角线上边一行，k&#x3D;-1表示对角线下面一行</li><li>输出棋盘样式的矩阵<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Z = np.ones((<span class="number">8</span>,<span class="number">8</span>),dtype=<span class="string">&#x27;int&#x27;</span>)</span><br><span class="line">Z[:-<span class="number">1</span>:<span class="number">2</span>,<span class="number">0</span>:-<span class="number">1</span>:<span class="number">2</span>] = <span class="number">0</span></span><br><span class="line">Z[<span class="number">1</span>::<span class="number">2</span>,<span class="number">1</span>::<span class="number">2</span>] = <span class="number">0</span></span><br><span class="line"><span class="built_in">print</span>(Z)</span><br><span class="line">answer(<span class="number">19</span>)</span><br><span class="line">--------------------------</span><br><span class="line">[[<span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]</span><br><span class="line">[<span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span>]</span><br><span class="line">[<span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]</span><br><span class="line">[<span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span>]</span><br><span class="line">[<span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]</span><br><span class="line">[<span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span>]</span><br><span class="line">[<span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]</span><br><span class="line">[<span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span>]]</span><br></pre></td></tr></table></figure></li><li>矩阵乘法（真矩阵相乘） <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(X.dot(Y))</span><br><span class="line"><span class="built_in">print</span>(X @ Y)</span><br></pre></td></tr></table></figure></li><li>有一种简写  <code>np.array(range(10))  ---&gt;  np.arange(10)</code></li><li>numpy数组中筛选出 3 到 8 的数值  <code>X[ (X&gt;=3) &amp; (X&lt;=8)]</code></li><li>有趣的题<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">sum</span>(<span class="built_in">range</span>(<span class="number">5</span>),-<span class="number">1</span>)) <span class="comment"># 输出 9   这里-1 的意思是前面的和加上一个start值，此处start=-1</span></span><br><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">sum</span>(<span class="built_in">range</span>(<span class="number">5</span>),-<span class="number">1</span>)) <span class="comment"># 输出 10  这里-1 的意思是默认对最低维度求和</span></span><br></pre></td></tr></table></figure></li><li>四舍五入 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Y = np.ceil(X)</span><br><span class="line">Z = np.floor(X)</span><br><span class="line">T = np.<span class="built_in">round</span>(X)</span><br></pre></td></tr></table></figure></li><li>找两个数组的交集 <code>np.intersect1d(Z1,Z2)</code></li><li>获得日期的函数<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yesterday = np.datetime64(<span class="string">&#x27;today&#x27;</span>) - np.timedelta64(<span class="number">1</span>)</span><br><span class="line">today     = np.datetime64(<span class="string">&#x27;today&#x27;</span>)</span><br><span class="line">tomorrow  = np.datetime64(<span class="string">&#x27;today&#x27;</span>) + np.timedelta64(<span class="number">1</span>)</span><br></pre></td></tr></table></figure></li><li>创建一个5*5的矩阵，每一行都是0-4<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">X = np.zeros((<span class="number">5</span>,<span class="number">5</span>),dtype=<span class="built_in">int</span>)</span><br><span class="line">Y = X + np.arange(<span class="number">5</span>)</span><br><span class="line">&lt;!-- ----------- --&gt;</span><br><span class="line">X = np.arange(<span class="number">5</span>)</span><br><span class="line">Y = np.tile(X,(<span class="number">5</span>,<span class="number">1</span>))</span><br></pre></td></tr></table></figure></li><li>创建10个数线性分布在0-1之间，不包括0、1 <code>Z = np.linspace(0,1,11,endpoint=False)[1:]</code></li><li>随机从1-n个数中选m个<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n , m = <span class="number">25</span>,<span class="number">5</span></span><br><span class="line">np.random.choice(np.arange(<span class="number">1</span>,n+<span class="number">1</span>),m)<span class="comment">#从1 ~ n+1随机选m个</span></span><br><span class="line">np.random.choice(n,m) <span class="comment">#从0~n随机选m个</span></span><br></pre></td></tr></table></figure></li><li>随机从给定区间内抽数，保证等概率 np.random.uniform(a,b,c) 在区间[a,b)内等概率抽取c个，特殊情况下a&#x3D;0,b&#x3D;1时等价于random.random(c),想要整数可以使用np.random.randint</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器视觉 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CS231 </tag>
+            
+            <tag> CNN </tag>
+            
+            <tag> Numpy </tag>
+            
+        </tags>
       
     </entry>
     

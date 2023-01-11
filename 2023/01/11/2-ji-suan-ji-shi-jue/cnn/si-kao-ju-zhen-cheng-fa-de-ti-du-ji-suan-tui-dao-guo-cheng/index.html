@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>first article | DaZhi&#39;s Home</title>
+  <title>DaZhi&#39;s Home</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -658,14 +658,14 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/15.jpg')">
+  background-position: center center;position: relative;background-image:url('/medias/1.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        first article
+        
       </span>
     </div>
     
@@ -681,7 +681,7 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 0 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 231 |
           </span>
   
           <span class="min2read">
@@ -708,7 +708,27 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        
+        <p>神经网络中的反向传播中的梯度计算一直是让我和头疼的问题，翻了好多资料，现在记录下自己目前的所得</p>
+<ol start="0">
+<li><p>结论<br>$$<br>\text{设\ }y\ &#x3D;\ f\left( X\ <em>\ W \right) \ ,\ C&#x3D;X\ </em>\ W,\text{则有:}<br>$$<br>$$<br>\frac{\partial y}{\partial W_{i,j}}&#x3D;X^T\frac{\partial y}{\partial C}<br>$$<br>$$<br>\frac{\partial y}{\partial X_{i,j}}&#x3D;\frac{\partial y}{\partial C}W^T<br>$$</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/milaohu/p/7337330.html?utm_source=itdadao&utm_medium=referral">转载自大佬笔记</a></p>
+</li>
+</ol>
+<p><img src="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221021155540030-886714468.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221021155540030-886714468.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp"></p>
+<ol start="2">
+<li><p><a target="_blank" rel="noopener" href="https://www.matrixcalculus.org/">一个可以计算梯度的在线工具</a><br>虽然现在我自己还没玩明白hhh，但是功能应该是很强大</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_63238256/article/details/126632188">一个具体推导的例子</a></p>
+</li>
+</ol>
+<hr>
+<ol start="4">
+<li><p>更新一个更简单的方式：<br> 根据矩阵乘法反向推导更加简单</p>
+<p> 比如 正向D &#x3D; X * W (X:  n * m   W: m * k  D:  n * k)<br> dD 的shape肯定和D一样<br> 同理，dW 的shape肯定是m * k,同时dw肯定有dD和X组成，那么根据矩阵乘法原理必须是 x.T.dot(dD)才行</p>
+</li>
+</ol>
+
       </div>
       <div class="post-tags-categories">
         
@@ -721,7 +741,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2023/01/11/first-article/" target="_blank" title="first article">https://dazhipro.github.io/2023/01/11/first-article/</a>
+    <a href="/2023/01/11/2-ji-suan-ji-shi-jue/cnn/si-kao-ju-zhen-cheng-fa-de-ti-du-ji-suan-tui-dao-guo-cheng/" target="_blank" title="">https://dazhipro.github.io/2023/01/11/2-ji-suan-ji-shi-jue/cnn/si-kao-ju-zhen-cheng-fa-de-ti-du-ji-suan-tui-dao-guo-cheng/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -743,17 +763,17 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/3.jpg" class="lazyload placeholder" data-srcset="/medias/3.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/2023/01/11/1-kai-fa/django/gai-shu/" class="post-nav-link">
+    <a href="/2023/01/11/2-ji-suan-ji-shi-jue/gan/gan-gai-shu/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">Django 概述</div>
+        <div class="title-text"></div>
       </div>
       
       <!-- <div class="content">
-        新建第一个hello world
-安装Django： python -m pip install Djangohttps
+        GAN(Generative Adversarial Network) 生成对抗网络
+1. 为什么要有这个东西？   为
       </div> -->
     </a>
   </div>
@@ -764,15 +784,16 @@
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
-    <a href="/2023/01/10/hello-world/" class="post-nav-link">
+    <a href="/2023/01/11/2-ji-suan-ji-shi-jue/cnn/04-fan-xiang-chuan-bo/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Hello World</div>
+        <div class="title-text"></div>
       </div>
       <!-- <div class="content">
-        Welcome to Hexo! This is your very first post. Check documen
+        等后续补充
+
       </div> -->
     </a>
   </div>

@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>first article | DaZhi&#39;s Home</title>
+  <title>CNN 概述 | DaZhi&#39;s Home</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -658,30 +658,39 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/15.jpg')">
+  background-position: center center;position: relative;background-image:url('/medias/4.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        first article
+        CNN 概述
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2023-01-11 |
+          <i class="fas fa-calendar"></i> 发表于：2022-10-02 |
         </span>
       
 
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/" class="post-detail-header_category">
+              机器视觉
+            </a>
+          
+        </span>
       
 
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 0 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 370 |
           </span>
   
           <span class="min2read">
@@ -708,9 +717,53 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        
+        <p>斯坦福CS231 视频 </p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1nJ411z7fe/?spm_id_from=333.999.0.0&vd_source=a25e4be5f25feef1532666f6ee51cce1">视频</a><br><a target="_blank" rel="noopener" href="https://cs231n.github.io/">作业笔记</a></p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="导论"><a href="#导论" class="headerlink" title="导论"></a>导论</h3><ol>
+<li>计算机视觉很火 随着传感器(摄像头的的增多）网上80%都是视频</li>
+<li>视频理解很难：可以类比物理学中的暗物质，占据宇宙（网络）中绝大部分，但是很难理解</li>
+<li>比较直观的应用就是短视频平台中需要对用户上传的视频进行分类（好、坏 or 进一步分为搞笑、科普、测评、商务等等）</li>
+<li>2012年 ImageNet 大规模图像分类挑战赛上，CNN第一次崭露头角，将错误率从 26% 降到 16%，人脸检测从2001年的Adabost就开始了，效果还不错</li>
+<li>最厉害的境界是对场景的理解</li>
+</ol>
+<h3 id="研究的问题"><a href="#研究的问题" class="headerlink" title="研究的问题"></a>研究的问题</h3><ol>
+<li>图像分类</li>
+<li>目标检测</li>
+<li>图像分割</li>
+<li>图像摘要</li>
+<li>医疗诊断</li>
+<li>自动驾驶</li>
+</ol>
+<h3 id="Python和Numpy基础教程"><a href="#Python和Numpy基础教程" class="headerlink" title="Python和Numpy基础教程"></a><a target="_blank" rel="noopener" href="https://cs231n.github.io/python-numpy-tutorial/">Python和Numpy基础教程</a></h3><p><em><strong>Python</strong></em></p>
+<ol>
+<li>列表表达式 <code>even_squares = [x ** 2 for x in nums if x % 2 == 0]</code></li>
+<li>输入输出 <code>a=int(input(&quot;请输入一个整数&quot;))</code>  <code>print(bin(7),bin(15),&#39;以上两位按位与之后&#39;,7&amp;15)</code></li>
+<li>循环<br><code>for i in range(2,a//2+1):</code><br><code>for idx, animal in enumerate(animals):</code> &#x2F;&#x2F;带索引的循环</li>
+</ol>
+<hr>
+<p><em><strong>Numpy</strong></em></p>
+<ol>
+<li>Matrix *   <code>a.dot(b)</code> or <code>np.dot(a,b)</code></li>
+<li>点乘（对应位置相乘）  a * b</li>
+<li>求矩阵每一列的和  <code>np.sum(x, axis=0)</code></li>
+<li>矩阵转置 <code>V.T</code></li>
+<li><a target="_blank" rel="noopener" href="https://numpy.org/doc/stable/user/basics.broadcasting.html">关于广播</a>:会从后往前扫描每一个维度，要么相同，要么有一方维度是1，可以广播此维度</li>
+</ol>
+
       </div>
       <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/CS231/" class="">
+              CS231
+            </a>
+          
+            <a href="/tags/CNN/" class="">
+              CNN
+            </a>
+          
+        </div>
         
       </div>
       
@@ -721,7 +774,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2023/01/11/first-article/" target="_blank" title="first article">https://dazhipro.github.io/2023/01/11/first-article/</a>
+    <a href="/2022/10/02/2-ji-suan-ji-shi-jue/cnn/01-gai-shu/" target="_blank" title="CNN 概述">https://dazhipro.github.io/2022/10/02/2-ji-suan-ji-shi-jue/cnn/01-gai-shu/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -743,17 +796,21 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/3.jpg" class="lazyload placeholder" data-srcset="/medias/3.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/9.jpg" class="lazyload placeholder" data-srcset="/medias/9.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/2023/01/11/1-kai-fa/django/gai-shu/" class="post-nav-link">
+    <a href="/2022/10/03/2-ji-suan-ji-shi-jue/cnn/02-jian-dan-fen-lei-qi/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">Django 概述</div>
+        <div class="title-text">简单分类器</div>
       </div>
       
       <!-- <div class="content">
-        新建第一个hello world
-安装Django： python -m pip install Djangohttps
+        最近邻算法
+思想：
+
+
+训练：只是记录下每个样本的位置和标签
+预测：遍历每个点，看一下距离该点最近的样本点的标签是啥，那
       </div> -->
     </a>
   </div>
@@ -766,13 +823,13 @@
       background-position: center center;">
       <img class="lazyload lazyload placeholder" src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
-    <a href="/2023/01/10/hello-world/" class="post-nav-link">
+    <a href="/2022/10/01/2-ji-suan-ji-shi-jue/cnn/00numpy-ji-qiao/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Hello World</div>
+        <div class="title-text">Numpy 技巧</div>
       </div>
       <!-- <div class="content">
-        Welcome to Hexo! This is your very first post. Check documen
+        构造列表筛选功能12345import numpy as npa = np.array(range(6)).reshap
       </div> -->
     </a>
   </div>
@@ -1090,7 +1147,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!--  -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E8%AE%BA"><span class="toc-text">导论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">研究的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Python%E5%92%8CNumpy%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B"><span class="toc-text">Python和Numpy基础教程</span></a></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>

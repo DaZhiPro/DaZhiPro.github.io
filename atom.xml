@@ -6,7 +6,7 @@
   <link href="https://dazhipro.github.io/atom.xml" rel="self"/>
   
   <link href="https://dazhipro.github.io/"/>
-  <updated>2023-01-11T05:42:08.456Z</updated>
+  <updated>2022-11-26T13:25:22.059Z</updated>
   <id>https://dazhipro.github.io/</id>
   
   <author>
@@ -15,6 +15,115 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://dazhipro.github.io/2023/01/11/2-ji-suan-ji-shi-jue/lstm/lstm/"/>
+    <id>https://dazhipro.github.io/2023/01/11/2-ji-suan-ji-shi-jue/lstm/lstm/</id>
+    <published>2023-01-11T06:18:02.059Z</published>
+    <updated>2022-11-26T13:25:22.059Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;LSTM 又叫长 短时记忆神经网络，问了解决RNN不能处理 &lt;code&gt;从较长的前文中推断下一个单词的问题&lt;/code&gt; 而提出的&lt;br&gt;&lt;code&gt;从较长的前文中推断下一个单词的问题&lt;/code&gt;比如：”I grew up in France… I speak</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://dazhipro.github.io/2023/01/11/2-ji-suan-ji-shi-jue/gan/gan-gai-shu/"/>
+    <id>https://dazhipro.github.io/2023/01/11/2-ji-suan-ji-shi-jue/gan/gan-gai-shu/</id>
+    <published>2023-01-11T06:18:02.049Z</published>
+    <updated>2022-12-13T08:35:39.879Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;GAN(Generative Adversarial Network) 生成对抗网络&lt;/p&gt;
+&lt;h4 id=&quot;1-为什么要有这个东西？&quot;&gt;&lt;a href=&quot;#1-为什么要有这个东西？&quot; class=&quot;headerlink&quot; title=&quot;1.</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://dazhipro.github.io/2023/01/11/2-ji-suan-ji-shi-jue/cnn/si-kao-ju-zhen-cheng-fa-de-ti-du-ji-suan-tui-dao-guo-cheng/"/>
+    <id>https://dazhipro.github.io/2023/01/11/2-ji-suan-ji-shi-jue/cnn/si-kao-ju-zhen-cheng-fa-de-ti-du-ji-suan-tui-dao-guo-cheng/</id>
+    <published>2023-01-11T06:18:02.042Z</published>
+    <updated>2022-11-19T11:44:39.712Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;神经网络中的反向传播中的梯度计算一直是让我和头疼的问题，翻了好多资料，现在记录下自己目前的所得&lt;/p&gt;
+&lt;ol start=&quot;0&quot;&gt;
+&lt;li&gt;&lt;p&gt;结论&lt;br&gt;$$&lt;br&gt;\text{设\ }y\ &amp;#x3D;\ f\left( X\ &lt;em&gt;\ W \right) \</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://dazhipro.github.io/2023/01/11/2-ji-suan-ji-shi-jue/cnn/04-fan-xiang-chuan-bo/"/>
+    <id>https://dazhipro.github.io/2023/01/11/2-ji-suan-ji-shi-jue/cnn/04-fan-xiang-chuan-bo/</id>
+    <published>2023-01-11T06:18:02.034Z</published>
+    <updated>2022-10-24T07:59:31.144Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;等后续补充&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://dazhipro.github.io/2023/01/11/2-ji-suan-ji-shi-jue/ji-suan-ji-shi-jue-bi-ji/"/>
+    <id>https://dazhipro.github.io/2023/01/11/2-ji-suan-ji-shi-jue/ji-suan-ji-shi-jue-bi-ji/</id>
+    <published>2023-01-11T06:18:02.014Z</published>
+    <updated>2022-12-27T09:08:10.256Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;先验-后验-和-似然函数的关系&quot;&gt;&lt;a href=&quot;#先验-后验-和-似然函数的关系&quot; class=&quot;headerlink&quot; title=&quot;先验 后验 和 似然函数的关系&quot;&gt;&lt;/a&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Django 概述</title>
@@ -74,6 +183,146 @@
     
     
     
+    
+  </entry>
+  
+  <entry>
+    <title>卷积和池化</title>
+    <link href="https://dazhipro.github.io/2022/10/05/2-ji-suan-ji-shi-jue/cnn/05-juan-ji-chi-hua/"/>
+    <id>https://dazhipro.github.io/2022/10/05/2-ji-suan-ji-shi-jue/cnn/05-juan-ji-chi-hua/</id>
+    <published>2022-10-05T04:40:19.000Z</published>
+    <updated>2023-01-11T06:24:45.751Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;卷积 输入和输出的关系&lt;/p&gt;
+&lt;p&gt;输入 N * N * D    卷积核 K * K * D2 stride(步长)、pad（周围填充）&lt;br&gt;输出尺寸 &amp;#x3D; ( N + 2 * pad - K ) &amp;#x2F; stride + 1 &lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="机器视觉" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/"/>
+    
+    
+    <category term="CS231" scheme="https://dazhipro.github.io/tags/CS231/"/>
+    
+    <category term="CNN" scheme="https://dazhipro.github.io/tags/CNN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>损失函数和优化</title>
+    <link href="https://dazhipro.github.io/2022/10/04/2-ji-suan-ji-shi-jue/cnn/03-sun-shi-han-shu-he-you-hua/"/>
+    <id>https://dazhipro.github.io/2022/10/04/2-ji-suan-ji-shi-jue/cnn/03-sun-shi-han-shu-he-you-hua/</id>
+    <published>2022-10-04T04:40:19.000Z</published>
+    <updated>2023-01-11T06:24:02.051Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;损失函数作用&quot;&gt;&lt;a href=&quot;#损失函数作用&quot; class=&quot;headerlink&quot; title=&quot;损失函数作用&quot;&gt;&lt;/a&gt;损失函数作用&lt;/h3&gt;&lt;p&gt;损失函数是一个衡量预测值和真实值之间差异的函数&lt;br&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="机器视觉" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/"/>
+    
+    
+    <category term="计算机视觉" scheme="https://dazhipro.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
+    
+    <category term="损失函数" scheme="https://dazhipro.github.io/tags/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>简单分类器</title>
+    <link href="https://dazhipro.github.io/2022/10/03/2-ji-suan-ji-shi-jue/cnn/02-jian-dan-fen-lei-qi/"/>
+    <id>https://dazhipro.github.io/2022/10/03/2-ji-suan-ji-shi-jue/cnn/02-jian-dan-fen-lei-qi/</id>
+    <published>2022-10-03T04:40:19.000Z</published>
+    <updated>2023-01-11T06:24:54.968Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;最近邻算法&quot;&gt;&lt;a href=&quot;#最近邻算法&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="机器视觉" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/"/>
+    
+    
+    <category term="CS231" scheme="https://dazhipro.github.io/tags/CS231/"/>
+    
+    <category term="CNN" scheme="https://dazhipro.github.io/tags/CNN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CNN 概述</title>
+    <link href="https://dazhipro.github.io/2022/10/02/2-ji-suan-ji-shi-jue/cnn/01-gai-shu/"/>
+    <id>https://dazhipro.github.io/2022/10/02/2-ji-suan-ji-shi-jue/cnn/01-gai-shu/</id>
+    <published>2022-10-02T04:40:19.000Z</published>
+    <updated>2023-01-11T06:25:01.383Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;斯坦福CS231 视频 &lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="机器视觉" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/"/>
+    
+    
+    <category term="CS231" scheme="https://dazhipro.github.io/tags/CS231/"/>
+    
+    <category term="CNN" scheme="https://dazhipro.github.io/tags/CNN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Numpy 技巧</title>
+    <link href="https://dazhipro.github.io/2022/10/01/2-ji-suan-ji-shi-jue/cnn/00numpy-ji-qiao/"/>
+    <id>https://dazhipro.github.io/2022/10/01/2-ji-suan-ji-shi-jue/cnn/00numpy-ji-qiao/</id>
+    <published>2022-10-01T04:40:19.000Z</published>
+    <updated>2023-01-11T06:25:16.353Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;构造列表筛选功能&quot;&gt;&lt;a href=&quot;#构造列表筛选功能&quot; class=&quot;headerlink&quot; title=&quot;构造列表筛选功能&quot;&gt;&lt;/a&gt;构造列表筛选功能&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    <category term="机器视觉" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/"/>
+    
+    
+    <category term="CS231" scheme="https://dazhipro.github.io/tags/CS231/"/>
+    
+    <category term="CNN" scheme="https://dazhipro.github.io/tags/CNN/"/>
+    
+    <category term="Numpy" scheme="https://dazhipro.github.io/tags/Numpy/"/>
     
   </entry>
   
