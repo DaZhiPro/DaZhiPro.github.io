@@ -12,7 +12,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>CNN 概述 | DaZhi&#39;s Home</title>
+  <title>计算机保研经验分享 | DaZhi&#39;s Home</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -659,21 +659,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/4.jpg')">
+  background-position: center center;position: relative;background-image:url('https://th.bing.com/th/id/R.512531ad2aad37bd030f8c4ffe2ab3a0?rik=n9fNAhwG5tmyjw&riu=http%3a%2f%2fwww.8bb.com%2fd%2ffile%2f20201228%2f1609116723275888.png&ehk=hkG8aUUgvF%2bVE5ji5MM0IcuiXHt2WwugOJVtNKNdIIs%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        CNN 概述
+        计算机保研经验分享
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2022-10-02 |
+          <i class="fas fa-calendar"></i> 发表于：2022-09-29 |
         </span>
       
 
@@ -681,8 +681,8 @@
         <span class="post-detail-header_categories">
           <i class="iconfont iconbookmark1"></i> 分类：
           
-            <a href="/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/" class="post-detail-header_category">
-              机器视觉
+            <a href="/categories/%E6%97%A5%E5%B8%B8%E9%9A%8F%E7%AC%94/" class="post-detail-header_category">
+              日常随笔
             </a>
           
         </span>
@@ -691,11 +691,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 370 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 2.3k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 1分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 7分钟 |
           </span>
   
           
@@ -718,50 +718,40 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <p>斯坦福CS231 视频 </p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1nJ411z7fe/?spm_id_from=333.999.0.0&vd_source=a25e4be5f25feef1532666f6ee51cce1">视频</a><br><a target="_blank" rel="noopener" href="https://cs231n.github.io/">作业笔记</a></p>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="导论"><a href="#导论" class="headerlink" title="导论"></a>导论</h3><ol>
-<li>计算机视觉很火 随着传感器(摄像头的的增多）网上80%都是视频</li>
-<li>视频理解很难：可以类比物理学中的暗物质，占据宇宙（网络）中绝大部分，但是很难理解</li>
-<li>比较直观的应用就是短视频平台中需要对用户上传的视频进行分类（好、坏 or 进一步分为搞笑、科普、测评、商务等等）</li>
-<li>2012年 ImageNet 大规模图像分类挑战赛上，CNN第一次崭露头角，将错误率从 26% 降到 16%，人脸检测从2001年的Adabost就开始了，效果还不错</li>
-<li>最厉害的境界是对场景的理解</li>
-</ol>
-<h3 id="研究的问题"><a href="#研究的问题" class="headerlink" title="研究的问题"></a>研究的问题</h3><ol>
-<li>图像分类</li>
-<li>目标检测</li>
-<li>图像分割</li>
-<li>图像摘要</li>
-<li>医疗诊断</li>
-<li>自动驾驶</li>
-</ol>
-<h3 id="Python和Numpy基础教程"><a href="#Python和Numpy基础教程" class="headerlink" title="Python和Numpy基础教程"></a><a target="_blank" rel="noopener" href="https://cs231n.github.io/python-numpy-tutorial/">Python和Numpy基础教程</a></h3><p><em><strong>Python</strong></em></p>
-<ol>
-<li>列表表达式 <code>even_squares = [x ** 2 for x in nums if x % 2 == 0]</code></li>
-<li>输入输出 <code>a=int(input(&quot;请输入一个整数&quot;))</code>  <code>print(bin(7),bin(15),&#39;以上两位按位与之后&#39;,7&amp;15)</code></li>
-<li>循环<br><code>for i in range(2,a//2+1):</code><br><code>for idx, animal in enumerate(animals):</code> &#x2F;&#x2F;带索引的循环</li>
-</ol>
-<hr>
-<p><em><strong>Numpy</strong></em></p>
-<ol>
-<li>Matrix *   <code>a.dot(b)</code> or <code>np.dot(a,b)</code></li>
-<li>点乘（对应位置相乘）  a * b</li>
-<li>求矩阵每一列的和  <code>np.sum(x, axis=0)</code></li>
-<li>矩阵转置 <code>V.T</code></li>
-<li><a target="_blank" rel="noopener" href="https://numpy.org/doc/stable/user/basics.broadcasting.html">关于广播</a>:会从后往前扫描每一个维度，要么相同，要么有一方维度是1，可以广播此维度</li>
-</ol>
+        <h2 id="1-关于保研"><a href="#1-关于保研" class="headerlink" title="1. 关于保研"></a>1. 关于保研</h2><p>随着928的结束，2023届轰轰烈烈的保研也就这么结束了。从五六月份开始准备各种材料，包括打印、签名、写推荐信、成绩证明、证书等等，然后是报无数个学校，填无数个报名系统，最后入营的寥寥无几。夏令营结束也并没有拿到几个offer，预推免经历了套磁十几个老师没一个回复的情况，整个人都很焦虑，好在结束了，谨以此文记录下在带给我莫大痛苦和成长的保研经历。</p>
+<h2 id="2-个人情况："><a href="#2-个人情况：" class="headerlink" title="2. 个人情况："></a>2. 个人情况：</h2><p>学校：末流 211</p>
+<p>专业：计算机科学与技术（实验）</p>
+<p>成绩排名：   4&#x2F;119   </p>
+<p>一些成果：国家奖学金 、网络技术挑战赛国家三等奖、有科研经历但无产出（实用新型专利+软著 比较水），还有些水赛</p>
+<h2 id="3-夏令营"><a href="#3-夏令营" class="headerlink" title="3. 夏令营"></a>3. 夏令营</h2><h5 id="没入营"><a href="#没入营" class="headerlink" title="没入营"></a>没入营</h5><p>南大（cs、se、ai)、上交网安、人大信息、北理cs、华中科技大学cs、华东师范cs、北邮cs15组、哈工大、天大、西交、中南、北交cs</p>
+<h5 id="吉林大学"><a href="#吉林大学" class="headerlink" title="吉林大学"></a>吉林大学</h5><p>第一次面试，整个过程比较慌乱，双机位没摆好，周围有噪音等等，抽到的题目是http和https有啥区别，然后项目最开始准备的也不是很好，好在优营发的比较多，拿到了offer</p>
+<h5 id="山大"><a href="#山大" class="headerlink" title="山大"></a>山大</h5><p>山大有机试，还挺难的，5道题做出来半道hhh（这里建议多刷算法题，保研找工作都用得到）。面试问了快排、图论（大概是看到了我一个算法竞赛的奖）项目问的很少，有的面试组只问项目很奇怪哈哈哈，最后是候补，结束后又参加了ilearn实验室的面试，学长面试很硬核哈，包括英语口语（介绍下你拿到的奖项）、数学（线代 –秩、概率论）、数据结构（算法实现全排列），最后拿到了学硕offer   {最后又说名 额少变卦啦，这是后话}</p>
+<h5 id="信工所国重"><a href="#信工所国重" class="headerlink" title="信工所国重"></a>信工所国重</h5><p>信工所国家重点实验室，报的一个比较火的老师，面试的时候问的数据结构链表之类的，还有项目里的短时傅里叶变化和傅里叶变换的关系等等，没想到问这个项目hhh，老师最后问我接不接受调剂，感觉答得不好，就说接受调剂（其实调剂了别的组大概率就不去了hhh），最后准备不足，拿到了候补（9.27候补到了专硕）</p>
+<h5 id="南开大学"><a href="#南开大学" class="headerlink" title="南开大学"></a>南开大学</h5><p>南开计算机和网安都是自己联系导师，我联系了一个网络安全方向和自己做的项目比较接近的老师，老师问了好多团队合作方便的问题，比如如果你是队长队员跟不上进度怎么办，你是队员，完不成队长的任务怎么办，还问了磁盘去除重复文件的问题，感觉回答的还行，最后拿到了专硕offer。不过南开专硕今年没宿舍，纠结了很久。</p>
+<h5 id="计算所"><a href="#计算所" class="headerlink" title="计算所"></a>计算所</h5><p>计算所没有入营，不过之前联系的老师，然后霸面（就是没入营的获得了老师推荐也可以直接参加考核），比较奇怪的是之前这老师没给我回邮件，但是直接让我霸面了，可能是联系这个老师的比较少吧hhh，考核就是机试+面试，机试就是一些数据结构的题，正常水平，五道做了三道，面试感觉答的还行，问的不是很深，不过计算所是最后把你的机试和面试成绩告诉老师，老师决定要不要你，我面试完也没有再联系那个老师（感觉那老师研究方向比较偏hhh），然后最后没拿到offer。</p>
+<h5 id="东南大学"><a href="#东南大学" class="headerlink" title="东南大学"></a>东南大学</h5><p>今年东南大学是要求先联系导师，获得导师的推荐名额之后才能有机会入营，我联系了计院一个做网安的老师lz，面了50min，把我做的四个项目从头到尾问了个遍，还问了计网相关的问题：“从输入网址到显示出网页来，后台发生了什么，用到了什么网络协议？”，感觉整体还行，当时老师就给了计科的名额（老师的推荐名额也是有限的，然后计科名额比较少，软件的多），入营后学院面试的时候问的项目里用到的LSTM以及数据结构算法中的内部排序、外部排序，感觉回答的不是很好，而且面试过程听到的老师的话都是断断续续的，需要听到关键词，然后猜测老师的问题是啥，体验很差，最后没拿到offer。</p>
+<p>offer：吉林大学cs、山大cs候补（ilearn offer）、信工所国重候补、南开网安</p>
+<h2 id="4-预推免"><a href="#4-预推免" class="headerlink" title="4. 预推免"></a>4. 预推免</h2><p>没入营：北航网安、北理cs、国防科大cs、厦门大学cs、软件所、同济</p>
+<p> 因为拿了夏令营南开和山大offer，就没有报太多，报的都挺高的hhh</p>
+<h5 id="北邮cs"><a href="#北邮cs" class="headerlink" title="北邮cs"></a>北邮cs</h5><p>预推免的时候北邮好多老师都招满了，北邮是弱com，就是那种老师想要基本就能要的，不需要统一考核，老师夏令营基本招满了，然后预推免的时候鸽子还没起飞，发了好多套磁老师的邮件，北邮是分组考核的，15组考核全程问项目，问了大概40min，刚面完15组还没出结果的时候16组一个老师又开始面，面完说感觉不错，但还得完成个小任务考核类似于 先爬虫搜集公交车数据，然后实现一个路径规划的系统。刚面完就接到15组的offer，老师说预计是学硕，然后给16组老师说明情况，老师说也可以给我学硕、也不用做考核了（打起来啦哈哈哈），最后综合选择后拒掉了16组老师，选择15组学硕（15组是北邮比较火的一组）。（拿到北邮cs  offer后拒掉了南开老师，但后来北邮15组老师又开始问我接不接受专硕，说只能给专硕，被搞了一手很难受）</p>
+<h5 id="天津大学"><a href="#天津大学" class="headerlink" title="天津大学"></a>天津大学</h5><p>入营后放弃</p>
+<h5 id="计算所无线中心"><a href="#计算所无线中心" class="headerlink" title="计算所无线中心"></a>计算所无线中心</h5><p>报名后老师打电话通知面试，主要就是讲项目，不过老师问了编译链接的过程、七层网络模型及其作用、神经网络中卷积的过程、离散傅里叶和连续傅里叶的区别等等，感觉面得还可以，不过可能只要两个名额竞争太大，老师打电话说只能给一个计算所和上科大联培的名额，考虑后拒绝了。（9.26收到了通知说可以给计算所的offer，不过第一年在南京培养）</p>
+<h5 id="浙大工程师院"><a href="#浙大工程师院" class="headerlink" title="浙大工程师院"></a>浙大工程师院</h5><p>浙工我没报太大希望，就没怎么准备，主要问了下SDN的项目，还是一些加密算法（项目涉及到的），然后英文介绍家乡，等等，感觉答得不是很好，最后是候补第六位。（总共要8个人，也就是说我前面13个人放弃6个我才有希望，当时感觉希望不大）</p>
+<h5 id="华中科技大学"><a href="#华中科技大学" class="headerlink" title="华中科技大学"></a>华中科技大学</h5><p>华科首先是机试，三道题（字符串处理*2+双栈求解逻辑表达式），挺水的，做出来两道半，然后是面试也很水hhh，应该主要是看机试+背景吧，最后拿到了候补，联系老师面试主要问了编程能力和项目，老师说基本是稳的，不过可能是专硕。老师做核心算法优化之类的，专硕没宿舍实验室会有各种补助，花销和校内差不多，会给安排大厂实习，当时问的很详细，感觉很可能就去了哈哈哈。</p>
+<p>offer：北邮cs 15组、计算所无线中心 候补、华科cs候补、浙大工程师院候补</p>
+<h2 id="5-推免系统开放"><a href="#5-推免系统开放" class="headerlink" title="5. 推免系统开放"></a>5. 推免系统开放</h2><p>最后感觉手里比较好的排就是 华科候补 北邮cs  浙工候补 计算所无线中心，因为只能填三个志愿，最后拒绝了计算所offer，选择北邮保底，冲华科和浙工，最后上岸浙工。</p>
+<p>最后好多都被割穿了</p>
+<p>西交软、中山、浙软、北邮、吉大、东南网安、人大gl、北航计算所、武汉大学计算机、南大计算机等等 </p>
+<p>以上学校基本都是候补都能录，然后录完还有剩余名额招不到学生。所以最后三个志愿可以搏一搏哈哈哈，搏一搏单车变摩托！（但也有可能只能留本校了哈哈哈，风险与机遇并存）</p>
+<h2 id="最后附计算机类院校排行榜"><a href="#最后附计算机类院校排行榜" class="headerlink" title="最后附计算机类院校排行榜"></a>最后附计算机类院校排行榜</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/da-zhi/p/16757151.html">附计算机类院校排行榜汇总</a></p>
 
       </div>
       <div class="post-tags-categories">
         
         <div class="tags">
           
-            <a href="/tags/CS231/" class="">
-              CS231
-            </a>
-          
-            <a href="/tags/CNN/" class="">
-              CNN
+            <a href="/tags/%E4%BF%9D%E7%A0%94/" class="">
+              保研
             </a>
           
         </div>
@@ -775,7 +765,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2022/10/02/2-ji-suan-ji-shi-jue/cnn/01-gai-shu/" target="_blank" title="CNN 概述">https://dazhipro.github.io/2022/10/02/2-ji-suan-ji-shi-jue/cnn/01-gai-shu/</a>
+    <a href="/2022/09/29/4-ri-chang-sui-bi/ji-suan-ji-bao-yan-jing-yan-fen-xiang/" target="_blank" title="计算机保研经验分享">https://dazhipro.github.io/2022/09/29/4-ri-chang-sui-bi/ji-suan-ji-bao-yan-jing-yan-fen-xiang/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -797,21 +787,16 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/9.jpg" class="lazyload placeholder" data-srcset="/medias/9.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/2022/10/03/2-ji-suan-ji-shi-jue/cnn/02-jian-dan-fen-lei-qi/" class="post-nav-link">
+    <a href="/2022/10/01/2-ji-suan-ji-shi-jue/cnn/00numpy-ji-qiao/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">简单分类器</div>
+        <div class="title-text">Numpy 技巧</div>
       </div>
       
       <!-- <div class="content">
-        最近邻算法
-思想：
-
-
-训练：只是记录下每个样本的位置和标签
-预测：遍历每个点，看一下距离该点最近的样本点的标签是啥，那
+        构造列表筛选功能12345import numpy as npa = np.array(range(6)).reshap
       </div> -->
     </a>
   </div>
@@ -822,15 +807,16 @@
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/13.jpg" class="lazyload placeholder" data-srcset="/medias/13.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
-    <a href="/2022/10/01/2-ji-suan-ji-shi-jue/cnn/00numpy-ji-qiao/" class="post-nav-link">
+    <a href="/2022/09/01/1-kai-fa/git/git-ru-men/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Numpy 技巧</div>
+        <div class="title-text">git 入门</div>
       </div>
       <!-- <div class="content">
-        构造列表筛选功能12345import numpy as npa = np.array(range(6)).reshap
+        基本操作 git status 	当前仓库的状态
+git add &quot;filename.txt&quot;		向
       </div> -->
     </a>
   </div>
@@ -1148,7 +1134,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E8%AE%BA"><span class="toc-text">导论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">研究的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Python%E5%92%8CNumpy%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B"><span class="toc-text">Python和Numpy基础教程</span></a></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%85%B3%E4%BA%8E%E4%BF%9D%E7%A0%94"><span class="toc-text">1. 关于保研</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%B8%AA%E4%BA%BA%E6%83%85%E5%86%B5%EF%BC%9A"><span class="toc-text">2. 个人情况：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%A4%8F%E4%BB%A4%E8%90%A5"><span class="toc-text">3. 夏令营</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B2%A1%E5%85%A5%E8%90%A5"><span class="toc-text">没入营</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%90%89%E6%9E%97%E5%A4%A7%E5%AD%A6"><span class="toc-text">吉林大学</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B1%B1%E5%A4%A7"><span class="toc-text">山大</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BF%A1%E5%B7%A5%E6%89%80%E5%9B%BD%E9%87%8D"><span class="toc-text">信工所国重</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6"><span class="toc-text">南开大学</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%89%80"><span class="toc-text">计算所</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%9C%E5%8D%97%E5%A4%A7%E5%AD%A6"><span class="toc-text">东南大学</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E9%A2%84%E6%8E%A8%E5%85%8D"><span class="toc-text">4. 预推免</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8C%97%E9%82%AEcs"><span class="toc-text">北邮cs</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%A9%E6%B4%A5%E5%A4%A7%E5%AD%A6"><span class="toc-text">天津大学</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%89%80%E6%97%A0%E7%BA%BF%E4%B8%AD%E5%BF%83"><span class="toc-text">计算所无线中心</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B5%99%E5%A4%A7%E5%B7%A5%E7%A8%8B%E5%B8%88%E9%99%A2"><span class="toc-text">浙大工程师院</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8D%8E%E4%B8%AD%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6"><span class="toc-text">华中科技大学</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%8E%A8%E5%85%8D%E7%B3%BB%E7%BB%9F%E5%BC%80%E6%94%BE"><span class="toc-text">5. 推免系统开放</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%90%8E%E9%99%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B1%BB%E9%99%A2%E6%A0%A1%E6%8E%92%E8%A1%8C%E6%A6%9C"><span class="toc-text">最后附计算机类院校排行榜</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
