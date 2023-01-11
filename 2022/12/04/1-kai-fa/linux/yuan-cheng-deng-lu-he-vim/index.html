@@ -49,8 +49,6 @@
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
     
-        <script src="/js/valine/index.js"></script>
-    
 
     <!-- import link -->
     
@@ -67,6 +65,9 @@
         
             
         
+    
+
+
     
 
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="DaZhi's Home" type="application/atom+xml">
@@ -718,21 +719,29 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h3 id="主机和虚拟机ping不通的原因"><a href="#主机和虚拟机ping不通的原因" class="headerlink" title="主机和虚拟机ping不通的原因"></a>主机和虚拟机ping不通的原因</h3><ol>
+        <h3 id="主机和虚拟机ping不通的原因"><a class="markdownIt-Anchor" href="#主机和虚拟机ping不通的原因"></a> 主机和虚拟机ping不通的原因</h3>
+<ol>
 <li>主机需要将自己网卡共享给VMware net8</li>
-<li>主机VMware net8虚拟网卡设计的网段需要和虚拟机中vmnet8 的网段设置为一样的<br>如果不一致，会出现主机ping不通虚拟机，反之可以，同时虚拟机也能上网</li>
+<li>主机VMware net8虚拟网卡设计的网段需要和虚拟机中vmnet8 的网段设置为一样的
+如果不一致，会出现主机ping不通虚拟机，反之可以，同时虚拟机也能上网</li>
 </ol>
-<h3 id="远程登录传输"><a href="#远程登录传输" class="headerlink" title="远程登录传输"></a>远程登录传输</h3><p>虚拟机ip  192.168.126.128   Vmwarenet8 196.168.126.0</p>
-<p>连接工具： XShell 和 XFTP<br>连接的时候主机一定要选择虚拟机（就是linux所在主机）<strong>的ip</strong><br>小问题：如果使用XFTP出现乱码的话，将语言改为UTF-8</p>
+<h3 id="远程登录传输"><a class="markdownIt-Anchor" href="#远程登录传输"></a> 远程登录传输</h3>
+<p>虚拟机ip  192.168.126.128   Vmwarenet8 196.168.126.0</p>
+<p>连接工具： XShell 和 XFTP
+连接的时候主机一定要选择虚拟机（就是linux所在主机）<strong>的ip</strong>
+小问题：如果使用XFTP出现乱码的话，将语言改为UTF-8</p>
 <p>连接成功后就可以远程通过用户名和密码 远程登录到linux系统</p>
-<h3 id="vim使用以及快捷键"><a href="#vim使用以及快捷键" class="headerlink" title="vim使用以及快捷键"></a>vim使用以及快捷键</h3><p>vim的三种模式</p>
+<h3 id="vim使用以及快捷键"><a class="markdownIt-Anchor" href="#vim使用以及快捷键"></a> vim使用以及快捷键</h3>
+<p>vim的三种模式</p>
 <ol>
 <li>正常模式 默认进去的模式，可以光标移动</li>
 <li>编辑模式 正常+ i\a 可以进行编辑</li>
 <li>命令模式 正常+：可以输入命令   :wq 保存并退出 :q! 强制退出</li>
 </ol>
-<h4 id="各种模式的切换"><a href="#各种模式的切换" class="headerlink" title="各种模式的切换"></a>各种模式的切换</h4><p><img src="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221002232546072-1965942321.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221002232546072-1965942321.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<h4 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h4><ul>
+<h4 id="各种模式的切换"><a class="markdownIt-Anchor" href="#各种模式的切换"></a> 各种模式的切换</h4>
+<p><img src="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221002232546072-1965942321.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221002232546072-1965942321.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<h4 id="常用快捷键"><a class="markdownIt-Anchor" href="#常用快捷键"></a> 常用快捷键</h4>
+<ul>
 <li>yy 复制当前行  5yy 复制之后的5行    p 粘贴</li>
 <li>dd 删除当前行  6dd删除当前行后的6行</li>
 <li></li>
@@ -740,11 +749,11 @@
 <li></li>
 <li>正常模式下：输入u撤销操作，就是输错了，先ESC，然后再u</li>
 <li>正常模式下：跳转到第一行 gg  跳转到最后一行G</li>
-<li>正常模式下： &#x2F;hello 回车 开始搜索文件中的hello  使用n选择next个匹配项</li>
+<li>正常模式下： /hello 回车 开始搜索文件中的hello  使用n选择next个匹配项</li>
 <li>正常模式下：输入行号n，然后shift+g  go到第n行</li>
 <li>任何模式切换为正常模式 按ESC键</li>
 </ul>
-<p><img src="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221002234541152-1804272133.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221002234541152-1804272133.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
+<p><img src="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221002234541152-1804272133.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221002234541152-1804272133.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
 
       </div>
       <div class="post-tags-categories">
@@ -797,7 +806,10 @@
       </div>
       
       <!-- <div class="content">
-        快速排序问题将序列 q 的 l ~ r 区间排序void quick_sort(int q[], int l, int 
+         快速排序
+ 问题
+将序列 q 的 l ~ r 区间排序
+void quick_sort(int q[], int l,
       </div> -->
     </a>
   </div>
@@ -816,8 +828,12 @@
         <div class="title-text">Linux 常用命令</div>
       </div>
       <!-- <div class="content">
-        常用命令文件管理
-删除 rm option 文件&#x2F;文件名option  -r:删除目录及其子文件   -f: 
+         常用命令
+ 文件管理
+
+
+删除 rm option 文件/文件名
+option  -r:删除目录及其子文件   -f:
       </div> -->
     </a>
   </div>
@@ -936,102 +952,8 @@
 
   <div id="myComment">
     
-      
-<section id="comments" style="padding: 1em;"
-	class="animated bounceInUp">
-	<div id="vcomment" class="comment"></div>
-</section>
-<style>
-	#comments {
-		background: rgba(255,255,255,0.9);
-	}
-	#veditor {
-		background-image: url('https://img.zcool.cn/community/01a253594c71cfa8012193a329a77f.gif');
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: right;
-		background-color: rgba(255, 255, 255, 0);
-		resize: vertical;
-	}
-	#veditor:focus{
-		background-position-y: 200px;
-		transition: all 0.2s ease-in-out 0s;
-	}
-	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
-		background-color: #42b983;
-	}
-	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
-		color: #42b983;
-		border-color: #42b983;
-	}
-	#vcomment .vcards .vcard .vhead .vsys i {
-		display: none;
-	}
-	/* 底部valine链接 */
-	#vcomment .vpower {
-		display: none;
-	}
-	
-	/* 底下注释是修改 名称和邮箱和网址输入框的样式 */
-	/* #vcomment .vheader {
-		display: flex;
-		justify-content: space-around;
-	}
-	
-	#vcomment .vheader .vnick {
-		width: 31%;
-		border: 2px solid #dedede;
-		padding-left: 10px;
-		padding-right: 10px;
-		border-radius: 5px
-	}
+      <div id="gitment-container"></div>
 
-	#vcomment .vheader .vmail {
-		width: 31%;
-		border: 2px solid #dedede;
-		padding-left: 10px;
-		padding-right: 10px;
-		border-radius: 5px
-	}
-
-	#vcomment .vheader .vlink {
-		width: 31%;
-		border: 2px solid #dedede;
-		padding-left: 10px;
-		padding-right: 10px;
-		border-radius: 5px
-	} */
-
-	img.vimg {
-		transition: all 1s;
-		/* 头像旋转时间为 1s */
-	}
-
-	img.vimg:hover {
-		transform: rotate(360deg);
-		-webkit-transform: rotate(360deg);
-		-moz-transform: rotate(360deg);
-		-o-transform: rotate(360deg);
-		-ms-transform: rotate(360deg);
-	}
-
-	#vcomment .vcards .vcard {
-		padding: 15px 20px 0 20px;
-		border-radius: 10px;
-		margin-bottom: 15px;
-		box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
-		transition: all .3s
-	}
-
-	#vcomment .vcards .vcard:hover {
-		box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
-	}
-
-	#vcomment .vcards .vcard .vh .vcard {
-		border: none;
-		box-shadow: none;
-	}
-</style>
     
   </div>
 
@@ -1135,7 +1057,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E6%9C%BA%E5%92%8C%E8%99%9A%E6%8B%9F%E6%9C%BAping%E4%B8%8D%E9%80%9A%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="toc-text">主机和虚拟机ping不通的原因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E4%BC%A0%E8%BE%93"><span class="toc-text">远程登录传输</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vim%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">vim使用以及快捷键</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%84%E7%A7%8D%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%88%87%E6%8D%A2"><span class="toc-text">各种模式的切换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">常用快捷键</span></a></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E6%9C%BA%E5%92%8C%E8%99%9A%E6%8B%9F%E6%9C%BAping%E4%B8%8D%E9%80%9A%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="toc-text"> 主机和虚拟机ping不通的原因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E4%BC%A0%E8%BE%93"><span class="toc-text"> 远程登录传输</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vim%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text"> vim使用以及快捷键</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%84%E7%A7%8D%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%88%87%E6%8D%A2"><span class="toc-text"> 各种模式的切换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text"> 常用快捷键</span></a></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1607,7 +1529,7 @@
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
 
           </div>
         
@@ -2121,141 +2043,68 @@
 <!-- 评论所需js -->
 
   
-    <!-- 弹幕所需的css和js -->
-    
-  <!-- 弹幕插件 -->
-  <link href="/js/danmu/barrager.css" rel="stylesheet">
-  <script src="/js/danmu/jquery.barrager.js"></script>
+    <script type="text/javascript">
+  var utteranceCommon = {};
 
-<!-- 具体js，请前往valine/script.ejs查看 -->
-
-    <script>
-  var requiredFields = 'nick,mail';
-  requiredFields = requiredFields.split(',');
-  comment_el = '.comment';
-  let looperValine = null;
-  load_valine = function () {
-    if ($(comment_el).length) {
-      var valine = new Valine({
-        el: '#vcomment',
-        path: window.location.pathname,
-        notify: false,
-        verify: false,
-        app_id: "",
-        app_key: "",
-        placeholder: "客官，说点什么吧",
-        avatar: "",
-        master: "",   //博主邮箱md5
-        tagMeta: ["博主","小伙伴","访客"],     //标识字段名
-        friends: "",
-        metaPlaceholder: { "nick": "昵称/QQ号", "mail": "邮箱" },
-        requiredFields: requiredFields,
-        enableQQ: true,
-      });
-      function debounce(fn) {
-        var timerID = null
-        return function () {
-          var arg = arguments[0]   //获取事件
-          if (timerID) {
-            clearTimeout(timerID)
-          }
-          timerID = setTimeout(function () {
-            fn(arg)              //事件传入函数
-          }, 200)
-        }
-      }
-      //查询评论 valine.Q('*').limit(7) -- 查询所有，限制7条, 下面的的代码是查询当前页面
-      var themeDanmu = eval('true');
-      var themeLoop = eval('false');
-      var themeLooperTime = '5000' || 5000;
-      var speed = '40' || 20;
-      var isBarrager = true;
-      if (themeDanmu == true) {
-        do_barrager();
-        if ($('.danmuBox').length <= 0) {
-          $('.navbar').append('<div class="danmuBox"><div class="danmuBtn open"><span class="danmuCircle"></span><span class="danmuText">弹幕</span></div></div>');
-        }
-        $('.danmuBtn').on('click', debounce(
-          function () {
-            if ($('.danmuBtn').hasClass('open')) {
-              $('.danmuBtn').removeClass('open')
-              clearInterval(looperValine);
-              $.fn.barrager.removeAll();
-            } else {
-              $('.danmuBtn').addClass("open");
-              do_barrager();
-            }
-          }
-        ))
-      }
-      function do_barrager() {
-        isBarrager && valine.Q(window.location.pathname).find().then(function (comments) {
-          // var num = 0; // 可以记录条数，循环调用的时候只取最新的评论放入弹幕中
-          var run_once = true;
-          var looper_time = themeLooperTime;
-          var total = comments.length;
-          // var looper = null;
-          var index = 0;
-          if (total > 0) {
-            barrager();
-          } else {
-            // 当评论数为0的时候，自动关闭弹幕
-            // $('.danmuBtn').removeClass('open');
-          }
-          function barrager() {
-            if (run_once) {
-              //如果是首次执行,则设置一个定时器,并且把首次执行置为false
-              looperValine = setInterval(barrager, looper_time);
-              run_once = false;
-            }
-            var content = comments[index]._serverData.comment;
-            var email = comments[index]._serverData.mail;
-            var link = comments[index]._serverData.link;
-            var newcontent = content.substring(0, 50).replace(/<[^>]+>/g, "");
-            //发布一个弹幕
-            const item = {
-              img: `https://q1.qlogo.cn/g?b=qq&nk=${email}&s=640`, //图片 
-              info: newcontent, //文字 
-              href: link, //链接 
-              close: true, //显示关闭按钮 
-              speed: speed, //延迟,单位秒,默认6 
-              color: '#fff', //颜色,默认白色 
-              old_ie_color: '#000000', //ie低版兼容色,不能与网页背景相同,默认黑色
-            }
-            $('body').barrager(item);
-            //索引自增
-            index++;
-            //所有弹幕发布完毕，清除计时器。
-            if (index == total) {
-              clearInterval(looperValine);
-              if (themeLoop === true) {
-                setTimeout(function () {
-                  do_barrager();
-                }, 5000);
-              } else {
-                $('.danmuBtn').removeClass('open');
-              }
-              return false;
-            }
-
-          }
-        })
-      }
+  function check_utterance() {
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    if (isDark) {
+      utteranceCommon.Theme = 'github-dark';
+    } else {
+      utteranceCommon.Theme = 'github-light';
     }
-  };
-  $(document).ready(load_valine);
-  document.addEventListener('pjax:send', function (e) {
-    
-      $('.danmuBox').length > 0 && $('.danmuBox').remove()
-      looperValine && clearInterval(looperValine);
-      $.fn.barrager.removeAll();
-    
-  })
+
+    return document.getElementById("gitment-container");
+  }
+  comment_el = '#gitment-container';
+  load_utterance = function () {
+    if ($(comment_el).length) {
+      // 匿名函数，防止污染全局变量
+      const HEAD = check_utterance();
+
+      var utterances = document.createElement('script');
+      utterances.type = 'text/javascript';
+      utterances.async = true;
+      utterances.setAttribute('issue-term', 'pathname')
+      utterances.setAttribute('theme', utteranceCommon.Theme)
+      utterances.setAttribute('repo', 'dazhipro/dazhipro.github.io')
+      utterances.crossorigin = 'anonymous';
+      utterances.src = 'https://utteranc.es/client.js';
+      // content 是要插入评论的地方
+      document.getElementById('gitment-container').appendChild(utterances);
+
+    }
+  }
+
+  function dark_utterance() {
+    const HEAD = check_utterance();
+    if (!HEAD) return;
+    const message = {
+      type: 'set-theme',
+      theme: utteranceCommon.Theme
+    };
+    const utteranceIframe = document.querySelector('iframe');
+    utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');
+  }
+
+  $(document).ready(load_utterance);
   document.addEventListener('pjax:complete', function () {
-    load_valine();
+    load_utterance();
   });
+
+  $('.dark').click(function () {
+    setTimeout(() => {
+      dark_utterance();
+    });
+  })
+
 </script>
 
+<style>
+  .utterances {
+    max-width: inherit !important;
+  }
+</style>
   
 
 

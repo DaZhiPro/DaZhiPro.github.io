@@ -49,8 +49,6 @@
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
     
-        <script src="/js/valine/index.js"></script>
-    
 
     <!-- import link -->
     
@@ -67,6 +65,9 @@
         
             
         
+    
+
+
     
 
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="DaZhi's Home" type="application/atom+xml">
@@ -691,7 +692,7 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 121 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 124 |
           </span>
   
           <span class="min2read">
@@ -718,13 +719,19 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <p>LSTM 又叫长 短时记忆神经网络，问了解决RNN不能处理 <code>从较长的前文中推断下一个单词的问题</code> 而提出的<br><code>从较长的前文中推断下一个单词的问题</code>比如：”I grew up in France… I speak fluent <em>French</em>.”不能从这句中推出French，因为中间隔了好多词</p>
-<h4 id="遗忘门："><a href="#遗忘门：" class="headerlink" title="遗忘门："></a>遗忘门：</h4><p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212224503-712213887.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212224503-712213887.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<h4 id="输入门："><a href="#输入门：" class="headerlink" title="输入门："></a>输入门：</h4><p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212311075-209010384.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212311075-209010384.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<h4 id="想下一个cell的输出："><a href="#想下一个cell的输出：" class="headerlink" title="想下一个cell的输出："></a>想下一个cell的输出：</h4><p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212423984-1696402345.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212423984-1696402345.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<h4 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h4><p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212440327-44970240.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212440327-44970240.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<p><a target="_blank" rel="noopener" href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/#fn1">参考链接1</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/84333843">中文版参考链接</a><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1J94y1f7u5?p=28&vd_source=a25e4be5f25feef1532666f6ee51cce1">李宏毅RNN教程</a>
- </p>
+        <p>LSTM 又叫长 短时记忆神经网络，问了解决RNN不能处理 <code>从较长的前文中推断下一个单词的问题</code> 而提出的
+<code>从较长的前文中推断下一个单词的问题</code>比如：&quot;I grew up in France… I speak fluent <em>French</em>.&quot;不能从这句中推出French，因为中间隔了好多词</p>
+<h4 id="遗忘门"><a class="markdownIt-Anchor" href="#遗忘门"></a> 遗忘门：</h4>
+<p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212224503-712213887.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212224503-712213887.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<h4 id="输入门"><a class="markdownIt-Anchor" href="#输入门"></a> 输入门：</h4>
+<p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212311075-209010384.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212311075-209010384.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<h4 id="想下一个cell的输出"><a class="markdownIt-Anchor" href="#想下一个cell的输出"></a> 想下一个cell的输出：</h4>
+<p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212423984-1696402345.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212423984-1696402345.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<h4 id="输出"><a class="markdownIt-Anchor" href="#输出"></a> 输出：</h4>
+<p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212440327-44970240.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212440327-44970240.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<p><a target="_blank" rel="noopener" href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/#fn1">参考链接1</a>
+<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/84333843">中文版参考链接</a>
+<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1J94y1f7u5?p=28&amp;vd_source=a25e4be5f25feef1532666f6ee51cce1">李宏毅RNN教程</a></p>
 
       </div>
       <div class="post-tags-categories">
@@ -781,7 +788,9 @@
       </div>
       
       <!-- <div class="content">
-        先验 后验 和 似然函数的关系常见的概率分布模型概率分布就是一个公式，给定X，就能计算出在这一点X的概率（或者连续随机变
+         先验 后验 和 似然函数的关系
+ 常见的概率分布模型
+概率分布就是一个公式，给定X，就能计算出在这一点X的概率（或者连
       </div> -->
     </a>
   </div>
@@ -801,7 +810,8 @@
       </div>
       <!-- <div class="content">
         GAN(Generative Adversarial Network) 生成对抗网络
-1. 为什么要有这个东西？   为
+ 1. 为什么要有这个东西？
+为了
       </div> -->
     </a>
   </div>
@@ -920,102 +930,8 @@
 
   <div id="myComment">
     
-      
-<section id="comments" style="padding: 1em;"
-	class="animated bounceInUp">
-	<div id="vcomment" class="comment"></div>
-</section>
-<style>
-	#comments {
-		background: rgba(255,255,255,0.9);
-	}
-	#veditor {
-		background-image: url('https://img.zcool.cn/community/01a253594c71cfa8012193a329a77f.gif');
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: right;
-		background-color: rgba(255, 255, 255, 0);
-		resize: vertical;
-	}
-	#veditor:focus{
-		background-position-y: 200px;
-		transition: all 0.2s ease-in-out 0s;
-	}
-	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
-		background-color: #42b983;
-	}
-	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
-		color: #42b983;
-		border-color: #42b983;
-	}
-	#vcomment .vcards .vcard .vhead .vsys i {
-		display: none;
-	}
-	/* 底部valine链接 */
-	#vcomment .vpower {
-		display: none;
-	}
-	
-	/* 底下注释是修改 名称和邮箱和网址输入框的样式 */
-	/* #vcomment .vheader {
-		display: flex;
-		justify-content: space-around;
-	}
-	
-	#vcomment .vheader .vnick {
-		width: 31%;
-		border: 2px solid #dedede;
-		padding-left: 10px;
-		padding-right: 10px;
-		border-radius: 5px
-	}
+      <div id="gitment-container"></div>
 
-	#vcomment .vheader .vmail {
-		width: 31%;
-		border: 2px solid #dedede;
-		padding-left: 10px;
-		padding-right: 10px;
-		border-radius: 5px
-	}
-
-	#vcomment .vheader .vlink {
-		width: 31%;
-		border: 2px solid #dedede;
-		padding-left: 10px;
-		padding-right: 10px;
-		border-radius: 5px
-	} */
-
-	img.vimg {
-		transition: all 1s;
-		/* 头像旋转时间为 1s */
-	}
-
-	img.vimg:hover {
-		transform: rotate(360deg);
-		-webkit-transform: rotate(360deg);
-		-moz-transform: rotate(360deg);
-		-o-transform: rotate(360deg);
-		-ms-transform: rotate(360deg);
-	}
-
-	#vcomment .vcards .vcard {
-		padding: 15px 20px 0 20px;
-		border-radius: 10px;
-		margin-bottom: 15px;
-		box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
-		transition: all .3s
-	}
-
-	#vcomment .vcards .vcard:hover {
-		box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
-	}
-
-	#vcomment .vcards .vcard .vh .vcard {
-		border: none;
-		box-shadow: none;
-	}
-</style>
     
   </div>
 
@@ -1119,7 +1035,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%81%97%E5%BF%98%E9%97%A8%EF%BC%9A"><span class="toc-text">遗忘门：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E9%97%A8%EF%BC%9A"><span class="toc-text">输入门：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%83%B3%E4%B8%8B%E4%B8%80%E4%B8%AAcell%E7%9A%84%E8%BE%93%E5%87%BA%EF%BC%9A"><span class="toc-text">想下一个cell的输出：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%EF%BC%9A"><span class="toc-text">输出：</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%81%97%E5%BF%98%E9%97%A8"><span class="toc-text"> 遗忘门：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E9%97%A8"><span class="toc-text"> 输入门：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%83%B3%E4%B8%8B%E4%B8%80%E4%B8%AAcell%E7%9A%84%E8%BE%93%E5%87%BA"><span class="toc-text"> 想下一个cell的输出：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA"><span class="toc-text"> 输出：</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1591,7 +1507,7 @@
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
 
           </div>
         
@@ -2105,141 +2021,68 @@
 <!-- 评论所需js -->
 
   
-    <!-- 弹幕所需的css和js -->
-    
-  <!-- 弹幕插件 -->
-  <link href="/js/danmu/barrager.css" rel="stylesheet">
-  <script src="/js/danmu/jquery.barrager.js"></script>
+    <script type="text/javascript">
+  var utteranceCommon = {};
 
-<!-- 具体js，请前往valine/script.ejs查看 -->
-
-    <script>
-  var requiredFields = 'nick,mail';
-  requiredFields = requiredFields.split(',');
-  comment_el = '.comment';
-  let looperValine = null;
-  load_valine = function () {
-    if ($(comment_el).length) {
-      var valine = new Valine({
-        el: '#vcomment',
-        path: window.location.pathname,
-        notify: false,
-        verify: false,
-        app_id: "",
-        app_key: "",
-        placeholder: "客官，说点什么吧",
-        avatar: "",
-        master: "",   //博主邮箱md5
-        tagMeta: ["博主","小伙伴","访客"],     //标识字段名
-        friends: "",
-        metaPlaceholder: { "nick": "昵称/QQ号", "mail": "邮箱" },
-        requiredFields: requiredFields,
-        enableQQ: true,
-      });
-      function debounce(fn) {
-        var timerID = null
-        return function () {
-          var arg = arguments[0]   //获取事件
-          if (timerID) {
-            clearTimeout(timerID)
-          }
-          timerID = setTimeout(function () {
-            fn(arg)              //事件传入函数
-          }, 200)
-        }
-      }
-      //查询评论 valine.Q('*').limit(7) -- 查询所有，限制7条, 下面的的代码是查询当前页面
-      var themeDanmu = eval('true');
-      var themeLoop = eval('false');
-      var themeLooperTime = '5000' || 5000;
-      var speed = '40' || 20;
-      var isBarrager = true;
-      if (themeDanmu == true) {
-        do_barrager();
-        if ($('.danmuBox').length <= 0) {
-          $('.navbar').append('<div class="danmuBox"><div class="danmuBtn open"><span class="danmuCircle"></span><span class="danmuText">弹幕</span></div></div>');
-        }
-        $('.danmuBtn').on('click', debounce(
-          function () {
-            if ($('.danmuBtn').hasClass('open')) {
-              $('.danmuBtn').removeClass('open')
-              clearInterval(looperValine);
-              $.fn.barrager.removeAll();
-            } else {
-              $('.danmuBtn').addClass("open");
-              do_barrager();
-            }
-          }
-        ))
-      }
-      function do_barrager() {
-        isBarrager && valine.Q(window.location.pathname).find().then(function (comments) {
-          // var num = 0; // 可以记录条数，循环调用的时候只取最新的评论放入弹幕中
-          var run_once = true;
-          var looper_time = themeLooperTime;
-          var total = comments.length;
-          // var looper = null;
-          var index = 0;
-          if (total > 0) {
-            barrager();
-          } else {
-            // 当评论数为0的时候，自动关闭弹幕
-            // $('.danmuBtn').removeClass('open');
-          }
-          function barrager() {
-            if (run_once) {
-              //如果是首次执行,则设置一个定时器,并且把首次执行置为false
-              looperValine = setInterval(barrager, looper_time);
-              run_once = false;
-            }
-            var content = comments[index]._serverData.comment;
-            var email = comments[index]._serverData.mail;
-            var link = comments[index]._serverData.link;
-            var newcontent = content.substring(0, 50).replace(/<[^>]+>/g, "");
-            //发布一个弹幕
-            const item = {
-              img: `https://q1.qlogo.cn/g?b=qq&nk=${email}&s=640`, //图片 
-              info: newcontent, //文字 
-              href: link, //链接 
-              close: true, //显示关闭按钮 
-              speed: speed, //延迟,单位秒,默认6 
-              color: '#fff', //颜色,默认白色 
-              old_ie_color: '#000000', //ie低版兼容色,不能与网页背景相同,默认黑色
-            }
-            $('body').barrager(item);
-            //索引自增
-            index++;
-            //所有弹幕发布完毕，清除计时器。
-            if (index == total) {
-              clearInterval(looperValine);
-              if (themeLoop === true) {
-                setTimeout(function () {
-                  do_barrager();
-                }, 5000);
-              } else {
-                $('.danmuBtn').removeClass('open');
-              }
-              return false;
-            }
-
-          }
-        })
-      }
+  function check_utterance() {
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    if (isDark) {
+      utteranceCommon.Theme = 'github-dark';
+    } else {
+      utteranceCommon.Theme = 'github-light';
     }
-  };
-  $(document).ready(load_valine);
-  document.addEventListener('pjax:send', function (e) {
-    
-      $('.danmuBox').length > 0 && $('.danmuBox').remove()
-      looperValine && clearInterval(looperValine);
-      $.fn.barrager.removeAll();
-    
-  })
+
+    return document.getElementById("gitment-container");
+  }
+  comment_el = '#gitment-container';
+  load_utterance = function () {
+    if ($(comment_el).length) {
+      // 匿名函数，防止污染全局变量
+      const HEAD = check_utterance();
+
+      var utterances = document.createElement('script');
+      utterances.type = 'text/javascript';
+      utterances.async = true;
+      utterances.setAttribute('issue-term', 'pathname')
+      utterances.setAttribute('theme', utteranceCommon.Theme)
+      utterances.setAttribute('repo', 'dazhipro/dazhipro.github.io')
+      utterances.crossorigin = 'anonymous';
+      utterances.src = 'https://utteranc.es/client.js';
+      // content 是要插入评论的地方
+      document.getElementById('gitment-container').appendChild(utterances);
+
+    }
+  }
+
+  function dark_utterance() {
+    const HEAD = check_utterance();
+    if (!HEAD) return;
+    const message = {
+      type: 'set-theme',
+      theme: utteranceCommon.Theme
+    };
+    const utteranceIframe = document.querySelector('iframe');
+    utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');
+  }
+
+  $(document).ready(load_utterance);
   document.addEventListener('pjax:complete', function () {
-    load_valine();
+    load_utterance();
   });
+
+  $('.dark').click(function () {
+    setTimeout(() => {
+      dark_utterance();
+    });
+  })
+
 </script>
 
+<style>
+  .utterances {
+    max-width: inherit !important;
+  }
+</style>
   
 
 

@@ -49,8 +49,6 @@
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
     
-        <script src="/js/valine/index.js"></script>
-    
 
     <!-- import link -->
     
@@ -67,6 +65,9 @@
         
             
         
+    
+
+
     
 
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="DaZhi's Home" type="application/atom+xml">
@@ -691,7 +692,7 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 485 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 476 |
           </span>
   
           <span class="min2read">
@@ -718,42 +719,76 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h2 id="新建第一个hello-world"><a href="#新建第一个hello-world" class="headerlink" title="新建第一个hello world"></a>新建第一个hello world</h2><ol>
-<li><p>安装Django： <code>python -m pip install Django</code><br><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/zh-hans/4.1/topics/install/#installing-official-release">https://docs.djangoproject.com/zh-hans/4.1/topics/install/#installing-official-release</a></p>
+        <h2 id="新建第一个hello-world"><a class="markdownIt-Anchor" href="#新建第一个hello-world"></a> 新建第一个hello world</h2>
+<ol>
+<li>
+<p>安装Django： <code>python -m pip install Django</code><br />
+<a target="_blank" rel="noopener" href="https://docs.djangoproject.com/zh-hans/4.1/topics/install/#installing-official-release">https://docs.djangoproject.com/zh-hans/4.1/topics/install/#installing-official-release</a></p>
 </li>
-<li><p>创建项目 <code>django-admin startproject mysite</code></p>
+<li>
+<p>创建项目 <code>django-admin startproject mysite</code></p>
 </li>
-<li><p>创建hello world 应用 <code>python manage.py startapp helloworld</code></p>
+<li>
+<p>创建hello world 应用 <code>python manage.py startapp helloworld</code></p>
 </li>
-<li><p>应用链接项目：在mysite的url中链接到helloworld应用的界面<br>—mysite&#x2F;urls.py—</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> include, path</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">&#x27;helloworld/&#x27;</span>, include(<span class="string">&#x27;helloworld.urls&#x27;</span>)),</span><br><span class="line">    path(<span class="string">&#x27;admin/&#x27;</span>, admin.site.urls),</span><br><span class="line">]</span><br></pre></td></tr></table></figure></li>
-<li><p>运行项目 <code>python manage.py runserver 127.0.0.1:7000</code></p>
+<li>
+<p>应用链接项目：在mysite的url中链接到helloworld应用的界面
+---mysite/urls.py---</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> include, path</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">&#x27;helloworld/&#x27;</span>, include(<span class="string">&#x27;helloworld.urls&#x27;</span>)),</span><br><span class="line">    path(<span class="string">&#x27;admin/&#x27;</span>, admin.site.urls),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>运行项目 <code>python manage.py runserver 127.0.0.1:7000</code></p>
 </li>
 </ol>
-<h2 id="常见的初始化配置"><a href="#常见的初始化配置" class="headerlink" title="常见的初始化配置"></a>常见的初始化配置</h2><ul>
-<li><p>数据库<br>安装mysql、新建数据库、配置账户密码<br>—-mysite&#x2F;setting.py—</p>
+<h2 id="常见的初始化配置"><a class="markdownIt-Anchor" href="#常见的初始化配置"></a> 常见的初始化配置</h2>
+<ul>
+<li>
+<p>数据库
+安装mysql、新建数据库、配置账户密码
+----mysite/setting.py---</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">DATABASES = &#123;</span><br><span class="line">  <span class="string">&#x27;default&#x27;</span>: &#123;</span><br><span class="line">      <span class="string">&#x27;ENGINE&#x27;</span>: <span class="string">&#x27;django.db.backends.mysql&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;NAME&#x27;</span>: <span class="string">&#x27;poll&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;USER&#x27;</span>: <span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;PASSWORD&#x27;</span>: <span class="string">&#x27;654321&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;HOST&#x27;</span>: <span class="string">&#x27;127.0.0.1&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;PORT&#x27;</span>: <span class="string">&#x27;3306&#x27;</span>,</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>时区</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TIME_ZONE = <span class="string">&#x27;Asia/Shanghai&#x27;</span></span><br><span class="line">USE_TZ = <span class="literal">False</span></span><br></pre></td></tr></table></figure></li>
+<li>
+<p>时区</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TIME_ZONE = <span class="string">&#x27;Asia/Shanghai&#x27;</span></span><br><span class="line">USE_TZ = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><p>django 的 url 中的 path 函数提供路由功能，将用户的每个 url 映射到views中的某个函数</p>
+<h2 id="路由"><a class="markdownIt-Anchor" href="#路由"></a> 路由</h2>
+<p>django 的 url 中的 path 函数提供路由功能，将用户的每个 url 映射到views中的某个函数</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path,include</span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">&#x27;admin/&#x27;</span>, admin.site.urls),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<p>url 中带参数：<br><code>path(&#39;&lt;int:question_id&gt;/vote/&#39;, views.vote, name=&#39;vote&#39;)</code></p>
-<h2 id="数据传输"><a href="#数据传输" class="headerlink" title="数据传输"></a>数据传输</h2><h3 id="后端和数据库的数据传输"><a href="#后端和数据库的数据传输" class="headerlink" title="后端和数据库的数据传输"></a>后端和数据库的数据传输</h3><ol>
-<li>在model中定义模型 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Question</span>(models.Model):</span><br><span class="line"> question_text = models.CharField(max_length=<span class="number">20</span>)</span><br><span class="line"> pub_date = models.DateTimeField(<span class="string">&#x27;data published&#x27;</span>)</span><br><span class="line"></span><br><span class="line"> <span class="keyword">def</span> <span class="title function_">__str__</span>(<span class="params">self</span>):</span><br><span class="line">     <span class="keyword">return</span> self.question_text</span><br></pre></td></tr></table></figure></li>
+<p>url 中带参数：
+<code>path('&lt;int:question_id&gt;/vote/', views.vote, name='vote')</code></p>
+<h2 id="数据传输"><a class="markdownIt-Anchor" href="#数据传输"></a> 数据传输</h2>
+<h3 id="后端和数据库的数据传输"><a class="markdownIt-Anchor" href="#后端和数据库的数据传输"></a> 后端和数据库的数据传输</h3>
+<ol>
+<li>在model中定义模型<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Question</span>(models.Model):</span><br><span class="line"> question_text = models.CharField(max_length=<span class="number">20</span>)</span><br><span class="line"> pub_date = models.DateTimeField(<span class="string">&#x27;data published&#x27;</span>)</span><br><span class="line"></span><br><span class="line"> <span class="keyword">def</span> <span class="title function_">__str__</span>(<span class="params">self</span>):</span><br><span class="line">     <span class="keyword">return</span> self.question_text</span><br></pre></td></tr></table></figure>
+</li>
 <li>运行 <code>python manage.py makemigrations</code> 为模型的改变生成迁移文件。</li>
 <li>运行 <code>python manage.py migrate</code> 来应用数据库迁移。</li>
 <li>运行 <code>python manage.py createsuperuser</code> 创建超级账户</li>
 </ol>
-<h3 id="前端和后端的数据传输"><a href="#前端和后端的数据传输" class="headerlink" title="前端和后端的数据传输"></a>前端和后端的数据传输</h3><ol>
-<li>get 方式 url 中带参数<br>比如url中带question.id后端就把对应的问题从数据库中找出来</li>
-<li>form 方式 字典的方式带数据<br>后端可以request.POST[‘choice’]来获取字典中choice对应的value</li>
+<h3 id="前端和后端的数据传输"><a class="markdownIt-Anchor" href="#前端和后端的数据传输"></a> 前端和后端的数据传输</h3>
+<ol>
+<li>get 方式 url 中带参数
+比如url中带question.id后端就把对应的问题从数据库中找出来</li>
+<li>form 方式 字典的方式带数据
+后端可以request.POST['choice']来获取字典中choice对应的value</li>
 </ol>
-<h2 id="常见函数"><a href="#常见函数" class="headerlink" title="常见函数"></a>常见函数</h2><h3 id="操作数据API"><a href="#操作数据API" class="headerlink" title="操作数据API"></a>操作数据API</h3><p><em><strong>增</strong></em><br>q &#x3D; Question(question_text&#x3D;”What’s new?”, pub_date&#x3D;timezone.now())<br>q.save()</p>
-<p><em><strong>删</strong></em><br>q &#x3D; Question.objects.get(pk&#x3D;1)<br>q.delete()<br><em><strong>查</strong></em><br><code>Question.object.all()</code> : 获取一个类的所有对象<br><code>q=Question.objects.get(pk=1)</code></p>
-<p><em><strong>改</strong></em><br>q &#x3D; Question.objects.get(pk&#x3D;1)<br>q.question_text &#x3D; “xinzhi”<br>q.save()</p>
+<h2 id="常见函数"><a class="markdownIt-Anchor" href="#常见函数"></a> 常见函数</h2>
+<h3 id="操作数据api"><a class="markdownIt-Anchor" href="#操作数据api"></a> 操作数据API</h3>
+<p><em><strong>增</strong></em>
+q = Question(question_text=&quot;What's new?&quot;, pub_date=timezone.now())
+q.save()</p>
+<p><em><strong>删</strong></em>
+q = Question.objects.get(pk=1)
+q.delete()
+<em><strong>查</strong></em>
+<code>Question.object.all()</code> : 获取一个类的所有对象
+<code>q=Question.objects.get(pk=1)</code></p>
+<p><em><strong>改</strong></em>
+q = Question.objects.get(pk=1)
+q.question_text = &quot;xinzhi&quot;
+q.save()</p>
 
       </div>
       <div class="post-tags-categories">
@@ -926,102 +961,8 @@
 
   <div id="myComment">
     
-      
-<section id="comments" style="padding: 1em;"
-	class="animated bounceInUp">
-	<div id="vcomment" class="comment"></div>
-</section>
-<style>
-	#comments {
-		background: rgba(255,255,255,0.9);
-	}
-	#veditor {
-		background-image: url('https://img.zcool.cn/community/01a253594c71cfa8012193a329a77f.gif');
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: right;
-		background-color: rgba(255, 255, 255, 0);
-		resize: vertical;
-	}
-	#veditor:focus{
-		background-position-y: 200px;
-		transition: all 0.2s ease-in-out 0s;
-	}
-	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
-		background-color: #42b983;
-	}
-	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
-		color: #42b983;
-		border-color: #42b983;
-	}
-	#vcomment .vcards .vcard .vhead .vsys i {
-		display: none;
-	}
-	/* 底部valine链接 */
-	#vcomment .vpower {
-		display: none;
-	}
-	
-	/* 底下注释是修改 名称和邮箱和网址输入框的样式 */
-	/* #vcomment .vheader {
-		display: flex;
-		justify-content: space-around;
-	}
-	
-	#vcomment .vheader .vnick {
-		width: 31%;
-		border: 2px solid #dedede;
-		padding-left: 10px;
-		padding-right: 10px;
-		border-radius: 5px
-	}
+      <div id="gitment-container"></div>
 
-	#vcomment .vheader .vmail {
-		width: 31%;
-		border: 2px solid #dedede;
-		padding-left: 10px;
-		padding-right: 10px;
-		border-radius: 5px
-	}
-
-	#vcomment .vheader .vlink {
-		width: 31%;
-		border: 2px solid #dedede;
-		padding-left: 10px;
-		padding-right: 10px;
-		border-radius: 5px
-	} */
-
-	img.vimg {
-		transition: all 1s;
-		/* 头像旋转时间为 1s */
-	}
-
-	img.vimg:hover {
-		transform: rotate(360deg);
-		-webkit-transform: rotate(360deg);
-		-moz-transform: rotate(360deg);
-		-o-transform: rotate(360deg);
-		-ms-transform: rotate(360deg);
-	}
-
-	#vcomment .vcards .vcard {
-		padding: 15px 20px 0 20px;
-		border-radius: 10px;
-		margin-bottom: 15px;
-		box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
-		transition: all .3s
-	}
-
-	#vcomment .vcards .vcard:hover {
-		box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
-	}
-
-	#vcomment .vcards .vcard .vh .vcard {
-		border: none;
-		box-shadow: none;
-	}
-</style>
     
   </div>
 
@@ -1125,7 +1066,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AAhello-world"><span class="toc-text">新建第一个hello world</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E9%85%8D%E7%BD%AE"><span class="toc-text">常见的初始化配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1"><span class="toc-text">路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93"><span class="toc-text">数据传输</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF%E5%92%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93"><span class="toc-text">后端和数据库的数据传输</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E5%92%8C%E5%90%8E%E7%AB%AF%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93"><span class="toc-text">前端和后端的数据传输</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%87%BD%E6%95%B0"><span class="toc-text">常见函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AEAPI"><span class="toc-text">操作数据API</span></a></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AAhello-world"><span class="toc-text"> 新建第一个hello world</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E9%85%8D%E7%BD%AE"><span class="toc-text"> 常见的初始化配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1"><span class="toc-text"> 路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93"><span class="toc-text"> 数据传输</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF%E5%92%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93"><span class="toc-text"> 后端和数据库的数据传输</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E5%92%8C%E5%90%8E%E7%AB%AF%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93"><span class="toc-text"> 前端和后端的数据传输</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%87%BD%E6%95%B0"><span class="toc-text"> 常见函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AEapi"><span class="toc-text"> 操作数据API</span></a></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1597,7 +1538,7 @@
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
 
           </div>
         
@@ -2111,141 +2052,68 @@
 <!-- 评论所需js -->
 
   
-    <!-- 弹幕所需的css和js -->
-    
-  <!-- 弹幕插件 -->
-  <link href="/js/danmu/barrager.css" rel="stylesheet">
-  <script src="/js/danmu/jquery.barrager.js"></script>
+    <script type="text/javascript">
+  var utteranceCommon = {};
 
-<!-- 具体js，请前往valine/script.ejs查看 -->
-
-    <script>
-  var requiredFields = 'nick,mail';
-  requiredFields = requiredFields.split(',');
-  comment_el = '.comment';
-  let looperValine = null;
-  load_valine = function () {
-    if ($(comment_el).length) {
-      var valine = new Valine({
-        el: '#vcomment',
-        path: window.location.pathname,
-        notify: false,
-        verify: false,
-        app_id: "",
-        app_key: "",
-        placeholder: "客官，说点什么吧",
-        avatar: "",
-        master: "",   //博主邮箱md5
-        tagMeta: ["博主","小伙伴","访客"],     //标识字段名
-        friends: "",
-        metaPlaceholder: { "nick": "昵称/QQ号", "mail": "邮箱" },
-        requiredFields: requiredFields,
-        enableQQ: true,
-      });
-      function debounce(fn) {
-        var timerID = null
-        return function () {
-          var arg = arguments[0]   //获取事件
-          if (timerID) {
-            clearTimeout(timerID)
-          }
-          timerID = setTimeout(function () {
-            fn(arg)              //事件传入函数
-          }, 200)
-        }
-      }
-      //查询评论 valine.Q('*').limit(7) -- 查询所有，限制7条, 下面的的代码是查询当前页面
-      var themeDanmu = eval('true');
-      var themeLoop = eval('false');
-      var themeLooperTime = '5000' || 5000;
-      var speed = '40' || 20;
-      var isBarrager = true;
-      if (themeDanmu == true) {
-        do_barrager();
-        if ($('.danmuBox').length <= 0) {
-          $('.navbar').append('<div class="danmuBox"><div class="danmuBtn open"><span class="danmuCircle"></span><span class="danmuText">弹幕</span></div></div>');
-        }
-        $('.danmuBtn').on('click', debounce(
-          function () {
-            if ($('.danmuBtn').hasClass('open')) {
-              $('.danmuBtn').removeClass('open')
-              clearInterval(looperValine);
-              $.fn.barrager.removeAll();
-            } else {
-              $('.danmuBtn').addClass("open");
-              do_barrager();
-            }
-          }
-        ))
-      }
-      function do_barrager() {
-        isBarrager && valine.Q(window.location.pathname).find().then(function (comments) {
-          // var num = 0; // 可以记录条数，循环调用的时候只取最新的评论放入弹幕中
-          var run_once = true;
-          var looper_time = themeLooperTime;
-          var total = comments.length;
-          // var looper = null;
-          var index = 0;
-          if (total > 0) {
-            barrager();
-          } else {
-            // 当评论数为0的时候，自动关闭弹幕
-            // $('.danmuBtn').removeClass('open');
-          }
-          function barrager() {
-            if (run_once) {
-              //如果是首次执行,则设置一个定时器,并且把首次执行置为false
-              looperValine = setInterval(barrager, looper_time);
-              run_once = false;
-            }
-            var content = comments[index]._serverData.comment;
-            var email = comments[index]._serverData.mail;
-            var link = comments[index]._serverData.link;
-            var newcontent = content.substring(0, 50).replace(/<[^>]+>/g, "");
-            //发布一个弹幕
-            const item = {
-              img: `https://q1.qlogo.cn/g?b=qq&nk=${email}&s=640`, //图片 
-              info: newcontent, //文字 
-              href: link, //链接 
-              close: true, //显示关闭按钮 
-              speed: speed, //延迟,单位秒,默认6 
-              color: '#fff', //颜色,默认白色 
-              old_ie_color: '#000000', //ie低版兼容色,不能与网页背景相同,默认黑色
-            }
-            $('body').barrager(item);
-            //索引自增
-            index++;
-            //所有弹幕发布完毕，清除计时器。
-            if (index == total) {
-              clearInterval(looperValine);
-              if (themeLoop === true) {
-                setTimeout(function () {
-                  do_barrager();
-                }, 5000);
-              } else {
-                $('.danmuBtn').removeClass('open');
-              }
-              return false;
-            }
-
-          }
-        })
-      }
+  function check_utterance() {
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    if (isDark) {
+      utteranceCommon.Theme = 'github-dark';
+    } else {
+      utteranceCommon.Theme = 'github-light';
     }
-  };
-  $(document).ready(load_valine);
-  document.addEventListener('pjax:send', function (e) {
-    
-      $('.danmuBox').length > 0 && $('.danmuBox').remove()
-      looperValine && clearInterval(looperValine);
-      $.fn.barrager.removeAll();
-    
-  })
+
+    return document.getElementById("gitment-container");
+  }
+  comment_el = '#gitment-container';
+  load_utterance = function () {
+    if ($(comment_el).length) {
+      // 匿名函数，防止污染全局变量
+      const HEAD = check_utterance();
+
+      var utterances = document.createElement('script');
+      utterances.type = 'text/javascript';
+      utterances.async = true;
+      utterances.setAttribute('issue-term', 'pathname')
+      utterances.setAttribute('theme', utteranceCommon.Theme)
+      utterances.setAttribute('repo', 'dazhipro/dazhipro.github.io')
+      utterances.crossorigin = 'anonymous';
+      utterances.src = 'https://utteranc.es/client.js';
+      // content 是要插入评论的地方
+      document.getElementById('gitment-container').appendChild(utterances);
+
+    }
+  }
+
+  function dark_utterance() {
+    const HEAD = check_utterance();
+    if (!HEAD) return;
+    const message = {
+      type: 'set-theme',
+      theme: utteranceCommon.Theme
+    };
+    const utteranceIframe = document.querySelector('iframe');
+    utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');
+  }
+
+  $(document).ready(load_utterance);
   document.addEventListener('pjax:complete', function () {
-    load_valine();
+    load_utterance();
   });
+
+  $('.dark').click(function () {
+    setTimeout(() => {
+      dark_utterance();
+    });
+  })
+
 </script>
 
+<style>
+  .utterances {
+    max-width: inherit !important;
+  }
+</style>
   
 
 

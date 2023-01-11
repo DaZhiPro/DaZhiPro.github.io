@@ -49,8 +49,6 @@
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
     
-        <script src="/js/valine/index.js"></script>
-    
 
     <!-- import link -->
     
@@ -67,6 +65,9 @@
         
             
         
+    
+
+
     
 
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="DaZhi's Home" type="application/atom+xml">
@@ -691,7 +692,7 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 716 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 708 |
           </span>
   
           <span class="min2read">
@@ -718,45 +719,55 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h3 id="构造列表筛选功能"><a href="#构造列表筛选功能" class="headerlink" title="构造列表筛选功能"></a>构造列表筛选功能</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.array(<span class="built_in">range</span>(<span class="number">6</span>)).reshape(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">mask = np.array([<span class="number">1</span>,<span class="number">2</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;原数组\n&#x27;</span>,a)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;筛选数组&#x27;</span>,mask)</span><br></pre></td></tr></table></figure>
-
-<p>原数组<br>    [[0 1 2]<br>    [3 4 5]]<br>筛选数组 [1 2]</p>
-<h4 id="要求实现"><a href="#要求实现" class="headerlink" title="要求实现"></a>要求实现</h4><p>筛选出原数组，第i行的第mask[i]个元素</p>
+        <h3 id="构造列表筛选功能"><a class="markdownIt-Anchor" href="#构造列表筛选功能"></a> 构造列表筛选功能</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.array(<span class="built_in">range</span>(<span class="number">6</span>)).reshape(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">mask = np.array([<span class="number">1</span>,<span class="number">2</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;原数组\n&#x27;</span>,a)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;筛选数组&#x27;</span>,mask)</span><br></pre></td></tr></table></figure>
+<p>原数组
+[[0 1 2]
+[3 4 5]]
+筛选数组 [1 2]</p>
+<h4 id="要求实现"><a class="markdownIt-Anchor" href="#要求实现"></a> 要求实现</h4>
+<p>筛选出原数组，第i行的第mask[i]个元素</p>
 <ol>
 <li>循环实现</li>
 <li>向量实现</li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 循环实现</span></span><br><span class="line">b=[]</span><br><span class="line"><span class="keyword">for</span> idx,x <span class="keyword">in</span> <span class="built_in">enumerate</span>(mask):</span><br><span class="line">    b.append(a[idx,x])</span><br><span class="line">np.array(b)</span><br></pre></td></tr></table></figure>
-
-
 <pre><code>array([1, 5])
 </code></pre>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 2. 向量实现</span></span><br><span class="line">a[<span class="built_in">range</span>(<span class="built_in">len</span>(mask)),mask]</span><br></pre></td></tr></table></figure>
-
-
 <pre><code>array([1, 5])
 </code></pre>
-<h3 id="Numpy-一百题"><a href="#Numpy-一百题" class="headerlink" title="Numpy 一百题"></a><a target="_blank" rel="noopener" href="https://github.com/rougier/numpy-100">Numpy 一百题</a></h3><p>以下为笔记</p>
+<h3 id="numpy-一百题"><a class="markdownIt-Anchor" href="#numpy-一百题"></a> <a target="_blank" rel="noopener" href="https://github.com/rougier/numpy-100">Numpy 一百题</a></h3>
+<p>以下为笔记</p>
 <ol>
 <li>数组逆序 <code>Z[::-1]</code> ：取自缩写 of Z[1:10:2]</li>
-<li>查找非0元素的下标  np.nonzero([1,2,3,0,3,0]) </li>
+<li>查找非0元素的下标  np.nonzero([1,2,3,0,3,0])</li>
 <li>创建 3 * 3 的单位矩阵 np.eye(3)</li>
 <li>创建 3 * 3 * 3 的随机数矩阵 np.random.random((3,3,3))</li>
-<li>数组周围增加一个边界 np.pad(Z, pad_width&#x3D;1, mode&#x3D;’constant’, constant_values&#x3D;0)</li>
-<li>print(0.3 &#x3D;&#x3D; 3 * 0.1) # False<br>print(0 * np.nan) # np.nan<br>print(np.inf &gt; np.nan) #False</li>
-<li>numpy.diag(v, k&#x3D;0): v 是 2d 则提取对角线元素，v是1d则构建对角矩阵 ， k&#x3D;1 表示主对角线上边一行，k&#x3D;-1表示对角线下面一行</li>
-<li>输出棋盘样式的矩阵<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Z = np.ones((<span class="number">8</span>,<span class="number">8</span>),dtype=<span class="string">&#x27;int&#x27;</span>)</span><br><span class="line">Z[:-<span class="number">1</span>:<span class="number">2</span>,<span class="number">0</span>:-<span class="number">1</span>:<span class="number">2</span>] = <span class="number">0</span></span><br><span class="line">Z[<span class="number">1</span>::<span class="number">2</span>,<span class="number">1</span>::<span class="number">2</span>] = <span class="number">0</span></span><br><span class="line"><span class="built_in">print</span>(Z)</span><br><span class="line">answer(<span class="number">19</span>)</span><br><span class="line">--------------------------</span><br><span class="line">[[<span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]</span><br><span class="line">[<span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span>]</span><br><span class="line">[<span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]</span><br><span class="line">[<span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span>]</span><br><span class="line">[<span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]</span><br><span class="line">[<span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span>]</span><br><span class="line">[<span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]</span><br><span class="line">[<span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span>]]</span><br></pre></td></tr></table></figure></li>
-<li>矩阵乘法（真矩阵相乘） <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(X.dot(Y))</span><br><span class="line"><span class="built_in">print</span>(X @ Y)</span><br></pre></td></tr></table></figure></li>
+<li>数组周围增加一个边界 np.pad(Z, pad_width=1, mode='constant', constant_values=0)</li>
+<li>print(0.3 == 3 * 0.1) # False
+print(0 * np.nan) # np.nan
+print(np.inf &gt; np.nan) #False</li>
+<li>numpy.diag(v, k=0): v 是 2d 则提取对角线元素，v是1d则构建对角矩阵 ， k=1 表示主对角线上边一行，k=-1表示对角线下面一行</li>
+<li>输出棋盘样式的矩阵<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Z = np.ones((<span class="number">8</span>,<span class="number">8</span>),dtype=<span class="string">&#x27;int&#x27;</span>)</span><br><span class="line">Z[:-<span class="number">1</span>:<span class="number">2</span>,<span class="number">0</span>:-<span class="number">1</span>:<span class="number">2</span>] = <span class="number">0</span></span><br><span class="line">Z[<span class="number">1</span>::<span class="number">2</span>,<span class="number">1</span>::<span class="number">2</span>] = <span class="number">0</span></span><br><span class="line"><span class="built_in">print</span>(Z)</span><br><span class="line">answer(<span class="number">19</span>)</span><br><span class="line">--------------------------</span><br><span class="line">[[<span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]</span><br><span class="line">[<span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span>]</span><br><span class="line">[<span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]</span><br><span class="line">[<span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span>]</span><br><span class="line">[<span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]</span><br><span class="line">[<span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span>]</span><br><span class="line">[<span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]</span><br><span class="line">[<span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span>]]</span><br></pre></td></tr></table></figure>
+</li>
+<li>矩阵乘法（真矩阵相乘） <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(X.dot(Y))</span><br><span class="line"><span class="built_in">print</span>(X @ Y)</span><br></pre></td></tr></table></figure>
+</li>
 <li>有一种简写  <code>np.array(range(10))  ---&gt;  np.arange(10)</code></li>
 <li>numpy数组中筛选出 3 到 8 的数值  <code>X[ (X&gt;=3) &amp; (X&lt;=8)]</code></li>
-<li>有趣的题<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">sum</span>(<span class="built_in">range</span>(<span class="number">5</span>),-<span class="number">1</span>)) <span class="comment"># 输出 9   这里-1 的意思是前面的和加上一个start值，此处start=-1</span></span><br><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">sum</span>(<span class="built_in">range</span>(<span class="number">5</span>),-<span class="number">1</span>)) <span class="comment"># 输出 10  这里-1 的意思是默认对最低维度求和</span></span><br></pre></td></tr></table></figure></li>
-<li>四舍五入 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Y = np.ceil(X)</span><br><span class="line">Z = np.floor(X)</span><br><span class="line">T = np.<span class="built_in">round</span>(X)</span><br></pre></td></tr></table></figure></li>
+<li>有趣的题<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">sum</span>(<span class="built_in">range</span>(<span class="number">5</span>),-<span class="number">1</span>)) <span class="comment"># 输出 9   这里-1 的意思是前面的和加上一个start值，此处start=-1</span></span><br><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">sum</span>(<span class="built_in">range</span>(<span class="number">5</span>),-<span class="number">1</span>)) <span class="comment"># 输出 10  这里-1 的意思是默认对最低维度求和</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>四舍五入<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Y = np.ceil(X)</span><br><span class="line">Z = np.floor(X)</span><br><span class="line">T = np.<span class="built_in">round</span>(X)</span><br></pre></td></tr></table></figure>
+</li>
 <li>找两个数组的交集 <code>np.intersect1d(Z1,Z2)</code></li>
-<li>获得日期的函数<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yesterday = np.datetime64(<span class="string">&#x27;today&#x27;</span>) - np.timedelta64(<span class="number">1</span>)</span><br><span class="line">today     = np.datetime64(<span class="string">&#x27;today&#x27;</span>)</span><br><span class="line">tomorrow  = np.datetime64(<span class="string">&#x27;today&#x27;</span>) + np.timedelta64(<span class="number">1</span>)</span><br></pre></td></tr></table></figure></li>
-<li>创建一个5*5的矩阵，每一行都是0-4<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">X = np.zeros((<span class="number">5</span>,<span class="number">5</span>),dtype=<span class="built_in">int</span>)</span><br><span class="line">Y = X + np.arange(<span class="number">5</span>)</span><br><span class="line">&lt;!-- ----------- --&gt;</span><br><span class="line">X = np.arange(<span class="number">5</span>)</span><br><span class="line">Y = np.tile(X,(<span class="number">5</span>,<span class="number">1</span>))</span><br></pre></td></tr></table></figure></li>
+<li>获得日期的函数<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yesterday = np.datetime64(<span class="string">&#x27;today&#x27;</span>) - np.timedelta64(<span class="number">1</span>)</span><br><span class="line">today     = np.datetime64(<span class="string">&#x27;today&#x27;</span>)</span><br><span class="line">tomorrow  = np.datetime64(<span class="string">&#x27;today&#x27;</span>) + np.timedelta64(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li>创建一个5*5的矩阵，每一行都是0-4<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">X = np.zeros((<span class="number">5</span>,<span class="number">5</span>),dtype=<span class="built_in">int</span>)</span><br><span class="line">Y = X + np.arange(<span class="number">5</span>)</span><br><span class="line">&lt;!-- ----------- --&gt;</span><br><span class="line">X = np.arange(<span class="number">5</span>)</span><br><span class="line">Y = np.tile(X,(<span class="number">5</span>,<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+</li>
 <li>创建10个数线性分布在0-1之间，不包括0、1 <code>Z = np.linspace(0,1,11,endpoint=False)[1:]</code></li>
-<li>随机从1-n个数中选m个<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n , m = <span class="number">25</span>,<span class="number">5</span></span><br><span class="line">np.random.choice(np.arange(<span class="number">1</span>,n+<span class="number">1</span>),m)<span class="comment">#从1 ~ n+1随机选m个</span></span><br><span class="line">np.random.choice(n,m) <span class="comment">#从0~n随机选m个</span></span><br></pre></td></tr></table></figure></li>
-<li>随机从给定区间内抽数，保证等概率 np.random.uniform(a,b,c) 在区间[a,b)内等概率抽取c个，特殊情况下a&#x3D;0,b&#x3D;1时等价于random.random(c),想要整数可以使用np.random.randint</li>
+<li>随机从1-n个数中选m个<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n , m = <span class="number">25</span>,<span class="number">5</span></span><br><span class="line">np.random.choice(np.arange(<span class="number">1</span>,n+<span class="number">1</span>),m)<span class="comment">#从1 ~ n+1随机选m个</span></span><br><span class="line">np.random.choice(n,m) <span class="comment">#从0~n随机选m个</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>随机从给定区间内抽数，保证等概率 np.random.uniform(a,b,c) 在区间[a,b)内等概率抽取c个，特殊情况下a=0,b=1时等价于random.random(c),想要整数可以使用np.random.randint</li>
 </ol>
 
       </div>
@@ -818,11 +829,13 @@
       </div>
       
       <!-- <div class="content">
-        斯坦福CS231 视频 
-视频作业笔记
-概述导论
+        斯坦福CS231 视频
+视频
+作业笔记
+ 概述
+ 导论
+
 计算机视觉很火 随着传感器(摄像头的的增多）网上80%都是视频
-视频理
       </div> -->
     </a>
   </div>
@@ -841,7 +854,8 @@
         <div class="title-text">计算机保研经验分享</div>
       </div>
       <!-- <div class="content">
-        1. 关于保研随着928的结束，2023届轰轰烈烈的保研也就这么结束了。从五六月份开始准备各种材料，包括打印、签名、写推
+         1. 关于保研
+随着928的结束，2023届轰轰烈烈的保研也就这么结束了。从五六月份开始准备各种材料，包括打印、签名、
       </div> -->
     </a>
   </div>
@@ -960,102 +974,8 @@
 
   <div id="myComment">
     
-      
-<section id="comments" style="padding: 1em;"
-	class="animated bounceInUp">
-	<div id="vcomment" class="comment"></div>
-</section>
-<style>
-	#comments {
-		background: rgba(255,255,255,0.9);
-	}
-	#veditor {
-		background-image: url('https://img.zcool.cn/community/01a253594c71cfa8012193a329a77f.gif');
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: right;
-		background-color: rgba(255, 255, 255, 0);
-		resize: vertical;
-	}
-	#veditor:focus{
-		background-position-y: 200px;
-		transition: all 0.2s ease-in-out 0s;
-	}
-	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
-		background-color: #42b983;
-	}
-	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
-		color: #42b983;
-		border-color: #42b983;
-	}
-	#vcomment .vcards .vcard .vhead .vsys i {
-		display: none;
-	}
-	/* 底部valine链接 */
-	#vcomment .vpower {
-		display: none;
-	}
-	
-	/* 底下注释是修改 名称和邮箱和网址输入框的样式 */
-	/* #vcomment .vheader {
-		display: flex;
-		justify-content: space-around;
-	}
-	
-	#vcomment .vheader .vnick {
-		width: 31%;
-		border: 2px solid #dedede;
-		padding-left: 10px;
-		padding-right: 10px;
-		border-radius: 5px
-	}
+      <div id="gitment-container"></div>
 
-	#vcomment .vheader .vmail {
-		width: 31%;
-		border: 2px solid #dedede;
-		padding-left: 10px;
-		padding-right: 10px;
-		border-radius: 5px
-	}
-
-	#vcomment .vheader .vlink {
-		width: 31%;
-		border: 2px solid #dedede;
-		padding-left: 10px;
-		padding-right: 10px;
-		border-radius: 5px
-	} */
-
-	img.vimg {
-		transition: all 1s;
-		/* 头像旋转时间为 1s */
-	}
-
-	img.vimg:hover {
-		transform: rotate(360deg);
-		-webkit-transform: rotate(360deg);
-		-moz-transform: rotate(360deg);
-		-o-transform: rotate(360deg);
-		-ms-transform: rotate(360deg);
-	}
-
-	#vcomment .vcards .vcard {
-		padding: 15px 20px 0 20px;
-		border-radius: 10px;
-		margin-bottom: 15px;
-		box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
-		transition: all .3s
-	}
-
-	#vcomment .vcards .vcard:hover {
-		box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
-	}
-
-	#vcomment .vcards .vcard .vh .vcard {
-		border: none;
-		box-shadow: none;
-	}
-</style>
     
   </div>
 
@@ -1159,7 +1079,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%88%97%E8%A1%A8%E7%AD%9B%E9%80%89%E5%8A%9F%E8%83%BD"><span class="toc-text">构造列表筛选功能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A6%81%E6%B1%82%E5%AE%9E%E7%8E%B0"><span class="toc-text">要求实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Numpy-%E4%B8%80%E7%99%BE%E9%A2%98"><span class="toc-text">Numpy 一百题</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%88%97%E8%A1%A8%E7%AD%9B%E9%80%89%E5%8A%9F%E8%83%BD"><span class="toc-text"> 构造列表筛选功能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A6%81%E6%B1%82%E5%AE%9E%E7%8E%B0"><span class="toc-text"> 要求实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#numpy-%E4%B8%80%E7%99%BE%E9%A2%98"><span class="toc-text"> Numpy 一百题</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1631,7 +1551,7 @@
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
 
           </div>
         
@@ -2145,141 +2065,68 @@
 <!-- 评论所需js -->
 
   
-    <!-- 弹幕所需的css和js -->
-    
-  <!-- 弹幕插件 -->
-  <link href="/js/danmu/barrager.css" rel="stylesheet">
-  <script src="/js/danmu/jquery.barrager.js"></script>
+    <script type="text/javascript">
+  var utteranceCommon = {};
 
-<!-- 具体js，请前往valine/script.ejs查看 -->
-
-    <script>
-  var requiredFields = 'nick,mail';
-  requiredFields = requiredFields.split(',');
-  comment_el = '.comment';
-  let looperValine = null;
-  load_valine = function () {
-    if ($(comment_el).length) {
-      var valine = new Valine({
-        el: '#vcomment',
-        path: window.location.pathname,
-        notify: false,
-        verify: false,
-        app_id: "",
-        app_key: "",
-        placeholder: "客官，说点什么吧",
-        avatar: "",
-        master: "",   //博主邮箱md5
-        tagMeta: ["博主","小伙伴","访客"],     //标识字段名
-        friends: "",
-        metaPlaceholder: { "nick": "昵称/QQ号", "mail": "邮箱" },
-        requiredFields: requiredFields,
-        enableQQ: true,
-      });
-      function debounce(fn) {
-        var timerID = null
-        return function () {
-          var arg = arguments[0]   //获取事件
-          if (timerID) {
-            clearTimeout(timerID)
-          }
-          timerID = setTimeout(function () {
-            fn(arg)              //事件传入函数
-          }, 200)
-        }
-      }
-      //查询评论 valine.Q('*').limit(7) -- 查询所有，限制7条, 下面的的代码是查询当前页面
-      var themeDanmu = eval('true');
-      var themeLoop = eval('false');
-      var themeLooperTime = '5000' || 5000;
-      var speed = '40' || 20;
-      var isBarrager = true;
-      if (themeDanmu == true) {
-        do_barrager();
-        if ($('.danmuBox').length <= 0) {
-          $('.navbar').append('<div class="danmuBox"><div class="danmuBtn open"><span class="danmuCircle"></span><span class="danmuText">弹幕</span></div></div>');
-        }
-        $('.danmuBtn').on('click', debounce(
-          function () {
-            if ($('.danmuBtn').hasClass('open')) {
-              $('.danmuBtn').removeClass('open')
-              clearInterval(looperValine);
-              $.fn.barrager.removeAll();
-            } else {
-              $('.danmuBtn').addClass("open");
-              do_barrager();
-            }
-          }
-        ))
-      }
-      function do_barrager() {
-        isBarrager && valine.Q(window.location.pathname).find().then(function (comments) {
-          // var num = 0; // 可以记录条数，循环调用的时候只取最新的评论放入弹幕中
-          var run_once = true;
-          var looper_time = themeLooperTime;
-          var total = comments.length;
-          // var looper = null;
-          var index = 0;
-          if (total > 0) {
-            barrager();
-          } else {
-            // 当评论数为0的时候，自动关闭弹幕
-            // $('.danmuBtn').removeClass('open');
-          }
-          function barrager() {
-            if (run_once) {
-              //如果是首次执行,则设置一个定时器,并且把首次执行置为false
-              looperValine = setInterval(barrager, looper_time);
-              run_once = false;
-            }
-            var content = comments[index]._serverData.comment;
-            var email = comments[index]._serverData.mail;
-            var link = comments[index]._serverData.link;
-            var newcontent = content.substring(0, 50).replace(/<[^>]+>/g, "");
-            //发布一个弹幕
-            const item = {
-              img: `https://q1.qlogo.cn/g?b=qq&nk=${email}&s=640`, //图片 
-              info: newcontent, //文字 
-              href: link, //链接 
-              close: true, //显示关闭按钮 
-              speed: speed, //延迟,单位秒,默认6 
-              color: '#fff', //颜色,默认白色 
-              old_ie_color: '#000000', //ie低版兼容色,不能与网页背景相同,默认黑色
-            }
-            $('body').barrager(item);
-            //索引自增
-            index++;
-            //所有弹幕发布完毕，清除计时器。
-            if (index == total) {
-              clearInterval(looperValine);
-              if (themeLoop === true) {
-                setTimeout(function () {
-                  do_barrager();
-                }, 5000);
-              } else {
-                $('.danmuBtn').removeClass('open');
-              }
-              return false;
-            }
-
-          }
-        })
-      }
+  function check_utterance() {
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    if (isDark) {
+      utteranceCommon.Theme = 'github-dark';
+    } else {
+      utteranceCommon.Theme = 'github-light';
     }
-  };
-  $(document).ready(load_valine);
-  document.addEventListener('pjax:send', function (e) {
-    
-      $('.danmuBox').length > 0 && $('.danmuBox').remove()
-      looperValine && clearInterval(looperValine);
-      $.fn.barrager.removeAll();
-    
-  })
+
+    return document.getElementById("gitment-container");
+  }
+  comment_el = '#gitment-container';
+  load_utterance = function () {
+    if ($(comment_el).length) {
+      // 匿名函数，防止污染全局变量
+      const HEAD = check_utterance();
+
+      var utterances = document.createElement('script');
+      utterances.type = 'text/javascript';
+      utterances.async = true;
+      utterances.setAttribute('issue-term', 'pathname')
+      utterances.setAttribute('theme', utteranceCommon.Theme)
+      utterances.setAttribute('repo', 'dazhipro/dazhipro.github.io')
+      utterances.crossorigin = 'anonymous';
+      utterances.src = 'https://utteranc.es/client.js';
+      // content 是要插入评论的地方
+      document.getElementById('gitment-container').appendChild(utterances);
+
+    }
+  }
+
+  function dark_utterance() {
+    const HEAD = check_utterance();
+    if (!HEAD) return;
+    const message = {
+      type: 'set-theme',
+      theme: utteranceCommon.Theme
+    };
+    const utteranceIframe = document.querySelector('iframe');
+    utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');
+  }
+
+  $(document).ready(load_utterance);
   document.addEventListener('pjax:complete', function () {
-    load_valine();
+    load_utterance();
   });
+
+  $('.dark').click(function () {
+    setTimeout(() => {
+      dark_utterance();
+    });
+  })
+
 </script>
 
+<style>
+  .utterances {
+    max-width: inherit !important;
+  }
+</style>
   
 
 

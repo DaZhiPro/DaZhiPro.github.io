@@ -49,8 +49,6 @@
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
     
-        <script src="/js/valine/index.js"></script>
-    
 
     <!-- import link -->
     
@@ -67,6 +65,9 @@
         
             
         
+    
+
+
     
 
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="DaZhi's Home" type="application/atom+xml">
@@ -691,7 +692,7 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 370 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 367 |
           </span>
   
           <span class="min2read">
@@ -718,16 +719,20 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <p>斯坦福CS231 视频 </p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1nJ411z7fe/?spm_id_from=333.999.0.0&vd_source=a25e4be5f25feef1532666f6ee51cce1">视频</a><br><a target="_blank" rel="noopener" href="https://cs231n.github.io/">作业笔记</a></p>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="导论"><a href="#导论" class="headerlink" title="导论"></a>导论</h3><ol>
+        <p>斯坦福CS231 视频</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1nJ411z7fe/?spm_id_from=333.999.0.0&amp;vd_source=a25e4be5f25feef1532666f6ee51cce1">视频</a><br />
+<a target="_blank" rel="noopener" href="https://cs231n.github.io/">作业笔记</a></p>
+<h2 id="概述"><a class="markdownIt-Anchor" href="#概述"></a> 概述</h2>
+<h3 id="导论"><a class="markdownIt-Anchor" href="#导论"></a> 导论</h3>
+<ol>
 <li>计算机视觉很火 随着传感器(摄像头的的增多）网上80%都是视频</li>
 <li>视频理解很难：可以类比物理学中的暗物质，占据宇宙（网络）中绝大部分，但是很难理解</li>
 <li>比较直观的应用就是短视频平台中需要对用户上传的视频进行分类（好、坏 or 进一步分为搞笑、科普、测评、商务等等）</li>
 <li>2012年 ImageNet 大规模图像分类挑战赛上，CNN第一次崭露头角，将错误率从 26% 降到 16%，人脸检测从2001年的Adabost就开始了，效果还不错</li>
 <li>最厉害的境界是对场景的理解</li>
 </ol>
-<h3 id="研究的问题"><a href="#研究的问题" class="headerlink" title="研究的问题"></a>研究的问题</h3><ol>
+<h3 id="研究的问题"><a class="markdownIt-Anchor" href="#研究的问题"></a> 研究的问题</h3>
+<ol>
 <li>图像分类</li>
 <li>目标检测</li>
 <li>图像分割</li>
@@ -735,13 +740,16 @@
 <li>医疗诊断</li>
 <li>自动驾驶</li>
 </ol>
-<h3 id="Python和Numpy基础教程"><a href="#Python和Numpy基础教程" class="headerlink" title="Python和Numpy基础教程"></a><a target="_blank" rel="noopener" href="https://cs231n.github.io/python-numpy-tutorial/">Python和Numpy基础教程</a></h3><p><em><strong>Python</strong></em></p>
+<h3 id="python和numpy基础教程"><a class="markdownIt-Anchor" href="#python和numpy基础教程"></a> <a target="_blank" rel="noopener" href="https://cs231n.github.io/python-numpy-tutorial/">Python和Numpy基础教程</a></h3>
+<p><em><strong>Python</strong></em></p>
 <ol>
 <li>列表表达式 <code>even_squares = [x ** 2 for x in nums if x % 2 == 0]</code></li>
-<li>输入输出 <code>a=int(input(&quot;请输入一个整数&quot;))</code>  <code>print(bin(7),bin(15),&#39;以上两位按位与之后&#39;,7&amp;15)</code></li>
-<li>循环<br><code>for i in range(2,a//2+1):</code><br><code>for idx, animal in enumerate(animals):</code> &#x2F;&#x2F;带索引的循环</li>
+<li>输入输出 <code>a=int(input(&quot;请输入一个整数&quot;))</code>  <code>print(bin(7),bin(15),'以上两位按位与之后',7&amp;15)</code></li>
+<li>循环
+<code>for i in range(2,a//2+1):</code>
+<code>for idx, animal in enumerate(animals):</code> //带索引的循环</li>
 </ol>
-<hr>
+<hr />
 <p><em><strong>Numpy</strong></em></p>
 <ol>
 <li>Matrix *   <code>a.dot(b)</code> or <code>np.dot(a,b)</code></li>
@@ -806,12 +814,13 @@
       </div>
       
       <!-- <div class="content">
-        最近邻算法
+         最近邻算法
+
 思想：
 
 
 训练：只是记录下每个样本的位置和标签
-预测：遍历每个点，看一下距离该点最近的样本点的标签是啥，那
+预测：遍历每个点，看一下距离该点最近的样本点的标签是啥
       </div> -->
     </a>
   </div>
@@ -830,7 +839,8 @@
         <div class="title-text">Numpy 技巧</div>
       </div>
       <!-- <div class="content">
-        构造列表筛选功能12345import numpy as npa = np.array(range(6)).reshap
+         构造列表筛选功能
+12345import numpy as npa = np.array(range(6)).resh
       </div> -->
     </a>
   </div>
@@ -949,102 +959,8 @@
 
   <div id="myComment">
     
-      
-<section id="comments" style="padding: 1em;"
-	class="animated bounceInUp">
-	<div id="vcomment" class="comment"></div>
-</section>
-<style>
-	#comments {
-		background: rgba(255,255,255,0.9);
-	}
-	#veditor {
-		background-image: url('https://img.zcool.cn/community/01a253594c71cfa8012193a329a77f.gif');
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: right;
-		background-color: rgba(255, 255, 255, 0);
-		resize: vertical;
-	}
-	#veditor:focus{
-		background-position-y: 200px;
-		transition: all 0.2s ease-in-out 0s;
-	}
-	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
-		background-color: #42b983;
-	}
-	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
-		color: #42b983;
-		border-color: #42b983;
-	}
-	#vcomment .vcards .vcard .vhead .vsys i {
-		display: none;
-	}
-	/* 底部valine链接 */
-	#vcomment .vpower {
-		display: none;
-	}
-	
-	/* 底下注释是修改 名称和邮箱和网址输入框的样式 */
-	/* #vcomment .vheader {
-		display: flex;
-		justify-content: space-around;
-	}
-	
-	#vcomment .vheader .vnick {
-		width: 31%;
-		border: 2px solid #dedede;
-		padding-left: 10px;
-		padding-right: 10px;
-		border-radius: 5px
-	}
+      <div id="gitment-container"></div>
 
-	#vcomment .vheader .vmail {
-		width: 31%;
-		border: 2px solid #dedede;
-		padding-left: 10px;
-		padding-right: 10px;
-		border-radius: 5px
-	}
-
-	#vcomment .vheader .vlink {
-		width: 31%;
-		border: 2px solid #dedede;
-		padding-left: 10px;
-		padding-right: 10px;
-		border-radius: 5px
-	} */
-
-	img.vimg {
-		transition: all 1s;
-		/* 头像旋转时间为 1s */
-	}
-
-	img.vimg:hover {
-		transform: rotate(360deg);
-		-webkit-transform: rotate(360deg);
-		-moz-transform: rotate(360deg);
-		-o-transform: rotate(360deg);
-		-ms-transform: rotate(360deg);
-	}
-
-	#vcomment .vcards .vcard {
-		padding: 15px 20px 0 20px;
-		border-radius: 10px;
-		margin-bottom: 15px;
-		box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
-		transition: all .3s
-	}
-
-	#vcomment .vcards .vcard:hover {
-		box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
-	}
-
-	#vcomment .vcards .vcard .vh .vcard {
-		border: none;
-		box-shadow: none;
-	}
-</style>
     
   </div>
 
@@ -1148,7 +1064,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E8%AE%BA"><span class="toc-text">导论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">研究的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Python%E5%92%8CNumpy%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B"><span class="toc-text">Python和Numpy基础教程</span></a></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text"> 概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E8%AE%BA"><span class="toc-text"> 导论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text"> 研究的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python%E5%92%8Cnumpy%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B"><span class="toc-text"> Python和Numpy基础教程</span></a></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1620,7 +1536,7 @@
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
 
           </div>
         
@@ -2134,141 +2050,68 @@
 <!-- 评论所需js -->
 
   
-    <!-- 弹幕所需的css和js -->
-    
-  <!-- 弹幕插件 -->
-  <link href="/js/danmu/barrager.css" rel="stylesheet">
-  <script src="/js/danmu/jquery.barrager.js"></script>
+    <script type="text/javascript">
+  var utteranceCommon = {};
 
-<!-- 具体js，请前往valine/script.ejs查看 -->
-
-    <script>
-  var requiredFields = 'nick,mail';
-  requiredFields = requiredFields.split(',');
-  comment_el = '.comment';
-  let looperValine = null;
-  load_valine = function () {
-    if ($(comment_el).length) {
-      var valine = new Valine({
-        el: '#vcomment',
-        path: window.location.pathname,
-        notify: false,
-        verify: false,
-        app_id: "",
-        app_key: "",
-        placeholder: "客官，说点什么吧",
-        avatar: "",
-        master: "",   //博主邮箱md5
-        tagMeta: ["博主","小伙伴","访客"],     //标识字段名
-        friends: "",
-        metaPlaceholder: { "nick": "昵称/QQ号", "mail": "邮箱" },
-        requiredFields: requiredFields,
-        enableQQ: true,
-      });
-      function debounce(fn) {
-        var timerID = null
-        return function () {
-          var arg = arguments[0]   //获取事件
-          if (timerID) {
-            clearTimeout(timerID)
-          }
-          timerID = setTimeout(function () {
-            fn(arg)              //事件传入函数
-          }, 200)
-        }
-      }
-      //查询评论 valine.Q('*').limit(7) -- 查询所有，限制7条, 下面的的代码是查询当前页面
-      var themeDanmu = eval('true');
-      var themeLoop = eval('false');
-      var themeLooperTime = '5000' || 5000;
-      var speed = '40' || 20;
-      var isBarrager = true;
-      if (themeDanmu == true) {
-        do_barrager();
-        if ($('.danmuBox').length <= 0) {
-          $('.navbar').append('<div class="danmuBox"><div class="danmuBtn open"><span class="danmuCircle"></span><span class="danmuText">弹幕</span></div></div>');
-        }
-        $('.danmuBtn').on('click', debounce(
-          function () {
-            if ($('.danmuBtn').hasClass('open')) {
-              $('.danmuBtn').removeClass('open')
-              clearInterval(looperValine);
-              $.fn.barrager.removeAll();
-            } else {
-              $('.danmuBtn').addClass("open");
-              do_barrager();
-            }
-          }
-        ))
-      }
-      function do_barrager() {
-        isBarrager && valine.Q(window.location.pathname).find().then(function (comments) {
-          // var num = 0; // 可以记录条数，循环调用的时候只取最新的评论放入弹幕中
-          var run_once = true;
-          var looper_time = themeLooperTime;
-          var total = comments.length;
-          // var looper = null;
-          var index = 0;
-          if (total > 0) {
-            barrager();
-          } else {
-            // 当评论数为0的时候，自动关闭弹幕
-            // $('.danmuBtn').removeClass('open');
-          }
-          function barrager() {
-            if (run_once) {
-              //如果是首次执行,则设置一个定时器,并且把首次执行置为false
-              looperValine = setInterval(barrager, looper_time);
-              run_once = false;
-            }
-            var content = comments[index]._serverData.comment;
-            var email = comments[index]._serverData.mail;
-            var link = comments[index]._serverData.link;
-            var newcontent = content.substring(0, 50).replace(/<[^>]+>/g, "");
-            //发布一个弹幕
-            const item = {
-              img: `https://q1.qlogo.cn/g?b=qq&nk=${email}&s=640`, //图片 
-              info: newcontent, //文字 
-              href: link, //链接 
-              close: true, //显示关闭按钮 
-              speed: speed, //延迟,单位秒,默认6 
-              color: '#fff', //颜色,默认白色 
-              old_ie_color: '#000000', //ie低版兼容色,不能与网页背景相同,默认黑色
-            }
-            $('body').barrager(item);
-            //索引自增
-            index++;
-            //所有弹幕发布完毕，清除计时器。
-            if (index == total) {
-              clearInterval(looperValine);
-              if (themeLoop === true) {
-                setTimeout(function () {
-                  do_barrager();
-                }, 5000);
-              } else {
-                $('.danmuBtn').removeClass('open');
-              }
-              return false;
-            }
-
-          }
-        })
-      }
+  function check_utterance() {
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    if (isDark) {
+      utteranceCommon.Theme = 'github-dark';
+    } else {
+      utteranceCommon.Theme = 'github-light';
     }
-  };
-  $(document).ready(load_valine);
-  document.addEventListener('pjax:send', function (e) {
-    
-      $('.danmuBox').length > 0 && $('.danmuBox').remove()
-      looperValine && clearInterval(looperValine);
-      $.fn.barrager.removeAll();
-    
-  })
+
+    return document.getElementById("gitment-container");
+  }
+  comment_el = '#gitment-container';
+  load_utterance = function () {
+    if ($(comment_el).length) {
+      // 匿名函数，防止污染全局变量
+      const HEAD = check_utterance();
+
+      var utterances = document.createElement('script');
+      utterances.type = 'text/javascript';
+      utterances.async = true;
+      utterances.setAttribute('issue-term', 'pathname')
+      utterances.setAttribute('theme', utteranceCommon.Theme)
+      utterances.setAttribute('repo', 'dazhipro/dazhipro.github.io')
+      utterances.crossorigin = 'anonymous';
+      utterances.src = 'https://utteranc.es/client.js';
+      // content 是要插入评论的地方
+      document.getElementById('gitment-container').appendChild(utterances);
+
+    }
+  }
+
+  function dark_utterance() {
+    const HEAD = check_utterance();
+    if (!HEAD) return;
+    const message = {
+      type: 'set-theme',
+      theme: utteranceCommon.Theme
+    };
+    const utteranceIframe = document.querySelector('iframe');
+    utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');
+  }
+
+  $(document).ready(load_utterance);
   document.addEventListener('pjax:complete', function () {
-    load_valine();
+    load_utterance();
   });
+
+  $('.dark').click(function () {
+    setTimeout(() => {
+      dark_utterance();
+    });
+  })
+
 </script>
 
+<style>
+  .utterances {
+    max-width: inherit !important;
+  }
+</style>
   
 
 

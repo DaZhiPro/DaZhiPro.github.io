@@ -28,7 +28,10 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;新建第一个hello-world&quot;&gt;&lt;a href=&quot;#新建第一个hello-world&quot; class=&quot;headerlink&quot; title=&quot;新建第一个hello world&quot;&gt;&lt;/a&gt;新建第一个hello</summary>
+    <summary type="html">&lt;h2 id=&quot;新建第一个hello-world&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#新建第一个hello-world&quot;&gt;&lt;/a&gt; 新建第一个hello world&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;安装Django：</summary>
         
       
     
@@ -74,7 +77,8 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;双指针&quot;&gt;&lt;a href=&quot;#双指针&quot; class=&quot;headerlink&quot; title=&quot;双指针&quot;&gt;&lt;/a&gt;双指针&lt;/h3&gt;&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h3 id=&quot;双指针&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#双指针&quot;&gt;&lt;/a&gt; 双指针&lt;/h3&gt;
+&lt;h4 id=&quot;问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#问题&quot;&gt;&lt;/a&gt;</summary>
         
       
     
@@ -133,7 +137,8 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;高精度&quot;&gt;&lt;a href=&quot;#高精度&quot; class=&quot;headerlink&quot; title=&quot;高精度&quot;&gt;&lt;/a&gt;高精度&lt;/h3&gt;&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h3 id=&quot;高精度&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#高精度&quot;&gt;&lt;/a&gt; 高精度&lt;/h3&gt;
+&lt;h4 id=&quot;问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#问题&quot;&gt;&lt;/a&gt;</summary>
         
       
     
@@ -158,7 +163,8 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;二分&quot;&gt;&lt;a href=&quot;#二分&quot; class=&quot;headerlink&quot; title=&quot;二分&quot;&gt;&lt;/a&gt;二分&lt;/h3&gt;&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;&lt;a</summary>
+    <summary type="html">&lt;h3 id=&quot;二分&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#二分&quot;&gt;&lt;/a&gt; 二分&lt;/h3&gt;
+&lt;h4 id=&quot;问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#问题&quot;&gt;&lt;/a&gt; &lt;a</summary>
         
       
     
@@ -183,7 +189,8 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;快速排序&quot;&gt;&lt;a href=&quot;#快速排序&quot; class=&quot;headerlink&quot; title=&quot;快速排序&quot;&gt;&lt;/a&gt;快速排序&lt;/h3&gt;&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;&lt;a</summary>
+    <summary type="html">&lt;h3 id=&quot;快速排序&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#快速排序&quot;&gt;&lt;/a&gt; 快速排序&lt;/h3&gt;
+&lt;h4 id=&quot;问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#问题&quot;&gt;&lt;/a&gt; &lt;a</summary>
         
       
     
@@ -208,7 +215,9 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;主机和虚拟机ping不通的原因&quot;&gt;&lt;a href=&quot;#主机和虚拟机ping不通的原因&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h3 id=&quot;主机和虚拟机ping不通的原因&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#主机和虚拟机ping不通的原因&quot;&gt;&lt;/a&gt; 主机和虚拟机ping不通的原因&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;主机需要将自己网卡共享给VMware</summary>
         
       
     
@@ -233,7 +242,8 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;常用命令&quot;&gt;&lt;a href=&quot;#常用命令&quot; class=&quot;headerlink&quot; title=&quot;常用命令&quot;&gt;&lt;/a&gt;常用命令&lt;/h2&gt;&lt;h3 id=&quot;文件管理&quot;&gt;&lt;a href=&quot;#文件管理&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;常用命令&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#常用命令&quot;&gt;&lt;/a&gt; 常用命令&lt;/h2&gt;
+&lt;h3 id=&quot;文件管理&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#文件管理&quot;&gt;&lt;/a&gt;</summary>
         
       
     
@@ -258,7 +268,8 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h1&gt;&lt;h3 id=&quot;学习路线&quot;&gt;&lt;a href=&quot;#学习路线&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;概述&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#概述&quot;&gt;&lt;/a&gt; 概述&lt;/h1&gt;
+&lt;h3 id=&quot;学习路线&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#学习路线&quot;&gt;&lt;/a&gt;</summary>
         
       
     
@@ -276,14 +287,14 @@
     <link href="https://dazhipro.github.io/2022/10/25/2-ji-suan-ji-shi-jue/ji-suan-ji-shi-jue-bi-ji/"/>
     <id>https://dazhipro.github.io/2022/10/25/2-ji-suan-ji-shi-jue/ji-suan-ji-shi-jue-bi-ji/</id>
     <published>2022-10-25T04:40:19.000Z</published>
-    <updated>2023-01-11T09:29:52.787Z</updated>
+    <updated>2023-01-11T12:48:46.124Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h3 id=&quot;先验-后验-和-似然函数的关系&quot;&gt;&lt;a href=&quot;#先验-后验-和-似然函数的关系&quot; class=&quot;headerlink&quot; title=&quot;先验 后验 和 似然函数的关系&quot;&gt;&lt;/a&gt;&lt;a</summary>
+    <summary type="html">&lt;h3 id=&quot;先验-后验-和-似然函数的关系&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#先验-后验-和-似然函数的关系&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://zhuanlan.zhihu.com/p/157677467&quot;&gt;先验 后验 和</summary>
         
       
     
@@ -308,7 +319,8 @@
       
         
         
-    <summary type="html">&lt;p&gt;LSTM 又叫长 短时记忆神经网络，问了解决RNN不能处理 &lt;code&gt;从较长的前文中推断下一个单词的问题&lt;/code&gt; 而提出的&lt;br&gt;&lt;code&gt;从较长的前文中推断下一个单词的问题&lt;/code&gt;比如：”I grew up in France… I speak</summary>
+    <summary type="html">&lt;p&gt;LSTM 又叫长 短时记忆神经网络，问了解决RNN不能处理 &lt;code&gt;从较长的前文中推断下一个单词的问题&lt;/code&gt; 而提出的
+&lt;code&gt;从较长的前文中推断下一个单词的问题&lt;/code&gt;比如：&amp;quot;I grew up in France… I speak</summary>
         
       
     
@@ -336,7 +348,7 @@
         
         
     <summary type="html">&lt;p&gt;GAN(Generative Adversarial Network) 生成对抗网络&lt;/p&gt;
-&lt;h4 id=&quot;1-为什么要有这个东西？&quot;&gt;&lt;a href=&quot;#1-为什么要有这个东西？&quot; class=&quot;headerlink&quot; title=&quot;1.</summary>
+&lt;h4 id=&quot;1-为什么要有这个东西&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#1-为什么要有这个东西&quot;&gt;&lt;/a&gt; 1.</summary>
         
       
     
@@ -365,7 +377,9 @@
         
     <summary type="html">&lt;p&gt;神经网络中的反向传播中的梯度计算一直是让我和头疼的问题，翻了好多资料，现在记录下自己目前的所得&lt;/p&gt;
 &lt;ol start=&quot;0&quot;&gt;
-&lt;li&gt;&lt;p&gt;结论&lt;br&gt;$$&lt;br&gt;\text{设\ }y\ &amp;#x3D;\ f\left( X\ &lt;em&gt;\ W \right) \</summary>
+&lt;li&gt;结论&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p class=&#39;katex-block&#39;&gt;&lt;span</summary>
         
       
     
@@ -419,7 +433,8 @@
         
         
     <summary type="html">&lt;p&gt;卷积 输入和输出的关系&lt;/p&gt;
-&lt;p&gt;输入 N * N * D    卷积核 K * K * D2 stride(步长)、pad（周围填充）&lt;br&gt;输出尺寸 &amp;#x3D; ( N + 2 * pad - K ) &amp;#x2F; stride + 1 &lt;/p&gt;
+&lt;p&gt;输入 N * N * D    卷积核 K * K * D2 stride(步长)、pad（周围填充）
+输出尺寸 = ( N + 2 * pad - K ) / stride + 1&lt;/p&gt;
 &lt;p&gt;&lt;img</summary>
         
       
@@ -447,7 +462,9 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;损失函数作用&quot;&gt;&lt;a href=&quot;#损失函数作用&quot; class=&quot;headerlink&quot; title=&quot;损失函数作用&quot;&gt;&lt;/a&gt;损失函数作用&lt;/h3&gt;&lt;p&gt;损失函数是一个衡量预测值和真实值之间差异的函数&lt;br&gt;&lt;img</summary>
+    <summary type="html">&lt;h3 id=&quot;损失函数作用&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#损失函数作用&quot;&gt;&lt;/a&gt; 损失函数作用&lt;/h3&gt;
+&lt;p&gt;损失函数是一个衡量预测值和真实值之间差异的函数
+&lt;img</summary>
         
       
     
@@ -474,7 +491,7 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;最近邻算法&quot;&gt;&lt;a href=&quot;#最近邻算法&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h3 id=&quot;最近邻算法&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#最近邻算法&quot;&gt;&lt;/a&gt;</summary>
         
       
     
@@ -501,7 +518,7 @@
       
         
         
-    <summary type="html">&lt;p&gt;斯坦福CS231 视频 &lt;/p&gt;
+    <summary type="html">&lt;p&gt;斯坦福CS231 视频&lt;/p&gt;
 &lt;p&gt;&lt;a</summary>
         
       
