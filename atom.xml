@@ -63,6 +63,140 @@
   </entry>
   
   <entry>
+    <title>离散化</title>
+    <link href="https://dazhipro.github.io/2023/01/06/3-suan-fa/06-chi-san-hua/"/>
+    <id>https://dazhipro.github.io/2023/01/06/3-suan-fa/06-chi-san-hua/</id>
+    <published>2023-01-06T04:40:19.000Z</published>
+    <updated>2023-01-11T11:23:51.316Z</updated>
+    
+    
+    
+    
+    <category term="算法" scheme="https://dazhipro.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="离散化" scheme="https://dazhipro.github.io/tags/%E7%A6%BB%E6%95%A3%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>双指针</title>
+    <link href="https://dazhipro.github.io/2023/01/06/3-suan-fa/05-shuang-zhi-zhen/"/>
+    <id>https://dazhipro.github.io/2023/01/06/3-suan-fa/05-shuang-zhi-zhen/</id>
+    <published>2023-01-06T04:40:19.000Z</published>
+    <updated>2023-01-11T11:59:20.791Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;双指针&quot;&gt;&lt;a href=&quot;#双指针&quot; class=&quot;headerlink&quot; title=&quot;双指针&quot;&gt;&lt;/a&gt;双指针&lt;/h3&gt;&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://dazhipro.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="双指针" scheme="https://dazhipro.github.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前缀和 差分</title>
+    <link href="https://dazhipro.github.io/2023/01/05/3-suan-fa/04-qian-zhui-he-he-chai-fen/"/>
+    <id>https://dazhipro.github.io/2023/01/05/3-suan-fa/04-qian-zhui-he-he-chai-fen/</id>
+    <published>2023-01-05T04:40:19.000Z</published>
+    <updated>2023-01-11T11:23:02.504Z</updated>
+    
+    
+    
+    
+    <category term="算法" scheme="https://dazhipro.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="前缀和 差分" scheme="https://dazhipro.github.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C-%E5%B7%AE%E5%88%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>高精度</title>
+    <link href="https://dazhipro.github.io/2023/01/04/3-suan-fa/03-gao-jing-du/"/>
+    <id>https://dazhipro.github.io/2023/01/04/3-suan-fa/03-gao-jing-du/</id>
+    <published>2023-01-04T04:40:19.000Z</published>
+    <updated>2023-01-11T11:21:57.726Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;高精度&quot;&gt;&lt;a href=&quot;#高精度&quot; class=&quot;headerlink&quot; title=&quot;高精度&quot;&gt;&lt;/a&gt;高精度&lt;/h3&gt;&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://dazhipro.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="高精度" scheme="https://dazhipro.github.io/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>二分</title>
+    <link href="https://dazhipro.github.io/2023/01/02/3-suan-fa/02-er-fen/"/>
+    <id>https://dazhipro.github.io/2023/01/02/3-suan-fa/02-er-fen/</id>
+    <published>2023-01-02T04:40:19.000Z</published>
+    <updated>2023-01-11T11:21:37.044Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;二分&quot;&gt;&lt;a href=&quot;#二分&quot; class=&quot;headerlink&quot; title=&quot;二分&quot;&gt;&lt;/a&gt;二分&lt;/h3&gt;&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://dazhipro.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="二分" scheme="https://dazhipro.github.io/tags/%E4%BA%8C%E5%88%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>排序</title>
+    <link href="https://dazhipro.github.io/2023/01/01/3-suan-fa/01-pai-xu/"/>
+    <id>https://dazhipro.github.io/2023/01/01/3-suan-fa/01-pai-xu/</id>
+    <published>2023-01-01T04:40:19.000Z</published>
+    <updated>2023-01-11T11:20:26.929Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;快速排序&quot;&gt;&lt;a href=&quot;#快速排序&quot; class=&quot;headerlink&quot; title=&quot;快速排序&quot;&gt;&lt;/a&gt;快速排序&lt;/h3&gt;&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://dazhipro.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="排序" scheme="https://dazhipro.github.io/tags/%E6%8E%92%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>远程登录和 vim</title>
     <link href="https://dazhipro.github.io/2022/12/04/1-kai-fa/linux/yuan-cheng-deng-lu-he-vim/"/>
     <id>https://dazhipro.github.io/2022/12/04/1-kai-fa/linux/yuan-cheng-deng-lu-he-vim/</id>
@@ -380,61 +514,6 @@
     <category term="CS231" scheme="https://dazhipro.github.io/tags/CS231/"/>
     
     <category term="CNN" scheme="https://dazhipro.github.io/tags/CNN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Numpy 技巧</title>
-    <link href="https://dazhipro.github.io/2022/10/01/2-ji-suan-ji-shi-jue/cnn/00numpy-ji-qiao/"/>
-    <id>https://dazhipro.github.io/2022/10/01/2-ji-suan-ji-shi-jue/cnn/00numpy-ji-qiao/</id>
-    <published>2022-10-01T04:40:19.000Z</published>
-    <updated>2023-01-11T06:25:16.353Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;构造列表筛选功能&quot;&gt;&lt;a href=&quot;#构造列表筛选功能&quot; class=&quot;headerlink&quot; title=&quot;构造列表筛选功能&quot;&gt;&lt;/a&gt;构造列表筛选功能&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
-        
-      
-    
-    
-    
-    <category term="机器视觉" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/"/>
-    
-    
-    <category term="CS231" scheme="https://dazhipro.github.io/tags/CS231/"/>
-    
-    <category term="CNN" scheme="https://dazhipro.github.io/tags/CNN/"/>
-    
-    <category term="Numpy" scheme="https://dazhipro.github.io/tags/Numpy/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git 入门</title>
-    <link href="https://dazhipro.github.io/2022/09/01/1-kai-fa/git/git-ru-men/"/>
-    <id>https://dazhipro.github.io/2022/09/01/1-kai-fa/git/git-ru-men/</id>
-    <published>2022-09-01T04:40:19.000Z</published>
-    <updated>2023-01-11T09:42:06.294Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;基本操作&quot;&gt;&lt;a href=&quot;#基本操作&quot; class=&quot;headerlink&quot; title=&quot;基本操作&quot;&gt;&lt;/a&gt;基本操作&lt;/h4&gt;&lt;p&gt; &lt;code&gt;git status&lt;/code&gt; 	当前仓库的状态&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;git add</summary>
-        
-      
-    
-    
-    
-    <category term="开发" scheme="https://dazhipro.github.io/categories/%E5%BC%80%E5%8F%91/"/>
-    
-    
-    <category term="git" scheme="https://dazhipro.github.io/tags/git/"/>
     
   </entry>
   

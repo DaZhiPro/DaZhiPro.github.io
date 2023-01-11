@@ -42,6 +42,156 @@
     
     
     <entry>
+      <title>离散化</title>
+      <link href="/2023/01/06/3-suan-fa/06-chi-san-hua/"/>
+      <url>/2023/01/06/3-suan-fa/06-chi-san-hua/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 离散化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>双指针</title>
+      <link href="/2023/01/06/3-suan-fa/05-shuang-zhi-zhen/"/>
+      <url>/2023/01/06/3-suan-fa/05-shuang-zhi-zhen/</url>
+      
+        <content type="html"><![CDATA[<h3 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h3><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><ol><li>一般适用于什么情况？</li></ol><h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4><h5 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>,j = <span class="number">0</span>; i &lt; n; i ++)&#123; <span class="comment">// 看做快指针，尽管往前面跑</span></span><br><span class="line">    <span class="keyword">while</span>(j &lt; n &amp;&amp; <span class="built_in">check</span>(j,i)) j ++;  <span class="comment">// j 看做慢指针， 有需要的情况下跟</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 问题的逻辑</span></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 双指针 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>前缀和 差分</title>
+      <link href="/2023/01/05/3-suan-fa/04-qian-zhui-he-he-chai-fen/"/>
+      <url>/2023/01/05/3-suan-fa/04-qian-zhui-he-he-chai-fen/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前缀和 差分 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>高精度</title>
+      <link href="/2023/01/04/3-suan-fa/03-gao-jing-du/"/>
+      <url>/2023/01/04/3-suan-fa/03-gao-jing-du/</url>
+      
+        <content type="html"><![CDATA[<h3 id="高精度"><a href="#高精度" class="headerlink" title="高精度"></a>高精度</h3><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>超长数字的加减乘除 ( len(A),len(B) &gt; 1e6 )</p><h4 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h4><ol><li><p>大数相加 C &#x3D; A + B</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(vector&lt;<span class="type">int</span>&gt; &amp;A, vector&lt;<span class="type">int</span>&gt; &amp;B)</span></span>&#123; <span class="comment">// 使用引用是为了加快速度，原数列A,B需要是逆序过得</span></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; C;</span><br><span class="line">    <span class="type">int</span> t = <span class="number">0</span>; <span class="comment">// 表示向下一位的进位， 取 0 | 1</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; A.<span class="built_in">size</span>() || B.<span class="built_in">size</span>(); i ++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i &lt; A.<span class="built_in">size</span>()) t += A[i];</span><br><span class="line">        <span class="keyword">if</span>(i &lt; B.<span class="built_in">size</span>()) t += B[i];</span><br><span class="line">        C.<span class="built_in">push_back</span>(t % <span class="number">10</span>);</span><br><span class="line">        t /= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(t) C.<span class="built_in">push_back</span>(t); <span class="comment">// 向最高位进位</span></span><br><span class="line">    <span class="keyword">return</span> C;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>大数相减 C &#x3D; A - B</p></li></ol><p>&#96;&#96;&#96;c++<br>  void sub(vector<int> A, vector<int> B){</p><p>  }</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 高精度 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>二分</title>
+      <link href="/2023/01/02/3-suan-fa/02-er-fen/"/>
+      <url>/2023/01/02/3-suan-fa/02-er-fen/</url>
+      
+        <content type="html"><![CDATA[<h3 id="二分"><a href="#二分" class="headerlink" title="二分"></a>二分</h3><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a><a href="https://www.acwing.com/problem/content/791/">问题</a></h4><p>适用于一个序列，有一个check函数，能够使得序列左边都返回false，右边都返回true，然后我们找的就是这个分界点的时候</p><h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4><p>两种情况<br>一种是求 左半段最后一个元素，也就是说求上界，比如求 小于等于 x 的最后一个元素<br>这时候 <code>mid = l + r + 1 &gt;&gt; 1;</code></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(<span class="type">int</span> mid , <span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> q[mid] &lt;= x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">check</span>(mid,x)) l = mid;</span><br><span class="line"><span class="keyword">else</span> r = mid - <span class="number">1</span>;</span><br></pre></td></tr></table></figure><p>另一种情况是求 右半段的第一个元素，也就是求下界，比如求 大于等于 x 的第一个元素<br>这时候 <code>mid = l + r + 1 &gt;&gt; 1;</code></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(<span class="type">int</span> mid , <span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> q[mid] &gt;= x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">check</span>(mid,x)) r = mid;</span><br><span class="line"><span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br></pre></td></tr></table></figure><h4 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h4><p>给定一个序列 q , 求大于等于 x 的第一个值 右半段的第一个</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(<span class="type">int</span> mid , <span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> q[mid] &gt;= x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> l = <span class="number">0</span>, r = n - <span class="number">1</span>, mid;</span><br><span class="line"><span class="keyword">while</span> (l &lt; r)</span><br><span class="line">&#123;</span><br><span class="line">    mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">check</span>(mid, x)) r = mid;</span><br><span class="line">    <span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(q[l] == x) ...</span><br></pre></td></tr></table></figure><p>给定一个序列 q , 求小于等于 x 的最后一个值 左半段的最后一个</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(<span class="type">int</span> mid , <span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> q[mid] &lt;= x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> l = <span class="number">0</span>, r = n - <span class="number">1</span>, mid;</span><br><span class="line"><span class="keyword">while</span> (l &lt; r)</span><br><span class="line">&#123;</span><br><span class="line">    mid = l + r + <span class="number">1</span> &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">check</span>(mid, x)) l = mid;</span><br><span class="line">    <span class="keyword">else</span> r = mid - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(q[l] == x) ...</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 二分 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>排序</title>
+      <link href="/2023/01/01/3-suan-fa/01-pai-xu/"/>
+      <url>/2023/01/01/3-suan-fa/01-pai-xu/</url>
+      
+        <content type="html"><![CDATA[<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a><a href="https://www.acwing.com/problem/content/787/">问题</a></h4><p>将序列 q 的 l ~ r 区间排序<br>void quick_sort(int q[], int l, int r) </p><h4 id="基本思想-——-分治"><a href="#基本思想-——-分治" class="headerlink" title="基本思想 —— 分治"></a>基本思想 —— 分治</h4><ol><li>找一个参考值 x</li><li>通过双指针算法交换使得  左半边全部是 &lt;&#x3D; x , 右半边全部是 &gt;&#x3D; x<ol><li>移动左指针 i ，找到大于 x 的数</li><li>移动右指针 j ，找到小于 x 的数</li><li>交换逆序对</li></ol></li><li>递归处理 左半边 右半边</li></ol><h4 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">quick_sort</span><span class="params">(<span class="type">int</span> q[], <span class="type">int</span> l, <span class="type">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l &gt;= r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="type">int</span> i = l - <span class="number">1</span>, j = r + <span class="number">1</span>, x = q[l] + q[r] &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt; j)&#123;</span><br><span class="line">        <span class="keyword">while</span>(q[++ i] &lt; x);</span><br><span class="line">        <span class="keyword">while</span>(q[-- j] &gt; x);</span><br><span class="line">        <span class="keyword">if</span>(i &lt; j) <span class="built_in">swap</span>(q[i],q[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">quick_sort</span>( q, l, j), <span class="built_in">quick_sort</span>( q, j + <span class="number">1</span>, r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>注意点</strong>： 分界点的选择可以是[ l , j ]、 [ j + 1 , r ] 或者 [ l, i - 1 ]、[ i , r ],<br>swap 的时候不要忘记判断 i &lt; j</p><h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><p>与快排的先排完上层，再排下层不同，归并排序是先排完下层再排上层</p><h4 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a><a href="https://www.acwing.com/problem/content/789/">问题</a></h4><p>将序列 q 的 l ~ r 区间排序<br>void merge_sort(int q[], int l, int r) </p><h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4><ol><li>先排完左半边[ l , mid ]、再排完右半边[ mid + 1, r ]</li><li>将左右两个有序序列进行合并<ol><li>i , j 两个指针分别指向两个有序子序列的头，哪个小就输出哪个，并指向后一个，直到有一个序列指针到达末尾</li><li>将未全部输出的序列全部输出</li></ol></li><li>处理左半边 和 右半边 同样使用递归的方式</li></ol><h4 id="模板-1"><a href="#模板-1" class="headerlink" title="模板"></a>模板</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> tmp[N]; <span class="comment">// 很大，最好开在外面</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">merge_sort</span><span class="params">(<span class="type">int</span> q[], <span class="type">int</span> l, <span class="type">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l &gt;= r) <span class="keyword">return</span>; <span class="comment">// 递归的出口</span></span><br><span class="line">    <span class="type">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">merge_sort</span>(q, l, mid), <span class="built_in">merge_sort</span>(q, mid + <span class="number">1</span>, r);</span><br><span class="line">    <span class="type">int</span> i = l, j = mid + <span class="number">1</span>, k = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(i &lt;= mid &amp;&amp; j &lt;= r)&#123;</span><br><span class="line">        <span class="keyword">if</span>(q[i] &lt;= q[j]) tmp[k ++] = q[i ++];</span><br><span class="line">        <span class="keyword">else</span> tmp[k ++] = q[j ++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(i &lt;= mid) tmp[k ++] = q[i ++];</span><br><span class="line">    <span class="keyword">while</span>(j &lt;= r) tmp[k ++] = q[j ++];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = l, j = <span class="number">0</span>; i &lt;= r; i ++, j ++) q[i] = tmp[j];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 排序 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>远程登录和 vim</title>
       <link href="/2022/12/04/1-kai-fa/linux/yuan-cheng-deng-lu-he-vim/"/>
       <url>/2022/12/04/1-kai-fa/linux/yuan-cheng-deng-lu-he-vim/</url>
