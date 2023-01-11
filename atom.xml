@@ -6,7 +6,7 @@
   <link href="https://dazhipro.github.io/atom.xml" rel="self"/>
   
   <link href="https://dazhipro.github.io/"/>
-  <updated>2022-11-26T13:25:22.059Z</updated>
+  <updated>2023-01-10T11:44:45.796Z</updated>
   <id>https://dazhipro.github.io/</id>
   
   <author>
@@ -18,39 +18,18 @@
   
   <entry>
     <title></title>
-    <link href="https://dazhipro.github.io/2023/01/11/2-ji-suan-ji-shi-jue/lstm/lstm/"/>
-    <id>https://dazhipro.github.io/2023/01/11/2-ji-suan-ji-shi-jue/lstm/lstm/</id>
-    <published>2023-01-11T06:18:02.059Z</published>
-    <updated>2022-11-26T13:25:22.059Z</updated>
+    <link href="https://dazhipro.github.io/2023/01/11/1-kai-fa/git/git-ru-men/"/>
+    <id>https://dazhipro.github.io/2023/01/11/1-kai-fa/git/git-ru-men/</id>
+    <published>2023-01-11T09:30:47.370Z</published>
+    <updated>2023-01-10T11:44:45.796Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;LSTM 又叫长 短时记忆神经网络，问了解决RNN不能处理 &lt;code&gt;从较长的前文中推断下一个单词的问题&lt;/code&gt; 而提出的&lt;br&gt;&lt;code&gt;从较长的前文中推断下一个单词的问题&lt;/code&gt;比如：”I grew up in France… I speak</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://dazhipro.github.io/2023/01/11/2-ji-suan-ji-shi-jue/gan/gan-gai-shu/"/>
-    <id>https://dazhipro.github.io/2023/01/11/2-ji-suan-ji-shi-jue/gan/gan-gai-shu/</id>
-    <published>2023-01-11T06:18:02.049Z</published>
-    <updated>2022-12-13T08:35:39.879Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;GAN(Generative Adversarial Network) 生成对抗网络&lt;/p&gt;
-&lt;h4 id=&quot;1-为什么要有这个东西？&quot;&gt;&lt;a href=&quot;#1-为什么要有这个东西？&quot; class=&quot;headerlink&quot; title=&quot;1.</summary>
+    <summary type="html">&lt;h4 id=&quot;基本操作&quot;&gt;&lt;a href=&quot;#基本操作&quot; class=&quot;headerlink&quot; title=&quot;基本操作&quot;&gt;&lt;/a&gt;基本操作&lt;/h4&gt;&lt;p&gt; &lt;code&gt;git status&lt;/code&gt; 	当前仓库的状态&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git add</summary>
         
       
     
@@ -61,19 +40,18 @@
   
   <entry>
     <title></title>
-    <link href="https://dazhipro.github.io/2023/01/11/2-ji-suan-ji-shi-jue/cnn/si-kao-ju-zhen-cheng-fa-de-ti-du-ji-suan-tui-dao-guo-cheng/"/>
-    <id>https://dazhipro.github.io/2023/01/11/2-ji-suan-ji-shi-jue/cnn/si-kao-ju-zhen-cheng-fa-de-ti-du-ji-suan-tui-dao-guo-cheng/</id>
-    <published>2023-01-11T06:18:02.042Z</published>
-    <updated>2022-11-19T11:44:39.712Z</updated>
+    <link href="https://dazhipro.github.io/2023/01/11/1-kai-fa/git/git/"/>
+    <id>https://dazhipro.github.io/2023/01/11/1-kai-fa/git/git/</id>
+    <published>2023-01-11T09:30:47.367Z</published>
+    <updated>2022-05-28T12:18:21.223Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;神经网络中的反向传播中的梯度计算一直是让我和头疼的问题，翻了好多资料，现在记录下自己目前的所得&lt;/p&gt;
-&lt;ol start=&quot;0&quot;&gt;
-&lt;li&gt;&lt;p&gt;结论&lt;br&gt;$$&lt;br&gt;\text{设\ }y\ &amp;#x3D;\ f\left( X\ &lt;em&gt;\ W \right) \</summary>
+    <summary type="html">&lt;h4 id=&quot;linux常用命令&quot;&gt;&lt;a href=&quot;#linux常用命令&quot; class=&quot;headerlink&quot; title=&quot;linux常用命令&quot;&gt;&lt;/a&gt;linux常用命令&lt;/h4&gt;&lt;p&gt;mkdir test 创建文件夹&lt;/p&gt;
+&lt;p&gt;touch a.txt</summary>
         
       
     
@@ -96,27 +74,6 @@
         
     <summary type="html">&lt;p&gt;等后续补充&lt;/p&gt;
 </summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://dazhipro.github.io/2023/01/11/2-ji-suan-ji-shi-jue/ji-suan-ji-shi-jue-bi-ji/"/>
-    <id>https://dazhipro.github.io/2023/01/11/2-ji-suan-ji-shi-jue/ji-suan-ji-shi-jue-bi-ji/</id>
-    <published>2023-01-11T06:18:02.014Z</published>
-    <updated>2022-12-27T09:08:10.256Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;先验-后验-和-似然函数的关系&quot;&gt;&lt;a href=&quot;#先验-后验-和-似然函数的关系&quot; class=&quot;headerlink&quot; title=&quot;先验 后验 和 似然函数的关系&quot;&gt;&lt;/a&gt;&lt;a</summary>
         
       
     
@@ -153,19 +110,6 @@
   </entry>
   
   <entry>
-    <title>first article</title>
-    <link href="https://dazhipro.github.io/2023/01/11/first-article/"/>
-    <id>https://dazhipro.github.io/2023/01/11/first-article/</id>
-    <published>2023-01-11T03:40:19.000Z</published>
-    <updated>2023-01-11T04:28:16.878Z</updated>
-    
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>Hello World</title>
     <link href="https://dazhipro.github.io/2023/01/10/hello-world/"/>
     <id>https://dazhipro.github.io/2023/01/10/hello-world/</id>
@@ -183,6 +127,190 @@
     
     
     
+    
+  </entry>
+  
+  <entry>
+    <title>远程登录和 vim</title>
+    <link href="https://dazhipro.github.io/2022/12/04/1-kai-fa/linux/yuan-cheng-deng-lu-he-vim/"/>
+    <id>https://dazhipro.github.io/2022/12/04/1-kai-fa/linux/yuan-cheng-deng-lu-he-vim/</id>
+    <published>2022-12-04T04:40:19.000Z</published>
+    <updated>2023-01-11T09:35:37.556Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;主机和虚拟机ping不通的原因&quot;&gt;&lt;a href=&quot;#主机和虚拟机ping不通的原因&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="开发" scheme="https://dazhipro.github.io/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="linux" scheme="https://dazhipro.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 常用命令</title>
+    <link href="https://dazhipro.github.io/2022/12/01/1-kai-fa/linux/chang-yong-ming-ling/"/>
+    <id>https://dazhipro.github.io/2022/12/01/1-kai-fa/linux/chang-yong-ming-ling/</id>
+    <published>2022-12-01T04:40:19.000Z</published>
+    <updated>2023-01-11T09:34:41.921Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;常用命令&quot;&gt;&lt;a href=&quot;#常用命令&quot; class=&quot;headerlink&quot; title=&quot;常用命令&quot;&gt;&lt;/a&gt;常用命令&lt;/h2&gt;&lt;h3 id=&quot;文件管理&quot;&gt;&lt;a href=&quot;#文件管理&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="开发" scheme="https://dazhipro.github.io/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="linux" scheme="https://dazhipro.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 概述和安装</title>
+    <link href="https://dazhipro.github.io/2022/11/28/1-kai-fa/linux/gai-shu-he-huan-jing-an-zhuang/"/>
+    <id>https://dazhipro.github.io/2022/11/28/1-kai-fa/linux/gai-shu-he-huan-jing-an-zhuang/</id>
+    <published>2022-11-28T04:40:19.000Z</published>
+    <updated>2023-01-11T09:35:11.807Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h1&gt;&lt;h3 id=&quot;学习路线&quot;&gt;&lt;a href=&quot;#学习路线&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="开发" scheme="https://dazhipro.github.io/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="linux" scheme="https://dazhipro.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《计算机视觉》 笔记</title>
+    <link href="https://dazhipro.github.io/2022/10/25/2-ji-suan-ji-shi-jue/ji-suan-ji-shi-jue-bi-ji/"/>
+    <id>https://dazhipro.github.io/2022/10/25/2-ji-suan-ji-shi-jue/ji-suan-ji-shi-jue-bi-ji/</id>
+    <published>2022-10-25T04:40:19.000Z</published>
+    <updated>2023-01-11T09:29:52.787Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;先验-后验-和-似然函数的关系&quot;&gt;&lt;a href=&quot;#先验-后验-和-似然函数的关系&quot; class=&quot;headerlink&quot; title=&quot;先验 后验 和 似然函数的关系&quot;&gt;&lt;/a&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="机器视觉" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/"/>
+    
+    
+    <category term="《计算机视觉》" scheme="https://dazhipro.github.io/tags/%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E3%80%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LSTM</title>
+    <link href="https://dazhipro.github.io/2022/10/20/2-ji-suan-ji-shi-jue/lstm/lstm/"/>
+    <id>https://dazhipro.github.io/2022/10/20/2-ji-suan-ji-shi-jue/lstm/lstm/</id>
+    <published>2022-10-20T04:40:19.000Z</published>
+    <updated>2023-01-11T09:28:18.144Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;LSTM 又叫长 短时记忆神经网络，问了解决RNN不能处理 &lt;code&gt;从较长的前文中推断下一个单词的问题&lt;/code&gt; 而提出的&lt;br&gt;&lt;code&gt;从较长的前文中推断下一个单词的问题&lt;/code&gt;比如：”I grew up in France… I speak</summary>
+        
+      
+    
+    
+    
+    <category term="机器视觉" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/"/>
+    
+    
+    <category term="李宏毅笔记" scheme="https://dazhipro.github.io/tags/%E6%9D%8E%E5%AE%8F%E6%AF%85%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="LSTM" scheme="https://dazhipro.github.io/tags/LSTM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GAN 李宏毅笔记</title>
+    <link href="https://dazhipro.github.io/2022/10/19/2-ji-suan-ji-shi-jue/gan/gan-gai-shu/"/>
+    <id>https://dazhipro.github.io/2022/10/19/2-ji-suan-ji-shi-jue/gan/gan-gai-shu/</id>
+    <published>2022-10-19T04:40:19.000Z</published>
+    <updated>2023-01-11T09:28:11.138Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;GAN(Generative Adversarial Network) 生成对抗网络&lt;/p&gt;
+&lt;h4 id=&quot;1-为什么要有这个东西？&quot;&gt;&lt;a href=&quot;#1-为什么要有这个东西？&quot; class=&quot;headerlink&quot; title=&quot;1.</summary>
+        
+      
+    
+    
+    
+    <category term="机器视觉" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/"/>
+    
+    
+    <category term="李宏毅笔记" scheme="https://dazhipro.github.io/tags/%E6%9D%8E%E5%AE%8F%E6%AF%85%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="GAN" scheme="https://dazhipro.github.io/tags/GAN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>矩阵乘法中的梯度计算（反向传播常用）</title>
+    <link href="https://dazhipro.github.io/2022/10/07/2-ji-suan-ji-shi-jue/cnn/si-kao-ju-zhen-cheng-fa-de-ti-du-ji-suan-tui-dao-guo-cheng/"/>
+    <id>https://dazhipro.github.io/2022/10/07/2-ji-suan-ji-shi-jue/cnn/si-kao-ju-zhen-cheng-fa-de-ti-du-ji-suan-tui-dao-guo-cheng/</id>
+    <published>2022-10-07T04:40:19.000Z</published>
+    <updated>2023-01-11T09:26:32.866Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;神经网络中的反向传播中的梯度计算一直是让我和头疼的问题，翻了好多资料，现在记录下自己目前的所得&lt;/p&gt;
+&lt;ol start=&quot;0&quot;&gt;
+&lt;li&gt;&lt;p&gt;结论&lt;br&gt;$$&lt;br&gt;\text{设\ }y\ &amp;#x3D;\ f\left( X\ &lt;em&gt;\ W \right) \</summary>
+        
+      
+    
+    
+    
+    <category term="机器视觉" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/"/>
+    
+    
+    <category term="CS231" scheme="https://dazhipro.github.io/tags/CS231/"/>
+    
+    <category term="CNN" scheme="https://dazhipro.github.io/tags/CNN/"/>
     
   </entry>
   
@@ -220,7 +348,7 @@
     <link href="https://dazhipro.github.io/2022/10/04/2-ji-suan-ji-shi-jue/cnn/03-sun-shi-han-shu-he-you-hua/"/>
     <id>https://dazhipro.github.io/2022/10/04/2-ji-suan-ji-shi-jue/cnn/03-sun-shi-han-shu-he-you-hua/</id>
     <published>2022-10-04T04:40:19.000Z</published>
-    <updated>2023-01-11T06:24:02.051Z</updated>
+    <updated>2023-01-11T09:25:28.722Z</updated>
     
     
       
@@ -236,7 +364,7 @@
     <category term="机器视觉" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/"/>
     
     
-    <category term="计算机视觉" scheme="https://dazhipro.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
+    <category term="CNN" scheme="https://dazhipro.github.io/tags/CNN/"/>
     
     <category term="损失函数" scheme="https://dazhipro.github.io/tags/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/"/>
     

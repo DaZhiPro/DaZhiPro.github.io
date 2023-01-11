@@ -5,23 +5,10 @@
     
     <entry>
       <title></title>
-      <link href="/2023/01/11/2-ji-suan-ji-shi-jue/lstm/lstm/"/>
-      <url>/2023/01/11/2-ji-suan-ji-shi-jue/lstm/lstm/</url>
+      <link href="/2023/01/11/1-kai-fa/git/git-ru-men/"/>
+      <url>/2023/01/11/1-kai-fa/git/git-ru-men/</url>
       
-        <content type="html"><![CDATA[<p>LSTM 又叫长 短时记忆神经网络，问了解决RNN不能处理 <code>从较长的前文中推断下一个单词的问题</code> 而提出的<br><code>从较长的前文中推断下一个单词的问题</code>比如：”I grew up in France… I speak fluent <em>French</em>.”不能从这句中推出French，因为中间隔了好多词</p><h4 id="遗忘门："><a href="#遗忘门：" class="headerlink" title="遗忘门："></a>遗忘门：</h4><p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212224503-712213887.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212224503-712213887.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><h4 id="输入门："><a href="#输入门：" class="headerlink" title="输入门："></a>输入门：</h4><p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212311075-209010384.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212311075-209010384.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><h4 id="想下一个cell的输出："><a href="#想下一个cell的输出：" class="headerlink" title="想下一个cell的输出："></a>想下一个cell的输出：</h4><p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212423984-1696402345.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212423984-1696402345.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><h4 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h4><p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212440327-44970240.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212440327-44970240.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p><a href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/#fn1">参考链接1</a><br><a href="https://zhuanlan.zhihu.com/p/84333843">中文版参考链接</a><br><a href="https://www.bilibili.com/video/BV1J94y1f7u5?p=28&vd_source=a25e4be5f25feef1532666f6ee51cce1">李宏毅RNN教程</a> </p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/2023/01/11/2-ji-suan-ji-shi-jue/gan/gan-gai-shu/"/>
-      <url>/2023/01/11/2-ji-suan-ji-shi-jue/gan/gan-gai-shu/</url>
-      
-        <content type="html"><![CDATA[<p>GAN(Generative Adversarial Network) 生成对抗网络</p><h4 id="1-为什么要有这个东西？"><a href="#1-为什么要有这个东西？" class="headerlink" title="1. 为什么要有这个东西？"></a>1. 为什么要有这个东西？</h4><p>   为了解决相同输入x，不同输出y的情形,每一个输出都是对的，唯一可以知道的是他服从某一个分布。 </p><p>   李宏毅中的例子是根据游戏的前三帧，去预测下一帧，当前三帧游戏人物走到路口的时候，下一帧可能左拐也可能右拐，无法得到一个确切的输出，只能得到一个概率分布。<br>   也可以用于扩充样本。</p><h4 id="2-生成对抗网络是什么？"><a href="#2-生成对抗网络是什么？" class="headerlink" title="2. 生成对抗网络是什么？"></a>2. 生成对抗网络是什么？</h4><p>   一个生成对抗网络主要包含 生成器 + 判别器</p><ol><li><p><code>生成器(G)</code>的主要作用就是根据一个输入z（满足某个分布的向量）随机生成输出y（满足另一个分布）</p></li><li><p><code>判别器(D)</code>的主要作用是判断G的某一堆输出y_s与最终要生成的数据的相似程度 相似度越高打分越高</p></li><li><p>直观理解：</p><p>3.1 正常的network都是给定一个 x,得到一个 y, 记作<code>&#123;f(x) = y&#125;</code></p><p>3.2 这里为了使得给定一个x得到不同的y，同时再给定一个z1(满足某种简单的分布Z)，这样便成了 <code>f(x,z1) = y</code>。</p><p>3.3 因为z服从一个分布Z，那么y也服从一个分布Y，这样的话对于一个输入x得到的输出就是一个分布，而不是确定的值，等到预测的时候 给定x, 同时从Z分中随机选取一个z1，就能得到一个满足Y分布的结果</p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129161135195-2104431847.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129161135195-2104431847.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p></li></ol><h4 id="4-如何保证分布Y就是我们想要的-概率分布呢？"><a href="#4-如何保证分布Y就是我们想要的-概率分布呢？" class="headerlink" title="4. 如何保证分布Y就是我们想要的 概率分布呢？"></a>4. 如何保证分布Y就是我们想要的 概率分布呢？</h4><p>使用 判别器D 建立一个分类的network，他的输入是 生成器G 的输出，和我们已知的样本分布，输出是一个值，表示他和所需要生成的样本的差异程度，用这个值来表示 生成器G 表现好不好<br><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129165154824-1146175719.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129165154824-1146175719.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p>   真正计算的时候： 从real_data (标签1) 和 generated_data(标签0) 中随机抽取出若干个输入network分类，设定loss使得real_data得分尽可能高，generated_data 的分尽可能低</p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129201624345-504111067.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129201624345-504111067.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p>   同时可以从理论上推导这个 loss Function和 JS Diversion 是有关联的，直观理解也好理解，只有分布相似，差异小才难分，然后那个maxV才不会太大，所有Diversion越小，maxV越小【具体推导见GAN原paper：<a href="https://arxiv.org/abs/1406.2661">https://arxiv.org/abs/1406.2661</a> 】</p><h4 id="5-整体优化目标是什么，如何训练？"><a href="#5-整体优化目标是什么，如何训练？" class="headerlink" title="5. 整体优化目标是什么，如何训练？"></a>5. 整体优化目标是什么，如何训练？</h4><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129205011815-1057653954.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129205011815-1057653954.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><h4 id="6-GAN-是很难train的，原因是什么？"><a href="#6-GAN-是很难train的，原因是什么？" class="headerlink" title="6. GAN 是很难train的，原因是什么？"></a>6. GAN 是很难train的，原因是什么？</h4><ol><li><p>真实数据和生成的数据的分布存在重合很难 （1.所有图像空间中动漫的分布很小很小，存在交集就更难了 2.即使分布存在交集，我们sample出来的点构成的分布未必存在交集）</p></li><li><p>JS Diversion的特性是只要没有重合那两个分布的距离就是固定的log2</p></li></ol><p>所以可以看出JS divergence 不好，后人改用了W distance（Wasserstein distance）来衡量两个分布之间的距离，它的定义是通过移动一个分</p><p>布P中的样本点使其满足另一个分布Q，所需要移动的最小距离就是W distance</p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129213001543-1442672159.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129213001543-1442672159.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p><em><strong>6.1 那W distance 如何计算</strong></em></p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129214907059-345839759.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129214907059-345839759.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p><em><strong>lipschitz 条件</strong></em></p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129215424056-2087370460.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129215424056-2087370460.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p><em><strong>6.2 如何使得函数D满足上述条件</strong></em></p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129220105514-1144868367.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129220105514-1144868367.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><h4 id="7-生成器-和-判别器-必须水平相当才能训练起来，怎么保证双方水平相当呢？"><a href="#7-生成器-和-判别器-必须水平相当才能训练起来，怎么保证双方水平相当呢？" class="headerlink" title="7. 生成器 和 判别器 必须水平相当才能训练起来，怎么保证双方水平相当呢？"></a>7. 生成器 和 判别器 必须水平相当才能训练起来，怎么保证双方水平相当呢？</h4><p>一些tip</p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129223448387-1713605195.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129223448387-1713605195.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><h4 id="8-怎么评估一个GAN的好坏，评估其生成的图片的质量的好坏"><a href="#8-怎么评估一个GAN的好坏，评估其生成的图片的质量的好坏" class="headerlink" title="8. 怎么评估一个GAN的好坏，评估其生成的图片的质量的好坏"></a>8. 怎么评估一个GAN的好坏，评估其生成的图片的质量的好坏</h4><p><strong><strong>评估图像质量</strong></strong></p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129231650951-2123842083.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129231650951-2123842083.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p><em><strong>评估图像多样性</strong></em></p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129231619137-1629877941.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129231619137-1629877941.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p>   综合质量和多样性的话就是Inception Score</p><p><em><strong>这种评估手段无法检测出的一些问题</strong></em></p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129225216914-758335728.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129225216914-758335728.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><h4 id="9-有条件生成对抗网络"><a href="#9-有条件生成对抗网络" class="headerlink" title="9. 有条件生成对抗网络"></a>9. 有条件生成对抗网络</h4><p><img src="https://img2023.cnblogs.com/blog/2851436/202212/2851436-20221201105722166-1866872542.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202212/2851436-20221201105722166-1866872542.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p><em><strong>conditional GAN 的应用</strong></em></p><ol><li>文字产生图像–&gt; AI 绘图</li><li>图像长生图像–&gt; Pix2Pix 图像转换 与正常不同的是对于相同的输入可以产生不同的输出</li><li>语音产生图像</li><li>图像产生动图</li><li>…</li></ol><h4 id="10-几种常见的GAN"><a href="#10-几种常见的GAN" class="headerlink" title="10. 几种常见的GAN"></a>10. 几种常见的GAN</h4><ol><li>原生GAN</li><li>DCGAN：G 使用的是反向卷积网络（一维的输入变为二维的输出）</li><li>WGAN ： 改进了损失函数，解决了原本的损失函数难以敏感的反应两个不相交的分布的距离这一问题</li></ol>]]></content>
+        <content type="html"><![CDATA[<h4 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h4><p> <code>git status</code> 当前仓库的状态</p><p><code>git add &quot;filename.txt&quot;</code>向暂存区添加文件</p><p><code>git commit -m &quot;描述语句&quot;</code>提交暂存区文件</p><p><code>git diff</code>如果<code>git status</code>告诉你有文件被修改过，用<code>git diff</code>可以查看修改内容。</p><p><code>git log</code>显示该仓库所有提交记录，简洁版是<code>git log --pretty=oneline</code></p><h4 id="时空穿梭"><a href="#时空穿梭" class="headerlink" title="时空穿梭"></a>时空穿梭</h4><ul><li>回到过去</li></ul><ol><li><code>git reset --hard HEAD^</code>回退到上一个版本</li><li><code>git log</code> 查看过去提交的版本号id，然后用<code>git reset --hard id</code>即可</li></ol><ul><li>重返未来</li></ul><ol><li><code>git reflog</code> 查看命令历史，看到未来的版本号id，然后使用<code>git reset --hard id</code>重返未来</li></ol><h4 id="Git管理的文件分为"><a href="#Git管理的文件分为" class="headerlink" title="Git管理的文件分为"></a>Git管理的文件分为</h4><ul><li><p>工作区</p></li><li><p>版本库，</p><ul><li>暂存区stage</li><li>暂存区分支master(仓库)</li></ul></li></ul><p><code>git add</code>把文件从工作区&gt;&gt;&gt;&gt;暂存区，<code>git commit</code>把文件从暂存区&gt;&gt;&gt;&gt;仓库，</p><p><strong>git diff 三件套</strong></p><p><code>git diff</code>查看工作区和暂存区差异</p><p><code>git diff --cached</code>查看暂存区和仓库差异，</p><p><code>git diff HEAD</code> 查看工作区和仓库的差异，</p><p><strong>注</strong> : 暂存区为空使用git diff：因为此时暂存区为空，此时使</p><p>用git diff同样也是比较工作区和仓库，即和使用git diff HEAD结果相同</p><p><strong>文件传输</strong></p><p><code>git add</code>的反向命令<code>git checkout</code> – file，撤销工作区修改，即把暂存区（若空则为仓库）最新版本转移到工作区，</p><p><code>git commit</code>的反向命令<code>git reset HEAD &lt;file&gt;</code>，就是把仓库最新版本转移到暂存区。</p><p>删除文件 <code>git rm file</code>然后<code>git commit -m &quot;remove file&quot;</code></p><p>最最常用的</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">新建文件，或者修改后</span><br><span class="line">git add . //将所有的修改提交到暂存区</span><br><span class="line">git commit -m &quot;版本提交注释&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>ssh-keygen -R 20.205.243.166</p>]]></content>
       
       
       
@@ -31,10 +18,10 @@
     
     <entry>
       <title></title>
-      <link href="/2023/01/11/2-ji-suan-ji-shi-jue/cnn/si-kao-ju-zhen-cheng-fa-de-ti-du-ji-suan-tui-dao-guo-cheng/"/>
-      <url>/2023/01/11/2-ji-suan-ji-shi-jue/cnn/si-kao-ju-zhen-cheng-fa-de-ti-du-ji-suan-tui-dao-guo-cheng/</url>
+      <link href="/2023/01/11/1-kai-fa/git/git/"/>
+      <url>/2023/01/11/1-kai-fa/git/git/</url>
       
-        <content type="html"><![CDATA[<p>神经网络中的反向传播中的梯度计算一直是让我和头疼的问题，翻了好多资料，现在记录下自己目前的所得</p><ol start="0"><li><p>结论<br>$$<br>\text{设\ }y\ &#x3D;\ f\left( X\ <em>\ W \right) \ ,\ C&#x3D;X\ </em>\ W,\text{则有:}<br>$$<br>$$<br>\frac{\partial y}{\partial W_{i,j}}&#x3D;X^T\frac{\partial y}{\partial C}<br>$$<br>$$<br>\frac{\partial y}{\partial X_{i,j}}&#x3D;\frac{\partial y}{\partial C}W^T<br>$$</p></li><li><p><a href="https://www.cnblogs.com/milaohu/p/7337330.html?utm_source=itdadao&utm_medium=referral">转载自大佬笔记</a></p></li></ol><p><img src="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221021155540030-886714468.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221021155540030-886714468.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp"></p><ol start="2"><li><p><a href="https://www.matrixcalculus.org/">一个可以计算梯度的在线工具</a><br>虽然现在我自己还没玩明白hhh，但是功能应该是很强大</p></li><li><p><a href="https://blog.csdn.net/m0_63238256/article/details/126632188">一个具体推导的例子</a></p></li></ol><hr><ol start="4"><li><p>更新一个更简单的方式：<br> 根据矩阵乘法反向推导更加简单</p><p> 比如 正向D &#x3D; X * W (X:  n * m   W: m * k  D:  n * k)<br> dD 的shape肯定和D一样<br> 同理，dW 的shape肯定是m * k,同时dw肯定有dD和X组成，那么根据矩阵乘法原理必须是 x.T.dot(dD)才行</p></li></ol>]]></content>
+        <content type="html"><![CDATA[<h4 id="linux常用命令"><a href="#linux常用命令" class="headerlink" title="linux常用命令"></a>linux常用命令</h4><p>mkdir test 创建文件夹</p><p>touch a.txt 创建文件a.txt</p><p>mv a.txt test   移动a到b</p><p>cp test -r test02 复制test到test02</p><p>clear 清屏</p><p>rm a.html  删除文件a.html</p><p>rm test02 删除文件件test02</p><p>rm -r test 删除目录  ？根文件夹差不多？</p><p>history 展示历史命令</p><p>ls 显示当前目录下的文件</p><p>pwd 显示当前目录</p>]]></content>
       
       
       
@@ -48,19 +35,6 @@
       <url>/2023/01/11/2-ji-suan-ji-shi-jue/cnn/04-fan-xiang-chuan-bo/</url>
       
         <content type="html"><![CDATA[<p>等后续补充</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/2023/01/11/2-ji-suan-ji-shi-jue/ji-suan-ji-shi-jue-bi-ji/"/>
-      <url>/2023/01/11/2-ji-suan-ji-shi-jue/ji-suan-ji-shi-jue-bi-ji/</url>
-      
-        <content type="html"><![CDATA[<h3 id="先验-后验-和-似然函数的关系"><a href="#先验-后验-和-似然函数的关系" class="headerlink" title="先验 后验 和 似然函数的关系"></a><a href="https://zhuanlan.zhihu.com/p/157677467">先验 后验 和 似然函数的关系</a></h3><h3 id="常见的概率分布模型"><a href="#常见的概率分布模型" class="headerlink" title="常见的概率分布模型"></a>常见的概率分布模型</h3><p>概率分布就是一个公式，给定X，就能计算出在这一点X的概率（或者连续随机变量的话就是这一点的概率密度）</p><p><em><strong>伯努利分布</strong></em><br>描述一个像素的灰度值大于或者小于128的概率<br>$$<br>P\left( x\ &#x3D;\ 0 \right) \ &#x3D;\ 1\ -\ \lambda \ \ \ \left( 0:\text{灰度值小于}128 \right)<br>$$<br>$$<br>P\left( x\ &#x3D;\ 1 \right) \ \ &#x3D;\ \lambda \ \left( 1:\text{灰度值大于}128 \right)<br>$$<br>$$<br>\text{或者统一为}<br>$$<br>$$<br>P\left( x \right) \ &#x3D;\ \lambda ^x\ *\ \left( 1-\lambda \right) ^{1-x}<br>$$</p><p><em><strong>贝塔分布</strong></em><br>一个连续的分布，<br>$\text{由单变量}\lambda \text{定义的连续分布，}\lambda &#x3D;\left[ 0,1 \right] ,\text{适合表示伯努利分布的参数}\lambda \text{的不确定性}$</p><p><em><strong>分类分布</strong></em><br>一个离散的分布，用来表示$k$个可能的结果的概率$\lambda _k$<br><em><strong>狄利克雷分布</strong></em><br>一个连续的分布，用于表示$k$个连续值($\lambda <em>{1…K}$)的取值情况，其中$\sum</em>{k&#x3D;1}^K{\lambda _k}&#x3D;1$，适合表示分类分布参数$\lambda _k$的分布</p><h3 id="拟合概率模型的方法——极大似然、最大后验、贝叶斯方法"><a href="#拟合概率模型的方法——极大似然、最大后验、贝叶斯方法" class="headerlink" title="拟合概率模型的方法——极大似然、最大后验、贝叶斯方法"></a>拟合概率模型的方法——极大似然、最大后验、贝叶斯方法</h3><p><em><strong>基本概念</strong></em><br>$<br>\text{先验\ }P\left( \theta \right) :\text{不考虑样本，这个分布的参数应该满足什么样的分布}<br>$<br>$<br>\text{后验\ }P\left( \theta |x \right) :\text{在已知样本}x\text{的结果的前提下，分布的参数是}\theta \text{的概率是多少}<br>$<br>$<br>\text{似然\ }P\left( x|\theta \right) :\ \text{好像就是实际的分布，就是说实际的分布的参数假如说是}\theta \ \text{的话，那么}x\text{的概率是啥}<br>$</p><h4 id="最大似然拟合概率模型-ML"><a href="#最大似然拟合概率模型-ML" class="headerlink" title="最大似然拟合概率模型 ML"></a>最大似然拟合概率模型 ML</h4><p>顾名思义就是说最大化 $P\left( x|\theta \right) &#x3D;P\left( x_{1..n}|\theta \right) &#x3D;\prod_{i&#x3D;1}^n{P\left( x_i|\theta \right)}$，求解其中的未知量$\theta$ </p><p>$$<br>\argmax_{\theta}P\left( x|\theta \right)<br>$$<br>$$<br>&#x3D;\argmax_{\theta}P\left( x_{1..n}|\theta \right)<br>$$<br>$$<br>&#x3D;\argmax_{\theta}\prod_i^n{P\left( x_i|\theta \right)}<br>$$<br>$$<br>&#x3D;\argmax_{\theta}\ \sum{\log \left( P\left( x_i|\theta \right) \right)}<br>$$</p><h4 id="最大后验拟合概率模型-MAP"><a href="#最大后验拟合概率模型-MAP" class="headerlink" title="最大后验拟合概率模型 MAP"></a>最大后验拟合概率模型 MAP</h4><p>顾名思义就是最大化后验<br>$$<br>\argmax_{\theta}P\left( \theta |x \right)<br>$$<br>$$<br>&#x3D;\argmax_{\theta}\frac{P\left( x|\theta \right) \ \times \ P\left( \theta \right)}{P\left( x \right)}<br>$$<br>$$<br>&#x3D;\argmax_{\theta}P\left( x|\theta \right) \ *\ P\left( \theta \right)<br>$$</p><p>他有个好处就是可以利用到先验的知识，不像极大似然估计只知道用样本的数据进行拟合，这个还考虑到了先验的概率，但是先验的参数怎么确定呢，有利也有弊，后验方式是先验和极大似然方式的加权平均</p><h4 id="贝叶斯方式"><a href="#贝叶斯方式" class="headerlink" title="贝叶斯方式"></a>贝叶斯方式</h4><p>其实我们的最终目的不是求参数$\theta$,而是给定一个新数据$x^*$要计算$P(x^*|X _{1..I})$的概率 ($X _{1..I}$ 表示已有的抽样的数据) ，之前都是找出一个概率最大的$\theta$,其实这个$\theta$也满足一个分布，我们直接对他进行每个概率都给他乘上，然后加权一下就好了<br>$$<br>P\left( x^*|X _{1..I} \right) \ &#x3D;\ \int{P\left( x^*|\theta \right) \ *\ P\left( \theta |x \right) \ d\theta}<br>$$<br>贝叶斯方式去除了计算参数$\theta$的误差，更加合理</p><p><em><strong>小tip</strong></em>：<br><strong>正定矩阵</strong>： $\text{正定矩阵}\varSigma \text{满足：\ }Z^T<em>\ \Sigma \ </em>\ Z\ \text{恒为正}$<br>方差： 用来衡量单个随机变量的离散程度<br>协方差： 用来衡量两个随机变量的相似程度<br>协方差矩阵；用来衡量了 一个具有多个随机变量的 分布 的离散程度</p><h3 id="生成模型和判别模型"><a href="#生成模型和判别模型" class="headerlink" title="生成模型和判别模型"></a>生成模型和判别模型</h3><p><em><strong>判别模型</strong></em>： 比较简单直接计算 $P(w|x) 这里的w叫做全局状态(我理解就是y)$ 大概就是先估计一下w的分布，比如说在例子通过轮胎像素的个数，来估计车身的大小的样例中，w估计就是一元正态分布<br>$P(w|x,\theta) &#x3D; Norm_w[a + bx,\sigma^2] 这里的\theta就是一些需要确定得超参数，包括a,b,\sigma,所以只要求出\theta的估计值就可以进行推理(我立即的是预测)了。\<br>确定超参数有好多算法，比如可以用MAP算法求\argmax_{\theta}P\left( x|\theta \right) \ *\ P\left( \theta \right)$ </p><p><em><strong>生成模型</strong></em>：假如说是一个分类问题，就拟合分类为0的数据的模型，然后拟合分类为1的数据的模型，然后对于一个给定的数据，带入到两个模型，看看哪个概率打， 就属于哪个【这是w为离散的情况，好理解些】<br>【w连续的情况】 $要计算的是 P(x|w,\theta) 就是说在每一个全局状态w下，存在x这种数据的概率,通过样本{x_i,w_i} 可以计算出参数\theta从而求得P(x|w)&#x2F;&#x2F;<br>这种情况需要先预估w的分布，然后用现有的w_i样本去拟合这个分布，得到P(w) 这样就可以利用贝叶斯公式计算出后验P(w|x) &#x3D; P(x|w) * p(w) &#x2F; p(x)$</p>]]></content>
       
       
       
@@ -96,11 +70,11 @@
     
     
     <entry>
-      <title>first article</title>
-      <link href="/2023/01/11/first-article/"/>
-      <url>/2023/01/11/first-article/</url>
+      <title>Hello World</title>
+      <link href="/2023/01/10/hello-world/"/>
+      <url>/2023/01/10/hello-world/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
       
       
       
@@ -109,13 +83,181 @@
     
     
     <entry>
-      <title>Hello World</title>
-      <link href="/2023/01/10/hello-world/"/>
-      <url>/2023/01/10/hello-world/</url>
+      <title>远程登录和 vim</title>
+      <link href="/2022/12/04/1-kai-fa/linux/yuan-cheng-deng-lu-he-vim/"/>
+      <url>/2022/12/04/1-kai-fa/linux/yuan-cheng-deng-lu-he-vim/</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[<h3 id="主机和虚拟机ping不通的原因"><a href="#主机和虚拟机ping不通的原因" class="headerlink" title="主机和虚拟机ping不通的原因"></a>主机和虚拟机ping不通的原因</h3><ol><li>主机需要将自己网卡共享给VMware net8</li><li>主机VMware net8虚拟网卡设计的网段需要和虚拟机中vmnet8 的网段设置为一样的<br>如果不一致，会出现主机ping不通虚拟机，反之可以，同时虚拟机也能上网</li></ol><h3 id="远程登录传输"><a href="#远程登录传输" class="headerlink" title="远程登录传输"></a>远程登录传输</h3><p>虚拟机ip  192.168.126.128   Vmwarenet8 196.168.126.0</p><p>连接工具： XShell 和 XFTP<br>连接的时候主机一定要选择虚拟机（就是linux所在主机）<strong>的ip</strong><br>小问题：如果使用XFTP出现乱码的话，将语言改为UTF-8</p><p>连接成功后就可以远程通过用户名和密码 远程登录到linux系统</p><h3 id="vim使用以及快捷键"><a href="#vim使用以及快捷键" class="headerlink" title="vim使用以及快捷键"></a>vim使用以及快捷键</h3><p>vim的三种模式</p><ol><li>正常模式 默认进去的模式，可以光标移动</li><li>编辑模式 正常+ i\a 可以进行编辑</li><li>命令模式 正常+：可以输入命令   :wq 保存并退出 :q! 强制退出</li></ol><h4 id="各种模式的切换"><a href="#各种模式的切换" class="headerlink" title="各种模式的切换"></a>各种模式的切换</h4><p><img src="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221002232546072-1965942321.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221002232546072-1965942321.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><h4 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h4><ul><li>yy 复制当前行  5yy 复制之后的5行    p 粘贴</li><li>dd 删除当前行  6dd删除当前行后的6行</li><li></li><li>:set nu 显示行号  :set nonu 取消行号</li><li></li><li>正常模式下：输入u撤销操作，就是输错了，先ESC，然后再u</li><li>正常模式下：跳转到第一行 gg  跳转到最后一行G</li><li>正常模式下： &#x2F;hello 回车 开始搜索文件中的hello  使用n选择next个匹配项</li><li>正常模式下：输入行号n，然后shift+g  go到第n行</li><li>任何模式切换为正常模式 按ESC键</li></ul><p><img src="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221002234541152-1804272133.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221002234541152-1804272133.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>]]></content>
       
       
+      <categories>
+          
+          <category> 开发 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux 常用命令</title>
+      <link href="/2022/12/01/1-kai-fa/linux/chang-yong-ming-ling/"/>
+      <url>/2022/12/01/1-kai-fa/linux/chang-yong-ming-ling/</url>
+      
+        <content type="html"><![CDATA[<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h3><ol><li><p>删除 rm option 文件&#x2F;文件名<br>option  -r:删除目录及其子文件   -f: 即使原档案属性设为唯读，亦直接删除，无需逐一确认<br><code>sudo rm a.txt</code>  &#x2F;&#x2F;删除文件<br><code>sudo rm -r test</code> &#x2F;&#x2F;删除test文件夹</p></li><li><p>创建<br>创建文件 <code>touch a.txt</code>  创建a.txt 文件<br>创建文件夹  <code>mkdir a</code>   创建文件夹a</p></li><li><p>解压<br><code>tar -zxvf filename</code></p></li><li><p>用户操作<br>添加用户   <code>useradd 用户名</code><br>删除用户   <code>userdel -r 用户名</code></p></li><li><p>cd命令<br>cd a  是进入当前目录下的a文件夹中<br>cd &#x2F;a 是进入根目录下的a中  ‘&#x2F;‘代表根目录</p></li><li><p>开关机指令<br>shutdown -</p></li><li><p>关于相对路径的引用<br>a<br> -a1<br> -a2<br>b<br> -b1<br> -b2</p><ol><li>当前目录中的文件夹a1  \a1</li><li>上一级目录 ..\</li><li>同级目录b  ..\b</li></ol></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux 概述和安装</title>
+      <link href="/2022/11/28/1-kai-fa/linux/gai-shu-he-huan-jing-an-zhuang/"/>
+      <url>/2022/11/28/1-kai-fa/linux/gai-shu-he-huan-jing-an-zhuang/</url>
+      
+        <content type="html"><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h3 id="学习路线"><a href="#学习路线" class="headerlink" title="学习路线"></a>学习路线</h3><p><img src="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221002113558157-2074263708.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221002113558157-2074263708.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><h3 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h3><p>linux Cent OS 7.6  [该版本已经不再维护]<br>地址：<a href="https://vault.centos.org/7.6.1810/isos/x86_64/">https://vault.centos.org/7.6.1810/isos/x86_64/</a> </p><h3 id="网络连接的三种方式"><a href="#网络连接的三种方式" class="headerlink" title="网络连接的三种方式"></a>网络连接的三种方式</h3><p>桥接模式：虚拟机有独立的ip，占用当前网段的ip<br>NAT地址转换模式：虚拟机通过主机代理向别的主机发送请求，不占用ip</p><p> <img src="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221002153240354-538715935.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221002153240354-538715935.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p><strong>linux一切皆文件</strong><br>根目录  &#x2F;<br>bin  存放常用命令的具体实现，就是像 cd  tar等等<br>sbin superbin的意思，就是存放管理员才能使用的命令的具体实现<br>opt  一般存放安装包<br>home  存放每个用户的数据（用户名、密码等等），一个用户对应一个子文件夹，加入一个用户tom，那usr下就有一个子文件夹tom<br>     若使用命令 useradd jack 那就加了一个jack文件夹<br>ect  存放一些配置信息，用户配置 or 软件配置 ( mysql 账号密码？)<br>root 存放管理员用户的数据信息<br>boot 存放系统引导信息<br>usr  存放用户的应用程序和文件<br>     usr&#x2F;local 一般为软件安装的目录<br>mnt 挂载的文件系统 比如共享文件夹 D:&#x2F;myshare<br>var 存放不断扩大的东西，比如日志<br>tmp 存放临时文件<br>dev 存放设备信息，以文件的形式存储</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>《计算机视觉》 笔记</title>
+      <link href="/2022/10/25/2-ji-suan-ji-shi-jue/ji-suan-ji-shi-jue-bi-ji/"/>
+      <url>/2022/10/25/2-ji-suan-ji-shi-jue/ji-suan-ji-shi-jue-bi-ji/</url>
+      
+        <content type="html"><![CDATA[<h3 id="先验-后验-和-似然函数的关系"><a href="#先验-后验-和-似然函数的关系" class="headerlink" title="先验 后验 和 似然函数的关系"></a><a href="https://zhuanlan.zhihu.com/p/157677467">先验 后验 和 似然函数的关系</a></h3><h3 id="常见的概率分布模型"><a href="#常见的概率分布模型" class="headerlink" title="常见的概率分布模型"></a>常见的概率分布模型</h3><p>概率分布就是一个公式，给定X，就能计算出在这一点X的概率（或者连续随机变量的话就是这一点的概率密度）</p><p><em><strong>伯努利分布</strong></em><br>描述一个像素的灰度值大于或者小于128的概率<br>$$<br>P\left( x\ &#x3D;\ 0 \right) \ &#x3D;\ 1\ -\ \lambda \ \ \ \left( 0:\text{灰度值小于}128 \right)<br>$$<br>$$<br>P\left( x\ &#x3D;\ 1 \right) \ \ &#x3D;\ \lambda \ \left( 1:\text{灰度值大于}128 \right)<br>$$<br>$$<br>\text{或者统一为}<br>$$<br>$$<br>P\left( x \right) \ &#x3D;\ \lambda ^x\ *\ \left( 1-\lambda \right) ^{1-x}<br>$$</p><p><em><strong>贝塔分布</strong></em><br>一个连续的分布，<br>$\text{由单变量}\lambda \text{定义的连续分布，}\lambda &#x3D;\left[ 0,1 \right] ,\text{适合表示伯努利分布的参数}\lambda \text{的不确定性}$</p><p><em><strong>分类分布</strong></em><br>一个离散的分布，用来表示$k$个可能的结果的概率$\lambda _k$<br><em><strong>狄利克雷分布</strong></em><br>一个连续的分布，用于表示$k$个连续值($\lambda <em>{1…K}$)的取值情况，其中$\sum</em>{k&#x3D;1}^K{\lambda _k}&#x3D;1$，适合表示分类分布参数$\lambda _k$的分布</p><h3 id="拟合概率模型的方法——极大似然、最大后验、贝叶斯方法"><a href="#拟合概率模型的方法——极大似然、最大后验、贝叶斯方法" class="headerlink" title="拟合概率模型的方法——极大似然、最大后验、贝叶斯方法"></a>拟合概率模型的方法——极大似然、最大后验、贝叶斯方法</h3><p><em><strong>基本概念</strong></em><br>$<br>\text{先验\ }P\left( \theta \right) :\text{不考虑样本，这个分布的参数应该满足什么样的分布}<br>$<br>$<br>\text{后验\ }P\left( \theta |x \right) :\text{在已知样本}x\text{的结果的前提下，分布的参数是}\theta \text{的概率是多少}<br>$<br>$<br>\text{似然\ }P\left( x|\theta \right) :\ \text{好像就是实际的分布，就是说实际的分布的参数假如说是}\theta \ \text{的话，那么}x\text{的概率是啥}<br>$</p><h4 id="最大似然拟合概率模型-ML"><a href="#最大似然拟合概率模型-ML" class="headerlink" title="最大似然拟合概率模型 ML"></a>最大似然拟合概率模型 ML</h4><p>顾名思义就是说最大化 $P\left( x|\theta \right) &#x3D;P\left( x_{1..n}|\theta \right) &#x3D;\prod_{i&#x3D;1}^n{P\left( x_i|\theta \right)}$，求解其中的未知量$\theta$ </p><p>$$<br>\argmax_{\theta}P\left( x|\theta \right)<br>$$<br>$$<br>&#x3D;\argmax_{\theta}P\left( x_{1..n}|\theta \right)<br>$$<br>$$<br>&#x3D;\argmax_{\theta}\prod_i^n{P\left( x_i|\theta \right)}<br>$$<br>$$<br>&#x3D;\argmax_{\theta}\ \sum{\log \left( P\left( x_i|\theta \right) \right)}<br>$$</p><h4 id="最大后验拟合概率模型-MAP"><a href="#最大后验拟合概率模型-MAP" class="headerlink" title="最大后验拟合概率模型 MAP"></a>最大后验拟合概率模型 MAP</h4><p>顾名思义就是最大化后验<br>$$<br>\argmax_{\theta}P\left( \theta |x \right)<br>$$<br>$$<br>&#x3D;\argmax_{\theta}\frac{P\left( x|\theta \right) \ \times \ P\left( \theta \right)}{P\left( x \right)}<br>$$<br>$$<br>&#x3D;\argmax_{\theta}P\left( x|\theta \right) \ *\ P\left( \theta \right)<br>$$</p><p>他有个好处就是可以利用到先验的知识，不像极大似然估计只知道用样本的数据进行拟合，这个还考虑到了先验的概率，但是先验的参数怎么确定呢，有利也有弊，后验方式是先验和极大似然方式的加权平均</p><h4 id="贝叶斯方式"><a href="#贝叶斯方式" class="headerlink" title="贝叶斯方式"></a>贝叶斯方式</h4><p>其实我们的最终目的不是求参数$\theta$,而是给定一个新数据$x^*$要计算$P(x^*|X _{1..I})$的概率 ($X _{1..I}$ 表示已有的抽样的数据) ，之前都是找出一个概率最大的$\theta$,其实这个$\theta$也满足一个分布，我们直接对他进行每个概率都给他乘上，然后加权一下就好了<br>$$<br>P\left( x^*|X _{1..I} \right) \ &#x3D;\ \int{P\left( x^*|\theta \right) \ *\ P\left( \theta |x \right) \ d\theta}<br>$$<br>贝叶斯方式去除了计算参数$\theta$的误差，更加合理</p><p><em><strong>小tip</strong></em>：<br><strong>正定矩阵</strong>： $\text{正定矩阵}\varSigma \text{满足：\ }Z^T<em>\ \Sigma \ </em>\ Z\ \text{恒为正}$<br>方差： 用来衡量单个随机变量的离散程度<br>协方差： 用来衡量两个随机变量的相似程度<br>协方差矩阵；用来衡量了 一个具有多个随机变量的 分布 的离散程度</p><h3 id="生成模型和判别模型"><a href="#生成模型和判别模型" class="headerlink" title="生成模型和判别模型"></a>生成模型和判别模型</h3><p><em><strong>判别模型</strong></em>： 比较简单直接计算 $P(w|x) 这里的w叫做全局状态(我理解就是y)$ 大概就是先估计一下w的分布，比如说在例子通过轮胎像素的个数，来估计车身的大小的样例中，w估计就是一元正态分布<br>$P(w|x,\theta) &#x3D; Norm_w[a + bx,\sigma^2] 这里的\theta就是一些需要确定得超参数，包括a,b,\sigma,所以只要求出\theta的估计值就可以进行推理(我立即的是预测)了。\<br>确定超参数有好多算法，比如可以用MAP算法求\argmax_{\theta}P\left( x|\theta \right) \ *\ P\left( \theta \right)$ </p><p><em><strong>生成模型</strong></em>：假如说是一个分类问题，就拟合分类为0的数据的模型，然后拟合分类为1的数据的模型，然后对于一个给定的数据，带入到两个模型，看看哪个概率打， 就属于哪个【这是w为离散的情况，好理解些】<br>【w连续的情况】 $要计算的是 P(x|w,\theta) 就是说在每一个全局状态w下，存在x这种数据的概率,通过样本{x_i,w_i} 可以计算出参数\theta从而求得P(x|w)&#x2F;&#x2F;<br>这种情况需要先预估w的分布，然后用现有的w_i样本去拟合这个分布，得到P(w) 这样就可以利用贝叶斯公式计算出后验P(w|x) &#x3D; P(x|w) * p(w) &#x2F; p(x)$</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器视觉 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 《计算机视觉》 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LSTM</title>
+      <link href="/2022/10/20/2-ji-suan-ji-shi-jue/lstm/lstm/"/>
+      <url>/2022/10/20/2-ji-suan-ji-shi-jue/lstm/lstm/</url>
+      
+        <content type="html"><![CDATA[<p>LSTM 又叫长 短时记忆神经网络，问了解决RNN不能处理 <code>从较长的前文中推断下一个单词的问题</code> 而提出的<br><code>从较长的前文中推断下一个单词的问题</code>比如：”I grew up in France… I speak fluent <em>French</em>.”不能从这句中推出French，因为中间隔了好多词</p><h4 id="遗忘门："><a href="#遗忘门：" class="headerlink" title="遗忘门："></a>遗忘门：</h4><p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212224503-712213887.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212224503-712213887.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><h4 id="输入门："><a href="#输入门：" class="headerlink" title="输入门："></a>输入门：</h4><p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212311075-209010384.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212311075-209010384.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><h4 id="想下一个cell的输出："><a href="#想下一个cell的输出：" class="headerlink" title="想下一个cell的输出："></a>想下一个cell的输出：</h4><p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212423984-1696402345.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212423984-1696402345.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><h4 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h4><p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212440327-44970240.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212440327-44970240.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p><a href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/#fn1">参考链接1</a><br><a href="https://zhuanlan.zhihu.com/p/84333843">中文版参考链接</a><br><a href="https://www.bilibili.com/video/BV1J94y1f7u5?p=28&vd_source=a25e4be5f25feef1532666f6ee51cce1">李宏毅RNN教程</a> </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器视觉 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 李宏毅笔记 </tag>
+            
+            <tag> LSTM </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>GAN 李宏毅笔记</title>
+      <link href="/2022/10/19/2-ji-suan-ji-shi-jue/gan/gan-gai-shu/"/>
+      <url>/2022/10/19/2-ji-suan-ji-shi-jue/gan/gan-gai-shu/</url>
+      
+        <content type="html"><![CDATA[<p>GAN(Generative Adversarial Network) 生成对抗网络</p><h4 id="1-为什么要有这个东西？"><a href="#1-为什么要有这个东西？" class="headerlink" title="1. 为什么要有这个东西？"></a>1. 为什么要有这个东西？</h4><p>   为了解决相同输入x，不同输出y的情形,每一个输出都是对的，唯一可以知道的是他服从某一个分布。 </p><p>   李宏毅中的例子是根据游戏的前三帧，去预测下一帧，当前三帧游戏人物走到路口的时候，下一帧可能左拐也可能右拐，无法得到一个确切的输出，只能得到一个概率分布。<br>   也可以用于扩充样本。</p><h4 id="2-生成对抗网络是什么？"><a href="#2-生成对抗网络是什么？" class="headerlink" title="2. 生成对抗网络是什么？"></a>2. 生成对抗网络是什么？</h4><p>   一个生成对抗网络主要包含 生成器 + 判别器</p><ol><li><p><code>生成器(G)</code>的主要作用就是根据一个输入z（满足某个分布的向量）随机生成输出y（满足另一个分布）</p></li><li><p><code>判别器(D)</code>的主要作用是判断G的某一堆输出y_s与最终要生成的数据的相似程度 相似度越高打分越高</p></li><li><p>直观理解：</p><p>3.1 正常的network都是给定一个 x,得到一个 y, 记作<code>&#123;f(x) = y&#125;</code></p><p>3.2 这里为了使得给定一个x得到不同的y，同时再给定一个z1(满足某种简单的分布Z)，这样便成了 <code>f(x,z1) = y</code>。</p><p>3.3 因为z服从一个分布Z，那么y也服从一个分布Y，这样的话对于一个输入x得到的输出就是一个分布，而不是确定的值，等到预测的时候 给定x, 同时从Z分中随机选取一个z1，就能得到一个满足Y分布的结果</p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129161135195-2104431847.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129161135195-2104431847.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p></li></ol><h4 id="4-如何保证分布Y就是我们想要的-概率分布呢？"><a href="#4-如何保证分布Y就是我们想要的-概率分布呢？" class="headerlink" title="4. 如何保证分布Y就是我们想要的 概率分布呢？"></a>4. 如何保证分布Y就是我们想要的 概率分布呢？</h4><p>使用 判别器D 建立一个分类的network，他的输入是 生成器G 的输出，和我们已知的样本分布，输出是一个值，表示他和所需要生成的样本的差异程度，用这个值来表示 生成器G 表现好不好<br><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129165154824-1146175719.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129165154824-1146175719.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p>   真正计算的时候： 从real_data (标签1) 和 generated_data(标签0) 中随机抽取出若干个输入network分类，设定loss使得real_data得分尽可能高，generated_data 的分尽可能低</p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129201624345-504111067.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129201624345-504111067.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p>   同时可以从理论上推导这个 loss Function和 JS Diversion 是有关联的，直观理解也好理解，只有分布相似，差异小才难分，然后那个maxV才不会太大，所有Diversion越小，maxV越小【具体推导见GAN原paper：<a href="https://arxiv.org/abs/1406.2661">https://arxiv.org/abs/1406.2661</a> 】</p><h4 id="5-整体优化目标是什么，如何训练？"><a href="#5-整体优化目标是什么，如何训练？" class="headerlink" title="5. 整体优化目标是什么，如何训练？"></a>5. 整体优化目标是什么，如何训练？</h4><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129205011815-1057653954.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129205011815-1057653954.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><h4 id="6-GAN-是很难train的，原因是什么？"><a href="#6-GAN-是很难train的，原因是什么？" class="headerlink" title="6. GAN 是很难train的，原因是什么？"></a>6. GAN 是很难train的，原因是什么？</h4><ol><li><p>真实数据和生成的数据的分布存在重合很难 （1.所有图像空间中动漫的分布很小很小，存在交集就更难了 2.即使分布存在交集，我们sample出来的点构成的分布未必存在交集）</p></li><li><p>JS Diversion的特性是只要没有重合那两个分布的距离就是固定的log2</p></li></ol><p>所以可以看出JS divergence 不好，后人改用了W distance（Wasserstein distance）来衡量两个分布之间的距离，它的定义是通过移动一个分</p><p>布P中的样本点使其满足另一个分布Q，所需要移动的最小距离就是W distance</p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129213001543-1442672159.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129213001543-1442672159.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p><em><strong>6.1 那W distance 如何计算</strong></em></p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129214907059-345839759.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129214907059-345839759.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p><em><strong>lipschitz 条件</strong></em></p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129215424056-2087370460.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129215424056-2087370460.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p><em><strong>6.2 如何使得函数D满足上述条件</strong></em></p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129220105514-1144868367.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129220105514-1144868367.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><h4 id="7-生成器-和-判别器-必须水平相当才能训练起来，怎么保证双方水平相当呢？"><a href="#7-生成器-和-判别器-必须水平相当才能训练起来，怎么保证双方水平相当呢？" class="headerlink" title="7. 生成器 和 判别器 必须水平相当才能训练起来，怎么保证双方水平相当呢？"></a>7. 生成器 和 判别器 必须水平相当才能训练起来，怎么保证双方水平相当呢？</h4><p>一些tip</p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129223448387-1713605195.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129223448387-1713605195.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><h4 id="8-怎么评估一个GAN的好坏，评估其生成的图片的质量的好坏"><a href="#8-怎么评估一个GAN的好坏，评估其生成的图片的质量的好坏" class="headerlink" title="8. 怎么评估一个GAN的好坏，评估其生成的图片的质量的好坏"></a>8. 怎么评估一个GAN的好坏，评估其生成的图片的质量的好坏</h4><p><strong><strong>评估图像质量</strong></strong></p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129231650951-2123842083.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129231650951-2123842083.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p><em><strong>评估图像多样性</strong></em></p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129231619137-1629877941.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129231619137-1629877941.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p>   综合质量和多样性的话就是Inception Score</p><p><em><strong>这种评估手段无法检测出的一些问题</strong></em></p><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129225216914-758335728.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129225216914-758335728.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><h4 id="9-有条件生成对抗网络"><a href="#9-有条件生成对抗网络" class="headerlink" title="9. 有条件生成对抗网络"></a>9. 有条件生成对抗网络</h4><p><img src="https://img2023.cnblogs.com/blog/2851436/202212/2851436-20221201105722166-1866872542.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202212/2851436-20221201105722166-1866872542.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p><p><em><strong>conditional GAN 的应用</strong></em></p><ol><li>文字产生图像–&gt; AI 绘图</li><li>图像长生图像–&gt; Pix2Pix 图像转换 与正常不同的是对于相同的输入可以产生不同的输出</li><li>语音产生图像</li><li>图像产生动图</li><li>…</li></ol><h4 id="10-几种常见的GAN"><a href="#10-几种常见的GAN" class="headerlink" title="10. 几种常见的GAN"></a>10. 几种常见的GAN</h4><ol><li>原生GAN</li><li>DCGAN：G 使用的是反向卷积网络（一维的输入变为二维的输出）</li><li>WGAN ： 改进了损失函数，解决了原本的损失函数难以敏感的反应两个不相交的分布的距离这一问题</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器视觉 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 李宏毅笔记 </tag>
+            
+            <tag> GAN </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>矩阵乘法中的梯度计算（反向传播常用）</title>
+      <link href="/2022/10/07/2-ji-suan-ji-shi-jue/cnn/si-kao-ju-zhen-cheng-fa-de-ti-du-ji-suan-tui-dao-guo-cheng/"/>
+      <url>/2022/10/07/2-ji-suan-ji-shi-jue/cnn/si-kao-ju-zhen-cheng-fa-de-ti-du-ji-suan-tui-dao-guo-cheng/</url>
+      
+        <content type="html"><![CDATA[<p>神经网络中的反向传播中的梯度计算一直是让我和头疼的问题，翻了好多资料，现在记录下自己目前的所得</p><ol start="0"><li><p>结论<br>$$<br>\text{设\ }y\ &#x3D;\ f\left( X\ <em>\ W \right) \ ,\ C&#x3D;X\ </em>\ W,\text{则有:}<br>$$<br>$$<br>\frac{\partial y}{\partial W_{i,j}}&#x3D;X^T\frac{\partial y}{\partial C}<br>$$<br>$$<br>\frac{\partial y}{\partial X_{i,j}}&#x3D;\frac{\partial y}{\partial C}W^T<br>$$</p></li><li><p><a href="https://www.cnblogs.com/milaohu/p/7337330.html?utm_source=itdadao&utm_medium=referral">转载自大佬笔记</a></p></li></ol><p><img src="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221021155540030-886714468.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221021155540030-886714468.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp"></p><ol start="2"><li><p><a href="https://www.matrixcalculus.org/">一个可以计算梯度的在线工具</a><br>虽然现在我自己还没玩明白hhh，但是功能应该是很强大</p></li><li><p><a href="https://blog.csdn.net/m0_63238256/article/details/126632188">一个具体推导的例子</a></p></li></ol><hr><ol start="4"><li><p>更新一个更简单的方式：<br> 根据矩阵乘法反向推导更加简单</p><p> 比如 正向D &#x3D; X * W (X:  n * m   W: m * k  D:  n * k)<br> dD 的shape肯定和D一样<br> 同理，dW 的shape肯定是m * k,同时dw肯定有dD和X组成，那么根据矩阵乘法原理必须是 x.T.dot(dD)才行</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器视觉 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CS231 </tag>
+            
+            <tag> CNN </tag>
+            
+        </tags>
       
     </entry>
     
@@ -165,7 +307,7 @@
       
         <tags>
             
-            <tag> 计算机视觉 </tag>
+            <tag> CNN </tag>
             
             <tag> 损失函数 </tag>
             
