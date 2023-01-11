@@ -6,7 +6,7 @@
   <link href="https://dazhipro.github.io/atom.xml" rel="self"/>
   
   <link href="https://dazhipro.github.io/"/>
-  <updated>2022-10-24T07:59:31.144Z</updated>
+  <updated>2023-01-11T10:24:40.118Z</updated>
   <id>https://dazhipro.github.io/</id>
   
   <author>
@@ -17,33 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="https://dazhipro.github.io/2023/01/11/2-ji-suan-ji-shi-jue/cnn/04-fan-xiang-chuan-bo/"/>
-    <id>https://dazhipro.github.io/2023/01/11/2-ji-suan-ji-shi-jue/cnn/04-fan-xiang-chuan-bo/</id>
-    <published>2023-01-11T06:18:02.034Z</published>
-    <updated>2022-10-24T07:59:31.144Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;等后续补充&lt;/p&gt;
-</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>Django 概述</title>
     <link href="https://dazhipro.github.io/2023/01/11/1-kai-fa/django/gai-shu/"/>
     <id>https://dazhipro.github.io/2023/01/11/1-kai-fa/django/gai-shu/</id>
     <published>2023-01-11T04:40:19.000Z</published>
-    <updated>2023-01-11T05:42:08.456Z</updated>
+    <updated>2023-01-11T10:24:40.118Z</updated>
     
     
       
@@ -60,8 +38,6 @@
     
     
     <category term="Django" scheme="https://dazhipro.github.io/tags/Django/"/>
-    
-    <category term="开发" scheme="https://dazhipro.github.io/tags/%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
@@ -265,6 +241,32 @@
     
     
     <category term="CS231" scheme="https://dazhipro.github.io/tags/CS231/"/>
+    
+    <category term="CNN" scheme="https://dazhipro.github.io/tags/CNN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>反向传播</title>
+    <link href="https://dazhipro.github.io/2022/10/05/2-ji-suan-ji-shi-jue/cnn/04-fan-xiang-chuan-bo/"/>
+    <id>https://dazhipro.github.io/2022/10/05/2-ji-suan-ji-shi-jue/cnn/04-fan-xiang-chuan-bo/</id>
+    <published>2022-10-05T04:40:19.000Z</published>
+    <updated>2023-01-11T10:30:05.210Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;等后续补充&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="机器视觉" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/"/>
+    
     
     <category term="CNN" scheme="https://dazhipro.github.io/tags/CNN/"/>
     

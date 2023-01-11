@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title></title>
-      <link href="/2023/01/11/2-ji-suan-ji-shi-jue/cnn/04-fan-xiang-chuan-bo/"/>
-      <url>/2023/01/11/2-ji-suan-ji-shi-jue/cnn/04-fan-xiang-chuan-bo/</url>
-      
-        <content type="html"><![CDATA[<p>等后续补充</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Django 概述</title>
       <link href="/2023/01/11/1-kai-fa/django/gai-shu/"/>
       <url>/2023/01/11/1-kai-fa/django/gai-shu/</url>
@@ -34,8 +21,6 @@
         <tags>
             
             <tag> Django </tag>
-            
-            <tag> 开发 </tag>
             
         </tags>
       
@@ -228,6 +213,31 @@
         <tags>
             
             <tag> CS231 </tag>
+            
+            <tag> CNN </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>反向传播</title>
+      <link href="/2022/10/05/2-ji-suan-ji-shi-jue/cnn/04-fan-xiang-chuan-bo/"/>
+      <url>/2022/10/05/2-ji-suan-ji-shi-jue/cnn/04-fan-xiang-chuan-bo/</url>
+      
+        <content type="html"><![CDATA[<p>等后续补充</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器视觉 </category>
+          
+      </categories>
+      
+      
+        <tags>
             
             <tag> CNN </tag>
             
