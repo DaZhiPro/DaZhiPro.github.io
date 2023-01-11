@@ -6,7 +6,7 @@
   <link href="https://dazhipro.github.io/atom.xml" rel="self"/>
   
   <link href="https://dazhipro.github.io/"/>
-  <updated>2023-01-10T11:44:45.796Z</updated>
+  <updated>2022-10-24T07:59:31.144Z</updated>
   <id>https://dazhipro.github.io/</id>
   
   <author>
@@ -15,50 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="https://dazhipro.github.io/2023/01/11/1-kai-fa/git/git-ru-men/"/>
-    <id>https://dazhipro.github.io/2023/01/11/1-kai-fa/git/git-ru-men/</id>
-    <published>2023-01-11T09:30:47.370Z</published>
-    <updated>2023-01-10T11:44:45.796Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;基本操作&quot;&gt;&lt;a href=&quot;#基本操作&quot; class=&quot;headerlink&quot; title=&quot;基本操作&quot;&gt;&lt;/a&gt;基本操作&lt;/h4&gt;&lt;p&gt; &lt;code&gt;git status&lt;/code&gt; 	当前仓库的状态&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;git add</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://dazhipro.github.io/2023/01/11/1-kai-fa/git/git/"/>
-    <id>https://dazhipro.github.io/2023/01/11/1-kai-fa/git/git/</id>
-    <published>2023-01-11T09:30:47.367Z</published>
-    <updated>2022-05-28T12:18:21.223Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;linux常用命令&quot;&gt;&lt;a href=&quot;#linux常用命令&quot; class=&quot;headerlink&quot; title=&quot;linux常用命令&quot;&gt;&lt;/a&gt;linux常用命令&lt;/h4&gt;&lt;p&gt;mkdir test 创建文件夹&lt;/p&gt;
-&lt;p&gt;touch a.txt</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title></title>
@@ -160,7 +116,7 @@
     <link href="https://dazhipro.github.io/2022/12/01/1-kai-fa/linux/chang-yong-ming-ling/"/>
     <id>https://dazhipro.github.io/2022/12/01/1-kai-fa/linux/chang-yong-ming-ling/</id>
     <published>2022-12-01T04:40:19.000Z</published>
-    <updated>2023-01-11T09:34:41.921Z</updated>
+    <updated>2023-01-11T09:41:33.372Z</updated>
     
     
       
@@ -451,6 +407,32 @@
     <category term="CNN" scheme="https://dazhipro.github.io/tags/CNN/"/>
     
     <category term="Numpy" scheme="https://dazhipro.github.io/tags/Numpy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git 入门</title>
+    <link href="https://dazhipro.github.io/2022/09/01/1-kai-fa/git/git-ru-men/"/>
+    <id>https://dazhipro.github.io/2022/09/01/1-kai-fa/git/git-ru-men/</id>
+    <published>2022-09-01T04:40:19.000Z</published>
+    <updated>2023-01-11T09:42:06.294Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;基本操作&quot;&gt;&lt;a href=&quot;#基本操作&quot; class=&quot;headerlink&quot; title=&quot;基本操作&quot;&gt;&lt;/a&gt;基本操作&lt;/h4&gt;&lt;p&gt; &lt;code&gt;git status&lt;/code&gt; 	当前仓库的状态&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git add</summary>
+        
+      
+    
+    
+    
+    <category term="开发" scheme="https://dazhipro.github.io/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="git" scheme="https://dazhipro.github.io/tags/git/"/>
     
   </entry>
   
