@@ -8,7 +8,7 @@
       <link href="/2023/01/11/4-ri-chang-sui-bi/hexo-jian-zhan/"/>
       <url>/2023/01/11/4-ri-chang-sui-bi/hexo-jian-zhan/</url>
       
-        <content type="html"><![CDATA[<p>基本教程  <a href="https://yuang01.github.io/post/hexo-theme-bamboo-new/">https://yuang01.github.io/post/hexo-theme-bamboo-new/</a></p><p>发布文章流程</p><ol><li>hexo new &quot;文件名&quot;</li><li>编写文件</li><li>hexo clean</li><li>hexo d</li></ol><p>设置评论 <a href="https://utteranc.es/">https://utteranc.es/</a> 授权一下，写对地址</p><p>解决防盗链 图片不显示 <a href="https://www.jianshu.com/p/5b58ecce6443">https://www.jianshu.com/p/5b58ecce6443</a></p><p>解决；Latex 公式问题  <a href="https://zhuanlan.zhihu.com/p/387949353">https://zhuanlan.zhihu.com/p/387949353</a></p>]]></content>
+        <content type="html"><![CDATA[<p>基本教程  <a href="https://yuang01.github.io/post/hexo-theme-bamboo-new/">https://yuang01.github.io/post/hexo-theme-bamboo-new/</a></p><p>发布文章流程</p><ol><li><code>hexo new &quot;文件名&quot;</code></li><li><code>编写文件</code></li><li><code>hexo clean</code></li><li><code>hexo d</code></li></ol><p>设置评论 <a href="https://utteranc.es/">https://utteranc.es/</a> 授权一下，写对地址</p><p>解决防盗链 图片不显示 <a href="https://www.jianshu.com/p/5b58ecce6443">https://www.jianshu.com/p/5b58ecce6443</a></p><p>解决；Latex 公式问题  <a href="https://zhuanlan.zhihu.com/p/387949353">https://zhuanlan.zhihu.com/p/387949353</a></p>]]></content>
       
       
       <categories>
