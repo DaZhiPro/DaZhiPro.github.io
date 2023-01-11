@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>DaZhi&#39;s Home</title>
+  
+  
+  <link href="https://dazhipro.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://dazhipro.github.io/"/>
+  <updated>2023-01-11T05:42:08.456Z</updated>
+  <id>https://dazhipro.github.io/</id>
+  
+  <author>
+    <name>DaZhi</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Django 概述</title>
+    <link href="https://dazhipro.github.io/2023/01/11/1-kai-fa/django/gai-shu/"/>
+    <id>https://dazhipro.github.io/2023/01/11/1-kai-fa/django/gai-shu/</id>
+    <published>2023-01-11T04:40:19.000Z</published>
+    <updated>2023-01-11T05:42:08.456Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;新建第一个hello-world&quot;&gt;&lt;a href=&quot;#新建第一个hello-world&quot; class=&quot;headerlink&quot; title=&quot;新建第一个hello world&quot;&gt;&lt;/a&gt;新建第一个hello</summary>
+        
+      
+    
+    
+    
+    <category term="开发" scheme="https://dazhipro.github.io/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="Django" scheme="https://dazhipro.github.io/tags/Django/"/>
+    
+    <category term="开发" scheme="https://dazhipro.github.io/tags/%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>first article</title>
+    <link href="https://dazhipro.github.io/2023/01/11/first-article/"/>
+    <id>https://dazhipro.github.io/2023/01/11/first-article/</id>
+    <published>2023-01-11T03:40:19.000Z</published>
+    <updated>2023-01-11T04:28:16.878Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://dazhipro.github.io/2023/01/10/hello-world/"/>
+    <id>https://dazhipro.github.io/2023/01/10/hello-world/</id>
+    <published>2023-01-10T13:12:05.475Z</published>
+    <updated>2023-01-10T13:12:05.475Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
