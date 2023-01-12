@@ -12,7 +12,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>前缀和 差分 | DaZhi&#39;s Home</title>
+  <title>排序 | DaZhi&#39;s Home</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -660,21 +660,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/13.jpg')">
+  background-position: center center;position: relative;background-image:url('https://img2023.cnblogs.com/blog/2851436/202301/2851436-20230111191907452-453898299.png')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        前缀和 差分
+        排序
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2023-01-05 |
+          <i class="fas fa-calendar"></i> 发表于：2023-01-01 |
         </span>
       
 
@@ -692,11 +692,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 0 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 488 |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 1分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 2分钟 |
           </span>
   
           
@@ -719,14 +719,38 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        
+        <h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/787/">问题</a></h4><p>将序列 q 的 l ~ r 区间排序<br>void quick_sort(int q[], int l, int r) </p>
+<h4 id="基本思想-——-分治"><a href="#基本思想-——-分治" class="headerlink" title="基本思想 —— 分治"></a>基本思想 —— 分治</h4><ol>
+<li>找一个参考值 x</li>
+<li>通过双指针算法交换使得  左半边全部是 &lt;= x , 右半边全部是 &gt;= x<ol>
+<li>移动左指针 i ，找到大于 x 的数</li>
+<li>移动右指针 j ，找到小于 x 的数</li>
+<li>交换逆序对 </li>
+</ol>
+</li>
+<li>递归处理 左半边 右半边</li>
+</ol>
+<h4 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">quick_sort</span><span class="params">(<span class="type">int</span> q[], <span class="type">int</span> l, <span class="type">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l &gt;= r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="type">int</span> i = l - <span class="number">1</span>, j = r + <span class="number">1</span>, x = q[l] + q[r] &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt; j)&#123;</span><br><span class="line">        <span class="keyword">while</span>(q[++ i] &lt; x);</span><br><span class="line">        <span class="keyword">while</span>(q[-- j] &gt; x);</span><br><span class="line">        <span class="keyword">if</span>(i &lt; j) <span class="built_in">swap</span>(q[i],q[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">quick_sort</span>( q, l, j), <span class="built_in">quick_sort</span>( q, j + <span class="number">1</span>, r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意点</strong>： 分界点的选择可以是[ l , j ]、 [ j + 1 , r ] 或者 [ l, i - 1 ]、[ i , r ],<br>swap 的时候不要忘记判断 i &lt; j</p>
+<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><p>与快排的先排完上层，再排下层不同，归并排序是先排完下层再排上层</p>
+<h4 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/789/">问题</a></h4><p>将序列 q 的 l ~ r 区间排序<br>void merge_sort(int q[], int l, int r) </p>
+<h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4><ol>
+<li>先排完左半边[ l , mid ]、再排完右半边[ mid + 1, r ]</li>
+<li>将左右两个有序序列进行合并<ol>
+<li>i , j 两个指针分别指向两个有序子序列的头，哪个小就输出哪个，并指向后一个，直到有一个序列指针到达末尾</li>
+<li>将未全部输出的序列全部输出</li>
+</ol>
+</li>
+<li>处理左半边 和 右半边 同样使用递归的方式</li>
+</ol>
+<h4 id="模板-1"><a href="#模板-1" class="headerlink" title="模板"></a>模板</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> tmp[N]; <span class="comment">// 很大，最好开在外面</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">merge_sort</span><span class="params">(<span class="type">int</span> q[], <span class="type">int</span> l, <span class="type">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l &gt;= r) <span class="keyword">return</span>; <span class="comment">// 递归的出口</span></span><br><span class="line">    <span class="type">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">merge_sort</span>(q, l, mid), <span class="built_in">merge_sort</span>(q, mid + <span class="number">1</span>, r);</span><br><span class="line">    <span class="type">int</span> i = l, j = mid + <span class="number">1</span>, k = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(i &lt;= mid &amp;&amp; j &lt;= r)&#123;</span><br><span class="line">        <span class="keyword">if</span>(q[i] &lt;= q[j]) tmp[k ++] = q[i ++];</span><br><span class="line">        <span class="keyword">else</span> tmp[k ++] = q[j ++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(i &lt;= mid) tmp[k ++] = q[i ++];</span><br><span class="line">    <span class="keyword">while</span>(j &lt;= r) tmp[k ++] = q[j ++];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = l, j = <span class="number">0</span>; i &lt;= r; i ++, j ++) q[i] = tmp[j];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       </div>
       <div class="post-tags-categories">
         
         <div class="tags">
           
-            <a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C-%E5%B7%AE%E5%88%86/" class="">
-              前缀和 差分
+            <a href="/tags/%E6%8E%92%E5%BA%8F/" class="">
+              排序
             </a>
           
         </div>
@@ -740,7 +764,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2023/01/05/3-suan-fa/04-qian-zhui-he-he-chai-fen/" target="_blank" title="前缀和 差分">https://dazhipro.github.io/2023/01/05/3-suan-fa/04-qian-zhui-he-he-chai-fen/</a>
+    <a href="/2023/01/01/3-suan-fa/ji-chu-suan-fa/01-pai-xu/" target="_blank" title="排序">https://dazhipro.github.io/2023/01/01/3-suan-fa/ji-chu-suan-fa/01-pai-xu/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -762,16 +786,16 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/14.jpg" class="lazyload placeholder" data-srcset="/medias/14.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/2023/01/06/3-suan-fa/06-chi-san-hua/" class="post-nav-link">
+    <a href="/2023/01/02/3-suan-fa/ji-chu-suan-fa/02-er-fen/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">离散化</div>
+        <div class="title-text">二分</div>
       </div>
       
       <!-- <div class="content">
-        
+        二分问题适用于一个序列，有一个check函数，能够使得序列左边都返回false，右边都返回true，然后我们找的就是这个
       </div> -->
     </a>
   </div>
@@ -782,20 +806,17 @@
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/15.jpg" class="lazyload placeholder" data-srcset="/medias/15.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
-    <a href="/2023/01/04/3-suan-fa/03-gao-jing-du/" class="post-nav-link">
+    <a href="/2022/12/04/1-kai-fa/linux/yuan-cheng-deng-lu-he-vim/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">高精度</div>
+        <div class="title-text">远程登录和 vim</div>
       </div>
       <!-- <div class="content">
-         高精度
- 问题
-超长数字的加减乘除 ( len(A),len(B) &gt; 1e6 )
- 模板
-
-大数相加 C = 
+        主机和虚拟机ping不通的原因
+主机需要将自己网卡共享给VMware net8
+主机VMware net8虚拟网卡设计的
       </div> -->
     </a>
   </div>
@@ -1019,7 +1040,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!--  -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F"><span class="toc-text">快速排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-text">问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3-%E2%80%94%E2%80%94-%E5%88%86%E6%B2%BB"><span class="toc-text">基本思想 —— 分治</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF"><span class="toc-text">模板</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F"><span class="toc-text">归并排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98-1"><span class="toc-text">问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3"><span class="toc-text">基本思想</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF-1"><span class="toc-text">模板</span></a></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1045,6 +1066,27 @@
       <!-- hash算法 -->
       
       <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2023/01/12/3-suan-fa/dong-tai-gui-hua/qu-jian-he-bing/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://img2023.cnblogs.com/blog/2851436/202301/2851436-20230112195423440-778638186.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202301/2851436-20230112195423440-778638186.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">01-12</span>
+                
+              </div>
+              <a class="post-title" href="/2023/01/12/3-suan-fa/dong-tai-gui-hua/qu-jian-he-bing/">区间合并</a>
+            </div>
+          </div>
         
           <div class="aside-list-item">
             
@@ -1115,28 +1157,7 @@
             
 
             <div class="post-img-box">
-              <a href="/2023/01/06/3-suan-fa/05-shuang-zhi-zhen/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/3.jpg" class="lazyload placeholder" data-srcset="/medias/3.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">01-06</span>
-                
-              </div>
-              <a class="post-title" href="/2023/01/06/3-suan-fa/05-shuang-zhi-zhen/">双指针</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/01/06/3-suan-fa/06-chi-san-hua/" class="post-img " style="background-size: cover; 
+              <a href="/2023/01/06/3-suan-fa/ji-chu-suan-fa/06-chi-san-hua/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
                 <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/14.jpg" class="lazyload placeholder" data-srcset="/medias/14.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
@@ -1147,7 +1168,7 @@
                   <span class="post-date">01-06</span>
                 
               </div>
-              <a class="post-title" href="/2023/01/06/3-suan-fa/06-chi-san-hua/">离散化</a>
+              <a class="post-title" href="/2023/01/06/3-suan-fa/ji-chu-suan-fa/06-chi-san-hua/">离散化</a>
             </div>
           </div>
         
@@ -1491,7 +1512,7 @@
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
 
           </div>
         
