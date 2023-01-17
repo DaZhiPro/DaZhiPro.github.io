@@ -722,10 +722,10 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/340/">计数问题</a></p>
+        <h4 id="计数问题"><a class="markdownIt-Anchor" href="#计数问题"></a> <a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/340/">计数问题</a></h4>
 <h4 id="基本思路"><a class="markdownIt-Anchor" href="#基本思路"></a> 基本思路：</h4>
 <ol>
-<li>暴力(O(1^9)) 暴力遍历每一个数，然后遍历每一位 这样的话 复杂度 1e8 * 8 * 测试样例数 大概就是 1e9 左右，但是C++代码中的操作次数控制在 1e7 ~ 1e8</li>
+<li>暴力(O(<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>1</mn><mn>9</mn></msup></mrow><annotation encoding="application/x-tex">1^9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">1</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span>)) 暴力遍历每一个数，然后遍历每一位 这样的话 复杂度 1e8 * 8 * 测试样例数 大概就是 1e9 左右，但是C++代码中的操作次数控制在 1e7 ~ 1e8</li>
 <li>数位dp进行优化
 首先设定一个函数 <code>count(int n, int x)</code> 用于计算 1 ~ n 中 x 出现的次数
 然后分类讨论对于任意一个数 abcdefg  x 出现在第 i 位可能的情况数有多少
@@ -1028,7 +1028,7 @@ f[i][j]:表示合并第i堆到第j堆最小代价
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF"><span class="toc-text"> 基本思路：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E7%AE%97%E6%B3%95"><span class="toc-text"> 具体算法：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ac-code"><span class="toc-text"> AC Code</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E6%95%B0%E9%97%AE%E9%A2%98"><span class="toc-text"> 计数问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF"><span class="toc-text"> 基本思路：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E7%AE%97%E6%B3%95"><span class="toc-text"> 具体算法：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ac-code"><span class="toc-text"> AC Code</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
