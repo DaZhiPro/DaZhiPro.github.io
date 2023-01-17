@@ -6,7 +6,7 @@
   <link href="https://dazhipro.github.io/atom.xml" rel="self"/>
   
   <link href="https://dazhipro.github.io/"/>
-  <updated>2023-01-17T13:06:02.655Z</updated>
+  <updated>2023-01-17T13:21:33.295Z</updated>
   <id>https://dazhipro.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://dazhipro.github.io/2023/01/17/3-suan-fa/dong-tai-gui-hua/ji-shu-wen-ti/"/>
     <id>https://dazhipro.github.io/2023/01/17/3-suan-fa/dong-tai-gui-hua/ji-shu-wen-ti/</id>
     <published>2023-01-17T12:20:00.967Z</published>
-    <updated>2023-01-17T13:06:02.655Z</updated>
+    <updated>2023-01-17T13:21:33.295Z</updated>
     
     
       
@@ -471,32 +471,6 @@
   </entry>
   
   <entry>
-    <title>反向传播</title>
-    <link href="https://dazhipro.github.io/2022/10/05/2-ji-suan-ji-shi-jue/cnn/04-fan-xiang-chuan-bo/"/>
-    <id>https://dazhipro.github.io/2022/10/05/2-ji-suan-ji-shi-jue/cnn/04-fan-xiang-chuan-bo/</id>
-    <published>2022-10-05T04:40:19.000Z</published>
-    <updated>2023-01-11T10:30:05.210Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;等后续补充&lt;/p&gt;
-</summary>
-        
-      
-    
-    
-    
-    <category term="机器视觉" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/"/>
-    
-    
-    <category term="CNN" scheme="https://dazhipro.github.io/tags/CNN/"/>
-    
-  </entry>
-  
-  <entry>
     <title>卷积和池化</title>
     <link href="https://dazhipro.github.io/2022/10/05/2-ji-suan-ji-shi-jue/cnn/05-juan-ji-chi-hua/"/>
     <id>https://dazhipro.github.io/2022/10/05/2-ji-suan-ji-shi-jue/cnn/05-juan-ji-chi-hua/</id>
@@ -521,6 +495,32 @@
     
     
     <category term="CS231" scheme="https://dazhipro.github.io/tags/CS231/"/>
+    
+    <category term="CNN" scheme="https://dazhipro.github.io/tags/CNN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>反向传播</title>
+    <link href="https://dazhipro.github.io/2022/10/05/2-ji-suan-ji-shi-jue/cnn/04-fan-xiang-chuan-bo/"/>
+    <id>https://dazhipro.github.io/2022/10/05/2-ji-suan-ji-shi-jue/cnn/04-fan-xiang-chuan-bo/</id>
+    <published>2022-10-05T04:40:19.000Z</published>
+    <updated>2023-01-11T10:30:05.210Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;等后续补充&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="机器视觉" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/"/>
+    
     
     <category term="CNN" scheme="https://dazhipro.github.io/tags/CNN/"/>
     
