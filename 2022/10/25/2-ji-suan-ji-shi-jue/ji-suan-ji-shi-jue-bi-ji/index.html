@@ -781,7 +781,7 @@
 <strong>正定矩阵</strong>： <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>正定矩阵</mtext><mi>Σ</mi><mtext>满足： </mtext><msup><mi>Z</mi><mi>T</mi></msup><mo>∗</mo><mtext> </mtext><mi mathvariant="normal">Σ</mi><mtext> </mtext><mo>∗</mo><mtext> </mtext><mi>Z</mi><mtext> 恒为正</mtext></mrow><annotation encoding="application/x-tex">\text{正定矩阵}\varSigma \text{满足：\ }Z^T*\ \Sigma \ *\ Z\ \text{恒为正}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8413309999999999em;vertical-align:0em;"></span><span class="mord text"><span class="mord cjk_fallback">正定矩阵</span></span><span class="mord"><span class="mord mathit">Σ</span></span><span class="mord text"><span class="mord cjk_fallback">满足：</span><span class="mord"> </span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">T</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">Σ</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span><span class="mspace"> </span><span class="mord text"><span class="mord cjk_fallback">恒为正</span></span></span></span></span>
 方差： 用来衡量单个随机变量的离散程度
 协方差： 用来衡量两个随机变量的相似程度
-协方差矩阵；用来衡量了 一个具有多个随机变量的 分布 的离散程度</p>
+协方差矩阵: 用来衡量了 一个具有多个随机变量的 分布 的离散程度</p>
 <h3 id="生成模型和判别模型"><a class="markdownIt-Anchor" href="#生成模型和判别模型"></a> 生成模型和判别模型</h3>
 <p><em><strong>判别模型</strong></em>： 比较简单直接计算 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>w</mi><mi mathvariant="normal">∣</mi><mi>x</mi><mo stretchy="false">)</mo><mtext>这里的</mtext><mi>w</mi><mtext>叫做全局状态</mtext><mo stretchy="false">(</mo><mtext>我理解就是</mtext><mi>y</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P(w|x) 这里的w叫做全局状态(我理解就是y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mord">∣</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mord cjk_fallback">这</span><span class="mord cjk_fallback">里</span><span class="mord cjk_fallback">的</span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mord cjk_fallback">叫</span><span class="mord cjk_fallback">做</span><span class="mord cjk_fallback">全</span><span class="mord cjk_fallback">局</span><span class="mord cjk_fallback">状</span><span class="mord cjk_fallback">态</span><span class="mopen">(</span><span class="mord cjk_fallback">我</span><span class="mord cjk_fallback">理</span><span class="mord cjk_fallback">解</span><span class="mord cjk_fallback">就</span><span class="mord cjk_fallback">是</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span> 大概就是先估计一下w的分布，比如说在例子通过轮胎像素的个数，来估计车身的大小的样例中，w估计就是一元正态分布
 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>w</mi><mi mathvariant="normal">∣</mi><mi>x</mi><mo separator="true">,</mo><mi>θ</mi><mo stretchy="false">)</mo><mo>=</mo><mi>N</mi><mi>o</mi><mi>r</mi><msub><mi>m</mi><mi>w</mi></msub><mo stretchy="false">[</mo><mi>a</mi><mo>+</mo><mi>b</mi><mi>x</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo stretchy="false">]</mo><mtext>这里的</mtext><mi>θ</mi><mtext>就是一些需要确定得超参数，包括</mtext><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo separator="true">,</mo><mi>σ</mi><mo separator="true">,</mo><mtext>所以只要求出</mtext><mi>θ</mi><mtext>的估计值就可以进行推理</mtext><mo stretchy="false">(</mo><mtext>我立即的是预测</mtext><mo stretchy="false">)</mo><mtext>了。</mtext><mspace linebreak="newline"></mspace><mtext>确定超参数有好多算法，比如可以用</mtext><mi>M</mi><mi>A</mi><mi>P</mi><mtext>算法求</mtext><msub><mo><mi mathvariant="normal">arg max</mi><mo>⁡</mo></mo><mi>θ</mi></msub><mi>P</mi><mrow><mo fence="true">(</mo><mi>x</mi><mi mathvariant="normal">∣</mi><mi>θ</mi><mo fence="true">)</mo></mrow><mtext> </mtext><mo>∗</mo><mtext> </mtext><mi>P</mi><mrow><mo fence="true">(</mo><mi>θ</mi><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(w|x,\theta) = Norm_w[a + bx,\sigma^2] 这里的\theta就是一些需要确定得超参数，包括a,b,\sigma,所以只要求出\theta的估计值就可以进行推理(我立即的是预测)了。\\
@@ -1123,6 +1123,48 @@ linux Cent OS 7.6  [该版本已经不再维护]
             
 
             <div class="post-img-box">
+              <a href="/2023/02/02/2-ji-suan-ji-shi-jue/bi-she/bi-she-gui-hua/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">02-02</span>
+                
+              </div>
+              <a class="post-title" href="/2023/02/02/2-ji-suan-ji-shi-jue/bi-she/bi-she-gui-hua/">毕设题目及规划</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2023/01/30/2-ji-suan-ji-shi-jue/hui-gui-mo-xing/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/5.jpg" class="lazyload placeholder" data-srcset="/medias/5.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">01-30</span>
+                
+              </div>
+              <a class="post-title" href="/2023/01/30/2-ji-suan-ji-shi-jue/hui-gui-mo-xing/">《计算机视觉》 笔记</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
               <a href="/2023/01/17/3-suan-fa/dong-tai-gui-hua/ji-shu-wen-ti/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
                 <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/5.jpg" class="lazyload placeholder" data-srcset="/medias/5.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
@@ -1177,48 +1219,6 @@ linux Cent OS 7.6  [该版本已经不再维护]
                 
               </div>
               <a class="post-title" href="/2023/01/11/4-ri-chang-sui-bi/hexo-jian-zhan/">hexo 建站</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/01/11/1-kai-fa/django/gai-shu/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/3.jpg" class="lazyload placeholder" data-srcset="/medias/3.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">01-11</span>
-                
-              </div>
-              <a class="post-title" href="/2023/01/11/1-kai-fa/django/gai-shu/">Django 概述</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/01/10/hello-world/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">01-10</span>
-                
-              </div>
-              <a class="post-title" href="/2023/01/10/hello-world/">Hello World</a>
             </div>
           </div>
         
