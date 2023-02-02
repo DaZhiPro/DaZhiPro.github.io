@@ -722,59 +722,36 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h2 id="题目"><a class="markdownIt-Anchor" href="#题目"></a> 题目</h2>
-<p>题目：基于深度学习的超声波流量计量性能评估系统设计</p>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>题目：基于深度学习的超声波流量计量性能评估系统设计</p>
 <p>本课题旨在设计实现一个基于深度学习的超声波流量计计量性能评估系统，目的是通过深度生成对抗网络</p>
 <p>（1）流量检测模块，通过可视化的图表将收集到的<strong>流量计<em>各声道</em>流速数据和总流速数据</strong>进行展示，让现场检定人员能够直观观测到流量计计量的动态变化。</p>
 <p>（2）数据收集与预处理模块，收集压力、温度、流量计声道数据，对数据进行预处理，方便后续评估模型对数据的处理。</p>
 <p>（3）模型训练模块，分析流量计相关数据的特征，选择相应的深度学习方法进行数据的训练和特征提取，并进行算法优化，最终得出训练较优的流量计性能评估模型。</p>
 <p>（4）性能在线评估模块，利用训练好的性能评估模型对流量计检定过程产生的数据进行评估，识别流量计计量性能偏差，给出对实际流量的预测和流量计计量偏差值。</p>
 <p>实验环境：自选。</p>
-<h2 id="具体步骤"><a class="markdownIt-Anchor" href="#具体步骤"></a> 具体步骤</h2>
-<h4 id="大概分为三步"><a class="markdownIt-Anchor" href="#大概分为三步"></a> 大概分为三步</h4>
-<p>数据集的样子大概就是        多维输入 一维输出</p>
+<h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><h4 id="大概分为三步"><a href="#大概分为三步" class="headerlink" title="大概分为三步"></a>大概分为三步</h4><p>数据集的样子大概就是        多维输入 一维输出</p>
 <ol>
-<li>扩充数据集： 可以用GAN，也可以尝试一下其他的，比如VAE</li>
+<li>扩充数据集： 可以用GAN，也可以尝试一下其他的，比如VAE </li>
 <li>挑选合适的回归模型</li>
 <li>做一个可视化界面 界面可以设置一些参数，然后后台训练，界面可以输入数据，进行预测</li>
 </ol>
-<h4 id="现在要做的"><a class="markdownIt-Anchor" href="#现在要做的"></a> 现在要做的</h4>
-<p>找个小点的数据集，测试一些用GAN去扩充一下
-学习一些常用的回归模型，准备好代码
-做一个简单的可视化界面
-学一下优化方面的知识       书籍《最优化导论》
-学习一下基本的机器学习     书籍《统计学习方法》</p>
-<h4 id="一些小的idea"><a class="markdownIt-Anchor" href="#一些小的idea"></a> 一些小的idea</h4>
-<ol>
-<li>
-<p>对于步骤2：研究物理过程，考虑最复杂的情况下可能的公式，然后可能有几十个未知参数，构造一个前向传播就是这个公式的神经网络，通过反向传播使得loss最小来求得参数</p>
+<h4 id="现在要做的"><a href="#现在要做的" class="headerlink" title="现在要做的"></a>现在要做的</h4><p>找个小点的数据集，测试一些用GAN去扩充一下<br>学习一些常用的回归模型，准备好代码<br>做一个简单的可视化界面<br>学一下优化方面的知识       书籍《最优化导论》<br>学习一下基本的机器学习     书籍《统计学习方法》</p>
+<h4 id="一些小的idea"><a href="#一些小的idea" class="headerlink" title="一些小的idea"></a>一些小的idea</h4><ol>
+<li><p>对于步骤2：研究物理过程，考虑最复杂的情况下可能的公式，然后可能有几十个未知参数，构造一个前向传播就是这个公式的神经网络，通过反向传播使得loss最小来求得参数</p>
 </li>
-<li>
-<p>对于步骤1：使用GAN的两种方式：</p>
+<li><p>对于步骤1：使用GAN的两种方式：</p>
 <ol>
-<li>
-<p>扩充样本数据
-<img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230201112002921-745760998.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230201112002921-745760998.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<li><p>扩充样本数据<br><img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230201112002921-745760998.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230201112002921-745760998.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
 </li>
-<li>
-<p>直接应用GAN当做网络模型
-<img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230201112252507-983612410.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230201112252507-983612410.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" />
-例子：根据带噪声信号产生降噪声信号
-<img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230201112428999-530096738.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230201112428999-530096738.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<li><p>直接应用GAN当做网络模型<br><img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230201112252507-983612410.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230201112252507-983612410.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"><br>例子：根据带噪声信号产生降噪声信号<br><img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230201112428999-530096738.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230201112428999-530096738.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
 </li>
 </ol>
 </li>
 </ol>
-<h4 id="背景知识"><a class="markdownIt-Anchor" href="#背景知识"></a> 背景知识</h4>
-<p><em><strong>超声波流量计</strong></em>
-超声波流量计是通过利用超声波于流体之中传播时将会被流体流动影响的这种现 象来进行工作的。流量计是通过在流体里进行超声波信号的发送，当超声波在流体里进 行传播的时候会将测量流体的流速等一系列信息，与此同时对超声波回波信号进行检测 以及处理的方式就能够得到流体的流速</p>
-<p>分类：
-多普勒法计算流速：多普勒超声波流量计
-多普勒效应：假如两个物件之间的相对间距在降低，接受的频率将比原先强化。假如两个物件之间的相对间距在增加，接受的频率便会比原先降低</p>
+<h4 id="背景知识"><a href="#背景知识" class="headerlink" title="背景知识"></a>背景知识</h4><p><strong><em>超声波流量计</em></strong><br>超声波流量计是通过利用超声波于流体之中传播时将会被流体流动影响的这种现 象来进行工作的。流量计是通过在流体里进行超声波信号的发送，当超声波在流体里进 行传播的时候会将测量流体的流速等一系列信息，与此同时对超声波回波信号进行检测 以及处理的方式就能够得到流体的流速</p>
+<p>分类：<br>多普勒法计算流速：多普勒超声波流量计<br>    多普勒效应：假如两个物件之间的相对间距在降低，接受的频率将比原先强化。假如两个物件之间的相对间距在增加，接受的频率便会比原先降低</p>
 <p>传播时间计算流速：时差法、相差法、频差法</p>
-<p>时差法
-<img src="https://img2023.cnblogs.com/blog/2851436/202301/2851436-20230129145717771-861189124.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202301/2851436-20230129145717771-861189124.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" />
-···</p>
+<p>时差法<br><img src="https://img2023.cnblogs.com/blog/2851436/202301/2851436-20230129145717771-861189124.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202301/2851436-20230129145717771-861189124.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"><br>···</p>
 
       </div>
       <div class="post-tags-categories">
@@ -840,8 +817,7 @@
         <div class="title-text">《计算机视觉》 笔记</div>
       </div>
       <!-- <div class="content">
-         第八章 回归模型
-定义：根据向量 x=[x1,x2,...,xn]Tx = [x_1,x_2,...,x_n]^Tx=
+        第八章 回归模型定义：根据向量 $x = [x_1,x_2,…,x_n]^T$ 来估计全局状态 $w$，就是说计算 $P
       </div> -->
     </a>
   </div>
@@ -1065,7 +1041,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE"><span class="toc-text"> 题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E6%AD%A5%E9%AA%A4"><span class="toc-text"> 具体步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%A7%E6%A6%82%E5%88%86%E4%B8%BA%E4%B8%89%E6%AD%A5"><span class="toc-text"> 大概分为三步</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%B0%E5%9C%A8%E8%A6%81%E5%81%9A%E7%9A%84"><span class="toc-text"> 现在要做的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%B0%8F%E7%9A%84idea"><span class="toc-text"> 一些小的idea</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AF%86"><span class="toc-text"> 背景知识</span></a></li></ol></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE"><span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E6%AD%A5%E9%AA%A4"><span class="toc-text">具体步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%A7%E6%A6%82%E5%88%86%E4%B8%BA%E4%B8%89%E6%AD%A5"><span class="toc-text">大概分为三步</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%B0%E5%9C%A8%E8%A6%81%E5%81%9A%E7%9A%84"><span class="toc-text">现在要做的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%B0%8F%E7%9A%84idea"><span class="toc-text">一些小的idea</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AF%86"><span class="toc-text">背景知识</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1590,7 +1566,7 @@
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
 
           </div>
         
