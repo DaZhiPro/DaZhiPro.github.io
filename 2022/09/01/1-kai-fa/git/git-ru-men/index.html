@@ -719,33 +719,28 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h4 id="基本操作"><a class="markdownIt-Anchor" href="#基本操作"></a> 基本操作</h4>
-<p><code>git status</code> 	当前仓库的状态</p>
-<p><code>git add &quot;filename.txt&quot;	</code>	向暂存区添加文件</p>
-<p><code>git commit -m &quot;描述语句&quot;</code>	提交暂存区文件</p>
-<p><code>git diff</code>	如果<code>git status</code>告诉你有文件被修改过，用<code>git diff</code>可以查看修改内容。</p>
-<p><code>git log</code>	显示该仓库所有提交记录，简洁版是<code>git log --pretty=oneline</code></p>
-<h4 id="时空穿梭"><a class="markdownIt-Anchor" href="#时空穿梭"></a> 时空穿梭</h4>
-<ul>
+        <h4 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h4><p> <code>git status</code>     当前仓库的状态</p>
+<p><code>git add &quot;filename.txt&quot;</code>    向暂存区添加文件</p>
+<p><code>git commit -m &quot;描述语句&quot;</code>    提交暂存区文件</p>
+<p><code>git diff</code>    如果<code>git status</code>告诉你有文件被修改过，用<code>git diff</code>可以查看修改内容。</p>
+<p><code>git log</code>    显示该仓库所有提交记录，简洁版是<code>git log --pretty=oneline</code></p>
+<h4 id="时空穿梭"><a href="#时空穿梭" class="headerlink" title="时空穿梭"></a>时空穿梭</h4><ul>
 <li>回到过去</li>
 </ul>
 <ol>
-<li><code>git reset --hard HEAD^</code>	回退到上一个版本</li>
+<li><code>git reset --hard HEAD^</code>    回退到上一个版本</li>
 <li><code>git log</code> 查看过去提交的版本号id，然后用<code>git reset --hard id</code>即可</li>
 </ol>
 <ul>
 <li>重返未来</li>
 </ul>
 <ol>
-<li><code>git reflog</code>	 查看命令历史，看到未来的版本号id，然后使用<code>git reset --hard id</code>重返未来</li>
+<li><code>git reflog</code>     查看命令历史，看到未来的版本号id，然后使用<code>git reset --hard id</code>重返未来</li>
 </ol>
-<h4 id="git管理的文件分为"><a class="markdownIt-Anchor" href="#git管理的文件分为"></a> Git管理的文件分为</h4>
-<ul>
-<li>
-<p>工作区</p>
+<h4 id="Git管理的文件分为"><a href="#Git管理的文件分为" class="headerlink" title="Git管理的文件分为"></a>Git管理的文件分为</h4><ul>
+<li><p>工作区</p>
 </li>
-<li>
-<p>版本库，</p>
+<li><p>版本库，</p>
 <ul>
 <li>暂存区stage</li>
 <li>暂存区分支master(仓库)</li>
@@ -760,7 +755,7 @@
 <p><strong>注</strong> : 暂存区为空使用git diff：因为此时暂存区为空，此时使</p>
 <p>用git diff同样也是比较工作区和仓库，即和使用git diff HEAD结果相同</p>
 <p><strong>文件传输</strong></p>
-<p><code>git add</code>的反向命令<code>git checkout</code> -- file，撤销工作区修改，即把暂存区（若空则为仓库）最新版本转移到工作区，</p>
+<p><code>git add</code>的反向命令<code>git checkout</code> — file，撤销工作区修改，即把暂存区（若空则为仓库）最新版本转移到工作区，</p>
 <p><code>git commit</code>的反向命令<code>git reset HEAD &lt;file&gt;</code>，就是把仓库最新版本转移到暂存区。</p>
 <p>删除文件 <code>git rm file</code>然后<code>git commit -m &quot;remove file&quot;</code></p>
 <p>最最常用的</p>
@@ -818,8 +813,7 @@
       </div>
       
       <!-- <div class="content">
-         1. 关于保研
-随着928的结束，2023届轰轰烈烈的保研也就这么结束了。从五六月份开始准备各种材料，包括打印、签名、
+        1. 关于保研随着928的结束，2023届轰轰烈烈的保研也就这么结束了。从五六月份开始准备各种材料，包括打印、签名、写推
       </div> -->
     </a>
   </div>
@@ -1045,7 +1039,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text"> 基本操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E7%A9%BA%E7%A9%BF%E6%A2%AD"><span class="toc-text"> 时空穿梭</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git%E7%AE%A1%E7%90%86%E7%9A%84%E6%96%87%E4%BB%B6%E5%88%86%E4%B8%BA"><span class="toc-text"> Git管理的文件分为</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">基本操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E7%A9%BA%E7%A9%BF%E6%A2%AD"><span class="toc-text">时空穿梭</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Git%E7%AE%A1%E7%90%86%E7%9A%84%E6%96%87%E4%BB%B6%E5%88%86%E4%B8%BA"><span class="toc-text">Git管理的文件分为</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1517,7 +1511,7 @@
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
 
           </div>
         

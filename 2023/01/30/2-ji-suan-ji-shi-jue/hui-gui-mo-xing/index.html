@@ -695,7 +695,7 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 318 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 280 |
           </span>
   
           <span class="min2read">
@@ -722,21 +722,15 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1 id="第八章-回归模型"><a class="markdownIt-Anchor" href="#第八章-回归模型"></a> 第八章 回归模型</h1>
-<p>定义：根据向量 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mo stretchy="false">[</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><msup><mo stretchy="false">]</mo><mi>T</mi></msup></mrow><annotation encoding="application/x-tex">x = [x_1,x_2,...,x_n]^T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.0913309999999998em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">T</span></span></span></span></span></span></span></span></span></span></span> 来估计全局状态 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi></mrow><annotation encoding="application/x-tex">w</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span></span></span></span>，就是说计算 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>w</mi><mi mathvariant="normal">∣</mi><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P(w|x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mord">∣</span><span class="mord mathnormal">x</span><span class="mclose">)</span></span></span></span></p>
-<h2 id="线性回归"><a class="markdownIt-Anchor" href="#线性回归"></a> 线性回归</h2>
-<ol>
+        <h1 id="第八章-回归模型"><a href="#第八章-回归模型" class="headerlink" title="第八章 回归模型"></a>第八章 回归模型</h1><p>定义：根据向量 $x = [x_1,x_2,…,x_n]^T$ 来估计全局状态 $w$，就是说计算 $P(w|x)$</p>
+<h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><ol>
 <li>设 w 满足的概率分布，一般连续的就设 一元正态分布（离散的就设分类分布），这样的话只需要求出分布的参数，就能求某一个 w 的概率，但是还要和我们的数据扯上关系，所以 就设正态分布的参数 u 为数据 x 的线性函数 (u = <em>ax</em> + b，此时引入了超参 <em>a</em>,b)</li>
-<li>只需要计算出参数<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span>（包括a,b,方差） 就能完美的描述数据 x 和 全局状态 w 之间的关系</li>
-<li>使用极大似然估计方法 使得似然 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>w</mi><mi mathvariant="normal">∣</mi><mi>x</mi><mo separator="true">,</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P(w|x,\theta)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mord">∣</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span></span></span></span> 最大</li>
+<li>只需要计算出参数$\theta$（包括a,b,方差） 就能完美的描述数据 x 和 全局状态 w 之间的关系</li>
+<li>使用极大似然估计方法 使得似然 $P(w|x,\theta)$ 最大</li>
 </ol>
-<p>![img](<a target="_blank" rel="noopener" href="https://img2023.cnblogs.com/blog/2851436/202301/2851436-20230131111542071-1844025411.png">https://img2023.cnblogs.com/blog/2851436/202301/2851436-20230131111542071-1844025411.png</a> =500x)</p>
-<h2 id="贝叶斯回归"><a class="markdownIt-Anchor" href="#贝叶斯回归"></a> 贝叶斯回归</h2>
-<p>正常是求最优的参数<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span>,然后用这个参数直接求新数据的预测概率，
-贝叶斯方法是直接求参数<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span>的概率分布，然后预测的时候对它的每个可能的取值进行加权求和</p>
-<h2 id="非线性回归"><a class="markdownIt-Anchor" href="#非线性回归"></a> 非线性回归</h2>
-<h2 id="稀疏线性回归"><a class="markdownIt-Anchor" href="#稀疏线性回归"></a> 稀疏线性回归</h2>
-
+<p><img src="https://img2023.cnblogs.com/blog/2851436/202301/2851436-20230131111542071-1844025411.png =500x" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202301/2851436-20230131111542071-1844025411.png =500x" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
+<h2 id="贝叶斯回归"><a href="#贝叶斯回归" class="headerlink" title="贝叶斯回归"></a>贝叶斯回归</h2><p>正常是求最优的参数$\theta$,然后用这个参数直接求新数据的预测概率，<br>贝叶斯方法是直接求参数$\theta$的概率分布，然后预测的时候对它的每个可能的取值进行加权求和</p>
+<h2 id="非线性回归"><a href="#非线性回归" class="headerlink" title="非线性回归"></a>非线性回归</h2><h2 id="稀疏线性回归"><a href="#稀疏线性回归" class="headerlink" title="稀疏线性回归"></a>稀疏线性回归</h2>
       </div>
       <div class="post-tags-categories">
         
@@ -788,9 +782,8 @@
       </div>
       
       <!-- <div class="content">
-         题目
-题目：基于深度学习的超声波流量计量性能评估系统设计
-本课题旨在设计实现一个基于深度学习的超声波流量计计量性能评估
+        题目题目：基于深度学习的超声波流量计量性能评估系统设计
+本课题旨在设计实现一个基于深度学习的超声波流量计计量性能评估系统
       </div> -->
     </a>
   </div>
@@ -809,10 +802,8 @@
         <div class="title-text">计数问题</div>
       </div>
       <!-- <div class="content">
-         计数问题
- 基本思路：
-
-暴力(O(191^919)) 暴力遍历每一个数，然后遍历每一位 这样的话 复杂度 1e8 *
+        计数问题基本思路：
+暴力(O($1^9$)) 暴力遍历每一个数，然后遍历每一位 这样的话 复杂度 1e8  8  测试样
       </div> -->
     </a>
   </div>
@@ -1036,7 +1027,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B"><span class="toc-text"> 第八章 回归模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="toc-text"> 线性回归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%9B%9E%E5%BD%92"><span class="toc-text"> 贝叶斯回归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="toc-text"> 非线性回归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%80%E7%96%8F%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="toc-text"> 稀疏线性回归</span></a></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B"><span class="toc-text">第八章 回归模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="toc-text">线性回归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%9B%9E%E5%BD%92"><span class="toc-text">贝叶斯回归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="toc-text">非线性回归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%80%E7%96%8F%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="toc-text">稀疏线性回归</span></a></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1561,7 +1552,7 @@
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
 
           </div>
         
