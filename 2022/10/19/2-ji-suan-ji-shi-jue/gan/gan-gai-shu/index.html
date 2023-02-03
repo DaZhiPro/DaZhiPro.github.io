@@ -720,60 +720,76 @@
     <article class="post post-detail">
       <div class="post-content">
         <p>GAN(Generative Adversarial Network) 生成对抗网络</p>
-<h4 id="1-为什么要有这个东西？"><a href="#1-为什么要有这个东西？" class="headerlink" title="1. 为什么要有这个东西？"></a>1. 为什么要有这个东西？</h4><p>   为了解决相同输入x，不同输出y的情形,每一个输出都是对的，唯一可以知道的是他服从某一个分布。 </p>
-<p>   李宏毅中的例子是根据游戏的前三帧，去预测下一帧，当前三帧游戏人物走到路口的时候，下一帧可能左拐也可能右拐，无法得到一个确切的输出，只能得到一个概率分布。<br>   也可以用于扩充样本。</p>
-<h4 id="2-生成对抗网络是什么？"><a href="#2-生成对抗网络是什么？" class="headerlink" title="2. 生成对抗网络是什么？"></a>2. 生成对抗网络是什么？</h4><p>   一个生成对抗网络主要包含 生成器 + 判别器</p>
+<h4 id="1-为什么要有这个东西"><a class="markdownIt-Anchor" href="#1-为什么要有这个东西"></a> 1. 为什么要有这个东西？</h4>
+<p>为了解决相同输入x，不同输出y的情形,每一个输出都是对的，唯一可以知道的是他服从某一个分布。</p>
+<p>李宏毅中的例子是根据游戏的前三帧，去预测下一帧，当前三帧游戏人物走到路口的时候，下一帧可能左拐也可能右拐，无法得到一个确切的输出，只能得到一个概率分布。
+也可以用于扩充样本。</p>
+<h4 id="2-生成对抗网络是什么"><a class="markdownIt-Anchor" href="#2-生成对抗网络是什么"></a> 2. 生成对抗网络是什么？</h4>
+<p>一个生成对抗网络主要包含 生成器 + 判别器</p>
 <ol>
-<li><p><code>生成器(G)</code>的主要作用就是根据一个输入z（满足某个分布的向量）随机生成输出y（满足另一个分布）</p>
+<li>
+<p><code>生成器(G)</code>的主要作用就是根据一个输入z（满足某个分布的向量）随机生成输出y（满足另一个分布）</p>
 </li>
-<li><p><code>判别器(D)</code>的主要作用是判断G的某一堆输出y_s与最终要生成的数据的相似程度 相似度越高打分越高</p>
+<li>
+<p><code>判别器(D)</code>的主要作用是判断G的某一堆输出y_s与最终要生成的数据的相似程度 相似度越高打分越高</p>
 </li>
-<li><p>直观理解：</p>
+<li>
+<p>直观理解：</p>
 <p>3.1 正常的network都是给定一个 x,得到一个 y, 记作<code>&#123;f(x) = y&#125;</code></p>
 <p>3.2 这里为了使得给定一个x得到不同的y，同时再给定一个z1(满足某种简单的分布Z)，这样便成了 <code>f(x,z1) = y</code>。</p>
 <p>3.3 因为z服从一个分布Z，那么y也服从一个分布Y，这样的话对于一个输入x得到的输出就是一个分布，而不是确定的值，等到预测的时候 给定x, 同时从Z分中随机选取一个z1，就能得到一个满足Y分布的结果</p>
-<p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129161135195-2104431847.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129161135195-2104431847.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
+<p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129161135195-2104431847.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129161135195-2104431847.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
 </li>
 </ol>
-<h4 id="4-如何保证分布Y就是我们想要的-概率分布呢？"><a href="#4-如何保证分布Y就是我们想要的-概率分布呢？" class="headerlink" title="4. 如何保证分布Y就是我们想要的 概率分布呢？"></a>4. 如何保证分布Y就是我们想要的 概率分布呢？</h4><p>使用 判别器D 建立一个分类的network，他的输入是 生成器G 的输出，和我们已知的样本分布，输出是一个值，表示他和所需要生成的样本的差异程度，用这个值来表示 生成器G 表现好不好<br><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129165154824-1146175719.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129165154824-1146175719.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<p>   真正计算的时候： 从real_data (标签1) 和 generated_data(标签0) 中随机抽取出若干个输入network分类，设定loss使得real_data得分尽可能高，generated_data 的分尽可能低</p>
-<p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129201624345-504111067.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129201624345-504111067.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<p>   同时可以从理论上推导这个 loss Function和 JS Diversion 是有关联的，直观理解也好理解，只有分布相似，差异小才难分，然后那个maxV才不会太大，所有Diversion越小，maxV越小【具体推导见GAN原paper：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1406.2661">https://arxiv.org/abs/1406.2661</a> 】</p>
-<h4 id="5-整体优化目标是什么，如何训练？"><a href="#5-整体优化目标是什么，如何训练？" class="headerlink" title="5. 整体优化目标是什么，如何训练？"></a>5. 整体优化目标是什么，如何训练？</h4><p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129205011815-1057653954.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129205011815-1057653954.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<h4 id="6-GAN-是很难train的，原因是什么？"><a href="#6-GAN-是很难train的，原因是什么？" class="headerlink" title="6. GAN 是很难train的，原因是什么？"></a>6. GAN 是很难train的，原因是什么？</h4><ol>
-<li><p>真实数据和生成的数据的分布存在重合很难 （1.所有图像空间中动漫的分布很小很小，存在交集就更难了 2.即使分布存在交集，我们sample出来的点构成的分布未必存在交集）</p>
+<h4 id="4-如何保证分布y就是我们想要的-概率分布呢"><a class="markdownIt-Anchor" href="#4-如何保证分布y就是我们想要的-概率分布呢"></a> 4. 如何保证分布Y就是我们想要的 概率分布呢？</h4>
+<p>使用 判别器D 建立一个分类的network，他的输入是 生成器G 的输出，和我们已知的样本分布，输出是一个值，表示他和所需要生成的样本的差异程度，用这个值来表示 生成器G 表现好不好
+<img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129165154824-1146175719.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129165154824-1146175719.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<p>真正计算的时候： 从real_data (标签1) 和 generated_data(标签0) 中随机抽取出若干个输入network分类，设定loss使得real_data得分尽可能高，generated_data 的分尽可能低</p>
+<p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129201624345-504111067.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129201624345-504111067.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<p>同时可以从理论上推导这个 loss Function和 JS Diversion 是有关联的，直观理解也好理解，只有分布相似，差异小才难分，然后那个maxV才不会太大，所有Diversion越小，maxV越小【具体推导见GAN原paper：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1406.2661">https://arxiv.org/abs/1406.2661</a> 】</p>
+<h4 id="5-整体优化目标是什么如何训练"><a class="markdownIt-Anchor" href="#5-整体优化目标是什么如何训练"></a> 5. 整体优化目标是什么，如何训练？</h4>
+<p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129205011815-1057653954.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129205011815-1057653954.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<h4 id="6-gan-是很难train的原因是什么"><a class="markdownIt-Anchor" href="#6-gan-是很难train的原因是什么"></a> 6. GAN 是很难train的，原因是什么？</h4>
+<ol>
+<li>
+<p>真实数据和生成的数据的分布存在重合很难 （1.所有图像空间中动漫的分布很小很小，存在交集就更难了 2.即使分布存在交集，我们sample出来的点构成的分布未必存在交集）</p>
 </li>
-<li><p>JS Diversion的特性是只要没有重合那两个分布的距离就是固定的log2</p>
+<li>
+<p>JS Diversion的特性是只要没有重合那两个分布的距离就是固定的log2</p>
 </li>
 </ol>
 <p>所以可以看出JS divergence 不好，后人改用了W distance（Wasserstein distance）来衡量两个分布之间的距离，它的定义是通过移动一个分</p>
 <p>布P中的样本点使其满足另一个分布Q，所需要移动的最小距离就是W distance</p>
-<p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129213001543-1442672159.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129213001543-1442672159.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<p><strong><em>6.1 那W distance 如何计算</em></strong></p>
-<p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129214907059-345839759.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129214907059-345839759.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<p><strong><em>lipschitz 条件</em></strong></p>
-<p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129215424056-2087370460.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129215424056-2087370460.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<p><strong><em>6.2 如何使得函数D满足上述条件</em></strong></p>
-<p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129220105514-1144868367.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129220105514-1144868367.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<h4 id="7-生成器-和-判别器-必须水平相当才能训练起来，怎么保证双方水平相当呢？"><a href="#7-生成器-和-判别器-必须水平相当才能训练起来，怎么保证双方水平相当呢？" class="headerlink" title="7. 生成器 和 判别器 必须水平相当才能训练起来，怎么保证双方水平相当呢？"></a>7. 生成器 和 判别器 必须水平相当才能训练起来，怎么保证双方水平相当呢？</h4><p>一些tip</p>
-<p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129223448387-1713605195.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129223448387-1713605195.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<h4 id="8-怎么评估一个GAN的好坏，评估其生成的图片的质量的好坏"><a href="#8-怎么评估一个GAN的好坏，评估其生成的图片的质量的好坏" class="headerlink" title="8. 怎么评估一个GAN的好坏，评估其生成的图片的质量的好坏"></a>8. 怎么评估一个GAN的好坏，评估其生成的图片的质量的好坏</h4><p><strong><strong>评估图像质量</strong></strong></p>
-<p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129231650951-2123842083.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129231650951-2123842083.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<p><strong><em>评估图像多样性</em></strong></p>
-<p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129231619137-1629877941.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129231619137-1629877941.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<p>   综合质量和多样性的话就是Inception Score</p>
-<p><strong><em>这种评估手段无法检测出的一些问题</em></strong></p>
-<p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129225216914-758335728.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129225216914-758335728.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<h4 id="9-有条件生成对抗网络"><a href="#9-有条件生成对抗网络" class="headerlink" title="9. 有条件生成对抗网络"></a>9. 有条件生成对抗网络</h4><p><img src="https://img2023.cnblogs.com/blog/2851436/202212/2851436-20221201105722166-1866872542.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202212/2851436-20221201105722166-1866872542.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<p><strong><em>conditional GAN 的应用</em></strong></p>
+<p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129213001543-1442672159.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129213001543-1442672159.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<p><em><strong>6.1 那W distance 如何计算</strong></em></p>
+<p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129214907059-345839759.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129214907059-345839759.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<p><em><strong>lipschitz 条件</strong></em></p>
+<p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129215424056-2087370460.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129215424056-2087370460.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<p><em><strong>6.2 如何使得函数D满足上述条件</strong></em></p>
+<p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129220105514-1144868367.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129220105514-1144868367.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<h4 id="7-生成器-和-判别器-必须水平相当才能训练起来怎么保证双方水平相当呢"><a class="markdownIt-Anchor" href="#7-生成器-和-判别器-必须水平相当才能训练起来怎么保证双方水平相当呢"></a> 7. 生成器 和 判别器 必须水平相当才能训练起来，怎么保证双方水平相当呢？</h4>
+<p>一些tip</p>
+<p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129223448387-1713605195.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129223448387-1713605195.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<h4 id="8-怎么评估一个gan的好坏评估其生成的图片的质量的好坏"><a class="markdownIt-Anchor" href="#8-怎么评估一个gan的好坏评估其生成的图片的质量的好坏"></a> 8. 怎么评估一个GAN的好坏，评估其生成的图片的质量的好坏</h4>
+<p><strong><strong>评估图像质量</strong></strong></p>
+<p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129231650951-2123842083.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129231650951-2123842083.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<p><em><strong>评估图像多样性</strong></em></p>
+<p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129231619137-1629877941.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129231619137-1629877941.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<p>综合质量和多样性的话就是Inception Score</p>
+<p><em><strong>这种评估手段无法检测出的一些问题</strong></em></p>
+<p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129225216914-758335728.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129225216914-758335728.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<h4 id="9-有条件生成对抗网络"><a class="markdownIt-Anchor" href="#9-有条件生成对抗网络"></a> 9. 有条件生成对抗网络</h4>
+<p><img src="https://img2023.cnblogs.com/blog/2851436/202212/2851436-20221201105722166-1866872542.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202212/2851436-20221201105722166-1866872542.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<p><em><strong>conditional GAN 的应用</strong></em></p>
 <ol>
-<li>文字产生图像—&gt; AI 绘图</li>
-<li>图像长生图像—&gt; Pix2Pix 图像转换 与正常不同的是对于相同的输入可以产生不同的输出</li>
+<li>文字产生图像--&gt; AI 绘图</li>
+<li>图像长生图像--&gt; Pix2Pix 图像转换 与正常不同的是对于相同的输入可以产生不同的输出</li>
 <li>语音产生图像</li>
 <li>图像产生动图</li>
-<li>…</li>
+<li>...</li>
 </ol>
-<h4 id="10-几种常见的GAN"><a href="#10-几种常见的GAN" class="headerlink" title="10. 几种常见的GAN"></a>10. 几种常见的GAN</h4><ol>
+<h4 id="10-几种常见的gan"><a class="markdownIt-Anchor" href="#10-几种常见的gan"></a> 10. 几种常见的GAN</h4>
+<ol>
 <li>原生GAN</li>
 <li>DCGAN：G 使用的是反向卷积网络（一维的输入变为二维的输出）</li>
 <li>WGAN ： 改进了损失函数，解决了原本的损失函数难以敏感的反应两个不相交的分布的距离这一问题</li>
@@ -834,7 +850,8 @@
       </div>
       
       <!-- <div class="content">
-        LSTM 又叫长 短时记忆神经网络，问了解决RNN不能处理 从较长的前文中推断下一个单词的问题 而提出的从较长的前文中推
+        LSTM 又叫长 短时记忆神经网络，问了解决RNN不能处理 从较长的前文中推断下一个单词的问题 而提出的
+从较长的前文中
       </div> -->
     </a>
   </div>
@@ -856,7 +873,8 @@
         神经网络中的反向传播中的梯度计算一直是让我和头疼的问题，翻了好多资料，现在记录下自己目前的所得
 
 结论
-\text{设\
+
+设 y = f
       </div> -->
     </a>
   </div>
@@ -1080,7 +1098,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%9C%89%E8%BF%99%E4%B8%AA%E4%B8%9C%E8%A5%BF%EF%BC%9F"><span class="toc-text">1. 为什么要有这个东西？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%94%9F%E6%88%90%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">2. 生成对抗网络是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E5%88%86%E5%B8%83Y%E5%B0%B1%E6%98%AF%E6%88%91%E4%BB%AC%E6%83%B3%E8%A6%81%E7%9A%84-%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83%E5%91%A2%EF%BC%9F"><span class="toc-text">4. 如何保证分布Y就是我们想要的 概率分布呢？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E6%95%B4%E4%BD%93%E4%BC%98%E5%8C%96%E7%9B%AE%E6%A0%87%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8C%E5%A6%82%E4%BD%95%E8%AE%AD%E7%BB%83%EF%BC%9F"><span class="toc-text">5. 整体优化目标是什么，如何训练？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-GAN-%E6%98%AF%E5%BE%88%E9%9A%BEtrain%E7%9A%84%EF%BC%8C%E5%8E%9F%E5%9B%A0%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">6. GAN 是很难train的，原因是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E7%94%9F%E6%88%90%E5%99%A8-%E5%92%8C-%E5%88%A4%E5%88%AB%E5%99%A8-%E5%BF%85%E9%A1%BB%E6%B0%B4%E5%B9%B3%E7%9B%B8%E5%BD%93%E6%89%8D%E8%83%BD%E8%AE%AD%E7%BB%83%E8%B5%B7%E6%9D%A5%EF%BC%8C%E6%80%8E%E4%B9%88%E4%BF%9D%E8%AF%81%E5%8F%8C%E6%96%B9%E6%B0%B4%E5%B9%B3%E7%9B%B8%E5%BD%93%E5%91%A2%EF%BC%9F"><span class="toc-text">7. 生成器 和 判别器 必须水平相当才能训练起来，怎么保证双方水平相当呢？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-%E6%80%8E%E4%B9%88%E8%AF%84%E4%BC%B0%E4%B8%80%E4%B8%AAGAN%E7%9A%84%E5%A5%BD%E5%9D%8F%EF%BC%8C%E8%AF%84%E4%BC%B0%E5%85%B6%E7%94%9F%E6%88%90%E7%9A%84%E5%9B%BE%E7%89%87%E7%9A%84%E8%B4%A8%E9%87%8F%E7%9A%84%E5%A5%BD%E5%9D%8F"><span class="toc-text">8. 怎么评估一个GAN的好坏，评估其生成的图片的质量的好坏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-%E6%9C%89%E6%9D%A1%E4%BB%B6%E7%94%9F%E6%88%90%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C"><span class="toc-text">9. 有条件生成对抗网络</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-%E5%87%A0%E7%A7%8D%E5%B8%B8%E8%A7%81%E7%9A%84GAN"><span class="toc-text">10. 几种常见的GAN</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%9C%89%E8%BF%99%E4%B8%AA%E4%B8%9C%E8%A5%BF"><span class="toc-text"> 1. 为什么要有这个东西？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%94%9F%E6%88%90%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text"> 2. 生成对抗网络是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E5%88%86%E5%B8%83y%E5%B0%B1%E6%98%AF%E6%88%91%E4%BB%AC%E6%83%B3%E8%A6%81%E7%9A%84-%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83%E5%91%A2"><span class="toc-text"> 4. 如何保证分布Y就是我们想要的 概率分布呢？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E6%95%B4%E4%BD%93%E4%BC%98%E5%8C%96%E7%9B%AE%E6%A0%87%E6%98%AF%E4%BB%80%E4%B9%88%E5%A6%82%E4%BD%95%E8%AE%AD%E7%BB%83"><span class="toc-text"> 5. 整体优化目标是什么，如何训练？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-gan-%E6%98%AF%E5%BE%88%E9%9A%BEtrain%E7%9A%84%E5%8E%9F%E5%9B%A0%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text"> 6. GAN 是很难train的，原因是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E7%94%9F%E6%88%90%E5%99%A8-%E5%92%8C-%E5%88%A4%E5%88%AB%E5%99%A8-%E5%BF%85%E9%A1%BB%E6%B0%B4%E5%B9%B3%E7%9B%B8%E5%BD%93%E6%89%8D%E8%83%BD%E8%AE%AD%E7%BB%83%E8%B5%B7%E6%9D%A5%E6%80%8E%E4%B9%88%E4%BF%9D%E8%AF%81%E5%8F%8C%E6%96%B9%E6%B0%B4%E5%B9%B3%E7%9B%B8%E5%BD%93%E5%91%A2"><span class="toc-text"> 7. 生成器 和 判别器 必须水平相当才能训练起来，怎么保证双方水平相当呢？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-%E6%80%8E%E4%B9%88%E8%AF%84%E4%BC%B0%E4%B8%80%E4%B8%AAgan%E7%9A%84%E5%A5%BD%E5%9D%8F%E8%AF%84%E4%BC%B0%E5%85%B6%E7%94%9F%E6%88%90%E7%9A%84%E5%9B%BE%E7%89%87%E7%9A%84%E8%B4%A8%E9%87%8F%E7%9A%84%E5%A5%BD%E5%9D%8F"><span class="toc-text"> 8. 怎么评估一个GAN的好坏，评估其生成的图片的质量的好坏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-%E6%9C%89%E6%9D%A1%E4%BB%B6%E7%94%9F%E6%88%90%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C"><span class="toc-text"> 9. 有条件生成对抗网络</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-%E5%87%A0%E7%A7%8D%E5%B8%B8%E8%A7%81%E7%9A%84gan"><span class="toc-text"> 10. 几种常见的GAN</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1106,6 +1124,27 @@
       <!-- hash算法 -->
       
       <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2023/02/02/2-ji-suan-ji-shi-jue/bi-she/sheng-cheng-dui-kang-wang-luo-xin-dian-xin-hao-jiang-zao/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">02-02</span>
+                
+              </div>
+              <a class="post-title" href="/2023/02/02/2-ji-suan-ji-shi-jue/bi-she/sheng-cheng-dui-kang-wang-luo-xin-dian-xin-hao-jiang-zao/">暂无标题</a>
+            </div>
+          </div>
         
           <div class="aside-list-item">
             
@@ -1188,27 +1227,6 @@
                 
               </div>
               <a class="post-title" href="/2023/01/12/3-suan-fa/dong-tai-gui-hua/qu-jian-he-bing/">区间合并</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/01/11/4-ri-chang-sui-bi/hexo-jian-zhan/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/5.jpg" class="lazyload placeholder" data-srcset="/medias/5.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">01-11</span>
-                
-              </div>
-              <a class="post-title" href="/2023/01/11/4-ri-chang-sui-bi/hexo-jian-zhan/">hexo 建站</a>
             </div>
           </div>
         
@@ -1552,7 +1570,7 @@
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
 
           </div>
         
