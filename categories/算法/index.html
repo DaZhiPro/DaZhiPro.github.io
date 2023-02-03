@@ -726,12 +726,9 @@
             </a>
           </div>
           <div class="post-content">
-             计数问题
- 基本思路：
-
-暴力(O(191^919)) 暴力遍历每一个数，然后遍历每一位 这样的话 复杂度 1e8 * 8 * 测试样例数 大概就是 1e9 左右，但是C++代码中的操作次数控制在 1e7 ~ 1e8
-数位dp进行优化
-首
+            计数问题基本思路：
+暴力(O($1^9$)) 暴力遍历每一个数，然后遍历每一位 这样的话 复杂度 1e8  8  测试样例数 大概就是 1e9 左右，但是C++代码中的操作次数控制在 1e7 ~ 1e8
+数位dp进行优化首先设定一个函数 c
           </div>
         </div>
         <div class="post-more">
@@ -785,15 +782,10 @@
             </a>
           </div>
           <div class="post-content">
-             题目: 石子合并
- 题目分析
-
- 状态转移式推导
-
- 代码
-f[i][j]:表示合并第i堆到第j堆最小代价
-时间复杂度O(n3)O(n^3)O(n3)
-1234567891011121314151617181920212223242526
+            题目: 石子合并题目分析
+状态转移式推导
+代码f[i][j]:表示合并第i堆到第j堆最小代价时间复杂度$O(n^3)$
+1234567891011121314151617181920212223242526272829#include&lt
           </div>
         </div>
         <div class="post-more">
@@ -847,14 +839,10 @@ f[i][j]:表示合并第i堆到第j堆最小代价
             </a>
           </div>
           <div class="post-content">
-             双指针
- 问题
-
+            双指针问题
 一般适用于什么情况？
 
- 基本思想
- 模板
-123456for(int i = 0,j = 0; i &lt; n; i ++)&#123; // 看做快指针，尽管往前面跑    while(j &lt; n &amp;
+基本思想模板123456for(int i = 0,j = 0; i &lt; n; i ++)&#123; // 看做快指针，尽管往前面跑    while(j &lt; n &amp;&amp; ch
           </div>
         </div>
         <div class="post-more">
@@ -1016,14 +1004,10 @@ f[i][j]:表示合并第i堆到第j堆最小代价
             </a>
           </div>
           <div class="post-content">
-             高精度
- 问题
-超长数字的加减乘除 ( len(A),len(B) &gt; 1e6 )
- 模板
-
+            高精度问题超长数字的加减乘除 ( len(A),len(B) &gt; 1e6 )
+模板
 大数相加 C = A + B
-
-123456789101112void add(vector&lt;int&gt; &amp;A, vec
+123456789101112void add(vector&lt;int&gt; &amp;A, vector&lt;
           </div>
         </div>
         <div class="post-more">
@@ -1077,12 +1061,8 @@ f[i][j]:表示合并第i堆到第j堆最小代价
             </a>
           </div>
           <div class="post-content">
-             二分
- 问题
-适用于一个序列，有一个check函数，能够使得序列左边都返回false，右边都返回true，然后我们找的就是这个分界点的时候
- 基本思想
-两种情况
-一种是求 左半段最后一个元素，也就是说求上界，比如求 小于等于 x 的最后一
+            二分问题适用于一个序列，有一个check函数，能够使得序列左边都返回false，右边都返回true，然后我们找的就是这个分界点的时候
+基本思想两种情况一种是求 左半段最后一个元素，也就是说求上界，比如求 小于等于 x 的最后一个元素这时候 
           </div>
         </div>
         <div class="post-more">
@@ -1136,14 +1116,10 @@ f[i][j]:表示合并第i堆到第j堆最小代价
             </a>
           </div>
           <div class="post-content">
-             快速排序
- 问题
-将序列 q 的 l ~ r 区间排序
-void quick_sort(int q[], int l, int r)
- 基本思想 —— 分治
-
+            快速排序问题将序列 q 的 l ~ r 区间排序void quick_sort(int q[], int l, int r) 
+基本思想 —— 分治
 找一个参考值 x
-通过双指针算法交换使得  左半边全部是 &lt;= x , 
+通过双指针算法交换使得  左半边全部是 &lt;= x , 右半边全部是
           </div>
         </div>
         <div class="post-more">
@@ -1342,7 +1318,7 @@ void quick_sort(int q[], int l, int r)
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
 
           </div>
         
