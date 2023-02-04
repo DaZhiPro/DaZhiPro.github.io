@@ -186,31 +186,6 @@
     
     
     <entry>
-      <title>双指针</title>
-      <link href="/2023/01/06/3-suan-fa/ji-chu-suan-fa/05-shuang-zhi-zhen/"/>
-      <url>/2023/01/06/3-suan-fa/ji-chu-suan-fa/05-shuang-zhi-zhen/</url>
-      
-        <content type="html"><![CDATA[<h3 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h3><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><ol><li>一般适用于什么情况？</li></ol><h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4><h5 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>,j = <span class="number">0</span>; i &lt; n; i ++)&#123; <span class="comment">// 看做快指针，尽管往前面跑</span></span><br><span class="line">    <span class="keyword">while</span>(j &lt; n &amp;&amp; <span class="built_in">check</span>(j,i)) j ++;  <span class="comment">// j 看做慢指针， 有需要的情况下跟</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 问题的逻辑</span></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> 算法 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 双指针 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>离散化</title>
       <link href="/2023/01/06/3-suan-fa/ji-chu-suan-fa/06-chi-san-hua/"/>
       <url>/2023/01/06/3-suan-fa/ji-chu-suan-fa/06-chi-san-hua/</url>
@@ -228,6 +203,31 @@
         <tags>
             
             <tag> 离散化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>双指针</title>
+      <link href="/2023/01/06/3-suan-fa/ji-chu-suan-fa/05-shuang-zhi-zhen/"/>
+      <url>/2023/01/06/3-suan-fa/ji-chu-suan-fa/05-shuang-zhi-zhen/</url>
+      
+        <content type="html"><![CDATA[<h3 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h3><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><ol><li>一般适用于什么情况？</li></ol><h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4><h5 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>,j = <span class="number">0</span>; i &lt; n; i ++)&#123; <span class="comment">// 看做快指针，尽管往前面跑</span></span><br><span class="line">    <span class="keyword">while</span>(j &lt; n &amp;&amp; <span class="built_in">check</span>(j,i)) j ++;  <span class="comment">// j 看做慢指针， 有需要的情况下跟</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 问题的逻辑</span></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 双指针 </tag>
             
         </tags>
       
