@@ -692,7 +692,7 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 405 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 406 |
           </span>
   
           <span class="min2read">
@@ -719,21 +719,29 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h3 id="主机和虚拟机ping不通的原因"><a href="#主机和虚拟机ping不通的原因" class="headerlink" title="主机和虚拟机ping不通的原因"></a>主机和虚拟机ping不通的原因</h3><ol>
+        <h3 id="主机和虚拟机ping不通的原因"><a class="markdownIt-Anchor" href="#主机和虚拟机ping不通的原因"></a> 主机和虚拟机ping不通的原因</h3>
+<ol>
 <li>主机需要将自己网卡共享给VMware net8</li>
-<li>主机VMware net8虚拟网卡设计的网段需要和虚拟机中vmnet8 的网段设置为一样的<br>如果不一致，会出现主机ping不通虚拟机，反之可以，同时虚拟机也能上网</li>
+<li>主机VMware net8虚拟网卡设计的网段需要和虚拟机中vmnet8 的网段设置为一样的
+如果不一致，会出现主机ping不通虚拟机，反之可以，同时虚拟机也能上网</li>
 </ol>
-<h3 id="远程登录传输"><a href="#远程登录传输" class="headerlink" title="远程登录传输"></a>远程登录传输</h3><p>虚拟机ip  192.168.126.128   Vmwarenet8 196.168.126.0</p>
-<p>连接工具： XShell 和 XFTP<br>连接的时候主机一定要选择虚拟机（就是linux所在主机）<strong>的ip</strong><br>小问题：如果使用XFTP出现乱码的话，将语言改为UTF-8</p>
+<h3 id="远程登录传输"><a class="markdownIt-Anchor" href="#远程登录传输"></a> 远程登录传输</h3>
+<p>虚拟机ip  192.168.126.128   Vmwarenet8 196.168.126.0</p>
+<p>连接工具： XShell 和 XFTP
+连接的时候主机一定要选择虚拟机（就是linux所在主机）<strong>的ip</strong>
+小问题：如果使用XFTP出现乱码的话，将语言改为UTF-8</p>
 <p>连接成功后就可以远程通过用户名和密码 远程登录到linux系统</p>
-<h3 id="vim使用以及快捷键"><a href="#vim使用以及快捷键" class="headerlink" title="vim使用以及快捷键"></a>vim使用以及快捷键</h3><p>vim的三种模式</p>
+<h3 id="vim使用以及快捷键"><a class="markdownIt-Anchor" href="#vim使用以及快捷键"></a> vim使用以及快捷键</h3>
+<p>vim的三种模式</p>
 <ol>
 <li>正常模式 默认进去的模式，可以光标移动</li>
 <li>编辑模式 正常+ i\a 可以进行编辑</li>
-<li>命令模式 正常+：可以输入命令   :wq 保存并退出 :q! 强制退出 </li>
+<li>命令模式 正常+：可以输入命令   :wq 保存并退出 :q! 强制退出</li>
 </ol>
-<h4 id="各种模式的切换"><a href="#各种模式的切换" class="headerlink" title="各种模式的切换"></a>各种模式的切换</h4><p><img src="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221002232546072-1965942321.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221002232546072-1965942321.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<h4 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h4><ul>
+<h4 id="各种模式的切换"><a class="markdownIt-Anchor" href="#各种模式的切换"></a> 各种模式的切换</h4>
+<p><img src="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221002232546072-1965942321.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221002232546072-1965942321.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<h4 id="常用快捷键"><a class="markdownIt-Anchor" href="#常用快捷键"></a> 常用快捷键</h4>
+<ul>
 <li>yy 复制当前行  5yy 复制之后的5行    p 粘贴</li>
 <li>dd 删除当前行  6dd删除当前行后的6行</li>
 <li></li>
@@ -745,7 +753,7 @@
 <li>正常模式下：输入行号n，然后shift+g  go到第n行</li>
 <li>任何模式切换为正常模式 按ESC键</li>
 </ul>
-<p><img src="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221002234541152-1804272133.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221002234541152-1804272133.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
+<p><img src="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221002234541152-1804272133.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202210/2851436-20221002234541152-1804272133.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
 
       </div>
       <div class="post-tags-categories">
@@ -798,7 +806,10 @@
       </div>
       
       <!-- <div class="content">
-        快速排序问题将序列 q 的 l ~ r 区间排序void quick_sort(int q[], int l, int 
+         快速排序
+ 问题
+将序列 q 的 l ~ r 区间排序
+void quick_sort(int q[], int l,
       </div> -->
     </a>
   </div>
@@ -817,8 +828,12 @@
         <div class="title-text">Linux 常用命令</div>
       </div>
       <!-- <div class="content">
-        常用命令文件管理
-删除 rm option 文件/文件名option  -r:删除目录及其子文件   -f: 即使原档案
+         常用命令
+ 文件管理
+
+
+删除 rm option 文件/文件名
+option  -r:删除目录及其子文件   -f:
       </div> -->
     </a>
   </div>
@@ -1042,7 +1057,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E6%9C%BA%E5%92%8C%E8%99%9A%E6%8B%9F%E6%9C%BAping%E4%B8%8D%E9%80%9A%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="toc-text">主机和虚拟机ping不通的原因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E4%BC%A0%E8%BE%93"><span class="toc-text">远程登录传输</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vim%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">vim使用以及快捷键</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%84%E7%A7%8D%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%88%87%E6%8D%A2"><span class="toc-text">各种模式的切换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">常用快捷键</span></a></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E6%9C%BA%E5%92%8C%E8%99%9A%E6%8B%9F%E6%9C%BAping%E4%B8%8D%E9%80%9A%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="toc-text"> 主机和虚拟机ping不通的原因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E4%BC%A0%E8%BE%93"><span class="toc-text"> 远程登录传输</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vim%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text"> vim使用以及快捷键</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%84%E7%A7%8D%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%88%87%E6%8D%A2"><span class="toc-text"> 各种模式的切换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text"> 常用快捷键</span></a></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1068,27 +1083,6 @@
       <!-- hash算法 -->
       
       <div class="aside-list">
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/02/02/2-ji-suan-ji-shi-jue/bi-she/sheng-cheng-dui-kang-wang-luo-xin-dian-xin-hao-jiang-zao/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">02-02</span>
-                
-              </div>
-              <a class="post-title" href="/2023/02/02/2-ji-suan-ji-shi-jue/bi-she/sheng-cheng-dui-kang-wang-luo-xin-dian-xin-hao-jiang-zao/">暂无标题</a>
-            </div>
-          </div>
         
           <div class="aside-list-item">
             
@@ -1171,6 +1165,27 @@
                 
               </div>
               <a class="post-title" href="/2023/01/12/3-suan-fa/dong-tai-gui-hua/qu-jian-he-bing/">区间合并</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2023/01/11/4-ri-chang-sui-bi/hexo-jian-zhan/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/5.jpg" class="lazyload placeholder" data-srcset="/medias/5.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">01-11</span>
+                
+              </div>
+              <a class="post-title" href="/2023/01/11/4-ri-chang-sui-bi/hexo-jian-zhan/">hexo 建站</a>
             </div>
           </div>
         
@@ -1514,7 +1529,7 @@
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
 
           </div>
         
