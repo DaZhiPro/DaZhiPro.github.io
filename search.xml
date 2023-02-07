@@ -556,31 +556,6 @@
     
     
     <entry>
-      <title>反向传播</title>
-      <link href="/2022/10/05/2-ji-suan-ji-shi-jue/cnn/04-fan-xiang-chuan-bo/"/>
-      <url>/2022/10/05/2-ji-suan-ji-shi-jue/cnn/04-fan-xiang-chuan-bo/</url>
-      
-        <content type="html"><![CDATA[<p>等后续补充</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 机器视觉 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> CNN </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>卷积和池化</title>
       <link href="/2022/10/05/2-ji-suan-ji-shi-jue/cnn/05-juan-ji-chi-hua/"/>
       <url>/2022/10/05/2-ji-suan-ji-shi-jue/cnn/05-juan-ji-chi-hua/</url>
@@ -598,6 +573,31 @@
         <tags>
             
             <tag> CS231 </tag>
+            
+            <tag> CNN </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>反向传播</title>
+      <link href="/2022/10/05/2-ji-suan-ji-shi-jue/cnn/04-fan-xiang-chuan-bo/"/>
+      <url>/2022/10/05/2-ji-suan-ji-shi-jue/cnn/04-fan-xiang-chuan-bo/</url>
+      
+        <content type="html"><![CDATA[<p>等后续补充</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器视觉 </category>
+          
+      </categories>
+      
+      
+        <tags>
             
             <tag> CNN </tag>
             
