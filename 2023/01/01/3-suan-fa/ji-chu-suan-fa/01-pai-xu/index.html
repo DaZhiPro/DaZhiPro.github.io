@@ -611,7 +611,7 @@
       <div class="post-content">
         <h3 id="快速排序"><a class="markdownIt-Anchor" href="#快速排序"></a> 快速排序</h3>
 <h4 id="问题"><a class="markdownIt-Anchor" href="#问题"></a> <a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/787/">问题</a></h4>
-<p>将序列 q 的 l ~ r 区间排序
+<p>将序列 q 的 l ~ r 区间排序<br />
 void quick_sort(int q[], int l, int r)</p>
 <h4 id="基本思想-分治"><a class="markdownIt-Anchor" href="#基本思想-分治"></a> 基本思想 —— 分治</h4>
 <ol>
@@ -627,12 +627,12 @@ void quick_sort(int q[], int l, int r)</p>
 </ol>
 <h4 id="模板"><a class="markdownIt-Anchor" href="#模板"></a> 模板</h4>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">quick_sort</span><span class="params">(<span class="type">int</span> q[], <span class="type">int</span> l, <span class="type">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l &gt;= r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="type">int</span> i = l - <span class="number">1</span>, j = r + <span class="number">1</span>, x = q[l] + q[r] &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt; j)&#123;</span><br><span class="line">        <span class="keyword">while</span>(q[++ i] &lt; x);</span><br><span class="line">        <span class="keyword">while</span>(q[-- j] &gt; x);</span><br><span class="line">        <span class="keyword">if</span>(i &lt; j) <span class="built_in">swap</span>(q[i],q[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">quick_sort</span>( q, l, j), <span class="built_in">quick_sort</span>( q, j + <span class="number">1</span>, r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>注意点</strong>： 分界点的选择可以是[ l , j ]、 [ j + 1 , r ] 或者 [ l, i - 1 ]、[ i , r ],
+<p><strong>注意点</strong>： 分界点的选择可以是[ l , j ]、 [ j + 1 , r ] 或者 [ l, i - 1 ]、[ i , r ],<br />
 swap 的时候不要忘记判断 i &lt; j</p>
 <h3 id="归并排序"><a class="markdownIt-Anchor" href="#归并排序"></a> 归并排序</h3>
 <p>与快排的先排完上层，再排下层不同，归并排序是先排完下层再排上层</p>
 <h4 id="问题-2"><a class="markdownIt-Anchor" href="#问题-2"></a> <a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/789/">问题</a></h4>
-<p>将序列 q 的 l ~ r 区间排序
+<p>将序列 q 的 l ~ r 区间排序<br />
 void merge_sort(int q[], int l, int r)</p>
 <h4 id="基本思想"><a class="markdownIt-Anchor" href="#基本思想"></a> 基本思想</h4>
 <ol>

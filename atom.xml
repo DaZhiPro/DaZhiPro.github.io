@@ -6,7 +6,7 @@
   <link href="https://dazhipro.github.io/atom.xml" rel="self"/>
   
   <link href="https://dazhipro.github.io/"/>
-  <updated>2023-02-07T11:59:57.559Z</updated>
+  <updated>2023-02-07T12:10:44.581Z</updated>
   <id>https://dazhipro.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://dazhipro.github.io/2023/02/06/2-ji-suan-ji-shi-jue/gan/data-augmentation-using-gans/"/>
     <id>https://dazhipro.github.io/2023/02/06/2-ji-suan-ji-shi-jue/gan/data-augmentation-using-gans/</id>
     <published>2023-02-06T11:05:22.244Z</published>
-    <updated>2023-02-07T11:59:57.559Z</updated>
+    <updated>2023-02-07T12:10:44.581Z</updated>
     
     
       
@@ -508,8 +508,8 @@
       
         
         
-    <summary type="html">&lt;p&gt;LSTM 又叫长 短时记忆神经网络，问了解决RNN不能处理 &lt;code&gt;从较长的前文中推断下一个单词的问题&lt;/code&gt; 而提出的
-&lt;code&gt;从较长的前文中推断下一个单词的问题&lt;/code&gt;比如：&amp;quot;I grew up in France… I speak</summary>
+    <summary type="html">&lt;p&gt;LSTM 又叫长 短时记忆神经网络，问了解决RNN不能处理 &lt;code&gt;从较长的前文中推断下一个单词的问题&lt;/code&gt; 而提出的&lt;br /&gt;
+&lt;code&gt;从较长的前文中推断下一个单词的问题&lt;/code&gt;比如：&amp;quot;I grew up in France… I</summary>
         
       
     

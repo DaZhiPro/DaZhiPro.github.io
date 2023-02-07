@@ -616,9 +616,9 @@
 <h4 id="基本思路"><a class="markdownIt-Anchor" href="#基本思路"></a> 基本思路：</h4>
 <ol>
 <li>暴力(O(<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>1</mn><mn>9</mn></msup></mrow><annotation encoding="application/x-tex">1^9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">1</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span>)) 暴力遍历每一个数，然后遍历每一位 这样的话 复杂度 1e8 * 8 * 测试样例数 大概就是 1e9 左右，但是C++代码中的操作次数控制在 1e7 ~ 1e8</li>
-<li>数位dp进行优化
-首先设定一个函数 <code>count(int n, int x)</code> 用于计算 1 ~ n 中 x 出现的次数
-然后分类讨论对于任意一个数 abcdefg  x 出现在第 i 位可能的情况数有多少
+<li>数位dp进行优化<br />
+首先设定一个函数 <code>count(int n, int x)</code> 用于计算 1 ~ n 中 x 出现的次数<br />
+然后分类讨论对于任意一个数 abcdefg  x 出现在第 i 位可能的情况数有多少<br />
 例如 i = 4： *** x ***</li>
 <li>前三个数 *** 取 000 ~ abc - 1 的时候，第四位是 x，此后三位随便取 000~999 共1e3中取法, 组合共 abc *   1e3种取法</li>
 <li>前三个数 *** 取 abc 时候，
@@ -628,7 +628,7 @@
 </ol>
 </li>
 </ol>
-<p>前导0的问题：(1) 0 不可能出现在 最高位，x = 0时不用考虑最高位是x的情况
+<p>前导0的问题：(1) 0 不可能出现在 最高位，x = 0时不用考虑最高位是x的情况<br />
 (2) x = 0时，前面的数不能全为0，例如 i = 4，第四位是x，是0 的时候，他前面不能是 <code>000~abc-1</code>，必须是<code>001~abc-1</code></p>
 <h4 id="具体算法"><a class="markdownIt-Anchor" href="#具体算法"></a> 具体算法：</h4>
 <p>遍历n的每一位，考虑第i位为x的情况共有多少种， 种类数就是前面讨论为三类之和</p>

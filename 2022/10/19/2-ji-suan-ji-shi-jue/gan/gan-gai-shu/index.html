@@ -612,7 +612,7 @@
         <p>GAN(Generative Adversarial Network) 生成对抗网络</p>
 <h4 id="1-为什么要有这个东西"><a class="markdownIt-Anchor" href="#1-为什么要有这个东西"></a> 1. 为什么要有这个东西？</h4>
 <p>为了解决相同输入x，不同输出y的情形,每一个输出都是对的，唯一可以知道的是他服从某一个分布。</p>
-<p>李宏毅中的例子是根据游戏的前三帧，去预测下一帧，当前三帧游戏人物走到路口的时候，下一帧可能左拐也可能右拐，无法得到一个确切的输出，只能得到一个概率分布。
+<p>李宏毅中的例子是根据游戏的前三帧，去预测下一帧，当前三帧游戏人物走到路口的时候，下一帧可能左拐也可能右拐，无法得到一个确切的输出，只能得到一个概率分布。<br />
 也可以用于扩充样本。</p>
 <h4 id="2-生成对抗网络是什么"><a class="markdownIt-Anchor" href="#2-生成对抗网络是什么"></a> 2. 生成对抗网络是什么？</h4>
 <p>一个生成对抗网络主要包含 生成器 + 判别器</p>
@@ -632,7 +632,7 @@
 </li>
 </ol>
 <h4 id="4-如何保证分布y就是我们想要的-概率分布呢"><a class="markdownIt-Anchor" href="#4-如何保证分布y就是我们想要的-概率分布呢"></a> 4. 如何保证分布Y就是我们想要的 概率分布呢？</h4>
-<p>使用 判别器D 建立一个分类的network，他的输入是 生成器G 的输出，和我们已知的样本分布，输出是一个值，表示他和所需要生成的样本的差异程度，用这个值来表示 生成器G 表现好不好
+<p>使用 判别器D 建立一个分类的network，他的输入是 生成器G 的输出，和我们已知的样本分布，输出是一个值，表示他和所需要生成的样本的差异程度，用这个值来表示 生成器G 表现好不好<br />
 <img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129165154824-1146175719.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129165154824-1146175719.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
 <p>真正计算的时候： 从real_data (标签1) 和 generated_data(标签0) 中随机抽取出若干个输入network分类，设定loss使得real_data得分尽可能高，generated_data 的分尽可能低</p>
 <p><img src="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129201624345-504111067.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202211/2851436-20221129201624345-504111067.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
@@ -690,12 +690,12 @@
         
         <div class="tags">
           
-            <a href="/tags/GAN/" class="">
-              GAN
-            </a>
-          
             <a href="/tags/%E6%9D%8E%E5%AE%8F%E6%AF%85%E7%AC%94%E8%AE%B0/" class="">
               李宏毅笔记
+            </a>
+          
+            <a href="/tags/GAN/" class="">
+              GAN
             </a>
           
         </div>

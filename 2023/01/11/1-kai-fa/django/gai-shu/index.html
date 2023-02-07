@@ -622,7 +622,7 @@
 <p>创建hello world 应用 <code>python manage.py startapp helloworld</code></p>
 </li>
 <li>
-<p>应用链接项目：在mysite的url中链接到helloworld应用的界面
+<p>应用链接项目：在mysite的url中链接到helloworld应用的界面<br />
 ---mysite/urls.py---</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> include, path</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">&#x27;helloworld/&#x27;</span>, include(<span class="string">&#x27;helloworld.urls&#x27;</span>)),</span><br><span class="line">    path(<span class="string">&#x27;admin/&#x27;</span>, admin.site.urls),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 </li>
@@ -633,8 +633,8 @@
 <h2 id="常见的初始化配置"><a class="markdownIt-Anchor" href="#常见的初始化配置"></a> 常见的初始化配置</h2>
 <ul>
 <li>
-<p>数据库
-安装mysql、新建数据库、配置账户密码
+<p>数据库<br />
+安装mysql、新建数据库、配置账户密码<br />
 ----mysite/setting.py---</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">DATABASES = &#123;</span><br><span class="line">  <span class="string">&#x27;default&#x27;</span>: &#123;</span><br><span class="line">      <span class="string">&#x27;ENGINE&#x27;</span>: <span class="string">&#x27;django.db.backends.mysql&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;NAME&#x27;</span>: <span class="string">&#x27;poll&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;USER&#x27;</span>: <span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;PASSWORD&#x27;</span>: <span class="string">&#x27;654321&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;HOST&#x27;</span>: <span class="string">&#x27;127.0.0.1&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;PORT&#x27;</span>: <span class="string">&#x27;3306&#x27;</span>,</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -646,7 +646,7 @@
 <h2 id="路由"><a class="markdownIt-Anchor" href="#路由"></a> 路由</h2>
 <p>django 的 url 中的 path 函数提供路由功能，将用户的每个 url 映射到views中的某个函数</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path,include</span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">&#x27;admin/&#x27;</span>, admin.site.urls),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<p>url 中带参数：
+<p>url 中带参数：<br />
 <code>path('&lt;int:question_id&gt;/vote/', views.vote, name='vote')</code></p>
 <h2 id="数据传输"><a class="markdownIt-Anchor" href="#数据传输"></a> 数据传输</h2>
 <h3 id="后端和数据库的数据传输"><a class="markdownIt-Anchor" href="#后端和数据库的数据传输"></a> 后端和数据库的数据传输</h3>
@@ -659,25 +659,25 @@
 </ol>
 <h3 id="前端和后端的数据传输"><a class="markdownIt-Anchor" href="#前端和后端的数据传输"></a> 前端和后端的数据传输</h3>
 <ol>
-<li>get 方式 url 中带参数
+<li>get 方式 url 中带参数<br />
 比如url中带question.id后端就把对应的问题从数据库中找出来</li>
-<li>form 方式 字典的方式带数据
+<li>form 方式 字典的方式带数据<br />
 后端可以request.POST['choice']来获取字典中choice对应的value</li>
 </ol>
 <h2 id="常见函数"><a class="markdownIt-Anchor" href="#常见函数"></a> 常见函数</h2>
 <h3 id="操作数据api"><a class="markdownIt-Anchor" href="#操作数据api"></a> 操作数据API</h3>
-<p><em><strong>增</strong></em>
-q = Question(question_text=&quot;What's new?&quot;, pub_date=timezone.now())
+<p><em><strong>增</strong></em><br />
+q = Question(question_text=&quot;What's new?&quot;, pub_date=timezone.now())<br />
 q.save()</p>
-<p><em><strong>删</strong></em>
-q = Question.objects.get(pk=1)
-q.delete()
-<em><strong>查</strong></em>
-<code>Question.object.all()</code> : 获取一个类的所有对象
+<p><em><strong>删</strong></em><br />
+q = Question.objects.get(pk=1)<br />
+q.delete()<br />
+<em><strong>查</strong></em><br />
+<code>Question.object.all()</code> : 获取一个类的所有对象<br />
 <code>q=Question.objects.get(pk=1)</code></p>
-<p><em><strong>改</strong></em>
-q = Question.objects.get(pk=1)
-q.question_text = &quot;xinzhi&quot;
+<p><em><strong>改</strong></em><br />
+q = Question.objects.get(pk=1)<br />
+q.question_text = &quot;xinzhi&quot;<br />
 q.save()</p>
 
       </div>

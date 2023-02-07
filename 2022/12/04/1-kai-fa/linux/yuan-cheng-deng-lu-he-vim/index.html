@@ -612,13 +612,13 @@
         <h3 id="主机和虚拟机ping不通的原因"><a class="markdownIt-Anchor" href="#主机和虚拟机ping不通的原因"></a> 主机和虚拟机ping不通的原因</h3>
 <ol>
 <li>主机需要将自己网卡共享给VMware net8</li>
-<li>主机VMware net8虚拟网卡设计的网段需要和虚拟机中vmnet8 的网段设置为一样的
+<li>主机VMware net8虚拟网卡设计的网段需要和虚拟机中vmnet8 的网段设置为一样的<br />
 如果不一致，会出现主机ping不通虚拟机，反之可以，同时虚拟机也能上网</li>
 </ol>
 <h3 id="远程登录传输"><a class="markdownIt-Anchor" href="#远程登录传输"></a> 远程登录传输</h3>
 <p>虚拟机ip  192.168.126.128   Vmwarenet8 196.168.126.0</p>
-<p>连接工具： XShell 和 XFTP
-连接的时候主机一定要选择虚拟机（就是linux所在主机）<strong>的ip</strong>
+<p>连接工具： XShell 和 XFTP<br />
+连接的时候主机一定要选择虚拟机（就是linux所在主机）<strong>的ip</strong><br />
 小问题：如果使用XFTP出现乱码的话，将语言改为UTF-8</p>
 <p>连接成功后就可以远程通过用户名和密码 远程登录到linux系统</p>
 <h3 id="vim使用以及快捷键"><a class="markdownIt-Anchor" href="#vim使用以及快捷键"></a> vim使用以及快捷键</h3>
