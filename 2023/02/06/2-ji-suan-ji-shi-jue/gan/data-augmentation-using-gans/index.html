@@ -585,7 +585,7 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 1.7k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 1.8k |
           </span>
   
           <span class="min2read">
@@ -727,13 +727,14 @@ of it obtained by undersampling the majority class.</li>
 </li>
 </ol>
 <h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
-<p>这篇论文的特别之处就是他并没有用 loss 有多低，有多接近样本去描述GAN的好坏</p>
-<p>他直接用了简单的分类器，对比GAN产生的数据和原始数据上两个分类器性能的好坏，来评价GAN的好坏</p>
-<p>某种意义上说可能 GAN 产生的数据在我们开来不太一样，但是在在计算机看来就是一样的，而且分类器性能更好，说明可能 GAN 抓住了本质，本质（某些特征）上一样，知识我们乍一看可能不一样</p>
 <p>总体来说，文章讲述了GAN的两大基本应用，一个是通过 GAN 在没有原始数据集的情况下可以训练一个分类器（解决敏感数据脱敏的问题，另一个是通过 GAN 扩充少数样本来解决样本不均衡的问题、
 最终发现使用GAN合成的数据训练出来的分类器性能甚至更好，第一个方面对于数据脱敏问题有个很好的应用
 在处理样本不均衡的问题上，使用GAN扩充少数样本比不扩充效果更好，但是不如SMOTE 和 ADASYN ，好处是比较简单，不需要定义任何约束和规则
 最后本文知识研究了GAN基本架构，探讨了不同深度的变化，后续可以进行过更多研究</p>
+<ol>
+<li>优点：这篇论文的特别之处就是他并没有用 loss 有多低，有多接近样本去描述GAN的好坏，他直接用了简单的分类器，对比GAN产生的数据和原始数据上两个分类器性能的好坏，来评价GAN的好坏。某种意义上说可能 GAN 产生的数据在我们看来不太一样，但是在在计算机看来就是一样的，而且分类器性能更好，说明可能 GAN 抓住了本质，本质（某些特征）上一样，知识我们乍一看可能不一样</li>
+<li>缺点：文章中所实验的GAN的网络结构比较简单，可以使用不同的loss探索更多的可能。</li>
+</ol>
 <h4 id="补充知识"><a class="markdownIt-Anchor" href="#补充知识"></a> 补充知识</h4>
 <p>TP（True Positives)：真正例，预测为正例而且实际上也是正例；</p>
 <p>FP（False Positives)：假正例，预测为正例然而实际上却是负例；</p>
@@ -745,6 +746,9 @@ of it obtained by undersampling the majority class.</li>
 <p>召回率：在实际的正样本中，预测为正样本的概率</p>
 <p>F1值：综合考虑精确率和召回率
 具体参考链接 <a target="_blank" rel="noopener" href="https://blog.csdn.net/lhxez6868/article/details/108150777">https://blog.csdn.net/lhxez6868/article/details/108150777</a></p>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<p>原文献：<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1904.09135.pdf">https://arxiv.org/pdf/1904.09135.pdf</a>
+代码：  <a target="_blank" rel="noopener" href="https://github.com/fhtanaka/directed_research_CS_2018">https://github.com/fhtanaka/directed_research_CS_2018</a></p>
 
       </div>
       <div class="post-tags-categories">
@@ -1027,7 +1031,7 @@ of it obtained by undersampling the majority class.</li>
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-text"> 问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9"><span class="toc-text"> 主要内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#gan"><span class="toc-text"> GAN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E8%BF%87%E9%87%87%E6%A0%B7%E6%96%B9%E6%B3%95-smote-%E5%92%8C-adasyn"><span class="toc-text"> 两个过采样方法 SMOTE 和 ADASYN</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1"><span class="toc-text"> 实验设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E9%97%AE%E9%A2%98"><span class="toc-text"> 数据集问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AD%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84-gan-%E7%BB%93%E6%9E%84"><span class="toc-text"> 六种不同的 GAN 结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%B8%80-%E5%AE%8C%E5%85%A8%E7%94%A8gan%E4%BA%A7%E7%94%9F%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E5%AF%B9%E7%B3%96%E5%B0%BF%E7%97%85%E5%92%8C%E7%99%8C%E7%97%87%E6%95%B0%E6%8D%AE%E9%9B%86%E8%BF%9B%E8%A1%8C%E5%88%86%E7%B1%BB"><span class="toc-text"> 实验一 完全用GAN产生的数据集对糖尿病和癌症数据集进行分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90"><span class="toc-text"> 结果分析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%BA%8C-%E5%AF%B9%E6%AF%94%E6%89%A9%E5%85%85%E4%B8%8D%E5%B9%B3%E8%A1%A1%E6%95%B0%E6%8D%AE%E9%9B%86-%E7%94%A8%E4%B8%89%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E6%96%B9%E5%BC%8Fgan-smote-adasyn"><span class="toc-text"> 实验二 对比扩充不平衡数据集 用三种不同的方式GAN、SMOTE、ADASYN</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90-2"><span class="toc-text"> 结果分析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text"> 总结</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86"><span class="toc-text"> 补充知识</span></a></li></ol></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-text"> 问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9"><span class="toc-text"> 主要内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#gan"><span class="toc-text"> GAN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E8%BF%87%E9%87%87%E6%A0%B7%E6%96%B9%E6%B3%95-smote-%E5%92%8C-adasyn"><span class="toc-text"> 两个过采样方法 SMOTE 和 ADASYN</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1"><span class="toc-text"> 实验设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E9%97%AE%E9%A2%98"><span class="toc-text"> 数据集问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AD%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84-gan-%E7%BB%93%E6%9E%84"><span class="toc-text"> 六种不同的 GAN 结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%B8%80-%E5%AE%8C%E5%85%A8%E7%94%A8gan%E4%BA%A7%E7%94%9F%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E5%AF%B9%E7%B3%96%E5%B0%BF%E7%97%85%E5%92%8C%E7%99%8C%E7%97%87%E6%95%B0%E6%8D%AE%E9%9B%86%E8%BF%9B%E8%A1%8C%E5%88%86%E7%B1%BB"><span class="toc-text"> 实验一 完全用GAN产生的数据集对糖尿病和癌症数据集进行分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90"><span class="toc-text"> 结果分析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%BA%8C-%E5%AF%B9%E6%AF%94%E6%89%A9%E5%85%85%E4%B8%8D%E5%B9%B3%E8%A1%A1%E6%95%B0%E6%8D%AE%E9%9B%86-%E7%94%A8%E4%B8%89%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E6%96%B9%E5%BC%8Fgan-smote-adasyn"><span class="toc-text"> 实验二 对比扩充不平衡数据集 用三种不同的方式GAN、SMOTE、ADASYN</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90-2"><span class="toc-text"> 结果分析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text"> 总结</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86"><span class="toc-text"> 补充知识</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-text"> 参考</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
