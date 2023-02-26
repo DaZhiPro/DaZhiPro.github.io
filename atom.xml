@@ -6,7 +6,7 @@
   <link href="https://dazhipro.github.io/atom.xml" rel="self"/>
   
   <link href="https://dazhipro.github.io/"/>
-  <updated>2023-02-07T12:10:44.581Z</updated>
+  <updated>2023-02-26T02:20:52.253Z</updated>
   <id>https://dazhipro.github.io/</id>
   
   <author>
@@ -17,19 +17,49 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>pytorch 基础</title>
+    <link href="https://dazhipro.github.io/2023/02/26/2-ji-suan-ji-shi-jue/pytorch-ji-chu/"/>
+    <id>https://dazhipro.github.io/2023/02/26/2-ji-suan-ji-shi-jue/pytorch-ji-chu/</id>
+    <published>2023-02-26T02:17:45.732Z</published>
+    <updated>2023-02-26T02:20:52.253Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;自动求导机制&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#自动求导机制&quot;&gt;&lt;/a&gt; 自动求导机制&lt;/h4&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    <category term="机器学习" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="速查" scheme="https://dazhipro.github.io/tags/%E9%80%9F%E6%9F%A5/"/>
+    
+    <category term="机器学习" scheme="https://dazhipro.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Date Augmentation Using GANs文献阅读笔记</title>
     <link href="https://dazhipro.github.io/2023/02/06/2-ji-suan-ji-shi-jue/gan/data-augmentation-using-gans/"/>
     <id>https://dazhipro.github.io/2023/02/06/2-ji-suan-ji-shi-jue/gan/data-augmentation-using-gans/</id>
     <published>2023-02-06T11:05:22.244Z</published>
-    <updated>2023-02-07T12:10:44.581Z</updated>
+    <updated>2023-02-26T02:20:38.423Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;样本不均衡问题&lt;ul&gt;
+    <summary type="html">&lt;h2 id=&quot;问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#问题&quot;&gt;&lt;/a&gt; 问题&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;样本不均衡问题
+&lt;ul&gt;
 &lt;li&gt;信用卡欺诈分类：</summary>
         
       
@@ -39,9 +69,9 @@
     <category term="机器学习" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="毕设" scheme="https://dazhipro.github.io/tags/%E6%AF%95%E8%AE%BE/"/>
-    
     <category term="GAN" scheme="https://dazhipro.github.io/tags/GAN/"/>
+    
+    <category term="毕设" scheme="https://dazhipro.github.io/tags/%E6%AF%95%E8%AE%BE/"/>
     
   </entry>
   
@@ -75,20 +105,21 @@
     <link href="https://dazhipro.github.io/2023/01/30/2-ji-suan-ji-shi-jue/hui-gui-mo-xing/"/>
     <id>https://dazhipro.github.io/2023/01/30/2-ji-suan-ji-shi-jue/hui-gui-mo-xing/</id>
     <published>2023-01-30T02:36:44.304Z</published>
-    <updated>2023-01-31T03:29:58.227Z</updated>
+    <updated>2023-02-26T02:20:24.938Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;第八章-回归模型&quot;&gt;&lt;a href=&quot;#第八章-回归模型&quot; class=&quot;headerlink&quot; title=&quot;第八章 回归模型&quot;&gt;&lt;/a&gt;第八章 回归模型&lt;/h1&gt;&lt;p&gt;定义：根据向量 $x = [x_1,x_2,…,x_n]^T$ 来估计全局状态</summary>
+    <summary type="html">&lt;h1 id=&quot;第八章-回归模型&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#第八章-回归模型&quot;&gt;&lt;/a&gt; 第八章 回归模型&lt;/h1&gt;
+&lt;p&gt;定义：根据向量 &lt;span class=&quot;katex&quot;&gt;&lt;span</summary>
         
       
     
     
     
-    <category term="机器视觉" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/"/>
+    <category term="机器学习" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
     <category term="《计算机视觉》" scheme="https://dazhipro.github.io/tags/%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E3%80%8B/"/>
@@ -107,7 +138,8 @@
       
         
         
-    <summary type="html">&lt;h4 id=&quot;计数问题&quot;&gt;&lt;a href=&quot;#计数问题&quot; class=&quot;headerlink&quot; title=&quot;计数问题&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acwing.com/problem/content/340/&quot;&gt;计数问题&lt;/a&gt;&lt;/h4&gt;&lt;h4</summary>
+    <summary type="html">&lt;h4 id=&quot;计数问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#计数问题&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://www.acwing.com/problem/content/340/&quot;&gt;计数问题&lt;/a&gt;&lt;/h4&gt;
+&lt;h4</summary>
         
       
     
@@ -132,7 +164,7 @@
       
         
         
-    <summary type="html">&lt;h4 id=&quot;题目-石子合并&quot;&gt;&lt;a href=&quot;#题目-石子合并&quot; class=&quot;headerlink&quot; title=&quot;题目: 石子合并&quot;&gt;&lt;/a&gt;题目: &lt;a</summary>
+    <summary type="html">&lt;h4 id=&quot;题目-石子合并&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#题目-石子合并&quot;&gt;&lt;/a&gt; 题目: &lt;a</summary>
         
       
     
@@ -182,7 +214,10 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;新建第一个hello-world&quot;&gt;&lt;a href=&quot;#新建第一个hello-world&quot; class=&quot;headerlink&quot; title=&quot;新建第一个hello world&quot;&gt;&lt;/a&gt;新建第一个hello</summary>
+    <summary type="html">&lt;h2 id=&quot;新建第一个hello-world&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#新建第一个hello-world&quot;&gt;&lt;/a&gt; 新建第一个hello world&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;安装Django：</summary>
         
       
     
@@ -228,7 +263,8 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;双指针&quot;&gt;&lt;a href=&quot;#双指针&quot; class=&quot;headerlink&quot; title=&quot;双指针&quot;&gt;&lt;/a&gt;双指针&lt;/h3&gt;&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h3 id=&quot;双指针&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#双指针&quot;&gt;&lt;/a&gt; 双指针&lt;/h3&gt;
+&lt;h4 id=&quot;问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#问题&quot;&gt;&lt;/a&gt;</summary>
         
       
     
@@ -287,7 +323,8 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;高精度&quot;&gt;&lt;a href=&quot;#高精度&quot; class=&quot;headerlink&quot; title=&quot;高精度&quot;&gt;&lt;/a&gt;高精度&lt;/h3&gt;&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h3 id=&quot;高精度&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#高精度&quot;&gt;&lt;/a&gt; 高精度&lt;/h3&gt;
+&lt;h4 id=&quot;问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#问题&quot;&gt;&lt;/a&gt;</summary>
         
       
     
@@ -312,7 +349,8 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;二分&quot;&gt;&lt;a href=&quot;#二分&quot; class=&quot;headerlink&quot; title=&quot;二分&quot;&gt;&lt;/a&gt;二分&lt;/h3&gt;&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;&lt;a</summary>
+    <summary type="html">&lt;h3 id=&quot;二分&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#二分&quot;&gt;&lt;/a&gt; 二分&lt;/h3&gt;
+&lt;h4 id=&quot;问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#问题&quot;&gt;&lt;/a&gt; &lt;a</summary>
         
       
     
@@ -337,7 +375,8 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;快速排序&quot;&gt;&lt;a href=&quot;#快速排序&quot; class=&quot;headerlink&quot; title=&quot;快速排序&quot;&gt;&lt;/a&gt;快速排序&lt;/h3&gt;&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;&lt;a</summary>
+    <summary type="html">&lt;h3 id=&quot;快速排序&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#快速排序&quot;&gt;&lt;/a&gt; 快速排序&lt;/h3&gt;
+&lt;h4 id=&quot;问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#问题&quot;&gt;&lt;/a&gt; &lt;a</summary>
         
       
     
@@ -362,7 +401,9 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;主机和虚拟机ping不通的原因&quot;&gt;&lt;a href=&quot;#主机和虚拟机ping不通的原因&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h3 id=&quot;主机和虚拟机ping不通的原因&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#主机和虚拟机ping不通的原因&quot;&gt;&lt;/a&gt; 主机和虚拟机ping不通的原因&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;主机需要将自己网卡共享给VMware</summary>
         
       
     
@@ -387,7 +428,8 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;常用命令&quot;&gt;&lt;a href=&quot;#常用命令&quot; class=&quot;headerlink&quot; title=&quot;常用命令&quot;&gt;&lt;/a&gt;常用命令&lt;/h2&gt;&lt;h3 id=&quot;文件管理&quot;&gt;&lt;a href=&quot;#文件管理&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;常用命令&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#常用命令&quot;&gt;&lt;/a&gt; 常用命令&lt;/h2&gt;
+&lt;h3 id=&quot;文件管理&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#文件管理&quot;&gt;&lt;/a&gt;</summary>
         
       
     
@@ -412,7 +454,8 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h1&gt;&lt;h3 id=&quot;学习路线&quot;&gt;&lt;a href=&quot;#学习路线&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;概述&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#概述&quot;&gt;&lt;/a&gt; 概述&lt;/h1&gt;
+&lt;h3 id=&quot;学习路线&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#学习路线&quot;&gt;&lt;/a&gt;</summary>
         
       
     
@@ -430,20 +473,20 @@
     <link href="https://dazhipro.github.io/2022/10/25/2-ji-suan-ji-shi-jue/ji-suan-ji-shi-jue-bi-ji/"/>
     <id>https://dazhipro.github.io/2022/10/25/2-ji-suan-ji-shi-jue/ji-suan-ji-shi-jue-bi-ji/</id>
     <published>2022-10-25T04:40:19.000Z</published>
-    <updated>2023-01-30T08:01:47.790Z</updated>
+    <updated>2023-02-26T02:20:20.927Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h3 id=&quot;先验-后验-和-似然函数的关系&quot;&gt;&lt;a href=&quot;#先验-后验-和-似然函数的关系&quot; class=&quot;headerlink&quot; title=&quot;先验 后验 和 似然函数的关系&quot;&gt;&lt;/a&gt;&lt;a</summary>
+    <summary type="html">&lt;h3 id=&quot;先验-后验-和-似然函数的关系&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#先验-后验-和-似然函数的关系&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://zhuanlan.zhihu.com/p/157677467&quot;&gt;先验 后验 和</summary>
         
       
     
     
     
-    <category term="机器视觉" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/"/>
+    <category term="机器学习" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
     <category term="《计算机视觉》" scheme="https://dazhipro.github.io/tags/%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E3%80%8B/"/>
@@ -462,7 +505,8 @@
       
         
         
-    <summary type="html">&lt;p&gt;LSTM 又叫长 短时记忆神经网络，问了解决RNN不能处理 &lt;code&gt;从较长的前文中推断下一个单词的问题&lt;/code&gt; 而提出的&lt;br&gt;&lt;code&gt;从较长的前文中推断下一个单词的问题&lt;/code&gt;比如：”I grew up in France… I speak</summary>
+    <summary type="html">&lt;p&gt;LSTM 又叫长 短时记忆神经网络，问了解决RNN不能处理 &lt;code&gt;从较长的前文中推断下一个单词的问题&lt;/code&gt; 而提出的&lt;br /&gt;
+&lt;code&gt;从较长的前文中推断下一个单词的问题&lt;/code&gt;比如：&amp;quot;I grew up in France… I</summary>
         
       
     
@@ -474,34 +518,6 @@
     <category term="李宏毅笔记" scheme="https://dazhipro.github.io/tags/%E6%9D%8E%E5%AE%8F%E6%AF%85%E7%AC%94%E8%AE%B0/"/>
     
     <category term="LSTM" scheme="https://dazhipro.github.io/tags/LSTM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GAN 李宏毅笔记</title>
-    <link href="https://dazhipro.github.io/2022/10/19/2-ji-suan-ji-shi-jue/gan/gan-gai-shu/"/>
-    <id>https://dazhipro.github.io/2022/10/19/2-ji-suan-ji-shi-jue/gan/gan-gai-shu/</id>
-    <published>2022-10-19T04:40:19.000Z</published>
-    <updated>2023-01-11T09:28:11.138Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;GAN(Generative Adversarial Network) 生成对抗网络&lt;/p&gt;
-&lt;h4 id=&quot;1-为什么要有这个东西？&quot;&gt;&lt;a href=&quot;#1-为什么要有这个东西？&quot; class=&quot;headerlink&quot; title=&quot;1.</summary>
-        
-      
-    
-    
-    
-    <category term="机器视觉" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/"/>
-    
-    
-    <category term="GAN" scheme="https://dazhipro.github.io/tags/GAN/"/>
-    
-    <category term="李宏毅笔记" scheme="https://dazhipro.github.io/tags/%E6%9D%8E%E5%AE%8F%E6%AF%85%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
