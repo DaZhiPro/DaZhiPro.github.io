@@ -605,10 +605,17 @@
 <p>数据： X：温度，压强。。。。   Y:故障号</p>
 <p>方法： 数据预处理 embedding 降维度， 同时建立一个函数 X = f(Y),就是根据故障号，能生成故障属性</p>
 <ol>
-<li>算每一类的中心</li>
-<li>训练 D K次 D的优化目标 ： 鉴别出realdata和fakedata 同时 对data分类准确<br><img src="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192411786-167486232.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192411786-167486232.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="D的优化目标"></li>
-<li><p>训练 G G的优化目标 ： 断过D的判别fakedata 同时是 D 对fakedata分类准确<br><img src="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192732139-1961494944.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192732139-1961494944.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<p><img src="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192741469-778150254.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192741469-778150254.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
+<li>
+<p>算每一类的中心</p>
+</li>
+<li>
+<p>训练 D K次 D的优化目标 ： 鉴别出realdata和fakedata 同时 对data分类准确<br />
+<img src="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192411786-167486232.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192411786-167486232.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="D的优化目标" /></p>
+</li>
+<li>
+<p>训练 G G的优化目标 ： 断过D的判别fakedata 同时是 D 对fakedata分类准确<br />
+<img src="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192732139-1961494944.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192732139-1961494944.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<p><img src="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192741469-778150254.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192741469-778150254.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
 <p>二者的和</p>
 </li>
 </ol>
@@ -619,13 +626,19 @@
 <li>三元组形式的辅助损失函数是什么？</li>
 <li>两个数据集是哪两个？ 液压系统数据集  和  田纳西-伊斯曼（TE）仿真平台 得到的数据集</li>
 <li>能概括核心内容的图找一下?</li>
-<li>文章的主要贡献是什么<br>提出了故障属性这么一个概念？<br>ACGAN 基础基础上 引入了 Triplet loss损失 （这个之前就有，只不过是用于人脸识别的）<br>小样本问题使用了微调技术： 生成的数据+真实小样本数据 上先训练，训练差不多后再只在小样本上训练（此时调低学习率）</li>
+<li>文章的主要贡献是什么<br />
+提出了故障属性这么一个概念？<br />
+ACGAN 基础基础上 引入了 Triplet loss损失 （这个之前就有，只不过是用于人脸识别的）<br />
+小样本问题使用了微调技术： 生成的数据+真实小样本数据 上先训练，训练差不多后再只在小样本上训练（此时调低学习率）</li>
 </ol>
-<h4 id="背景知识；"><a href="#背景知识；" class="headerlink" title="背景知识；"></a>背景知识；</h4><ol>
-<li>ACGAN：<br>ACGAN（Auxiliary Classifier GAN）是在CGAN基础上的扩展，通过对判别器进行改进实现了图像分类的功能。</li>
+<h4 id="背景知识"><a class="markdownIt-Anchor" href="#背景知识"></a> 背景知识；</h4>
+<ol>
+<li>ACGAN：<br />
+ACGAN（Auxiliary Classifier GAN）是在CGAN基础上的扩展，通过对判别器进行改进实现了图像分类的功能。</li>
 </ol>
-<p><img src="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307190417164-995118726.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307190417164-995118726.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<p>ACGAN 的 loss<br><img src="https://images2017.cnblogs.com/blog/1259250/201711/1259250-20171121154808118-1393587170.png" class="lazyload placeholder" data-srcset="https://images2017.cnblogs.com/blog/1259250/201711/1259250-20171121154808118-1393587170.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
+<p><img src="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307190417164-995118726.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307190417164-995118726.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<p>ACGAN 的 loss<br />
+<img src="https://images2017.cnblogs.com/blog/1259250/201711/1259250-20171121154808118-1393587170.png" class="lazyload placeholder" data-srcset="https://images2017.cnblogs.com/blog/1259250/201711/1259250-20171121154808118-1393587170.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
 <p>D is trained to maximize LS + LC while G is trained to maximize LC -LS.</p>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/punkcure/p/7873566.html">参考文章</a></p>
 
@@ -673,7 +686,8 @@
         <div class="title-text">pytorch 基础</div>
       </div>
       <!-- <div class="content">
-        自动求导机制12345678import torchx = torch.tensor([2.], requires_gr
+         自动求导机制
+12345678import torchx = torch.tensor([2.], requires_
       </div> -->
     </a>
   </div>
@@ -897,7 +911,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AF%86%EF%BC%9B"><span class="toc-text">背景知识；</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AF%86"><span class="toc-text"> 背景知识；</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1369,7 +1383,7 @@
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
 
           </div>
         
