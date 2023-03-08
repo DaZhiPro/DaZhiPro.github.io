@@ -6,7 +6,7 @@
   <link href="https://dazhipro.github.io/atom.xml" rel="self"/>
   
   <link href="https://dazhipro.github.io/"/>
-  <updated>2023-02-26T02:54:36.851Z</updated>
+  <updated>2023-03-08T09:26:31.464Z</updated>
   <id>https://dazhipro.github.io/</id>
   
   <author>
@@ -17,19 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title></title>
+    <link href="https://dazhipro.github.io/2023/03/07/2-ji-suan-ji-shi-jue/gan/ren-yi-yang-ben-gu-zhang-zhen-duan-shu-ju-zeng-qiang-fu-zhu-xin-xi/"/>
+    <id>https://dazhipro.github.io/2023/03/07/2-ji-suan-ji-shi-jue/gan/ren-yi-yang-ben-gu-zhang-zhen-duan-shu-ju-zeng-qiang-fu-zhu-xin-xi/</id>
+    <published>2023-03-07T11:10:14.528Z</published>
+    <updated>2023-03-08T09:26:31.464Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;FAGAN ：fault attributes GAN&lt;/p&gt;
+&lt;p&gt;目的： 解决故障诊断中的小样本问题和零样本问题&lt;/p&gt;
+&lt;p&gt;数据： X：温度，压强。。。。   Y:故障号&lt;/p&gt;
+&lt;p&gt;方法： 数据预处理 embedding 降维度， 同时建立一个函数 X =</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>pytorch 基础</title>
     <link href="https://dazhipro.github.io/2023/02/26/2-ji-suan-ji-shi-jue/pytorch-ji-chu/"/>
     <id>https://dazhipro.github.io/2023/02/26/2-ji-suan-ji-shi-jue/pytorch-ji-chu/</id>
     <published>2023-02-26T02:17:45.732Z</published>
-    <updated>2023-02-26T02:54:36.851Z</updated>
+    <updated>2023-03-03T08:28:03.931Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h4 id=&quot;自动求导机制&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#自动求导机制&quot;&gt;&lt;/a&gt; 自动求导机制&lt;/h4&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+    <summary type="html">&lt;h4 id=&quot;自动求导机制&quot;&gt;&lt;a href=&quot;#自动求导机制&quot; class=&quot;headerlink&quot; title=&quot;自动求导机制&quot;&gt;&lt;/a&gt;自动求导机制&lt;/h4&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
         
       
     
@@ -56,10 +79,8 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#问题&quot;&gt;&lt;/a&gt; 问题&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;样本不均衡问题
-&lt;ul&gt;
+    <summary type="html">&lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;样本不均衡问题&lt;ul&gt;
 &lt;li&gt;信用卡欺诈分类：</summary>
         
       
@@ -69,9 +90,9 @@
     <category term="机器学习" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="毕设" scheme="https://dazhipro.github.io/tags/%E6%AF%95%E8%AE%BE/"/>
-    
     <category term="GAN" scheme="https://dazhipro.github.io/tags/GAN/"/>
+    
+    <category term="毕设" scheme="https://dazhipro.github.io/tags/%E6%AF%95%E8%AE%BE/"/>
     
   </entry>
   
@@ -112,8 +133,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;第八章-回归模型&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#第八章-回归模型&quot;&gt;&lt;/a&gt; 第八章 回归模型&lt;/h1&gt;
-&lt;p&gt;定义：根据向量 &lt;span class=&quot;katex&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;h1 id=&quot;第八章-回归模型&quot;&gt;&lt;a href=&quot;#第八章-回归模型&quot; class=&quot;headerlink&quot; title=&quot;第八章 回归模型&quot;&gt;&lt;/a&gt;第八章 回归模型&lt;/h1&gt;&lt;p&gt;定义：根据向量 $x = [x_1,x_2,…,x_n]^T$ 来估计全局状态</summary>
         
       
     
@@ -138,8 +158,7 @@
       
         
         
-    <summary type="html">&lt;h4 id=&quot;计数问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#计数问题&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://www.acwing.com/problem/content/340/&quot;&gt;计数问题&lt;/a&gt;&lt;/h4&gt;
-&lt;h4</summary>
+    <summary type="html">&lt;h4 id=&quot;计数问题&quot;&gt;&lt;a href=&quot;#计数问题&quot; class=&quot;headerlink&quot; title=&quot;计数问题&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acwing.com/problem/content/340/&quot;&gt;计数问题&lt;/a&gt;&lt;/h4&gt;&lt;h4</summary>
         
       
     
@@ -164,7 +183,7 @@
       
         
         
-    <summary type="html">&lt;h4 id=&quot;题目-石子合并&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#题目-石子合并&quot;&gt;&lt;/a&gt; 题目: &lt;a</summary>
+    <summary type="html">&lt;h4 id=&quot;题目-石子合并&quot;&gt;&lt;a href=&quot;#题目-石子合并&quot; class=&quot;headerlink&quot; title=&quot;题目: 石子合并&quot;&gt;&lt;/a&gt;题目: &lt;a</summary>
         
       
     
@@ -214,10 +233,7 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;新建第一个hello-world&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#新建第一个hello-world&quot;&gt;&lt;/a&gt; 新建第一个hello world&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;安装Django：</summary>
+    <summary type="html">&lt;h2 id=&quot;新建第一个hello-world&quot;&gt;&lt;a href=&quot;#新建第一个hello-world&quot; class=&quot;headerlink&quot; title=&quot;新建第一个hello world&quot;&gt;&lt;/a&gt;新建第一个hello</summary>
         
       
     
@@ -263,8 +279,7 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;双指针&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#双指针&quot;&gt;&lt;/a&gt; 双指针&lt;/h3&gt;
-&lt;h4 id=&quot;问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#问题&quot;&gt;&lt;/a&gt;</summary>
+    <summary type="html">&lt;h3 id=&quot;双指针&quot;&gt;&lt;a href=&quot;#双指针&quot; class=&quot;headerlink&quot; title=&quot;双指针&quot;&gt;&lt;/a&gt;双指针&lt;/h3&gt;&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -323,8 +338,7 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;高精度&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#高精度&quot;&gt;&lt;/a&gt; 高精度&lt;/h3&gt;
-&lt;h4 id=&quot;问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#问题&quot;&gt;&lt;/a&gt;</summary>
+    <summary type="html">&lt;h3 id=&quot;高精度&quot;&gt;&lt;a href=&quot;#高精度&quot; class=&quot;headerlink&quot; title=&quot;高精度&quot;&gt;&lt;/a&gt;高精度&lt;/h3&gt;&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -349,8 +363,7 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;二分&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#二分&quot;&gt;&lt;/a&gt; 二分&lt;/h3&gt;
-&lt;h4 id=&quot;问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#问题&quot;&gt;&lt;/a&gt; &lt;a</summary>
+    <summary type="html">&lt;h3 id=&quot;二分&quot;&gt;&lt;a href=&quot;#二分&quot; class=&quot;headerlink&quot; title=&quot;二分&quot;&gt;&lt;/a&gt;二分&lt;/h3&gt;&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;&lt;a</summary>
         
       
     
@@ -375,8 +388,7 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;快速排序&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#快速排序&quot;&gt;&lt;/a&gt; 快速排序&lt;/h3&gt;
-&lt;h4 id=&quot;问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#问题&quot;&gt;&lt;/a&gt; &lt;a</summary>
+    <summary type="html">&lt;h3 id=&quot;快速排序&quot;&gt;&lt;a href=&quot;#快速排序&quot; class=&quot;headerlink&quot; title=&quot;快速排序&quot;&gt;&lt;/a&gt;快速排序&lt;/h3&gt;&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;&lt;a</summary>
         
       
     
@@ -401,9 +413,7 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;主机和虚拟机ping不通的原因&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#主机和虚拟机ping不通的原因&quot;&gt;&lt;/a&gt; 主机和虚拟机ping不通的原因&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;主机需要将自己网卡共享给VMware</summary>
+    <summary type="html">&lt;h3 id=&quot;主机和虚拟机ping不通的原因&quot;&gt;&lt;a href=&quot;#主机和虚拟机ping不通的原因&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -428,8 +438,7 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;常用命令&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#常用命令&quot;&gt;&lt;/a&gt; 常用命令&lt;/h2&gt;
-&lt;h3 id=&quot;文件管理&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#文件管理&quot;&gt;&lt;/a&gt;</summary>
+    <summary type="html">&lt;h2 id=&quot;常用命令&quot;&gt;&lt;a href=&quot;#常用命令&quot; class=&quot;headerlink&quot; title=&quot;常用命令&quot;&gt;&lt;/a&gt;常用命令&lt;/h2&gt;&lt;h3 id=&quot;文件管理&quot;&gt;&lt;a href=&quot;#文件管理&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -454,8 +463,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;概述&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#概述&quot;&gt;&lt;/a&gt; 概述&lt;/h1&gt;
-&lt;h3 id=&quot;学习路线&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#学习路线&quot;&gt;&lt;/a&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h1&gt;&lt;h3 id=&quot;学习路线&quot;&gt;&lt;a href=&quot;#学习路线&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -480,7 +488,7 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;先验-后验-和-似然函数的关系&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#先验-后验-和-似然函数的关系&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://zhuanlan.zhihu.com/p/157677467&quot;&gt;先验 后验 和</summary>
+    <summary type="html">&lt;h3 id=&quot;先验-后验-和-似然函数的关系&quot;&gt;&lt;a href=&quot;#先验-后验-和-似然函数的关系&quot; class=&quot;headerlink&quot; title=&quot;先验 后验 和 似然函数的关系&quot;&gt;&lt;/a&gt;&lt;a</summary>
         
       
     
@@ -490,34 +498,6 @@
     
     
     <category term="《计算机视觉》" scheme="https://dazhipro.github.io/tags/%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E3%80%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LSTM</title>
-    <link href="https://dazhipro.github.io/2022/10/20/2-ji-suan-ji-shi-jue/lstm/lstm/"/>
-    <id>https://dazhipro.github.io/2022/10/20/2-ji-suan-ji-shi-jue/lstm/lstm/</id>
-    <published>2022-10-20T04:40:19.000Z</published>
-    <updated>2023-01-11T09:28:18.144Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;LSTM 又叫长 短时记忆神经网络，问了解决RNN不能处理 &lt;code&gt;从较长的前文中推断下一个单词的问题&lt;/code&gt; 而提出的&lt;br /&gt;
-&lt;code&gt;从较长的前文中推断下一个单词的问题&lt;/code&gt;比如：&amp;quot;I grew up in France… I</summary>
-        
-      
-    
-    
-    
-    <category term="机器视觉" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/"/>
-    
-    
-    <category term="李宏毅笔记" scheme="https://dazhipro.github.io/tags/%E6%9D%8E%E5%AE%8F%E6%AF%85%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="LSTM" scheme="https://dazhipro.github.io/tags/LSTM/"/>
     
   </entry>
   
