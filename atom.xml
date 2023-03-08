@@ -6,7 +6,7 @@
   <link href="https://dazhipro.github.io/atom.xml" rel="self"/>
   
   <link href="https://dazhipro.github.io/"/>
-  <updated>2023-03-08T10:48:58.019Z</updated>
+  <updated>2023-03-08T10:54:16.274Z</updated>
   <id>https://dazhipro.github.io/</id>
   
   <author>
@@ -17,18 +17,19 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>于辅助信息引导工业数据增强的任意样本 故障学习和诊断 文献阅读笔记</title>
+    <title>文献阅读笔记 Auxiliary Information-Guided Industrial Data Augmentation for Any-Shot Fault Learning and Diagnosis</title>
     <link href="https://dazhipro.github.io/2023/03/07/2-ji-suan-ji-shi-jue/gan/ren-yi-yang-ben-gu-zhang-zhen-duan-shu-ju-zeng-qiang-fu-zhu-xin-xi/"/>
     <id>https://dazhipro.github.io/2023/03/07/2-ji-suan-ji-shi-jue/gan/ren-yi-yang-ben-gu-zhang-zhen-duan-shu-ju-zeng-qiang-fu-zhu-xin-xi/</id>
     <published>2023-03-07T11:10:14.528Z</published>
-    <updated>2023-03-08T10:48:58.019Z</updated>
+    <updated>2023-03-08T10:54:16.274Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;原文： Zhuo, Yue and Zhiqiang Ge. “Auxiliary Information-Guided Industrial Data Augmentation for Any-Shot Fault Learning and Diagnosis.”</summary>
+    <summary type="html">&lt;h4 id=&quot;原文&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#原文&quot;&gt;&lt;/a&gt; 原文&lt;/h4&gt;
+&lt;p&gt;Zhuo, Yue and Zhiqiang Ge. “Auxiliary Information-Guided Industrial</summary>
         
       
     
@@ -40,6 +41,8 @@
     <category term="毕设" scheme="https://dazhipro.github.io/tags/%E6%AF%95%E8%AE%BE/"/>
     
     <category term="GAN" scheme="https://dazhipro.github.io/tags/GAN/"/>
+    
+    <category term="文献阅读笔记" scheme="https://dazhipro.github.io/tags/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
