@@ -6,7 +6,7 @@
   <link href="https://dazhipro.github.io/atom.xml" rel="self"/>
   
   <link href="https://dazhipro.github.io/"/>
-  <updated>2023-03-08T09:26:31.464Z</updated>
+  <updated>2023-03-08T10:48:58.019Z</updated>
   <id>https://dazhipro.github.io/</id>
   
   <author>
@@ -17,26 +17,29 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>于辅助信息引导工业数据增强的任意样本 故障学习和诊断 文献阅读笔记</title>
     <link href="https://dazhipro.github.io/2023/03/07/2-ji-suan-ji-shi-jue/gan/ren-yi-yang-ben-gu-zhang-zhen-duan-shu-ju-zeng-qiang-fu-zhu-xin-xi/"/>
     <id>https://dazhipro.github.io/2023/03/07/2-ji-suan-ji-shi-jue/gan/ren-yi-yang-ben-gu-zhang-zhen-duan-shu-ju-zeng-qiang-fu-zhu-xin-xi/</id>
     <published>2023-03-07T11:10:14.528Z</published>
-    <updated>2023-03-08T09:26:31.464Z</updated>
+    <updated>2023-03-08T10:48:58.019Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;FAGAN ：fault attributes GAN&lt;/p&gt;
-&lt;p&gt;目的： 解决故障诊断中的小样本问题和零样本问题&lt;/p&gt;
-&lt;p&gt;数据： X：温度，压强。。。。   Y:故障号&lt;/p&gt;
-&lt;p&gt;方法： 数据预处理 embedding 降维度， 同时建立一个函数 X =</summary>
+    <summary type="html">&lt;p&gt;原文： Zhuo, Yue and Zhiqiang Ge. “Auxiliary Information-Guided Industrial Data Augmentation for Any-Shot Fault Learning and Diagnosis.”</summary>
         
       
     
     
     
+    <category term="机器学习" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="毕设" scheme="https://dazhipro.github.io/tags/%E6%AF%95%E8%AE%BE/"/>
+    
+    <category term="GAN" scheme="https://dazhipro.github.io/tags/GAN/"/>
     
   </entry>
   
