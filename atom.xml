@@ -6,7 +6,7 @@
   <link href="https://dazhipro.github.io/atom.xml" rel="self"/>
   
   <link href="https://dazhipro.github.io/"/>
-  <updated>2023-04-01T03:41:26.242Z</updated>
+  <updated>2023-04-01T04:22:13.047Z</updated>
   <id>https://dazhipro.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://dazhipro.github.io/2023/04/01/2-ji-suan-ji-shi-jue/bi-she/self-attentio/"/>
     <id>https://dazhipro.github.io/2023/04/01/2-ji-suan-ji-shi-jue/bi-she/self-attentio/</id>
     <published>2023-04-01T02:25:40.591Z</published>
-    <updated>2023-04-01T03:41:26.242Z</updated>
+    <updated>2023-04-01T04:22:13.047Z</updated>
     
     
       
@@ -40,6 +40,8 @@
     
     
     <category term="毕设" scheme="https://dazhipro.github.io/tags/%E6%AF%95%E8%AE%BE/"/>
+    
+    <category term="李宏毅笔记" scheme="https://dazhipro.github.io/tags/%E6%9D%8E%E5%AE%8F%E6%AF%85%E7%AC%94%E8%AE%B0/"/>
     
     <category term="自注意力机制" scheme="https://dazhipro.github.io/tags/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/"/>
     
