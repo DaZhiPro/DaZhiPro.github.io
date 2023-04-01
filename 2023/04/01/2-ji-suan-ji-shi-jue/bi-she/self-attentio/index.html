@@ -12,7 +12,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>高精度 | DaZhi&#39;s Home</title>
+  <title>自注意力机制及代码实现 | DaZhi&#39;s Home</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -62,6 +62,9 @@
     
 
 
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
     
 
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="DaZhi's Home" type="application/atom+xml">
@@ -550,21 +553,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/15.jpg')">
+  background-position: center center;position: relative;background-image:url('/medias/11.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        高精度
+        自注意力机制及代码实现
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2023-01-04 |
+          <i class="fas fa-calendar"></i> 发表于：2023-04-01 |
         </span>
       
 
@@ -572,8 +575,8 @@
         <span class="post-detail-header_categories">
           <i class="iconfont iconbookmark1"></i> 分类：
           
-            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-detail-header_category">
-              算法
+            <a href="/categories/%E6%AF%95%E8%AE%BE/" class="post-detail-header_category">
+              毕设
             </a>
           
         </span>
@@ -582,11 +585,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 157 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 484 |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 1分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 2分钟 |
           </span>
   
           
@@ -609,28 +612,44 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h3 id="高精度"><a class="markdownIt-Anchor" href="#高精度"></a> 高精度</h3>
-<h4 id="问题"><a class="markdownIt-Anchor" href="#问题"></a> 问题</h4>
-<p>超长数字的加减乘除 ( len(A),len(B) &gt; 1e6 )</p>
-<h4 id="模板"><a class="markdownIt-Anchor" href="#模板"></a> 模板</h4>
+        <ol>
+<li>为什么要有自注意力机制？<br />
+应用: 类似于机器翻译或者语音识别等需要seq2seq模型的场景<br />
+场景中模型的输出结果可能和输入的向量序列中的某几部分相关性较强的，而对于其他部分（像语音识别中的没有说话的噪音部分）可能对结果的影响较小，所以整个自注意力机制的目的就是对于一个输入序列的部分施以不同的权重。</li>
+<li>如何判断下序列中某一部分的重要程度呢？<br />
+如果说它和其他部分的相关性越高，那打分也越高</li>
+<li>具体计算过程
 <ol>
-<li>大数相加 C = A + B</li>
+<li>根据输入向量<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">a_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>得到不同向量打分值<br />
+<img src="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112339742-1056550260.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112339742-1056550260.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="根据输入向量得到不同向量打分值" /></li>
+<li>根据输入向量序列a得到输出向量序列b的过程<br />
+<img src="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112116612-379883211.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112116612-379883211.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="根据输入向量序列a得到输出向量序列b的过程" /></li>
+<li>前项传播矩阵化操作：<br />
+<img src="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112744723-38329950.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112744723-38329950.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></li>
+<li>代码实现</li>
 </ol>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(vector&lt;<span class="type">int</span>&gt; &amp;A, vector&lt;<span class="type">int</span>&gt; &amp;B)</span></span>&#123; <span class="comment">// 使用引用是为了加快速度，原数列A,B需要是逆序过得</span></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; C;</span><br><span class="line">    <span class="type">int</span> t = <span class="number">0</span>; <span class="comment">// 表示向下一位的进位， 取 0 | 1</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; A.<span class="built_in">size</span>() || B.<span class="built_in">size</span>(); i ++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i &lt; A.<span class="built_in">size</span>()) t += A[i];</span><br><span class="line">        <span class="keyword">if</span>(i &lt; B.<span class="built_in">size</span>()) t += B[i];</span><br><span class="line">        C.<span class="built_in">push_back</span>(t % <span class="number">10</span>);</span><br><span class="line">        t /= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(t) C.<span class="built_in">push_back</span>(t); <span class="comment">// 向最高位进位</span></span><br><span class="line">    <span class="keyword">return</span> C;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>大数相减 C = A - B</li>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SelfAttention</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, dim_q, dim_k, dim_v</span>):</span><br><span class="line">        <span class="built_in">super</span>(SelfAttention, self).__init__()</span><br><span class="line">        self.dim_q = dim_q</span><br><span class="line">        self.dim_k = dim_k</span><br><span class="line">        self.dim_v = dim_v</span><br><span class="line"></span><br><span class="line">        <span class="comment">#定义线性变换函数</span></span><br><span class="line">        self.linear_q = nn.Linear(dim_q, dim_k, bias=<span class="literal">False</span>)</span><br><span class="line">        self.linear_k = nn.Linear(dim_q, dim_k, bias=<span class="literal">False</span>)</span><br><span class="line">        self.linear_v = nn.Linear(dim_q, dim_v, bias=<span class="literal">False</span>)</span><br><span class="line">        self._norm_fact = <span class="number">1</span> / sqrt(dim_k)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">        <span class="comment"># x: batch, n, dim_q</span></span><br><span class="line">        <span class="comment">#根据文本获得相应的维度</span></span><br><span class="line"></span><br><span class="line">        batch, n, dim_q = x.shape</span><br><span class="line">        <span class="keyword">assert</span> dim_q == self.dim_q</span><br><span class="line"></span><br><span class="line">        q = self.linear_q(x)  <span class="comment"># batch, n, dim_k</span></span><br><span class="line">        k = self.linear_k(x)  <span class="comment"># batch, n, dim_k</span></span><br><span class="line">        v = self.linear_v(x)  <span class="comment"># batch, n, dim_v</span></span><br><span class="line">        <span class="comment">#q*k的转置 并*开根号后的dk</span></span><br><span class="line">        dist = torch.bmm(q, k.transpose(<span class="number">1</span>, <span class="number">2</span>)) * self._norm_fact  <span class="comment"># batch, n, n</span></span><br><span class="line">        <span class="comment">#归一化获得attention的相关系数</span></span><br><span class="line">        dist = torch.softmax(dist, dim=-<span class="number">1</span>)  <span class="comment"># batch, n, n</span></span><br><span class="line">        <span class="comment">#attention系数和v相乘，获得最终的得分</span></span><br><span class="line">        att = torch.bmm(dist, v)</span><br><span class="line">        <span class="keyword">return</span> att</span><br></pre></td></tr></table></figure>
+</li>
+<li>总结<br />
+它一般用于嵌入到一个网络模型中，本身并没有优化目标。如果单用的话优化目标可以设置为使得输出b尽量接近标签y</li>
 </ol>
-<pre class="highlight"><code class="c++">  <span class="function"><span class="type">void</span> <span class="title">sub</span><span class="params">(vector&lt;<span class="type">int</span>&gt; A, vector&lt;<span class="type">int</span>&gt; B)</span></span>&#123;
-    
-  &#125;</code></pre>
+<p>参考链接</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44750512/article/details/124244915#:~:text=%E3%80%90%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E3%80%91Self-Attention%20%E5%8E%9F%E7%90%86%E4%B8%8E%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%201%201.%20Self-Attention%20%E7%BB%93%E6%9E%84%20%E5%9C%A8%E8%AE%A1%E7%AE%97%E7%9A%84%E6%97%B6%E5%80%99%E9%9C%80%E8%A6%81%E7%94%A8%E5%88%B0%E7%9F%A9%E9%98%B5%20Q,X%2C%20Q%2C%20K%2C%20V%20%E7%9A%84%E6%AF%8F%E4%B8%80%E8%A1%8C%E9%83%BD%E8%A1%A8%E7%A4%BA%E4%B8%80%E4%B8%AA%E5%8D%95%E8%AF%8D%E3%80%82%203%203.Self-Attention%20%E7%9A%84%E8%AE%A1%E7%AE%97">【深度学习】Self-Attention 原理与代码实现</a></li>
+<li><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1agZm-kXjF4aWH_4lRBv-Sg#list/path=%2Fsharelink3559016486-787064992912258%2F%E5%95%A5%E9%83%BD%E7%94%9F-%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%BA%90%EF%BC%88%E6%8C%81%E7%BB%AD%E7%BB%B4%E6%8A%A4%EF%BC%89%2F05%20%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%2F2021%20ML%2F03%20Self-Attention%2F%E8%AF%BE%E4%BB%B6&amp;parentPath=%2Fsharelink3559016486-787064992912258">李宏毅教程</a></li>
+</ol>
 
       </div>
       <div class="post-tags-categories">
         
         <div class="tags">
           
-            <a href="/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/" class="">
-              高精度
+            <a href="/tags/%E6%AF%95%E8%AE%BE/" class="">
+              毕设
+            </a>
+          
+            <a href="/tags/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/" class="">
+              自注意力机制
             </a>
           
         </div>
@@ -644,7 +663,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2023/01/04/3-suan-fa/ji-chu-suan-fa/03-gao-jing-du/" target="_blank" title="高精度">https://dazhipro.github.io/2023/01/04/3-suan-fa/ji-chu-suan-fa/03-gao-jing-du/</a>
+    <a href="/2023/04/01/2-ji-suan-ji-shi-jue/bi-she/self-attentio/" target="_blank" title="自注意力机制及代码实现">https://dazhipro.github.io/2023/04/01/2-ji-suan-ji-shi-jue/bi-she/self-attentio/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -662,24 +681,6 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/13.jpg" class="lazyload placeholder" data-srcset="/medias/13.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-    </div>
-    <a href="/2023/01/05/3-suan-fa/ji-chu-suan-fa/04-qian-zhui-he-he-chai-fen/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">前缀和 差分</div>
-      </div>
-      
-      <!-- <div class="content">
-        
-      </div> -->
-    </a>
-  </div>
-
 
 
   
@@ -688,15 +689,14 @@
       background-position: center center;">
       <img class="lazyload lazyload placeholder" src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
-    <a href="/2023/01/02/3-suan-fa/ji-chu-suan-fa/02-er-fen/" class="post-nav-link">
+    <a href="/2023/03/07/2-ji-suan-ji-shi-jue/gan/ren-yi-yang-ben-gu-zhang-zhen-duan-shu-ju-zeng-qiang-fu-zhu-xin-xi/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">二分</div>
+        <div class="title-text">文献阅读笔记 Auxiliary Information-Guided Industrial Data Augmentation for Any-Shot Fault Learning and Diagnosis</div>
       </div>
       <!-- <div class="content">
-         二分
- 问题
-适用于一个序列，有一个check函数，能够使得序列左边都返回false，右边都返回true，然后我们找的
+         原文
+Zhuo, Yue and Zhiqiang Ge. “Auxiliary Information-Guided
       </div> -->
     </a>
   </div>
@@ -920,7 +920,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E7%B2%BE%E5%BA%A6"><span class="toc-text"> 高精度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-text"> 问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF"><span class="toc-text"> 模板</span></a></li></ol></li></ol> -->
+        <!--  -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1184,6 +1184,59 @@
 		height: 100%;
 	}
 </style>
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
 
 
 
