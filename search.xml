@@ -184,35 +184,6 @@
     
     
     <entry>
-      <title>文献阅读笔记 Auxiliary Information-Guided Industrial Data Augmentation for Any-Shot Fault Learning and Diagnosis</title>
-      <link href="/2023/07/02/2-ji-suan-ji-shi-jue/gan/ren-yi-yang-ben-gu-zhang-zhen-duan-shu-ju-zeng-qiang-fu-zhu-xin-xi/"/>
-      <url>/2023/07/02/2-ji-suan-ji-shi-jue/gan/ren-yi-yang-ben-gu-zhang-zhen-duan-shu-ju-zeng-qiang-fu-zhu-xin-xi/</url>
-      
-        <content type="html"><![CDATA[<h4 id="原文"><a class="markdownIt-Anchor" href="#原文"></a> 原文</h4><p>Zhuo, Yue and Zhiqiang Ge. “Auxiliary Information-Guided Industrial Data Augmentation for Any-Shot Fault Learning and Diagnosis.” IEEE Transactions on Industrial Informatics 17 (2021): 7535-7545.</p><h4 id="简述"><a class="markdownIt-Anchor" href="#简述"></a> 简述</h4><p>文章主要是解决小样本或零样本时的故障诊断问题，文章基本的架构是ACGAN，这是GAN的一个变形，判别器除了区分真实数据和生成数据的同时还要判断到底是哪一种故障，同样生成器也要生成使得判别器分类尽可能准确的数据。<br />文章的创新点是提出了故障属性空间的概念，它是故障的进一步细分，原本一个故障比如说是反应器冷凝水入口温度发生突变，它分解为故障类型是阶跃，故障单元是冷凝器，故障前置单元是反应器，进的物料是啥等等，这样通过这些故障属性的随机组合就可以组合出原本未发现的故障从而可以处理零样本问题。<br />第二个创新点是优化了损失函数，加了一项triplet loss，使得生成的样本质量更高<br />最后文章还提到了微调技术，就是首先分类器在生成的数据+真实小样本数据上先训练，训练差不多后再只在小样本上训练（此时调低学习率）经过在真实小样本上的微调效果会更好</p><h4 id="fagan-fault-attributes-gan"><a class="markdownIt-Anchor" href="#fagan-fault-attributes-gan"></a> FAGAN ：fault attributes GAN</h4><h4 id="目的-解决故障诊断中的小样本问题和零样本问题"><a class="markdownIt-Anchor" href="#目的-解决故障诊断中的小样本问题和零样本问题"></a> 目的： 解决故障诊断中的小样本问题和零样本问题</h4><h4 id="数据-x温度压强-y故障号"><a class="markdownIt-Anchor" href="#数据-x温度压强-y故障号"></a> 数据： X：温度，压强。。。。   Y:故障号</h4><h4 id="方法"><a class="markdownIt-Anchor" href="#方法"></a> 方法：</h4><ol><li><p>数据预处理 embedding 降维度， 同时建立一个函数 X = f(Y),就是根据故障号，能生成故障属性</p></li><li><p>算每一类的中心</p></li><li><p>训练 D K次 D的优化目标 ： 鉴别出realdata和fakedata 同时 对data分类准确<br /><img src="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192411786-167486232.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192411786-167486232.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="D的优化目标" /></p></li><li><p>训练 G G的优化目标 ： 断过D的判别fakedata 同时是 D 对fakedata分类准确<br /><img src="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192732139-1961494944.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192732139-1961494944.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p><p><img src="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192741469-778150254.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192741469-778150254.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p><p>二者的和</p></li></ol><h4 id="创新点-故障属性空间-acgan-triplet-loss"><a class="markdownIt-Anchor" href="#创新点-故障属性空间-acgan-triplet-loss"></a> 创新点： 故障属性空间 + [ACGAN + Triplet Loss]</h4><h4 id="思考"><a class="markdownIt-Anchor" href="#思考"></a> 思考</h4><ol><li>什么是属性空间？ 原本一个故障比如说是反应器冷凝水入口温度发生突变，他分解为故障类型 阶跃，故障单元 冷凝器，故障前置单元 反应器 ， 进的物料 。。。 等等，拆解成更加细节的引起故障的原因，就是一个故障可能是由好几个地方的连续问题引起的，他进一步拆解！</li><li>引入的辅助信息又是什么？</li><li>三元组形式的辅助损失函数是什么？</li><li>两个数据集是哪两个？ 液压系统数据集  和  田纳西-伊斯曼（TE）仿真平台 得到的数据集</li><li>能概括核心内容的图找一下?</li><li>文章的主要贡献是什么<br />提出了故障属性这么一个概念？<br />ACGAN 基础基础上 引入了 Triplet loss损失 （这个之前就有，只不过是用于人脸识别的）<br />小样本问题使用了微调技术： 生成的数据+真实小样本数据 上先训练，训练差不多后再只在小样本上训练（此时调低学习率）</li></ol><h4 id="背景知识"><a class="markdownIt-Anchor" href="#背景知识"></a> 背景知识；</h4><ol><li>ACGAN：<br />ACGAN（Auxiliary Classifier GAN）是在CGAN基础上的扩展，通过对判别器进行改进实现了图像分类的功能。</li></ol><p><img src="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307190417164-995118726.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307190417164-995118726.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p><p>ACGAN 的 loss<br /><img src="https://images2017.cnblogs.com/blog/1259250/201711/1259250-20171121154808118-1393587170.png" class="lazyload placeholder" data-srcset="https://images2017.cnblogs.com/blog/1259250/201711/1259250-20171121154808118-1393587170.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p><p>D is trained to maximize LS + LC while G is trained to maximize LC -LS.</p><p><a href="https://www.cnblogs.com/punkcure/p/7873566.html">参考文章</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 机器学习 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 毕设 </tag>
-            
-            <tag> GAN </tag>
-            
-            <tag> 文献阅读笔记 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>自注意力机制及代码实现</title>
       <link href="/2023/07/02/2-ji-suan-ji-shi-jue/bi-she/self-attentio/"/>
       <url>/2023/07/02/2-ji-suan-ji-shi-jue/bi-she/self-attentio/</url>
@@ -234,6 +205,35 @@
             <tag> 李宏毅笔记 </tag>
             
             <tag> 自注意力机制 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>文献阅读笔记 Auxiliary Information-Guided Industrial Data Augmentation for Any-Shot Fault Learning and Diagnosis</title>
+      <link href="/2023/07/02/2-ji-suan-ji-shi-jue/gan/ren-yi-yang-ben-gu-zhang-zhen-duan-shu-ju-zeng-qiang-fu-zhu-xin-xi/"/>
+      <url>/2023/07/02/2-ji-suan-ji-shi-jue/gan/ren-yi-yang-ben-gu-zhang-zhen-duan-shu-ju-zeng-qiang-fu-zhu-xin-xi/</url>
+      
+        <content type="html"><![CDATA[<h4 id="原文"><a class="markdownIt-Anchor" href="#原文"></a> 原文</h4><p>Zhuo, Yue and Zhiqiang Ge. “Auxiliary Information-Guided Industrial Data Augmentation for Any-Shot Fault Learning and Diagnosis.” IEEE Transactions on Industrial Informatics 17 (2021): 7535-7545.</p><h4 id="简述"><a class="markdownIt-Anchor" href="#简述"></a> 简述</h4><p>文章主要是解决小样本或零样本时的故障诊断问题，文章基本的架构是ACGAN，这是GAN的一个变形，判别器除了区分真实数据和生成数据的同时还要判断到底是哪一种故障，同样生成器也要生成使得判别器分类尽可能准确的数据。<br />文章的创新点是提出了故障属性空间的概念，它是故障的进一步细分，原本一个故障比如说是反应器冷凝水入口温度发生突变，它分解为故障类型是阶跃，故障单元是冷凝器，故障前置单元是反应器，进的物料是啥等等，这样通过这些故障属性的随机组合就可以组合出原本未发现的故障从而可以处理零样本问题。<br />第二个创新点是优化了损失函数，加了一项triplet loss，使得生成的样本质量更高<br />最后文章还提到了微调技术，就是首先分类器在生成的数据+真实小样本数据上先训练，训练差不多后再只在小样本上训练（此时调低学习率）经过在真实小样本上的微调效果会更好</p><h4 id="fagan-fault-attributes-gan"><a class="markdownIt-Anchor" href="#fagan-fault-attributes-gan"></a> FAGAN ：fault attributes GAN</h4><h4 id="目的-解决故障诊断中的小样本问题和零样本问题"><a class="markdownIt-Anchor" href="#目的-解决故障诊断中的小样本问题和零样本问题"></a> 目的： 解决故障诊断中的小样本问题和零样本问题</h4><h4 id="数据-x温度压强-y故障号"><a class="markdownIt-Anchor" href="#数据-x温度压强-y故障号"></a> 数据： X：温度，压强。。。。   Y:故障号</h4><h4 id="方法"><a class="markdownIt-Anchor" href="#方法"></a> 方法：</h4><ol><li><p>数据预处理 embedding 降维度， 同时建立一个函数 X = f(Y),就是根据故障号，能生成故障属性</p></li><li><p>算每一类的中心</p></li><li><p>训练 D K次 D的优化目标 ： 鉴别出realdata和fakedata 同时 对data分类准确<br /><img src="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192411786-167486232.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192411786-167486232.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="D的优化目标" /></p></li><li><p>训练 G G的优化目标 ： 断过D的判别fakedata 同时是 D 对fakedata分类准确<br /><img src="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192732139-1961494944.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192732139-1961494944.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p><p><img src="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192741469-778150254.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192741469-778150254.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p><p>二者的和</p></li></ol><h4 id="创新点-故障属性空间-acgan-triplet-loss"><a class="markdownIt-Anchor" href="#创新点-故障属性空间-acgan-triplet-loss"></a> 创新点： 故障属性空间 + [ACGAN + Triplet Loss]</h4><h4 id="思考"><a class="markdownIt-Anchor" href="#思考"></a> 思考</h4><ol><li>什么是属性空间？ 原本一个故障比如说是反应器冷凝水入口温度发生突变，他分解为故障类型 阶跃，故障单元 冷凝器，故障前置单元 反应器 ， 进的物料 。。。 等等，拆解成更加细节的引起故障的原因，就是一个故障可能是由好几个地方的连续问题引起的，他进一步拆解！</li><li>引入的辅助信息又是什么？</li><li>三元组形式的辅助损失函数是什么？</li><li>两个数据集是哪两个？ 液压系统数据集  和  田纳西-伊斯曼（TE）仿真平台 得到的数据集</li><li>能概括核心内容的图找一下?</li><li>文章的主要贡献是什么<br />提出了故障属性这么一个概念？<br />ACGAN 基础基础上 引入了 Triplet loss损失 （这个之前就有，只不过是用于人脸识别的）<br />小样本问题使用了微调技术： 生成的数据+真实小样本数据 上先训练，训练差不多后再只在小样本上训练（此时调低学习率）</li></ol><h4 id="背景知识"><a class="markdownIt-Anchor" href="#背景知识"></a> 背景知识；</h4><ol><li>ACGAN：<br />ACGAN（Auxiliary Classifier GAN）是在CGAN基础上的扩展，通过对判别器进行改进实现了图像分类的功能。</li></ol><p><img src="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307190417164-995118726.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307190417164-995118726.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p><p>ACGAN 的 loss<br /><img src="https://images2017.cnblogs.com/blog/1259250/201711/1259250-20171121154808118-1393587170.png" class="lazyload placeholder" data-srcset="https://images2017.cnblogs.com/blog/1259250/201711/1259250-20171121154808118-1393587170.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p><p>D is trained to maximize LS + LC while G is trained to maximize LC -LS.</p><p><a href="https://www.cnblogs.com/punkcure/p/7873566.html">参考文章</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 毕设 </tag>
+            
+            <tag> GAN </tag>
+            
+            <tag> 文献阅读笔记 </tag>
             
         </tags>
       
@@ -673,31 +673,6 @@
     
     
     <entry>
-      <title>反向传播</title>
-      <link href="/2022/10/05/2-ji-suan-ji-shi-jue/cnn/04-fan-xiang-chuan-bo/"/>
-      <url>/2022/10/05/2-ji-suan-ji-shi-jue/cnn/04-fan-xiang-chuan-bo/</url>
-      
-        <content type="html"><![CDATA[<p>等后续补充</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 机器视觉 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> CNN </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>卷积和池化</title>
       <link href="/2022/10/05/2-ji-suan-ji-shi-jue/cnn/05-juan-ji-chi-hua/"/>
       <url>/2022/10/05/2-ji-suan-ji-shi-jue/cnn/05-juan-ji-chi-hua/</url>
@@ -715,6 +690,31 @@
         <tags>
             
             <tag> CS231 </tag>
+            
+            <tag> CNN </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>反向传播</title>
+      <link href="/2022/10/05/2-ji-suan-ji-shi-jue/cnn/04-fan-xiang-chuan-bo/"/>
+      <url>/2022/10/05/2-ji-suan-ji-shi-jue/cnn/04-fan-xiang-chuan-bo/</url>
+      
+        <content type="html"><![CDATA[<p>等后续补充</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器视觉 </category>
+          
+      </categories>
+      
+      
+        <tags>
             
             <tag> CNN </tag>
             
