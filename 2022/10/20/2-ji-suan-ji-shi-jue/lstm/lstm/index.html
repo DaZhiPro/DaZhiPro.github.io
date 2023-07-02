@@ -582,7 +582,7 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 121 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 124 |
           </span>
   
           <span class="min2read">
@@ -609,12 +609,19 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <p>LSTM 又叫长 短时记忆神经网络，问了解决RNN不能处理 <code>从较长的前文中推断下一个单词的问题</code> 而提出的<br><code>从较长的前文中推断下一个单词的问题</code>比如：”I grew up in France… I speak fluent <em>French</em>.”不能从这句中推出French，因为中间隔了好多词</p>
-<h4 id="遗忘门："><a href="#遗忘门：" class="headerlink" title="遗忘门："></a>遗忘门：</h4><p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212224503-712213887.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212224503-712213887.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<h4 id="输入门："><a href="#输入门：" class="headerlink" title="输入门："></a>输入门：</h4><p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212311075-209010384.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212311075-209010384.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<h4 id="想下一个cell的输出："><a href="#想下一个cell的输出：" class="headerlink" title="想下一个cell的输出："></a>想下一个cell的输出：</h4><p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212423984-1696402345.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212423984-1696402345.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<h4 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h4><p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212440327-44970240.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212440327-44970240.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<p><a target="_blank" rel="noopener" href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/#fn1">参考链接1</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/84333843">中文版参考链接</a><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1J94y1f7u5?p=28&amp;vd_source=a25e4be5f25feef1532666f6ee51cce1">李宏毅RNN教程</a></p>
+        <p>LSTM 又叫长 短时记忆神经网络，问了解决RNN不能处理 <code>从较长的前文中推断下一个单词的问题</code> 而提出的<br />
+<code>从较长的前文中推断下一个单词的问题</code>比如：&quot;I grew up in France… I speak fluent <em>French</em>.&quot;不能从这句中推出French，因为中间隔了好多词</p>
+<h4 id="遗忘门"><a class="markdownIt-Anchor" href="#遗忘门"></a> 遗忘门：</h4>
+<p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212224503-712213887.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212224503-712213887.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<h4 id="输入门"><a class="markdownIt-Anchor" href="#输入门"></a> 输入门：</h4>
+<p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212311075-209010384.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212311075-209010384.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<h4 id="想下一个cell的输出"><a class="markdownIt-Anchor" href="#想下一个cell的输出"></a> 想下一个cell的输出：</h4>
+<p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212423984-1696402345.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212423984-1696402345.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<h4 id="输出"><a class="markdownIt-Anchor" href="#输出"></a> 输出：</h4>
+<p><img src="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212440327-44970240.png" class="lazyload placeholder" data-srcset="https://img2022.cnblogs.com/blog/2851436/202211/2851436-20221126212440327-44970240.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<p><a target="_blank" rel="noopener" href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/#fn1">参考链接1</a><br />
+<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/84333843">中文版参考链接</a><br />
+<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1J94y1f7u5?p=28&amp;vd_source=a25e4be5f25feef1532666f6ee51cce1">李宏毅RNN教程</a></p>
 
       </div>
       <div class="post-tags-categories">
@@ -671,7 +678,9 @@
       </div>
       
       <!-- <div class="content">
-        先验 后验 和 似然函数的关系常见的概率分布模型概率分布就是一个公式，给定X，就能计算出在这一点X的概率（或者连续随机变
+         先验 后验 和 似然函数的关系
+ 常见的概率分布模型
+概率分布就是一个公式，给定X，就能计算出在这一点X的概率（或者连
       </div> -->
     </a>
   </div>
@@ -691,7 +700,8 @@
       </div>
       <!-- <div class="content">
         GAN(Generative Adversarial Network) 生成对抗网络
-1. 为什么要有这个东西？   为
+ 1. 为什么要有这个东西？
+为了
       </div> -->
     </a>
   </div>
@@ -915,7 +925,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%81%97%E5%BF%98%E9%97%A8%EF%BC%9A"><span class="toc-text">遗忘门：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E9%97%A8%EF%BC%9A"><span class="toc-text">输入门：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%83%B3%E4%B8%8B%E4%B8%80%E4%B8%AAcell%E7%9A%84%E8%BE%93%E5%87%BA%EF%BC%9A"><span class="toc-text">想下一个cell的输出：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%EF%BC%9A"><span class="toc-text">输出：</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%81%97%E5%BF%98%E9%97%A8"><span class="toc-text"> 遗忘门：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E9%97%A8"><span class="toc-text"> 输入门：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%83%B3%E4%B8%8B%E4%B8%80%E4%B8%AAcell%E7%9A%84%E8%BE%93%E5%87%BA"><span class="toc-text"> 想下一个cell的输出：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA"><span class="toc-text"> 输出：</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1011,9 +1021,9 @@
             
 
             <div class="post-img-box">
-              <a href="/2023/07/02/4-ri-chang-sui-bi/li-shi-ji/" class="post-img " style="background-size: cover; 
+              <a href="/2023/07/02/2-ji-suan-ji-shi-jue/pytorch-ji-chu/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://photo.16pic.com/00/17/48/16pic_1748344_b.jpg" class="lazyload placeholder" data-srcset="https://photo.16pic.com/00/17/48/16pic_1748344_b.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/13.jpg" class="lazyload placeholder" data-srcset="/medias/13.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
@@ -1022,7 +1032,7 @@
                   <span class="post-date">07-02</span>
                 
               </div>
-              <a class="post-title" href="/2023/07/02/4-ri-chang-sui-bi/li-shi-ji/">历史记</a>
+              <a class="post-title" href="/2023/07/02/2-ji-suan-ji-shi-jue/pytorch-ji-chu/">pytorch 基础</a>
             </div>
           </div>
         
@@ -1032,9 +1042,9 @@
             
 
             <div class="post-img-box">
-              <a href="/2023/07/02/5-su-cha/matplotlib/" class="post-img " style="background-size: cover; 
+              <a href="/2023/07/02/2-ji-suan-ji-shi-jue/hui-gui-mo-xing/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/5.jpg" class="lazyload placeholder" data-srcset="/medias/5.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
@@ -1043,7 +1053,7 @@
                   <span class="post-date">07-02</span>
                 
               </div>
-              <a class="post-title" href="/2023/07/02/5-su-cha/matplotlib/">matplotlib 常用命令</a>
+              <a class="post-title" href="/2023/07/02/2-ji-suan-ji-shi-jue/hui-gui-mo-xing/">《计算机视觉》 笔记</a>
             </div>
           </div>
         
@@ -1387,7 +1397,7 @@
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
 
           </div>
         
