@@ -582,7 +582,7 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 474 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 465 |
           </span>
   
           <span class="min2read">
@@ -609,42 +609,21 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1 id="搭建git私服"><a class="markdownIt-Anchor" href="#搭建git私服"></a> 搭建git私服</h1>
-<h2 id="1-购买一台服务器"><a class="markdownIt-Anchor" href="#1-购买一台服务器"></a> 1. 购买一台服务器</h2>
-<p>我的是阿里云的，记下ip：8.130.xx.xx</p>
-<h2 id="2-服务器端操作"><a class="markdownIt-Anchor" href="#2-服务器端操作"></a> 2. 服务器端操作</h2>
-<p>进入root用户 <code>su root</code><br />
-增加一个名为git的普通用户 <code>adduser git</code><br />
-给用户设定密码 <code>passwd git fuzamima</code><br />
-切换到git用户 <code>su - git</code>  su 全称是Switch user<br />
-创建git仓库 <code>mkdir 仓库名.git</code><br />
-进入仓库后，<code>git init </code><br />
-后续连接这个仓库的名称就是  git@8.130.xx.xx:仓库名.git   格式是 <code>用户名@IP:仓库文件夹名</code></p>
-<h2 id="3-本地端操作"><a class="markdownIt-Anchor" href="#3-本地端操作"></a> 3. 本地端操作</h2>
-<p>本地上传文件到服务器端</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git init </span><br><span class="line">git add .</span><br><span class="line">git commmit -m &quot;first git&quot;</span><br><span class="line">git remote add origin git@8.130.xx.xx:仓库名.git</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
-<h1 id="git传到github"><a class="markdownIt-Anchor" href="#git传到github"></a> git传到github</h1>
-<h2 id="1-github新建一个仓库-名为test"><a class="markdownIt-Anchor" href="#1-github新建一个仓库-名为test"></a> 1. github新建一个仓库 名为test</h2>
-<h2 id="2-本地新建文件夹上传"><a class="markdownIt-Anchor" href="#2-本地新建文件夹上传"></a> 2. 本地新建文件夹上传</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">…or create a new repository on the command line</span><br><span class="line">echo &quot;# test&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin git@github.com:DaZhiPro/test.git   # 对应用户@IP：文件夹</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
-<h2 id="3-对于已经存在的git仓库"><a class="markdownIt-Anchor" href="#3-对于已经存在的git仓库"></a> 3. 对于已经存在的git仓库</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">…or push an existing repository from the command line</span><br><span class="line">git remote add origin git@github.com:DaZhiPro/test.git</span><br><span class="line">git branch -M main</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
-<h2 id="4第一次使用例外情况"><a class="markdownIt-Anchor" href="#4第一次使用例外情况"></a> 4.第一次使用，例外情况：</h2>
-<ol>
+        <h1 id="搭建git私服"><a href="#搭建git私服" class="headerlink" title="搭建git私服"></a>搭建git私服</h1><h2 id="1-购买一台服务器"><a href="#1-购买一台服务器" class="headerlink" title="1. 购买一台服务器"></a>1. 购买一台服务器</h2><p>我的是阿里云的，记下ip：8.130.xx.xx</p>
+<h2 id="2-服务器端操作"><a href="#2-服务器端操作" class="headerlink" title="2. 服务器端操作"></a>2. 服务器端操作</h2><p>进入root用户 <code>su root</code><br>增加一个名为git的普通用户 <code>adduser git</code><br>给用户设定密码 <code>passwd git fuzamima</code><br>切换到git用户 <code>su - git</code>  su 全称是Switch user<br>创建git仓库 <code>mkdir 仓库名.git</code><br>进入仓库后，<code>git init</code><br>后续连接这个仓库的名称就是  git@8.130.xx.xx:仓库名.git   格式是 <code>用户名@IP:仓库文件夹名</code></p>
+<h2 id="3-本地端操作"><a href="#3-本地端操作" class="headerlink" title="3. 本地端操作"></a>3. 本地端操作</h2><p>本地上传文件到服务器端<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git init </span><br><span class="line">git add .</span><br><span class="line">git commmit -m &quot;first git&quot;</span><br><span class="line">git remote add origin git@8.130.xx.xx:仓库名.git</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure></p>
+<h1 id="git传到github"><a href="#git传到github" class="headerlink" title="git传到github"></a>git传到github</h1><h2 id="1-github新建一个仓库-名为test"><a href="#1-github新建一个仓库-名为test" class="headerlink" title="1. github新建一个仓库 名为test"></a>1. github新建一个仓库 名为test</h2><h2 id="2-本地新建文件夹上传"><a href="#2-本地新建文件夹上传" class="headerlink" title="2. 本地新建文件夹上传"></a>2. 本地新建文件夹上传</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">…or create a new repository on the command line</span><br><span class="line">echo &quot;# test&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin git@github.com:DaZhiPro/test.git   # 对应用户@IP：文件夹</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+<h2 id="3-对于已经存在的git仓库"><a href="#3-对于已经存在的git仓库" class="headerlink" title="3. 对于已经存在的git仓库"></a>3. 对于已经存在的git仓库</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">…or push an existing repository from the command line</span><br><span class="line">git remote add origin git@github.com:DaZhiPro/test.git</span><br><span class="line">git branch -M main</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+<h2 id="4-第一次使用，例外情况："><a href="#4-第一次使用，例外情况：" class="headerlink" title="4.第一次使用，例外情况："></a>4.第一次使用，例外情况：</h2><ol>
 <li>有时候需要密码,或者新电脑需要验证rsa</li>
 </ol>
 <p>这时候需要本地主机产生rsa密钥对，然后将公钥放到github上</p>
-<p>具体来说<br />
-<code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code><br />
-产生成功后去 ~/.ssh/id_rsa.pub 复制公钥贴到github  settting ssh..</p>
-<ol start="2">
-<li>如果说这种方式还是不行（判断行不行可以使用  ssh <a href="mailto:git@github.com">git@github.com</a>)</li>
+<p>具体来说<br><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code><br>产生成功后去 ~/.ssh/id_rsa.pub 复制公钥贴到github  settting ssh.. </p>
+<ol>
+<li>如果说这种方式还是不行（判断行不行可以使用  ssh git@github.com)</li>
 </ol>
-<p>这时候用户名选择dazhipro即正产的用户<br />
-密码的话使用token口令，也是需要在github生成，setting-》developer-》token</p>
-<h1 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h1>
-<p>总的来说，ssh是一种连接方式，可以以git用户的身份登录到8.130.xx.xx<br />
-其他的就是git的基本使用方式</p>
+<p>这时候用户名选择dazhipro即正产的用户<br>密码的话使用token口令，也是需要在github生成，setting-》developer-》token</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>总的来说，ssh是一种连接方式，可以以git用户的身份登录到8.130.xx.xx<br>其他的就是git的基本使用方式</p>
 
       </div>
       <div class="post-tags-categories">
@@ -670,7 +649,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2023/07/03/1-kai-fa/git/da-jian-git-si-fu/" target="_blank" title="搭建git私服">https://dazhipro.github.io/2023/07/03/1-kai-fa/git/da-jian-git-si-fu/</a>
+    <a href="/2023/07/03/da-jian-git-si-fu/" target="_blank" title="搭建git私服">https://dazhipro.github.io/2023/07/03/da-jian-git-si-fu/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -926,7 +905,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%90%AD%E5%BB%BAgit%E7%A7%81%E6%9C%8D"><span class="toc-text"> 搭建git私服</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%B4%AD%E4%B9%B0%E4%B8%80%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text"> 1. 购买一台服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E6%93%8D%E4%BD%9C"><span class="toc-text"> 2. 服务器端操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%9C%AC%E5%9C%B0%E7%AB%AF%E6%93%8D%E4%BD%9C"><span class="toc-text"> 3. 本地端操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git%E4%BC%A0%E5%88%B0github"><span class="toc-text"> git传到github</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-github%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E4%BB%93%E5%BA%93-%E5%90%8D%E4%B8%BAtest"><span class="toc-text"> 1. github新建一个仓库 名为test</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%9C%AC%E5%9C%B0%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8A%E4%BC%A0"><span class="toc-text"> 2. 本地新建文件夹上传</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%AF%B9%E4%BA%8E%E5%B7%B2%E7%BB%8F%E5%AD%98%E5%9C%A8%E7%9A%84git%E4%BB%93%E5%BA%93"><span class="toc-text"> 3. 对于已经存在的git仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%BF%E7%94%A8%E4%BE%8B%E5%A4%96%E6%83%85%E5%86%B5"><span class="toc-text"> 4.第一次使用，例外情况：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text"> 总结</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%90%AD%E5%BB%BAgit%E7%A7%81%E6%9C%8D"><span class="toc-text">搭建git私服</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%B4%AD%E4%B9%B0%E4%B8%80%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">1. 购买一台服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E6%93%8D%E4%BD%9C"><span class="toc-text">2. 服务器端操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%9C%AC%E5%9C%B0%E7%AB%AF%E6%93%8D%E4%BD%9C"><span class="toc-text">3. 本地端操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git%E4%BC%A0%E5%88%B0github"><span class="toc-text">git传到github</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-github%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E4%BB%93%E5%BA%93-%E5%90%8D%E4%B8%BAtest"><span class="toc-text">1. github新建一个仓库 名为test</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%9C%AC%E5%9C%B0%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8A%E4%BC%A0"><span class="toc-text">2. 本地新建文件夹上传</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%AF%B9%E4%BA%8E%E5%B7%B2%E7%BB%8F%E5%AD%98%E5%9C%A8%E7%9A%84git%E4%BB%93%E5%BA%93"><span class="toc-text">3. 对于已经存在的git仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%BF%E7%94%A8%EF%BC%8C%E4%BE%8B%E5%A4%96%E6%83%85%E5%86%B5%EF%BC%9A"><span class="toc-text">4.第一次使用，例外情况：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -959,7 +938,7 @@
             
 
             <div class="post-img-box">
-              <a href="/2023/07/03/1-kai-fa/git/da-jian-git-si-fu/" class="post-img " style="background-size: cover; 
+              <a href="/2023/07/03/da-jian-git-si-fu/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
                 <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/13.jpg" class="lazyload placeholder" data-srcset="/medias/13.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
@@ -970,7 +949,7 @@
                   <span class="post-date">07-03</span>
                 
               </div>
-              <a class="post-title" href="/2023/07/03/1-kai-fa/git/da-jian-git-si-fu/">搭建git私服</a>
+              <a class="post-title" href="/2023/07/03/da-jian-git-si-fu/">搭建git私服</a>
             </div>
           </div>
         
@@ -1022,9 +1001,9 @@
             
 
             <div class="post-img-box">
-              <a href="/2023/07/02/5-su-cha/matplotlib/" class="post-img " style="background-size: cover; 
+              <a href="/2023/07/02/2-ji-suan-ji-shi-jue/pytorch-ji-chu/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/13.jpg" class="lazyload placeholder" data-srcset="/medias/13.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
@@ -1033,7 +1012,7 @@
                   <span class="post-date">07-02</span>
                 
               </div>
-              <a class="post-title" href="/2023/07/02/5-su-cha/matplotlib/">matplotlib 常用命令</a>
+              <a class="post-title" href="/2023/07/02/2-ji-suan-ji-shi-jue/pytorch-ji-chu/">pytorch 基础</a>
             </div>
           </div>
         
@@ -1043,9 +1022,9 @@
             
 
             <div class="post-img-box">
-              <a href="/2023/07/02/4-ri-chang-sui-bi/li-shi-ji/" class="post-img " style="background-size: cover; 
+              <a href="/2023/07/02/2-ji-suan-ji-shi-jue/hui-gui-mo-xing/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://photo.16pic.com/00/17/48/16pic_1748344_b.jpg" class="lazyload placeholder" data-srcset="https://photo.16pic.com/00/17/48/16pic_1748344_b.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/5.jpg" class="lazyload placeholder" data-srcset="/medias/5.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
@@ -1054,7 +1033,7 @@
                   <span class="post-date">07-02</span>
                 
               </div>
-              <a class="post-title" href="/2023/07/02/4-ri-chang-sui-bi/li-shi-ji/">历史记</a>
+              <a class="post-title" href="/2023/07/02/2-ji-suan-ji-shi-jue/hui-gui-mo-xing/">《计算机视觉》 笔记</a>
             </div>
           </div>
         
@@ -1398,7 +1377,7 @@
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
 
           </div>
         

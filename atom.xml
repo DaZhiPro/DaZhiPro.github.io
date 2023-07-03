@@ -18,8 +18,8 @@
   
   <entry>
     <title>搭建git私服</title>
-    <link href="https://dazhipro.github.io/2023/07/03/1-kai-fa/git/da-jian-git-si-fu/"/>
-    <id>https://dazhipro.github.io/2023/07/03/1-kai-fa/git/da-jian-git-si-fu/</id>
+    <link href="https://dazhipro.github.io/2023/07/03/da-jian-git-si-fu/"/>
+    <id>https://dazhipro.github.io/2023/07/03/da-jian-git-si-fu/</id>
     <published>2023-07-03T12:12:57.000Z</published>
     <updated>2023-07-03T12:56:59.818Z</updated>
     
@@ -28,8 +28,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;搭建git私服&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#搭建git私服&quot;&gt;&lt;/a&gt; 搭建git私服&lt;/h1&gt;
-&lt;h2 id=&quot;1-购买一台服务器&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;搭建git私服&quot;&gt;&lt;a href=&quot;#搭建git私服&quot; class=&quot;headerlink&quot; title=&quot;搭建git私服&quot;&gt;&lt;/a&gt;搭建git私服&lt;/h1&gt;&lt;h2 id=&quot;1-购买一台服务器&quot;&gt;&lt;a href=&quot;#1-购买一台服务器&quot;</summary>
         
       
     
@@ -79,30 +78,54 @@
   </entry>
   
   <entry>
-    <title>matplotlib 常用命令</title>
-    <link href="https://dazhipro.github.io/2023/07/02/5-su-cha/matplotlib/"/>
-    <id>https://dazhipro.github.io/2023/07/02/5-su-cha/matplotlib/</id>
+    <title>pytorch 基础</title>
+    <link href="https://dazhipro.github.io/2023/07/02/2-ji-suan-ji-shi-jue/pytorch-ji-chu/"/>
+    <id>https://dazhipro.github.io/2023/07/02/2-ji-suan-ji-shi-jue/pytorch-ji-chu/</id>
     <published>2023-07-02T02:21:26.000Z</published>
-    <updated>2023-05-10T09:03:54.000Z</updated>
+    <updated>2023-04-03T07:39:42.000Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;matplotlib 速查&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;引入库 &lt;code&gt;import matplotlib.pyplot as plt&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;绘制散点图  &lt;code&gt;plt.scatter(x,y)&lt;/code&gt;&lt;br</summary>
+    <summary type="html">&lt;h4 id=&quot;自动求导机制&quot;&gt;&lt;a href=&quot;#自动求导机制&quot; class=&quot;headerlink&quot; title=&quot;自动求导机制&quot;&gt;&lt;/a&gt;自动求导机制&lt;/h4&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
         
       
     
     
     
-    <category term="速查" scheme="https://dazhipro.github.io/categories/%E9%80%9F%E6%9F%A5/"/>
+    <category term="机器学习" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
     <category term="速查" scheme="https://dazhipro.github.io/tags/%E9%80%9F%E6%9F%A5/"/>
+    
+    <category term="机器学习" scheme="https://dazhipro.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《计算机视觉》 笔记</title>
+    <link href="https://dazhipro.github.io/2023/07/02/2-ji-suan-ji-shi-jue/hui-gui-mo-xing/"/>
+    <id>https://dazhipro.github.io/2023/07/02/2-ji-suan-ji-shi-jue/hui-gui-mo-xing/</id>
+    <published>2023-07-02T02:21:26.000Z</published>
+    <updated>2023-02-26T02:20:26.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;第八章-回归模型&quot;&gt;&lt;a href=&quot;#第八章-回归模型&quot; class=&quot;headerlink&quot; title=&quot;第八章 回归模型&quot;&gt;&lt;/a&gt;第八章 回归模型&lt;/h1&gt;&lt;p&gt;定义：根据向量 $x = [x_1,x_2,…,x_n]^T$ 来估计全局状态</summary>
+        
+      
+    
+    
+    
+    <category term="机器学习" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="《计算机视觉》" scheme="https://dazhipro.github.io/tags/%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E3%80%8B/"/>
     
   </entry>
   
@@ -132,56 +155,30 @@
   </entry>
   
   <entry>
-    <title>pytorch 基础</title>
-    <link href="https://dazhipro.github.io/2023/07/02/2-ji-suan-ji-shi-jue/pytorch-ji-chu/"/>
-    <id>https://dazhipro.github.io/2023/07/02/2-ji-suan-ji-shi-jue/pytorch-ji-chu/</id>
+    <title>matplotlib 常用命令</title>
+    <link href="https://dazhipro.github.io/2023/07/02/5-su-cha/matplotlib/"/>
+    <id>https://dazhipro.github.io/2023/07/02/5-su-cha/matplotlib/</id>
     <published>2023-07-02T02:21:26.000Z</published>
-    <updated>2023-04-03T07:39:42.000Z</updated>
+    <updated>2023-05-10T09:03:54.000Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h4 id=&quot;自动求导机制&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#自动求导机制&quot;&gt;&lt;/a&gt; 自动求导机制&lt;/h4&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+    <summary type="html">&lt;p&gt;matplotlib 速查&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;引入库 &lt;code&gt;import matplotlib.pyplot as plt&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;绘制散点图 </summary>
         
       
     
     
     
-    <category term="机器学习" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="速查" scheme="https://dazhipro.github.io/categories/%E9%80%9F%E6%9F%A5/"/>
     
     
     <category term="速查" scheme="https://dazhipro.github.io/tags/%E9%80%9F%E6%9F%A5/"/>
-    
-    <category term="机器学习" scheme="https://dazhipro.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《计算机视觉》 笔记</title>
-    <link href="https://dazhipro.github.io/2023/07/02/2-ji-suan-ji-shi-jue/hui-gui-mo-xing/"/>
-    <id>https://dazhipro.github.io/2023/07/02/2-ji-suan-ji-shi-jue/hui-gui-mo-xing/</id>
-    <published>2023-07-02T02:21:26.000Z</published>
-    <updated>2023-02-26T02:20:26.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;第八章-回归模型&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#第八章-回归模型&quot;&gt;&lt;/a&gt; 第八章 回归模型&lt;/h1&gt;
-&lt;p&gt;定义：根据向量 &lt;span class=&quot;katex&quot;&gt;&lt;span</summary>
-        
-      
-    
-    
-    
-    <category term="机器学习" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="《计算机视觉》" scheme="https://dazhipro.github.io/tags/%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E3%80%8B/"/>
     
   </entry>
   
@@ -198,8 +195,7 @@
         
         
     <summary type="html">&lt;ol&gt;
-&lt;li&gt;为什么要有自注意力机制？&lt;br /&gt;
-应用: 类似于机器翻译或者语音识别等需要seq2seq模型的场景&lt;br</summary>
+&lt;li&gt;为什么要有自注意力机制？&lt;br&gt; 应用: 类似于机器翻译或者语音识别等需要seq2seq模型的场景&lt;br&gt;</summary>
         
       
     
@@ -228,10 +224,8 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#问题&quot;&gt;&lt;/a&gt; 问题&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;样本不均衡问题
-&lt;ul&gt;
+    <summary type="html">&lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;样本不均衡问题&lt;ul&gt;
 &lt;li&gt;信用卡欺诈分类：</summary>
         
       
@@ -259,8 +253,7 @@
       
         
         
-    <summary type="html">&lt;h4 id=&quot;原文&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#原文&quot;&gt;&lt;/a&gt; 原文&lt;/h4&gt;
-&lt;p&gt;Zhuo, Yue and Zhiqiang Ge. “Auxiliary Information-Guided Industrial</summary>
+    <summary type="html">&lt;h4 id=&quot;原文&quot;&gt;&lt;a href=&quot;#原文&quot; class=&quot;headerlink&quot; title=&quot;原文&quot;&gt;&lt;/a&gt;原文&lt;/h4&gt;&lt;p&gt;Zhuo, Yue and Zhiqiang Ge. “Auxiliary Information-Guided Industrial</summary>
         
       
     
@@ -289,7 +282,7 @@
       
         
         
-    <summary type="html">&lt;h4 id=&quot;题目-石子合并&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#题目-石子合并&quot;&gt;&lt;/a&gt; 题目: &lt;a</summary>
+    <summary type="html">&lt;h4 id=&quot;题目-石子合并&quot;&gt;&lt;a href=&quot;#题目-石子合并&quot; class=&quot;headerlink&quot; title=&quot;题目: 石子合并&quot;&gt;&lt;/a&gt;题目: &lt;a</summary>
         
       
     
@@ -314,8 +307,7 @@
       
         
         
-    <summary type="html">&lt;h4 id=&quot;计数问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#计数问题&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://www.acwing.com/problem/content/340/&quot;&gt;计数问题&lt;/a&gt;&lt;/h4&gt;
-&lt;h4</summary>
+    <summary type="html">&lt;h4 id=&quot;计数问题&quot;&gt;&lt;a href=&quot;#计数问题&quot; class=&quot;headerlink&quot; title=&quot;计数问题&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acwing.com/problem/content/340/&quot;&gt;计数问题&lt;/a&gt;&lt;/h4&gt;&lt;h4</summary>
         
       
     
@@ -365,10 +357,7 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;新建第一个hello-world&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#新建第一个hello-world&quot;&gt;&lt;/a&gt; 新建第一个hello world&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;安装Django：</summary>
+    <summary type="html">&lt;h2 id=&quot;新建第一个hello-world&quot;&gt;&lt;a href=&quot;#新建第一个hello-world&quot; class=&quot;headerlink&quot; title=&quot;新建第一个hello world&quot;&gt;&lt;/a&gt;新建第一个hello</summary>
         
       
     
@@ -393,8 +382,7 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;双指针&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#双指针&quot;&gt;&lt;/a&gt; 双指针&lt;/h3&gt;
-&lt;h4 id=&quot;问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#问题&quot;&gt;&lt;/a&gt;</summary>
+    <summary type="html">&lt;h3 id=&quot;双指针&quot;&gt;&lt;a href=&quot;#双指针&quot; class=&quot;headerlink&quot; title=&quot;双指针&quot;&gt;&lt;/a&gt;双指针&lt;/h3&gt;&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -453,8 +441,7 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;高精度&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#高精度&quot;&gt;&lt;/a&gt; 高精度&lt;/h3&gt;
-&lt;h4 id=&quot;问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#问题&quot;&gt;&lt;/a&gt;</summary>
+    <summary type="html">&lt;h3 id=&quot;高精度&quot;&gt;&lt;a href=&quot;#高精度&quot; class=&quot;headerlink&quot; title=&quot;高精度&quot;&gt;&lt;/a&gt;高精度&lt;/h3&gt;&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -479,8 +466,7 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;二分&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#二分&quot;&gt;&lt;/a&gt; 二分&lt;/h3&gt;
-&lt;h4 id=&quot;问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#问题&quot;&gt;&lt;/a&gt; &lt;a</summary>
+    <summary type="html">&lt;h3 id=&quot;二分&quot;&gt;&lt;a href=&quot;#二分&quot; class=&quot;headerlink&quot; title=&quot;二分&quot;&gt;&lt;/a&gt;二分&lt;/h3&gt;&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;&lt;a</summary>
         
       
     
@@ -505,8 +491,7 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;快速排序&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#快速排序&quot;&gt;&lt;/a&gt; 快速排序&lt;/h3&gt;
-&lt;h4 id=&quot;问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#问题&quot;&gt;&lt;/a&gt; &lt;a</summary>
+    <summary type="html">&lt;h3 id=&quot;快速排序&quot;&gt;&lt;a href=&quot;#快速排序&quot; class=&quot;headerlink&quot; title=&quot;快速排序&quot;&gt;&lt;/a&gt;快速排序&lt;/h3&gt;&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;&lt;a</summary>
         
       
     
