@@ -613,25 +613,16 @@
     <article class="post post-detail">
       <div class="post-content">
         <ol>
-<li>为什么要有自注意力机制？<br />
-应用: 类似于机器翻译或者语音识别等需要seq2seq模型的场景<br />
-场景中模型的输出结果可能和输入的向量序列中的某几部分相关性较强的，而对于其他部分（像语音识别中的没有说话的噪音部分）可能对结果的影响较小，所以整个自注意力机制的目的就是对于一个输入序列的部分施以不同的权重。</li>
-<li>如何判断下序列中某一部分的重要程度呢？<br />
-如果说它和其他部分的相关性越高，那打分也越高</li>
-<li>具体计算过程
-<ol>
-<li>根据输入向量<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">a_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>得到不同向量打分值<br />
-<img src="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112339742-1056550260.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112339742-1056550260.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="根据输入向量得到不同向量打分值" /></li>
-<li>根据输入向量序列a得到输出向量序列b的过程<br />
-<img src="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112116612-379883211.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112116612-379883211.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="根据输入向量序列a得到输出向量序列b的过程" /></li>
-<li>前项传播矩阵化操作：<br />
-<img src="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112744723-38329950.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112744723-38329950.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></li>
-<li>代码实现</li>
+<li>为什么要有自注意力机制？<br> 应用: 类似于机器翻译或者语音识别等需要seq2seq模型的场景<br> 场景中模型的输出结果可能和输入的向量序列中的某几部分相关性较强的，而对于其他部分（像语音识别中的没有说话的噪音部分）可能对结果的影响较小，所以整个自注意力机制的目的就是对于一个输入序列的部分施以不同的权重。</li>
+<li>如何判断下序列中某一部分的重要程度呢？<br> 如果说它和其他部分的相关性越高，那打分也越高</li>
+<li>具体计算过程<ol>
+<li>根据输入向量$a_i$得到不同向量打分值<br><img src="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112339742-1056550260.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112339742-1056550260.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="根据输入向量$a_i$得到不同向量打分值"></li>
+<li>根据输入向量序列a得到输出向量序列b的过程<br><img src="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112116612-379883211.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112116612-379883211.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="根据输入向量序列a得到输出向量序列b的过程"></li>
+<li>前项传播矩阵化操作：<br><img src="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112744723-38329950.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112744723-38329950.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></li>
+<li>代码实现<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SelfAttention</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, dim_q, dim_k, dim_v</span>):</span><br><span class="line">        <span class="built_in">super</span>(SelfAttention, self).__init__()</span><br><span class="line">        self.dim_q = dim_q</span><br><span class="line">        self.dim_k = dim_k</span><br><span class="line">        self.dim_v = dim_v</span><br><span class="line"></span><br><span class="line">        <span class="comment">#定义线性变换函数</span></span><br><span class="line">        self.linear_q = nn.Linear(dim_q, dim_k, bias=<span class="literal">False</span>)</span><br><span class="line">        self.linear_k = nn.Linear(dim_q, dim_k, bias=<span class="literal">False</span>)</span><br><span class="line">        self.linear_v = nn.Linear(dim_q, dim_v, bias=<span class="literal">False</span>)</span><br><span class="line">        self._norm_fact = <span class="number">1</span> / sqrt(dim_k)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">        <span class="comment"># x: batch, n, dim_q</span></span><br><span class="line">        <span class="comment">#根据文本获得相应的维度</span></span><br><span class="line"></span><br><span class="line">        batch, n, dim_q = x.shape</span><br><span class="line">        <span class="keyword">assert</span> dim_q == self.dim_q</span><br><span class="line"></span><br><span class="line">        q = self.linear_q(x)  <span class="comment"># batch, n, dim_k</span></span><br><span class="line">        k = self.linear_k(x)  <span class="comment"># batch, n, dim_k</span></span><br><span class="line">        v = self.linear_v(x)  <span class="comment"># batch, n, dim_v</span></span><br><span class="line">        <span class="comment">#q*k的转置 并*开根号后的dk</span></span><br><span class="line">        dist = torch.bmm(q, k.transpose(<span class="number">1</span>, <span class="number">2</span>)) * self._norm_fact  <span class="comment"># batch, n, n</span></span><br><span class="line">        <span class="comment">#归一化获得attention的相关系数</span></span><br><span class="line">        dist = torch.softmax(dist, dim=-<span class="number">1</span>)  <span class="comment"># batch, n, n</span></span><br><span class="line">        <span class="comment">#attention系数和v相乘，获得最终的得分</span></span><br><span class="line">        att = torch.bmm(dist, v)</span><br><span class="line">        <span class="keyword">return</span> att</span><br></pre></td></tr></table></figure></li>
 </ol>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SelfAttention</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, dim_q, dim_k, dim_v</span>):</span><br><span class="line">        <span class="built_in">super</span>(SelfAttention, self).__init__()</span><br><span class="line">        self.dim_q = dim_q</span><br><span class="line">        self.dim_k = dim_k</span><br><span class="line">        self.dim_v = dim_v</span><br><span class="line"></span><br><span class="line">        <span class="comment">#定义线性变换函数</span></span><br><span class="line">        self.linear_q = nn.Linear(dim_q, dim_k, bias=<span class="literal">False</span>)</span><br><span class="line">        self.linear_k = nn.Linear(dim_q, dim_k, bias=<span class="literal">False</span>)</span><br><span class="line">        self.linear_v = nn.Linear(dim_q, dim_v, bias=<span class="literal">False</span>)</span><br><span class="line">        self._norm_fact = <span class="number">1</span> / sqrt(dim_k)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">        <span class="comment"># x: batch, n, dim_q</span></span><br><span class="line">        <span class="comment">#根据文本获得相应的维度</span></span><br><span class="line"></span><br><span class="line">        batch, n, dim_q = x.shape</span><br><span class="line">        <span class="keyword">assert</span> dim_q == self.dim_q</span><br><span class="line"></span><br><span class="line">        q = self.linear_q(x)  <span class="comment"># batch, n, dim_k</span></span><br><span class="line">        k = self.linear_k(x)  <span class="comment"># batch, n, dim_k</span></span><br><span class="line">        v = self.linear_v(x)  <span class="comment"># batch, n, dim_v</span></span><br><span class="line">        <span class="comment">#q*k的转置 并*开根号后的dk</span></span><br><span class="line">        dist = torch.bmm(q, k.transpose(<span class="number">1</span>, <span class="number">2</span>)) * self._norm_fact  <span class="comment"># batch, n, n</span></span><br><span class="line">        <span class="comment">#归一化获得attention的相关系数</span></span><br><span class="line">        dist = torch.softmax(dist, dim=-<span class="number">1</span>)  <span class="comment"># batch, n, n</span></span><br><span class="line">        <span class="comment">#attention系数和v相乘，获得最终的得分</span></span><br><span class="line">        att = torch.bmm(dist, v)</span><br><span class="line">        <span class="keyword">return</span> att</span><br></pre></td></tr></table></figure>
 </li>
-<li>总结<br />
-它一般用于嵌入到一个网络模型中，本身并没有优化目标。如果单用的话优化目标可以设置为使得输出b尽量接近标签y</li>
+<li>总结<br>它一般用于嵌入到一个网络模型中，本身并没有优化目标。如果单用的话优化目标可以设置为使得输出b尽量接近标签y</li>
 </ol>
 <p>参考链接</p>
 <ol>
@@ -644,16 +635,16 @@
         
         <div class="tags">
           
+            <a href="/tags/%E6%9D%8E%E5%AE%8F%E6%AF%85%E7%AC%94%E8%AE%B0/" class="">
+              李宏毅笔记
+            </a>
+          
             <a href="/tags/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/" class="">
               自注意力机制
             </a>
           
             <a href="/tags/%E6%AF%95%E8%AE%BE/" class="">
               毕设
-            </a>
-          
-            <a href="/tags/%E6%9D%8E%E5%AE%8F%E6%AF%85%E7%AC%94%E8%AE%B0/" class="">
-              李宏毅笔记
             </a>
           
         </div>
@@ -698,10 +689,8 @@
       </div>
       
       <!-- <div class="content">
-         计数问题
- 基本思路：
-
-暴力(O(191^919)) 暴力遍历每一个数，然后遍历每一位 这样的话 复杂度 1e8 *
+        计数问题基本思路：
+暴力(O($1^9$)) 暴力遍历每一个数，然后遍历每一位 这样的话 复杂度 1e8  8  测试样
       </div> -->
     </a>
   </div>
@@ -720,16 +709,13 @@
         <div class="title-text">Date Augmentation Using GANs文献阅读笔记</div>
       </div>
       <!-- <div class="content">
-         问题
-
+        问题
 样本不均衡问题
-
 信用卡欺诈分类： 正常：欺诈=10000:1
 
 
 敏感数据脱敏问题
-
-某些医疗数据即时隐去姓
+某些医疗数据即时隐去姓名，还是
       </div> -->
     </a>
   </div>
@@ -1049,9 +1035,9 @@
             
 
             <div class="post-img-box">
-              <a href="/2023/07/02/2-ji-suan-ji-shi-jue/pytorch-ji-chu/" class="post-img " style="background-size: cover; 
+              <a href="/2023/07/02/5-su-cha/matplotlib/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/13.jpg" class="lazyload placeholder" data-srcset="/medias/13.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
@@ -1060,7 +1046,7 @@
                   <span class="post-date">07-02</span>
                 
               </div>
-              <a class="post-title" href="/2023/07/02/2-ji-suan-ji-shi-jue/pytorch-ji-chu/">pytorch 基础</a>
+              <a class="post-title" href="/2023/07/02/5-su-cha/matplotlib/">matplotlib 常用命令</a>
             </div>
           </div>
         
@@ -1070,9 +1056,9 @@
             
 
             <div class="post-img-box">
-              <a href="/2023/07/02/2-ji-suan-ji-shi-jue/hui-gui-mo-xing/" class="post-img " style="background-size: cover; 
+              <a href="/2023/07/02/4-ri-chang-sui-bi/li-shi-ji/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/5.jpg" class="lazyload placeholder" data-srcset="/medias/5.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://photo.16pic.com/00/17/48/16pic_1748344_b.jpg" class="lazyload placeholder" data-srcset="https://photo.16pic.com/00/17/48/16pic_1748344_b.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
@@ -1081,7 +1067,7 @@
                   <span class="post-date">07-02</span>
                 
               </div>
-              <a class="post-title" href="/2023/07/02/2-ji-suan-ji-shi-jue/hui-gui-mo-xing/">《计算机视觉》 笔记</a>
+              <a class="post-title" href="/2023/07/02/4-ri-chang-sui-bi/li-shi-ji/">历史记</a>
             </div>
           </div>
         
@@ -1478,7 +1464,7 @@
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
 
           </div>
         
