@@ -609,31 +609,44 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/787/">问题</a></h4><p>将序列 q 的 l ~ r 区间排序<br>void quick_sort(int q[], int l, int r) </p>
-<h4 id="基本思想-——-分治"><a href="#基本思想-——-分治" class="headerlink" title="基本思想 —— 分治"></a>基本思想 —— 分治</h4><ol>
+        <h3 id="快速排序"><a class="markdownIt-Anchor" href="#快速排序"></a> 快速排序</h3>
+<h4 id="问题"><a class="markdownIt-Anchor" href="#问题"></a> <a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/787/">问题</a></h4>
+<p>将序列 q 的 l ~ r 区间排序<br />
+void quick_sort(int q[], int l, int r)</p>
+<h4 id="基本思想-分治"><a class="markdownIt-Anchor" href="#基本思想-分治"></a> 基本思想 —— 分治</h4>
+<ol>
 <li>找一个参考值 x</li>
-<li>通过双指针算法交换使得  左半边全部是 &lt;= x , 右半边全部是 &gt;= x<ol>
+<li>通过双指针算法交换使得  左半边全部是 &lt;= x , 右半边全部是 &gt;= x
+<ol>
 <li>移动左指针 i ，找到大于 x 的数</li>
 <li>移动右指针 j ，找到小于 x 的数</li>
-<li>交换逆序对 </li>
+<li>交换逆序对</li>
 </ol>
 </li>
 <li>递归处理 左半边 右半边</li>
 </ol>
-<h4 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">quick_sort</span><span class="params">(<span class="type">int</span> q[], <span class="type">int</span> l, <span class="type">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l &gt;= r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="type">int</span> i = l - <span class="number">1</span>, j = r + <span class="number">1</span>, x = q[l] + q[r] &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt; j)&#123;</span><br><span class="line">        <span class="keyword">while</span>(q[++ i] &lt; x);</span><br><span class="line">        <span class="keyword">while</span>(q[-- j] &gt; x);</span><br><span class="line">        <span class="keyword">if</span>(i &lt; j) <span class="built_in">swap</span>(q[i],q[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">quick_sort</span>( q, l, j), <span class="built_in">quick_sort</span>( q, j + <span class="number">1</span>, r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>注意点</strong>： 分界点的选择可以是[ l , j ]、 [ j + 1 , r ] 或者 [ l, i - 1 ]、[ i , r ],<br>swap 的时候不要忘记判断 i &lt; j</p>
-<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><p>与快排的先排完上层，再排下层不同，归并排序是先排完下层再排上层</p>
-<h4 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/789/">问题</a></h4><p>将序列 q 的 l ~ r 区间排序<br>void merge_sort(int q[], int l, int r) </p>
-<h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4><ol>
+<h4 id="模板"><a class="markdownIt-Anchor" href="#模板"></a> 模板</h4>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">quick_sort</span><span class="params">(<span class="type">int</span> q[], <span class="type">int</span> l, <span class="type">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l &gt;= r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="type">int</span> i = l - <span class="number">1</span>, j = r + <span class="number">1</span>, x = q[l] + q[r] &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt; j)&#123;</span><br><span class="line">        <span class="keyword">while</span>(q[++ i] &lt; x);</span><br><span class="line">        <span class="keyword">while</span>(q[-- j] &gt; x);</span><br><span class="line">        <span class="keyword">if</span>(i &lt; j) <span class="built_in">swap</span>(q[i],q[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">quick_sort</span>( q, l, j), <span class="built_in">quick_sort</span>( q, j + <span class="number">1</span>, r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意点</strong>： 分界点的选择可以是[ l , j ]、 [ j + 1 , r ] 或者 [ l, i - 1 ]、[ i , r ],<br />
+swap 的时候不要忘记判断 i &lt; j</p>
+<h3 id="归并排序"><a class="markdownIt-Anchor" href="#归并排序"></a> 归并排序</h3>
+<p>与快排的先排完上层，再排下层不同，归并排序是先排完下层再排上层</p>
+<h4 id="问题-2"><a class="markdownIt-Anchor" href="#问题-2"></a> <a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/789/">问题</a></h4>
+<p>将序列 q 的 l ~ r 区间排序<br />
+void merge_sort(int q[], int l, int r)</p>
+<h4 id="基本思想"><a class="markdownIt-Anchor" href="#基本思想"></a> 基本思想</h4>
+<ol>
 <li>先排完左半边[ l , mid ]、再排完右半边[ mid + 1, r ]</li>
-<li>将左右两个有序序列进行合并<ol>
+<li>将左右两个有序序列进行合并
+<ol>
 <li>i , j 两个指针分别指向两个有序子序列的头，哪个小就输出哪个，并指向后一个，直到有一个序列指针到达末尾</li>
 <li>将未全部输出的序列全部输出</li>
 </ol>
 </li>
 <li>处理左半边 和 右半边 同样使用递归的方式</li>
 </ol>
-<h4 id="模板-1"><a href="#模板-1" class="headerlink" title="模板"></a>模板</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> tmp[N]; <span class="comment">// 很大，最好开在外面</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">merge_sort</span><span class="params">(<span class="type">int</span> q[], <span class="type">int</span> l, <span class="type">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l &gt;= r) <span class="keyword">return</span>; <span class="comment">// 递归的出口</span></span><br><span class="line">    <span class="type">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">merge_sort</span>(q, l, mid), <span class="built_in">merge_sort</span>(q, mid + <span class="number">1</span>, r);</span><br><span class="line">    <span class="type">int</span> i = l, j = mid + <span class="number">1</span>, k = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(i &lt;= mid &amp;&amp; j &lt;= r)&#123;</span><br><span class="line">        <span class="keyword">if</span>(q[i] &lt;= q[j]) tmp[k ++] = q[i ++];</span><br><span class="line">        <span class="keyword">else</span> tmp[k ++] = q[j ++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(i &lt;= mid) tmp[k ++] = q[i ++];</span><br><span class="line">    <span class="keyword">while</span>(j &lt;= r) tmp[k ++] = q[j ++];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = l, j = <span class="number">0</span>; i &lt;= r; i ++, j ++) q[i] = tmp[j];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="模板-2"><a class="markdownIt-Anchor" href="#模板-2"></a> 模板</h4>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> tmp[N]; <span class="comment">// 很大，最好开在外面</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">merge_sort</span><span class="params">(<span class="type">int</span> q[], <span class="type">int</span> l, <span class="type">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l &gt;= r) <span class="keyword">return</span>; <span class="comment">// 递归的出口</span></span><br><span class="line">    <span class="type">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">merge_sort</span>(q, l, mid), <span class="built_in">merge_sort</span>(q, mid + <span class="number">1</span>, r);</span><br><span class="line">    <span class="type">int</span> i = l, j = mid + <span class="number">1</span>, k = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(i &lt;= mid &amp;&amp; j &lt;= r)&#123;</span><br><span class="line">        <span class="keyword">if</span>(q[i] &lt;= q[j]) tmp[k ++] = q[i ++];</span><br><span class="line">        <span class="keyword">else</span> tmp[k ++] = q[j ++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(i &lt;= mid) tmp[k ++] = q[i ++];</span><br><span class="line">    <span class="keyword">while</span>(j &lt;= r) tmp[k ++] = q[j ++];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = l, j = <span class="number">0</span>; i &lt;= r; i ++, j ++) q[i] = tmp[j];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       </div>
       <div class="post-tags-categories">
         
@@ -685,7 +698,9 @@
       </div>
       
       <!-- <div class="content">
-        二分问题适用于一个序列，有一个check函数，能够使得序列左边都返回false，右边都返回true，然后我们找的就是这个
+         二分
+ 问题
+适用于一个序列，有一个check函数，能够使得序列左边都返回false，右边都返回true，然后我们找的
       </div> -->
     </a>
   </div>
@@ -704,9 +719,10 @@
         <div class="title-text">远程登录和 vim</div>
       </div>
       <!-- <div class="content">
-        主机和虚拟机ping不通的原因
+         主机和虚拟机ping不通的原因
+
 主机需要将自己网卡共享给VMware net8
-主机VMware net8虚拟网卡设计的
+主机VMware net8虚拟网卡设
       </div> -->
     </a>
   </div>
@@ -930,7 +946,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F"><span class="toc-text">快速排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-text">问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3-%E2%80%94%E2%80%94-%E5%88%86%E6%B2%BB"><span class="toc-text">基本思想 —— 分治</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF"><span class="toc-text">模板</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F"><span class="toc-text">归并排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98-1"><span class="toc-text">问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3"><span class="toc-text">基本思想</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF-1"><span class="toc-text">模板</span></a></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F"><span class="toc-text"> 快速排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-text"> 问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3-%E5%88%86%E6%B2%BB"><span class="toc-text"> 基本思想 —— 分治</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF"><span class="toc-text"> 模板</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F"><span class="toc-text"> 归并排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98-2"><span class="toc-text"> 问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3"><span class="toc-text"> 基本思想</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF-2"><span class="toc-text"> 模板</span></a></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1026,27 +1042,6 @@
             
 
             <div class="post-img-box">
-              <a href="/2023/07/02/4-ri-chang-sui-bi/li-shi-ji/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://photo.16pic.com/00/17/48/16pic_1748344_b.jpg" class="lazyload placeholder" data-srcset="https://photo.16pic.com/00/17/48/16pic_1748344_b.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">07-02</span>
-                
-              </div>
-              <a class="post-title" href="/2023/07/02/4-ri-chang-sui-bi/li-shi-ji/">历史记</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
               <a href="/2023/07/02/2-ji-suan-ji-shi-jue/pytorch-ji-chu/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
                 <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/13.jpg" class="lazyload placeholder" data-srcset="/medias/13.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
@@ -1059,6 +1054,27 @@
                 
               </div>
               <a class="post-title" href="/2023/07/02/2-ji-suan-ji-shi-jue/pytorch-ji-chu/">pytorch 基础</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2023/07/02/2-ji-suan-ji-shi-jue/hui-gui-mo-xing/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/5.jpg" class="lazyload placeholder" data-srcset="/medias/5.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">07-02</span>
+                
+              </div>
+              <a class="post-title" href="/2023/07/02/2-ji-suan-ji-shi-jue/hui-gui-mo-xing/">《计算机视觉》 笔记</a>
             </div>
           </div>
         
@@ -1402,7 +1418,7 @@
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
 
           </div>
         
