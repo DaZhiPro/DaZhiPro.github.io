@@ -609,10 +609,14 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h3 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h3><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><ol>
+        <h3 id="双指针"><a class="markdownIt-Anchor" href="#双指针"></a> 双指针</h3>
+<h4 id="问题"><a class="markdownIt-Anchor" href="#问题"></a> 问题</h4>
+<ol>
 <li>一般适用于什么情况？</li>
 </ol>
-<h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4><h5 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>,j = <span class="number">0</span>; i &lt; n; i ++)&#123; <span class="comment">// 看做快指针，尽管往前面跑</span></span><br><span class="line">    <span class="keyword">while</span>(j &lt; n &amp;&amp; <span class="built_in">check</span>(j,i)) j ++;  <span class="comment">// j 看做慢指针， 有需要的情况下跟</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 问题的逻辑</span></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="基本思想"><a class="markdownIt-Anchor" href="#基本思想"></a> 基本思想</h4>
+<h5 id="模板"><a class="markdownIt-Anchor" href="#模板"></a> 模板</h5>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>,j = <span class="number">0</span>; i &lt; n; i ++)&#123; <span class="comment">// 看做快指针，尽管往前面跑</span></span><br><span class="line">    <span class="keyword">while</span>(j &lt; n &amp;&amp; <span class="built_in">check</span>(j,i)) j ++;  <span class="comment">// j 看做慢指针， 有需要的情况下跟</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 问题的逻辑</span></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       </div>
       <div class="post-tags-categories">
         
@@ -655,16 +659,20 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/14.jpg" class="lazyload placeholder" data-srcset="/medias/14.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/3.jpg" class="lazyload placeholder" data-srcset="/medias/3.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/2023/01/06/3-suan-fa/ji-chu-suan-fa/06-chi-san-hua/" class="post-nav-link">
+    <a href="/2023/01/11/1-kai-fa/django/gai-shu/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">离散化</div>
+        <div class="title-text">Django 概述</div>
       </div>
       
       <!-- <div class="content">
-        
+         新建第一个hello world
+
+
+安装Django： python -m pip install Django
+h
       </div> -->
     </a>
   </div>
@@ -675,12 +683,12 @@
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/13.jpg" class="lazyload placeholder" data-srcset="/medias/13.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/14.jpg" class="lazyload placeholder" data-srcset="/medias/14.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
-    <a href="/2023/01/05/3-suan-fa/ji-chu-suan-fa/04-qian-zhui-he-he-chai-fen/" class="post-nav-link">
+    <a href="/2023/01/06/3-suan-fa/ji-chu-suan-fa/06-chi-san-hua/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">前缀和 差分</div>
+        <div class="title-text">离散化</div>
       </div>
       <!-- <div class="content">
         
@@ -907,7 +915,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E6%8C%87%E9%92%88"><span class="toc-text">双指针</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-text">问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3"><span class="toc-text">基本思想</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF"><span class="toc-text">模板</span></a></li></ol></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E6%8C%87%E9%92%88"><span class="toc-text"> 双指针</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-text"> 问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3"><span class="toc-text"> 基本思想</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF"><span class="toc-text"> 模板</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -961,9 +969,9 @@
             
 
             <div class="post-img-box">
-              <a href="/2023/07/02/2-ji-suan-ji-shi-jue/hui-gui-mo-xing/" class="post-img " style="background-size: cover; 
+              <a href="/2023/07/02/4-ri-chang-sui-bi/li-shi-ji/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/5.jpg" class="lazyload placeholder" data-srcset="/medias/5.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://photo.16pic.com/00/17/48/16pic_1748344_b.jpg" class="lazyload placeholder" data-srcset="https://photo.16pic.com/00/17/48/16pic_1748344_b.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
@@ -972,28 +980,7 @@
                   <span class="post-date">07-02</span>
                 
               </div>
-              <a class="post-title" href="/2023/07/02/2-ji-suan-ji-shi-jue/hui-gui-mo-xing/">《计算机视觉》 笔记</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/07/02/2-ji-suan-ji-shi-jue/pytorch-ji-chu/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/13.jpg" class="lazyload placeholder" data-srcset="/medias/13.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">07-02</span>
-                
-              </div>
-              <a class="post-title" href="/2023/07/02/2-ji-suan-ji-shi-jue/pytorch-ji-chu/">pytorch 基础</a>
+              <a class="post-title" href="/2023/07/02/4-ri-chang-sui-bi/li-shi-ji/">历史记</a>
             </div>
           </div>
         
@@ -1024,9 +1011,9 @@
             
 
             <div class="post-img-box">
-              <a href="/2023/07/02/4-ri-chang-sui-bi/li-shi-ji/" class="post-img " style="background-size: cover; 
+              <a href="/2023/07/02/2-ji-suan-ji-shi-jue/pytorch-ji-chu/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://photo.16pic.com/00/17/48/16pic_1748344_b.jpg" class="lazyload placeholder" data-srcset="https://photo.16pic.com/00/17/48/16pic_1748344_b.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/13.jpg" class="lazyload placeholder" data-srcset="/medias/13.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
@@ -1035,7 +1022,28 @@
                   <span class="post-date">07-02</span>
                 
               </div>
-              <a class="post-title" href="/2023/07/02/4-ri-chang-sui-bi/li-shi-ji/">历史记</a>
+              <a class="post-title" href="/2023/07/02/2-ji-suan-ji-shi-jue/pytorch-ji-chu/">pytorch 基础</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2023/07/02/2-ji-suan-ji-shi-jue/hui-gui-mo-xing/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/5.jpg" class="lazyload placeholder" data-srcset="/medias/5.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">07-02</span>
+                
+              </div>
+              <a class="post-title" href="/2023/07/02/2-ji-suan-ji-shi-jue/hui-gui-mo-xing/">《计算机视觉》 笔记</a>
             </div>
           </div>
         
@@ -1379,7 +1387,7 @@
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
 
           </div>
         
