@@ -613,15 +613,18 @@
     <article class="post post-detail">
       <div class="post-content">
         <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/unique-binary-search-trees/">搜索二叉树</a></p>
-<h3 id="（1）思路"><a href="#（1）思路" class="headerlink" title="（1）思路"></a>（1）思路</h3><p>搜索二叉树的定义：任何一个节点的左子节点一定小于当前节点，右子节点大于当前节点</p>
+<h3 id="1思路"><a class="markdownIt-Anchor" href="#1思路"></a> （1）思路</h3>
+<p>搜索二叉树的定义：任何一个节点的左子节点一定小于当前节点，右子节点大于当前节点</p>
 <p>遍历每一种头结点是x的情况，然后分成左子树和右子树情况相加</p>
 <p>定义：dp[x] 1…x能组成的搜索二叉树的数量</p>
 <p>递推公式： dp[x] = sum{dp[x-i]*dp[i-1]} i = 1..x</p>
 <p>初始化： dp[1] = 1 dp[0] = 1</p>
 <p>遍历顺序：  dp[x] x从小到大</p>
 <p>debug： 打印dp数组</p>
-<h3 id="（2）代码"><a href="#（2）代码" class="headerlink" title="（2）代码"></a>（2）代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">numTrees</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">dp</span><span class="params">(n+<span class="number">1</span>)</span></span>;</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i ++)&#123;</span><br><span class="line">            <span class="comment">// 求dp[i]</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= i; j ++)&#123;</span><br><span class="line">                dp[i] += dp[j<span class="number">-1</span>] * dp[i-j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="（3）总结"><a href="#（3）总结" class="headerlink" title="（3）总结"></a>（3）总结</h3><p>dp 数组初始化的过程中，可以人脑推理一下最开始的几步，看一下是否合理</p>
+<h3 id="2代码"><a class="markdownIt-Anchor" href="#2代码"></a> （2）代码</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">numTrees</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">dp</span><span class="params">(n+<span class="number">1</span>)</span></span>;</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i ++)&#123;</span><br><span class="line">            <span class="comment">// 求dp[i]</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= i; j ++)&#123;</span><br><span class="line">                dp[i] += dp[j<span class="number">-1</span>] * dp[i-j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="3总结"><a class="markdownIt-Anchor" href="#3总结"></a> （3）总结</h3>
+<p>dp 数组初始化的过程中，可以人脑推理一下最开始的几步，看一下是否合理</p>
 
       </div>
       <div class="post-tags-categories">
@@ -674,12 +677,11 @@
       </div>
       
       <!-- <div class="content">
-        问题思路
+         问题
+ 思路
+
 转化为在集合中找n个数，使得其和为sum/2
 转化为对于集合中的每一个数，都可以选和不选，01背包问题
-
-
-状
       </div> -->
     </a>
   </div>
@@ -698,7 +700,9 @@
         <div class="title-text">分割等和子集</div>
       </div>
       <!-- <div class="content">
-        背包问题01背包 （每个物品只能取一个或者不取）题目链接：https://www.acwing.com/problem/
+         背包问题
+ 01背包 （每个物品只能取一个或者不取）
+题目链接：https://www.acwing.com/prob
       </div> -->
     </a>
   </div>
@@ -922,7 +926,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E6%80%9D%E8%B7%AF"><span class="toc-text">（1）思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E4%BB%A3%E7%A0%81"><span class="toc-text">（2）代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%883%EF%BC%89%E6%80%BB%E7%BB%93"><span class="toc-text">（3）总结</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E6%80%9D%E8%B7%AF"><span class="toc-text"> （1）思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E4%BB%A3%E7%A0%81"><span class="toc-text"> （2）代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E6%80%BB%E7%BB%93"><span class="toc-text"> （3）总结</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1447,7 +1451,7 @@
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
 
           </div>
         

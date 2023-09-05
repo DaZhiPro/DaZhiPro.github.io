@@ -585,7 +585,7 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 200 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 204 |
           </span>
   
           <span class="min2read">
@@ -612,9 +612,14 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h4 id="题目-石子合并"><a href="#题目-石子合并" class="headerlink" title="题目: 石子合并"></a>题目: <a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/284/">石子合并</a></h4><h4 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h4><p><img src="https://img2023.cnblogs.com/blog/2851436/202301/2851436-20230112195423440-778638186.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202301/2851436-20230112195423440-778638186.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<h4 id="状态转移式推导"><a href="#状态转移式推导" class="headerlink" title="状态转移式推导"></a>状态转移式推导</h4><p><img src="https://img2023.cnblogs.com/blog/2851436/202301/2851436-20230112200115692-751016457.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202301/2851436-20230112200115692-751016457.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><p>f[i][j]:表示合并第i堆到第j堆最小代价<br>时间复杂度$O(n^3)$</p>
+        <h4 id="题目-石子合并"><a class="markdownIt-Anchor" href="#题目-石子合并"></a> 题目: <a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/284/">石子合并</a></h4>
+<h4 id="题目分析"><a class="markdownIt-Anchor" href="#题目分析"></a> 题目分析</h4>
+<p><img src="https://img2023.cnblogs.com/blog/2851436/202301/2851436-20230112195423440-778638186.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202301/2851436-20230112195423440-778638186.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<h4 id="状态转移式推导"><a class="markdownIt-Anchor" href="#状态转移式推导"></a> 状态转移式推导</h4>
+<p><img src="https://img2023.cnblogs.com/blog/2851436/202301/2851436-20230112200115692-751016457.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202301/2851436-20230112200115692-751016457.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<h4 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h4>
+<p>f[i][j]:表示合并第i堆到第j堆最小代价<br />
+时间复杂度<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>3</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^3)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">310</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="type">int</span> s[N];</span><br><span class="line"><span class="type">int</span> f[N][N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)&#123;</span><br><span class="line">        cin &gt;&gt; s[i];</span><br><span class="line">        s[i] += s[i - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 遍历区间的时候为了保证计算f[i][j]时所用到的区间都被计算过，采用区间长度遍历</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> len = <span class="number">2</span>; len &lt;= n; len ++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i + len - <span class="number">1</span> &lt;= n; i ++)&#123;</span><br><span class="line">            <span class="type">int</span> l = i, r = i + len - <span class="number">1</span>;</span><br><span class="line">            f[l][r] = <span class="number">2e8</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> k = l; k &lt; r; k ++)&#123;</span><br><span class="line">                f[l][r] = <span class="built_in">min</span>(f[l][r],f[l][k]+f[k+<span class="number">1</span>][r]+s[r]-s[l<span class="number">-1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; f[<span class="number">1</span>][n] &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       </div>
@@ -659,17 +664,17 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401114117952-475429918.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401114117952-475429918.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="https://photo.16pic.com/00/17/48/16pic_1748344_b.jpg" class="lazyload placeholder" data-srcset="https://photo.16pic.com/00/17/48/16pic_1748344_b.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/2023/07/02/2-ji-suan-ji-shi-jue/bi-she/self-attentio/" class="post-nav-link">
+    <a href="/2023/07/02/4-ri-chang-sui-bi/li-shi-ji/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">自注意力机制及代码实现</div>
+        <div class="title-text">历史记</div>
       </div>
       
       <!-- <div class="content">
         
-为什么要有自注意力机制？ 应用: 类似于机器翻译或者语音识别等需要seq2seq模型的场景 场景中模型的输出结果可能和
+
       </div> -->
     </a>
   </div>
@@ -680,16 +685,24 @@
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/5.jpg" class="lazyload placeholder" data-srcset="/medias/5.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/8.jpg" class="lazyload placeholder" data-srcset="/medias/8.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
-    <a href="/2023/07/02/3-suan-fa/dong-tai-gui-hua/ji-shu-wen-ti/" class="post-nav-link">
+    <a href="/2023/07/02/2-ji-suan-ji-shi-jue/gan/data-augmentation-using-gans/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">计数问题</div>
+        <div class="title-text">Date Augmentation Using GANs文献阅读笔记</div>
       </div>
       <!-- <div class="content">
-        计数问题基本思路：
-暴力(O($1^9$)) 暴力遍历每一个数，然后遍历每一位 这样的话 复杂度 1e8  8  测试样
+         问题
+
+样本不均衡问题
+
+信用卡欺诈分类： 正常：欺诈=10000:1
+
+
+敏感数据脱敏问题
+
+某些医疗数据即时隐去姓
       </div> -->
     </a>
   </div>
@@ -913,7 +926,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE-%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6"><span class="toc-text">题目: 石子合并</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90"><span class="toc-text">题目分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E8%BD%AC%E7%A7%BB%E5%BC%8F%E6%8E%A8%E5%AF%BC"><span class="toc-text">状态转移式推导</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE-%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6"><span class="toc-text"> 题目: 石子合并</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90"><span class="toc-text"> 题目分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E8%BD%AC%E7%A7%BB%E5%BC%8F%E6%8E%A8%E5%AF%BC"><span class="toc-text"> 状态转移式推导</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text"> 代码</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1438,7 +1451,7 @@
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
 
           </div>
         
