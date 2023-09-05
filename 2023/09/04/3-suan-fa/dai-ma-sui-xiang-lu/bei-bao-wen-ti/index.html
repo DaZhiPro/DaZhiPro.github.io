@@ -612,11 +612,8 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1 id="背包问题"><a class="markdownIt-Anchor" href="#背包问题"></a> 背包问题</h1>
-<h2 id="01背包-每个物品只能取一个或者不取"><a class="markdownIt-Anchor" href="#01背包-每个物品只能取一个或者不取"></a> 01背包 （每个物品只能取一个或者不取）</h2>
-<p>题目链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/2/">https://www.acwing.com/problem/content/2/</a></p>
-<h3 id="1思路"><a class="markdownIt-Anchor" href="#1思路"></a> (1)思路</h3>
-<ul>
+        <h1 id="背包问题"><a href="#背包问题" class="headerlink" title="背包问题"></a>背包问题</h1><h2 id="01背包-（每个物品只能取一个或者不取）"><a href="#01背包-（每个物品只能取一个或者不取）" class="headerlink" title="01背包 （每个物品只能取一个或者不取）"></a>01背包 （每个物品只能取一个或者不取）</h2><p>题目链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/2/">https://www.acwing.com/problem/content/2/</a></p>
+<h3 id="1-思路"><a href="#1-思路" class="headerlink" title="(1)思路"></a>(1)思路</h3><ul>
 <li>暴力  每个物品都有选和不选两种情况，故O(2^n）</li>
 <li>dp动态规划 将某些种情况当做一类 O(n^2)</li>
 </ul>
@@ -625,8 +622,7 @@
 <p>初始化：    全为0</p>
 <p>遍历顺序 ： 外层i正序，内层j正序</p>
 <p>打印dp数组debug</p>
-<h3 id="2代码"><a class="markdownIt-Anchor" href="#2代码"></a> (2)代码</h3>
-<ul>
+<h3 id="2-代码"><a href="#2-代码" class="headerlink" title="(2)代码"></a>(2)代码</h3><ul>
 <li>二维版本：</li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> dp[<span class="number">1005</span>][<span class="number">1005</span>];</span><br><span class="line"><span class="type">int</span> v[<span class="number">1005</span>],w[<span class="number">1005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> N,V;</span><br><span class="line">    cin &gt;&gt; N &gt;&gt; V;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= N; i ++) cin &gt;&gt; v[i] &gt;&gt; w[i];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= N; i ++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= V; j ++)&#123;</span><br><span class="line">            dp[i][j] = dp[i<span class="number">-1</span>][j];</span><br><span class="line">            <span class="keyword">if</span>(j &gt;= v[i])</span><br><span class="line">                dp[i][j] = <span class="built_in">max</span>(dp[i<span class="number">-1</span>][j],dp[i<span class="number">-1</span>][j-v[i]]+w[i]);</span><br><span class="line">            <span class="comment">// cout&lt;&lt;&quot;前&quot;&lt;&lt;i&lt;&lt;&quot;个物品中，背包重量为&quot;&lt;&lt;j&lt;&lt;&quot;的价值最大&quot;&lt;&lt;dp[i][j]&lt;&lt;endl;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= V; i ++) ans = <span class="built_in">max</span>(ans,dp[N][i]);</span><br><span class="line">    cout &lt;&lt; ans &lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -635,35 +631,25 @@
 </ul>
 <p>优化原因：观察到计算dp[i][.]的时候，仅用到了dp[i-1][.],那么可以去掉i这一维度。纳闷只需要保证计算dp[.]的时候用到的数据是上一个循环的数据就可以了。所以为了保证计算dp[j]的时候dp[j-v]在外循环为i的时候没有被更新，只能将j倒序遍历。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> dp[<span class="number">1005</span>];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> N,V;</span><br><span class="line">    cin &gt;&gt; N &gt;&gt; V;</span><br><span class="line">    <span class="type">int</span> v,w;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= N; i ++)&#123;</span><br><span class="line">        cin &gt;&gt; v &gt;&gt; w;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = V; j &gt;= v; j --)&#123; <span class="comment">// 倒序</span></span><br><span class="line">           dp[j] = <span class="built_in">max</span>(dp[j],dp[j-v] + w);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; dp[V] &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="完全背包物品无限每个物品不取或者取k个"><a class="markdownIt-Anchor" href="#完全背包物品无限每个物品不取或者取k个"></a> 完全背包（物品无限，每个物品不取或者取k个）</h2>
-<p>链接 <a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/3/">https://www.acwing.com/problem/content/3/</a></p>
-<h3 id="思路"><a class="markdownIt-Anchor" href="#思路"></a> 思路</h3>
-<ul>
-<li>
-<p>dp[i][j] 表示前i个物品，背包容量是j的时候总价值最大值</p>
+<h2 id="完全背包（物品无限，每个物品不取或者取k个）"><a href="#完全背包（物品无限，每个物品不取或者取k个）" class="headerlink" title="完全背包（物品无限，每个物品不取或者取k个）"></a>完全背包（物品无限，每个物品不取或者取k个）</h2><p>链接 <a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/3/">https://www.acwing.com/problem/content/3/</a></p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>dp[i][j] 表示前i个物品，背包容量是j的时候总价值最大值</li>
+<li><p>递推公式</p>
+<p>  dp[i][j] = max(dp[i-1][j],dp[i-1][j-v]+w,dp[i-1][j-2v]+2w,…dp[i-1][j-kv]+kw</p>
+<p>  dp[i][j-v]=max(dp[i-1][j-v]  ,dp[i-1][j-2v]+w,….dp[i-1][j-kv]+kw)</p>
+<p>  ==》dp[i][j] = max(dp[i-1][j],dp[i][j-v]+w) </p>
 </li>
-<li>
-<p>递推公式</p>
-<p>dp[i][j] = max(dp[i-1][j],dp[i-1][j-v]+w,dp[i-1][j-2v]+2w,…dp[i-1][j-kv]+kw</p>
-<p>dp[i][j-v]=max(dp[i-1][j-v]  ,dp[i-1][j-2v]+w,….dp[i-1][j-kv]+kw)</p>
-<p>==》dp[i][j] = max(dp[i-1][j],dp[i][j-v]+w)</p>
-</li>
-<li>
-<p>初始化都是0</p>
+<li><p>初始化都是0</p>
 </li>
 </ul>
-<h3 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h3>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1005</span>;</span><br><span class="line"><span class="type">int</span> dp[N][N];</span><br><span class="line"><span class="type">int</span> v[N],w[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n,V;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; V;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++) cin &gt;&gt; v[i] &gt;&gt; w[i];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= V; j ++)&#123;</span><br><span class="line">            dp[i][j] = dp[i<span class="number">-1</span>][j];</span><br><span class="line">            <span class="keyword">if</span>(j &gt;= v[i])</span><br><span class="line">                dp[i][j] = <span class="built_in">max</span>(dp[i<span class="number">-1</span>][j],dp[i][j-v[i]]+w[i]);</span><br><span class="line">            <span class="comment">// cout&lt;&lt;&quot;前&quot;&lt;&lt;i&lt;&lt;&quot;个物品中，背包重量为&quot;&lt;&lt;j&lt;&lt;&quot;的价值最大&quot;&lt;&lt;dp[i][j]&lt;&lt;endl;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= V; i ++) ans = <span class="built_in">max</span>(ans,dp[n][i]);</span><br><span class="line">    cout &lt;&lt; ans &lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1005</span>;</span><br><span class="line"><span class="type">int</span> dp[N][N];</span><br><span class="line"><span class="type">int</span> v[N],w[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n,V;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; V;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++) cin &gt;&gt; v[i] &gt;&gt; w[i];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= V; j ++)&#123;</span><br><span class="line">            dp[i][j] = dp[i<span class="number">-1</span>][j];</span><br><span class="line">            <span class="keyword">if</span>(j &gt;= v[i])</span><br><span class="line">                dp[i][j] = <span class="built_in">max</span>(dp[i<span class="number">-1</span>][j],dp[i][j-v[i]]+w[i]);</span><br><span class="line">            <span class="comment">// cout&lt;&lt;&quot;前&quot;&lt;&lt;i&lt;&lt;&quot;个物品中，背包重量为&quot;&lt;&lt;j&lt;&lt;&quot;的价值最大&quot;&lt;&lt;dp[i][j]&lt;&lt;endl;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= V; i ++) ans = <span class="built_in">max</span>(ans,dp[n][i]);</span><br><span class="line">    cout &lt;&lt; ans &lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>同理优化版本：</p>
 <p>只不过这一次dp[i][j]的计算需要依赖于dp[i][j-v[i]]，就是说在i这一外循环中，j-v[i]]需要在之前被计算出来</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1005</span>;</span><br><span class="line"><span class="type">int</span> dp[N];</span><br><span class="line"><span class="type">int</span> v[N],w[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n,V;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; V;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++) cin &gt;&gt; v[i] &gt;&gt; w[i];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = v[i]; j &lt;= V; j ++)&#123;</span><br><span class="line">            dp[j] = <span class="built_in">max</span>(dp[j],dp[j-v[i]]+w[i]);</span><br><span class="line">            <span class="comment">// cout&lt;&lt;&quot;前&quot;&lt;&lt;i&lt;&lt;&quot;个物品中，背包重量为&quot;&lt;&lt;j&lt;&lt;&quot;的价值最大&quot;&lt;&lt;dp[i][j]&lt;&lt;endl;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; dp[V] &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="3注意的问题"><a class="markdownIt-Anchor" href="#3注意的问题"></a> （3）注意的问题</h3>
-<ul>
-<li>
-<p>最后都需要经过一次循环取最大值的原因是</p>
+<h3 id="（3）注意的问题"><a href="#（3）注意的问题" class="headerlink" title="（3）注意的问题"></a>（3）注意的问题</h3><ul>
+<li><p>最后都需要经过一次循环取最大值的原因是</p>
 </li>
-<li>
-<p>dp[j] 和 dp[i][j]的定义都是准确的要求物品容量是j，所有要取最大值</p>
+<li><p>dp[j] 和 dp[i][j]的定义都是准确的要求物品容量是j，所有要取最大值</p>
 </li>
 </ul>
 
@@ -719,9 +705,8 @@
       
       <!-- <div class="content">
         搜索二叉树
- （1）思路
-搜索二叉树的定义：任何一个节点的左子节点一定小于当前节点，右子节点大于当前节点
-遍历每一种头结
+（1）思路搜索二叉树的定义：任何一个节点的左子节点一定小于当前节点，右子节点大于当前节点
+遍历每一种头结点是
       </div> -->
     </a>
   </div>
@@ -740,13 +725,8 @@
         <div class="title-text">螺旋矩阵</div>
       </div>
       <!-- <div class="content">
-         问题
-
- 思路
-遵循左 下 右 上 的规则
-dx dy 进行偏移 合理性检查
-当前方向检查不对，换顺时针另一个方向
-另
+        问题
+思路遵循左 下 右 上 的规则dx dy 进行偏移 合理性检查当前方向检查不对，换顺时针另一个方向另一个方向不对，
       </div> -->
     </a>
   </div>
@@ -970,7 +950,7 @@ dx dy 进行偏移 合理性检查
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98"><span class="toc-text"> 背包问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#01%E8%83%8C%E5%8C%85-%E6%AF%8F%E4%B8%AA%E7%89%A9%E5%93%81%E5%8F%AA%E8%83%BD%E5%8F%96%E4%B8%80%E4%B8%AA%E6%88%96%E8%80%85%E4%B8%8D%E5%8F%96"><span class="toc-text"> 01背包 （每个物品只能取一个或者不取）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E6%80%9D%E8%B7%AF"><span class="toc-text"> (1)思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E4%BB%A3%E7%A0%81"><span class="toc-text"> (2)代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85%E7%89%A9%E5%93%81%E6%97%A0%E9%99%90%E6%AF%8F%E4%B8%AA%E7%89%A9%E5%93%81%E4%B8%8D%E5%8F%96%E6%88%96%E8%80%85%E5%8F%96k%E4%B8%AA"><span class="toc-text"> 完全背包（物品无限，每个物品不取或者取k个）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text"> 思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text"> 代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text"> （3）注意的问题</span></a></li></ol></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98"><span class="toc-text">背包问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#01%E8%83%8C%E5%8C%85-%EF%BC%88%E6%AF%8F%E4%B8%AA%E7%89%A9%E5%93%81%E5%8F%AA%E8%83%BD%E5%8F%96%E4%B8%80%E4%B8%AA%E6%88%96%E8%80%85%E4%B8%8D%E5%8F%96%EF%BC%89"><span class="toc-text">01背包 （每个物品只能取一个或者不取）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%80%9D%E8%B7%AF"><span class="toc-text">(1)思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BB%A3%E7%A0%81"><span class="toc-text">(2)代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85%EF%BC%88%E7%89%A9%E5%93%81%E6%97%A0%E9%99%90%EF%BC%8C%E6%AF%8F%E4%B8%AA%E7%89%A9%E5%93%81%E4%B8%8D%E5%8F%96%E6%88%96%E8%80%85%E5%8F%96k%E4%B8%AA%EF%BC%89"><span class="toc-text">完全背包（物品无限，每个物品不取或者取k个）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%883%EF%BC%89%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">（3）注意的问题</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1495,7 +1475,7 @@ dx dy 进行偏移 合理性检查
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
 
           </div>
         

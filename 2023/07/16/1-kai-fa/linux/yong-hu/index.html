@@ -582,7 +582,7 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 291 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 279 |
           </span>
   
           <span class="min2read">
@@ -609,34 +609,14 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h2 id="增加用户"><a class="markdownIt-Anchor" href="#增加用户"></a> 增加用户</h2>
-<p>增加用户<code>useradd dazhi</code><br />
-给dazhi加密码<code>passwd dazhi</code><br />
-切换到root用户<code>su - root</code><br />
-切换到root 且拥有root运行权限 <code>sudo su - root</code></p>
-<h2 id="配置ssh"><a class="markdownIt-Anchor" href="#配置ssh"></a> 配置ssh</h2>
-<p>会有一个 ~/.ssh/config 文件 上面会记录一个名称到ip的映射<br />
-比如这个</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Host aliyunServer</span><br><span class="line">  HostName 8.130.xx.xx</span><br><span class="line">  User dazhi</span><br><span class="line">  IdentityFile /Users/dazhi/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
-<p>会把正常<code>ssh dazhi@8.130.xx.xx </code> 简化为 <code>ssh aliyunServer</code><br />
-同时如果配置好了验证秘钥，可以不用输入密码<br />
-具体方法是先本地产生密钥对<code>ssh-keygen -t rsa</code>，然后运行<code>ssh-copy-id dazhi@8.130.xx.xx</code>  或者<code>ssh-copy-id aliyunServer</code></p>
-<h2 id="本地传文件到服务器"><a class="markdownIt-Anchor" href="#本地传文件到服务器"></a> 本地传文件到服务器</h2>
-<ol>
-<li>传输文件<br />
-<code>scp &lt;local_file&gt; &lt;user&gt;@&lt;server&gt;:&lt;remote_directory&gt;</code><br />
-请根据以下说明替换命令中的占位符：<br />
-&lt;local_file&gt;: 本地文件的路径和名称。<br />
-<user>: 远程服务器的用户名。<br />
-<server>: 远程服务器的 IP 地址或主机名。<br />
-&lt;remote_directory&gt;: 远程服务器上的目标目录路径。</li>
+        <h2 id="增加用户"><a href="#增加用户" class="headerlink" title="增加用户"></a>增加用户</h2><p>增加用户<code>useradd dazhi</code><br>给dazhi加密码<code>passwd dazhi</code><br>切换到root用户<code>su - root</code><br>切换到root 且拥有root运行权限 <code>sudo su - root</code></p>
+<h2 id="配置ssh"><a href="#配置ssh" class="headerlink" title="配置ssh"></a>配置ssh</h2><p>会有一个 ~/.ssh/config 文件 上面会记录一个名称到ip的映射<br>比如这个<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Host aliyunServer</span><br><span class="line">  HostName 8.130.xx.xx</span><br><span class="line">  User dazhi</span><br><span class="line">  IdentityFile /Users/dazhi/.ssh/id_rsa</span><br></pre></td></tr></table></figure><br>会把正常<code>ssh dazhi@8.130.xx.xx</code> 简化为 <code>ssh aliyunServer</code><br>同时如果配置好了验证秘钥，可以不用输入密码<br>具体方法是先本地产生密钥对<code>ssh-keygen -t rsa</code>，然后运行<code>ssh-copy-id dazhi@8.130.xx.xx</code>  或者<code>ssh-copy-id aliyunServer</code></p>
+<h2 id="本地传文件到服务器"><a href="#本地传文件到服务器" class="headerlink" title="本地传文件到服务器"></a>本地传文件到服务器</h2><ol>
+<li>传输文件<br><code>scp &lt;local_file&gt; &lt;user&gt;@&lt;server&gt;:&lt;remote_directory&gt;</code><br>请根据以下说明替换命令中的占位符：<br><local_file>: 本地文件的路径和名称。<br><user>: 远程服务器的用户名。<br><server>: 远程服务器的 IP 地址或主机名。<br><remote_directory>: 远程服务器上的目标目录路径。</li>
 </ol>
-<p><code>scp a.txt dazhi@8.130.xx.xx:~</code><br />
-配置好ssh之后可以直接简化<br />
-<code>scp a.txt aliyunServer:~/文件夹名</code></p>
-<ol start="2">
-<li>传输文件夹<br />
-<code>scp -r &lt;local_file&gt; &lt;user&gt;@&lt;server&gt;:&lt;remote_directory&gt;</code></li>
+<p><code>scp a.txt dazhi@8.130.xx.xx:~</code><br>配置好ssh之后可以直接简化<br><code>scp a.txt aliyunServer:~/文件夹名</code></p>
+<ol>
+<li>传输文件夹<br><code>scp -r &lt;local_file&gt; &lt;user&gt;@&lt;server&gt;:&lt;remote_directory&gt;</code></li>
 </ol>
 
       </div>
@@ -690,13 +670,8 @@
       </div>
       
       <!-- <div class="content">
-         问题
-
- 思路
-遵循左 下 右 上 的规则
-dx dy 进行偏移 合理性检查
-当前方向检查不对，换顺时针另一个方向
-另
+        问题
+思路遵循左 下 右 上 的规则dx dy 进行偏移 合理性检查当前方向检查不对，换顺时针另一个方向另一个方向不对，
       </div> -->
     </a>
   </div>
@@ -715,9 +690,8 @@ dx dy 进行偏移 合理性检查
         <div class="title-text"></div>
       </div>
       <!-- <div class="content">
-         #! https://zhuanlan.zhihu.com/p/643893274
- title: 搭建git私服
-d
+        ! https://zhuanlan.zhihu.com/p/643893274
+title: 搭建git私服date:
       </div> -->
     </a>
   </div>
@@ -941,7 +915,7 @@ d
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E7%94%A8%E6%88%B7"><span class="toc-text"> 增加用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEssh"><span class="toc-text"> 配置ssh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E4%BC%A0%E6%96%87%E4%BB%B6%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text"> 本地传文件到服务器</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E7%94%A8%E6%88%B7"><span class="toc-text">增加用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEssh"><span class="toc-text">配置ssh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E4%BC%A0%E6%96%87%E4%BB%B6%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">本地传文件到服务器</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1413,7 +1387,7 @@ d
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
 
           </div>
         

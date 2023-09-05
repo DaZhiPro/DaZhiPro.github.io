@@ -617,16 +617,13 @@
             </a>
           </div>
           <div class="post-content">
-             问题
- 思路
-原生思路：
+            问题思路原生思路：
 
 尽量分成相同的两堆，这样的话相撞之后所剩最小
 转化为01背包问题
 dp[x]：是否存在组合使得总容量为x
-dp[x] = dp[x-v[i]] | dp[x]
-改进版本
-状态表示：dp[x] 表示容量为x的背包
+dp[x] = dp[x-v[i]] | dp[x]改进版本
+状态表示：dp[x] 表示容量为x的背包所能装的最
           </div>
         </div>
         <div class="post-more">
@@ -680,15 +677,14 @@ dp[x] = dp[x-v[i]] | dp[x]
             </a>
           </div>
           <div class="post-content">
-             问题
- 思路
-
+            问题思路
 转化为在集合中找n个数，使得其和为sum/2
 转化为对于集合中的每一个数，都可以选和不选，01背包问题
 
 
 状态表示：dp[x]:总和为x的集合是否存在
 递推公式：dp[x] = dp[x-nums[i]] | dp[x]
+数组初
           </div>
         </div>
         <div class="post-more">
@@ -743,11 +739,10 @@ dp[x] = dp[x-v[i]] | dp[x]
           </div>
           <div class="post-content">
             搜索二叉树
- （1）思路
-搜索二叉树的定义：任何一个节点的左子节点一定小于当前节点，右子节点大于当前节点
+（1）思路搜索二叉树的定义：任何一个节点的左子节点一定小于当前节点，右子节点大于当前节点
 遍历每一种头结点是x的情况，然后分成左子树和右子树情况相加
 定义：dp[x] 1…x能组成的搜索二叉树的数量
-递推公式： dp[x] 
+递推公式： dp[x] = 
           </div>
         </div>
         <div class="post-more">
@@ -801,13 +796,10 @@ dp[x] = dp[x-v[i]] | dp[x]
             </a>
           </div>
           <div class="post-content">
-             背包问题
- 01背包 （每个物品只能取一个或者不取）
-题目链接：https://www.acwing.com/problem/content/2/
- (1)思路
-
+            背包问题01背包 （每个物品只能取一个或者不取）题目链接：https://www.acwing.com/problem/content/2/
+(1)思路
 暴力  每个物品都有选和不选两种情况，故O(2^n）
-dp动态规划 将某些
+dp动态规划 将某些种情况当做一
           </div>
         </div>
         <div class="post-more">
@@ -861,15 +853,10 @@ dp动态规划 将某些
             </a>
           </div>
           <div class="post-content">
-             题目: 石子合并
- 题目分析
-
- 状态转移式推导
-
- 代码
-f[i][j]:表示合并第i堆到第j堆最小代价
-时间复杂度O(n3)O(n^3)O(n3)
-1234567891011121314151617181920212223242526
+            题目: 石子合并题目分析
+状态转移式推导
+代码f[i][j]:表示合并第i堆到第j堆最小代价时间复杂度$O(n^3)$
+1234567891011121314151617181920212223242526272829#include&lt
           </div>
         </div>
         <div class="post-more">
@@ -923,12 +910,9 @@ f[i][j]:表示合并第i堆到第j堆最小代价
             </a>
           </div>
           <div class="post-content">
-             计数问题
- 基本思路：
-
-暴力(O(191^919)) 暴力遍历每一个数，然后遍历每一位 这样的话 复杂度 1e8 * 8 * 测试样例数 大概就是 1e9 左右，但是C++代码中的操作次数控制在 1e7 ~ 1e8
-数位dp进行优化
-首
+            计数问题基本思路：
+暴力(O($1^9$)) 暴力遍历每一个数，然后遍历每一位 这样的话 复杂度 1e8  8  测试样例数 大概就是 1e9 左右，但是C++代码中的操作次数控制在 1e7 ~ 1e8
+数位dp进行优化首先设定一个函数 c
           </div>
         </div>
         <div class="post-more">
@@ -1128,7 +1112,7 @@ f[i][j]:表示合并第i堆到第j堆最小代价
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
 
           </div>
         
