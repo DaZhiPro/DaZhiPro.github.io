@@ -612,20 +612,16 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h2 id="问题"><a class="markdownIt-Anchor" href="#问题"></a> 问题</h2>
-<ul>
+        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul>
 <li>链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/ones-and-zeroes/description/">https://leetcode.cn/problems/ones-and-zeroes/description/</a></li>
 </ul>
-<h2 id="思路"><a class="markdownIt-Anchor" href="#思路"></a> 思路</h2>
-<ol>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
 <li>状态定义：dp[i][j]:最多有i个0 j个1 的strs子集中，子集长度的最大值</li>
 <li>递推公式：dp[i][j] = dp[i-zero[k]][j-one[k]] + 1;</li>
 <li>初始化的过程中就是自己人脑中模拟一下前几个是否符合</li>
 </ol>
-<h2 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h2>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findMaxForm</span><span class="params">(vector&lt;string&gt;&amp; strs, <span class="type">int</span> m, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// dp[i][j]:最多有i个0 j个1 的strs子集中，子集长度的最大值</span></span><br><span class="line">        <span class="comment">// dp[i][j] = dp[i-zero[k]][j-one[k]] + 1;  // 倒序</span></span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">zero</span><span class="params">(strs.size()+<span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">one</span><span class="params">(strs.size()+<span class="number">1</span>)</span></span>;</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">dp</span>(m+<span class="number">1</span>,<span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(n+<span class="number">1</span>,<span class="number">0</span>));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; strs.<span class="built_in">size</span>(); i ++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> x: strs[i])&#123;</span><br><span class="line">                <span class="keyword">if</span>(x == <span class="string">&#x27;0&#x27;</span>) zero[i]++;</span><br><span class="line">                <span class="keyword">else</span> one[i]++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> k = <span class="number">0</span>; k &lt; strs.<span class="built_in">size</span>(); k ++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = m; i &gt;= zero[k]; i --)&#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> j = n; j &gt;= one[k]; j --)&#123;</span><br><span class="line">                    dp[i][j] = <span class="built_in">max</span>(dp[i-zero[k]][j-one[k]] + <span class="number">1</span>,dp[i][j]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[m][n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
-<ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findMaxForm</span><span class="params">(vector&lt;string&gt;&amp; strs, <span class="type">int</span> m, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// dp[i][j]:最多有i个0 j个1 的strs子集中，子集长度的最大值</span></span><br><span class="line">        <span class="comment">// dp[i][j] = dp[i-zero[k]][j-one[k]] + 1;  // 倒序</span></span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">zero</span><span class="params">(strs.size()+<span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">one</span><span class="params">(strs.size()+<span class="number">1</span>)</span></span>;</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">dp</span>(m+<span class="number">1</span>,<span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(n+<span class="number">1</span>,<span class="number">0</span>));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; strs.<span class="built_in">size</span>(); i ++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> x: strs[i])&#123;</span><br><span class="line">                <span class="keyword">if</span>(x == <span class="string">&#x27;0&#x27;</span>) zero[i]++;</span><br><span class="line">                <span class="keyword">else</span> one[i]++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> k = <span class="number">0</span>; k &lt; strs.<span class="built_in">size</span>(); k ++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = m; i &gt;= zero[k]; i --)&#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> j = n; j &gt;= one[k]; j --)&#123;</span><br><span class="line">                    dp[i][j] = <span class="built_in">max</span>(dp[i-zero[k]][j-one[k]] + <span class="number">1</span>,dp[i][j]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[m][n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
 <li>这也是属于01背包，不过约束条件变成了两个维度的约束，之前只有体积一个约束</li>
 <li>注意倒序遍历条件！</li>
 </ul>
@@ -685,9 +681,8 @@
       </div>
       
       <!-- <div class="content">
-         问题
-
-链接：https://leetcode.cn/problems/target-sum/submissions/
+        问题
+链接：https://leetcode.cn/problems/target-sum/submissions/思路
       </div> -->
     </a>
   </div>
@@ -706,13 +701,11 @@
         <div class="title-text">最后一块石头的重量 II.</div>
       </div>
       <!-- <div class="content">
-         问题
- 思路
-原生思路：
+        问题思路原生思路：
 
 尽量分成相同的两堆，这样的话相撞之后所剩最小
 转化为01背包问题
-dp[x]：是否存在组合
+dp[x]：是否存在组合使得总容
       </div> -->
     </a>
   </div>
@@ -936,7 +929,7 @@ dp[x]：是否存在组合
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-text"> 问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text"> 思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text"> 代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text"> 总结</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-text">问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1461,7 +1454,7 @@ dp[x]：是否存在组合
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
 
           </div>
         
