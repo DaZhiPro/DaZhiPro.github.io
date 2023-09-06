@@ -28,8 +28,7 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#问题&quot;&gt;&lt;/a&gt; 问题&lt;/h2&gt;
-&lt;ul&gt;
+    <summary type="html">&lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;链接：&lt;a</summary>
         
       
@@ -57,8 +56,7 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#问题&quot;&gt;&lt;/a&gt; 问题&lt;/h2&gt;
-&lt;ul&gt;
+    <summary type="html">&lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;链接：&lt;a</summary>
         
       
@@ -84,7 +82,7 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#问题&quot;&gt;&lt;/a&gt; &lt;a</summary>
+    <summary type="html">&lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;&lt;a</summary>
         
       
     
@@ -109,7 +107,7 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#问题&quot;&gt;&lt;/a&gt; &lt;a</summary>
+    <summary type="html">&lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;&lt;a</summary>
         
       
     
@@ -135,7 +133,7 @@
         
         
     <summary type="html">&lt;p&gt;&lt;a href=&quot;https://leetcode.cn/problems/unique-binary-search-trees/&quot;&gt;搜索二叉树&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;1思路&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+&lt;h3 id=&quot;（1）思路&quot;&gt;&lt;a href=&quot;#（1）思路&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -160,8 +158,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;背包问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#背包问题&quot;&gt;&lt;/a&gt; 背包问题&lt;/h1&gt;
-&lt;h2 id=&quot;01背包-每个物品只能取一个或者不取&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;背包问题&quot;&gt;&lt;a href=&quot;#背包问题&quot; class=&quot;headerlink&quot; title=&quot;背包问题&quot;&gt;&lt;/a&gt;背包问题&lt;/h1&gt;&lt;h2 id=&quot;01背包-（每个物品只能取一个或者不取）&quot;&gt;&lt;a href=&quot;#01背包-（每个物品只能取一个或者不取）&quot;</summary>
         
       
     
@@ -186,7 +183,7 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#问题&quot;&gt;&lt;/a&gt; &lt;a</summary>
+    <summary type="html">&lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;&lt;a</summary>
         
       
     
@@ -211,9 +208,7 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;增加用户&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#增加用户&quot;&gt;&lt;/a&gt; 增加用户&lt;/h2&gt;
-&lt;p&gt;增加用户&lt;code&gt;useradd dazhi&lt;/code&gt;&lt;br /&gt;
-给dazhi加密码&lt;code&gt;passwd</summary>
+    <summary type="html">&lt;h2 id=&quot;增加用户&quot;&gt;&lt;a href=&quot;#增加用户&quot; class=&quot;headerlink&quot; title=&quot;增加用户&quot;&gt;&lt;/a&gt;增加用户&lt;/h2&gt;&lt;p&gt;增加用户&lt;code&gt;useradd dazhi&lt;/code&gt;&lt;br&gt;给dazhi加密码&lt;code&gt;passwd</summary>
         
       
     
@@ -238,7 +233,7 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;httpszhuanlanzhihucomp643893274&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#httpszhuanlanzhihucomp643893274&quot;&gt;&lt;/a&gt; #! &lt;a</summary>
+    <summary type="html">&lt;h1 id=&quot;https-zhuanlan-zhihu-com-p-643893274&quot;&gt;&lt;a href=&quot;#https-zhuanlan-zhihu-com-p-643893274&quot; class=&quot;headerlink&quot; title=&quot;!</summary>
         
       
     
@@ -259,8 +254,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;第八章-回归模型&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#第八章-回归模型&quot;&gt;&lt;/a&gt; 第八章 回归模型&lt;/h1&gt;
-&lt;p&gt;定义：根据向量 &lt;span class=&quot;katex&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;h1 id=&quot;第八章-回归模型&quot;&gt;&lt;a href=&quot;#第八章-回归模型&quot; class=&quot;headerlink&quot; title=&quot;第八章 回归模型&quot;&gt;&lt;/a&gt;第八章 回归模型&lt;/h1&gt;&lt;p&gt;定义：根据向量 $x = [x_1,x_2,…,x_n]^T$ 来估计全局状态</summary>
         
       
     
@@ -270,34 +264,6 @@
     
     
     <category term="《计算机视觉》" scheme="https://dazhipro.github.io/tags/%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E3%80%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>pytorch 基础</title>
-    <link href="https://dazhipro.github.io/2023/07/02/2-ji-suan-ji-shi-jue/pytorch-ji-chu/"/>
-    <id>https://dazhipro.github.io/2023/07/02/2-ji-suan-ji-shi-jue/pytorch-ji-chu/</id>
-    <published>2023-07-02T02:21:26.000Z</published>
-    <updated>2023-04-03T07:39:42.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;自动求导机制&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#自动求导机制&quot;&gt;&lt;/a&gt; 自动求导机制&lt;/h4&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
-        
-      
-    
-    
-    
-    <category term="机器学习" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="速查" scheme="https://dazhipro.github.io/tags/%E9%80%9F%E6%9F%A5/"/>
-    
-    <category term="机器学习" scheme="https://dazhipro.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -327,6 +293,33 @@
   </entry>
   
   <entry>
+    <title>pytorch 基础</title>
+    <link href="https://dazhipro.github.io/2023/07/02/2-ji-suan-ji-shi-jue/pytorch-ji-chu/"/>
+    <id>https://dazhipro.github.io/2023/07/02/2-ji-suan-ji-shi-jue/pytorch-ji-chu/</id>
+    <published>2023-07-02T02:21:26.000Z</published>
+    <updated>2023-04-03T07:39:42.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;自动求导机制&quot;&gt;&lt;a href=&quot;#自动求导机制&quot; class=&quot;headerlink&quot; title=&quot;自动求导机制&quot;&gt;&lt;/a&gt;自动求导机制&lt;/h4&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    <category term="机器学习" scheme="https://dazhipro.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="速查" scheme="https://dazhipro.github.io/tags/%E9%80%9F%E6%9F%A5/"/>
+    
+    <category term="机器学习" scheme="https://dazhipro.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>matplotlib 常用命令</title>
     <link href="https://dazhipro.github.io/2023/07/02/5-su-cha/matplotlib/"/>
     <id>https://dazhipro.github.io/2023/07/02/5-su-cha/matplotlib/</id>
@@ -341,7 +334,7 @@
     <summary type="html">&lt;p&gt;matplotlib 速查&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;引入库 &lt;code&gt;import matplotlib.pyplot as plt&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;绘制散点图  &lt;code&gt;plt.scatter(x,y)&lt;/code&gt;&lt;br</summary>
+&lt;li&gt;绘制散点图 </summary>
         
       
     
@@ -351,6 +344,36 @@
     
     
     <category term="速查" scheme="https://dazhipro.github.io/tags/%E9%80%9F%E6%9F%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自注意力机制及代码实现</title>
+    <link href="https://dazhipro.github.io/2023/07/02/2-ji-suan-ji-shi-jue/bi-she/self-attentio/"/>
+    <id>https://dazhipro.github.io/2023/07/02/2-ji-suan-ji-shi-jue/bi-she/self-attentio/</id>
+    <published>2023-07-02T02:21:26.000Z</published>
+    <updated>2023-04-01T04:22:14.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;为什么要有自注意力机制？&lt;br&gt; 应用: 类似于机器翻译或者语音识别等需要seq2seq模型的场景&lt;br&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="毕设" scheme="https://dazhipro.github.io/categories/%E6%AF%95%E8%AE%BE/"/>
+    
+    
+    <category term="自注意力机制" scheme="https://dazhipro.github.io/tags/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/"/>
+    
+    <category term="毕设" scheme="https://dazhipro.github.io/tags/%E6%AF%95%E8%AE%BE/"/>
+    
+    <category term="李宏毅笔记" scheme="https://dazhipro.github.io/tags/%E6%9D%8E%E5%AE%8F%E6%AF%85%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -366,10 +389,8 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#问题&quot;&gt;&lt;/a&gt; 问题&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;样本不均衡问题
-&lt;ul&gt;
+    <summary type="html">&lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;样本不均衡问题&lt;ul&gt;
 &lt;li&gt;信用卡欺诈分类：</summary>
         
       
@@ -386,6 +407,32 @@
   </entry>
   
   <entry>
+    <title>KL散度</title>
+    <link href="https://dazhipro.github.io/2023/07/02/2-ji-suan-ji-shi-jue/zhi-shi-dian/kl-san-du/"/>
+    <id>https://dazhipro.github.io/2023/07/02/2-ji-suan-ji-shi-jue/zhi-shi-dian/kl-san-du/</id>
+    <published>2023-07-02T02:21:26.000Z</published>
+    <updated>2023-07-16T03:44:11.062Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;信息量&lt;br&gt;理解：根据通俗理解去进行的定义，概率很多大的事件比如太阳东边升起，信息量为0，概率很小的事件信息量很大，比如张三中彩票了&lt;br&gt;&lt;strong&gt;定义&lt;/strong&gt;： 随机变量X 发生事件x的信息量为 $I(x) =</summary>
+        
+      
+    
+    
+    
+    <category term="知识点" scheme="https://dazhipro.github.io/categories/%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    
+    
+    <category term="知识点" scheme="https://dazhipro.github.io/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    
+  </entry>
+  
+  <entry>
     <title>文献阅读笔记 Auxiliary Information-Guided Industrial Data Augmentation for Any-Shot Fault Learning and Diagnosis</title>
     <link href="https://dazhipro.github.io/2023/07/02/2-ji-suan-ji-shi-jue/gan/ren-yi-yang-ben-gu-zhang-zhen-duan-shu-ju-zeng-qiang-fu-zhu-xin-xi/"/>
     <id>https://dazhipro.github.io/2023/07/02/2-ji-suan-ji-shi-jue/gan/ren-yi-yang-ben-gu-zhang-zhen-duan-shu-ju-zeng-qiang-fu-zhu-xin-xi/</id>
@@ -397,8 +444,7 @@
       
         
         
-    <summary type="html">&lt;h4 id=&quot;原文&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#原文&quot;&gt;&lt;/a&gt; 原文&lt;/h4&gt;
-&lt;p&gt;Zhuo, Yue and Zhiqiang Ge. “Auxiliary Information-Guided Industrial</summary>
+    <summary type="html">&lt;h4 id=&quot;原文&quot;&gt;&lt;a href=&quot;#原文&quot; class=&quot;headerlink&quot; title=&quot;原文&quot;&gt;&lt;/a&gt;原文&lt;/h4&gt;&lt;p&gt;Zhuo, Yue and Zhiqiang Ge. “Auxiliary Information-Guided Industrial</summary>
         
       
     
@@ -416,31 +462,6 @@
   </entry>
   
   <entry>
-    <title>区间合并</title>
-    <link href="https://dazhipro.github.io/2023/07/02/3-suan-fa/dong-tai-gui-hua/qu-jian-he-bing/"/>
-    <id>https://dazhipro.github.io/2023/07/02/3-suan-fa/dong-tai-gui-hua/qu-jian-he-bing/</id>
-    <published>2023-07-02T02:21:26.000Z</published>
-    <updated>2023-02-06T11:02:58.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;题目-石子合并&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#题目-石子合并&quot;&gt;&lt;/a&gt; 题目: &lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="算法" scheme="https://dazhipro.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="动态规划" scheme="https://dazhipro.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-  </entry>
-  
-  <entry>
     <title>计数问题</title>
     <link href="https://dazhipro.github.io/2023/07/02/3-suan-fa/dong-tai-gui-hua/ji-shu-wen-ti/"/>
     <id>https://dazhipro.github.io/2023/07/02/3-suan-fa/dong-tai-gui-hua/ji-shu-wen-ti/</id>
@@ -452,8 +473,7 @@
       
         
         
-    <summary type="html">&lt;h4 id=&quot;计数问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#计数问题&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://www.acwing.com/problem/content/340/&quot;&gt;计数问题&lt;/a&gt;&lt;/h4&gt;
-&lt;h4</summary>
+    <summary type="html">&lt;h4 id=&quot;计数问题&quot;&gt;&lt;a href=&quot;#计数问题&quot; class=&quot;headerlink&quot; title=&quot;计数问题&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acwing.com/problem/content/340/&quot;&gt;计数问题&lt;/a&gt;&lt;/h4&gt;&lt;h4</summary>
         
       
     
@@ -467,61 +487,27 @@
   </entry>
   
   <entry>
-    <title>自注意力机制及代码实现</title>
-    <link href="https://dazhipro.github.io/2023/07/02/2-ji-suan-ji-shi-jue/bi-she/self-attentio/"/>
-    <id>https://dazhipro.github.io/2023/07/02/2-ji-suan-ji-shi-jue/bi-she/self-attentio/</id>
+    <title>区间合并</title>
+    <link href="https://dazhipro.github.io/2023/07/02/3-suan-fa/dong-tai-gui-hua/qu-jian-he-bing/"/>
+    <id>https://dazhipro.github.io/2023/07/02/3-suan-fa/dong-tai-gui-hua/qu-jian-he-bing/</id>
     <published>2023-07-02T02:21:26.000Z</published>
-    <updated>2023-04-01T04:22:14.000Z</updated>
+    <updated>2023-02-06T11:02:58.000Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;ol&gt;
-&lt;li&gt;为什么要有自注意力机制？&lt;br /&gt;
-应用: 类似于机器翻译或者语音识别等需要seq2seq模型的场景&lt;br</summary>
+    <summary type="html">&lt;h4 id=&quot;题目-石子合并&quot;&gt;&lt;a href=&quot;#题目-石子合并&quot; class=&quot;headerlink&quot; title=&quot;题目: 石子合并&quot;&gt;&lt;/a&gt;题目: &lt;a</summary>
         
       
     
     
     
-    <category term="毕设" scheme="https://dazhipro.github.io/categories/%E6%AF%95%E8%AE%BE/"/>
+    <category term="算法" scheme="https://dazhipro.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="李宏毅笔记" scheme="https://dazhipro.github.io/tags/%E6%9D%8E%E5%AE%8F%E6%AF%85%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="毕设" scheme="https://dazhipro.github.io/tags/%E6%AF%95%E8%AE%BE/"/>
-    
-    <category term="自注意力机制" scheme="https://dazhipro.github.io/tags/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>KL散度</title>
-    <link href="https://dazhipro.github.io/2023/07/02/2-ji-suan-ji-shi-jue/zhi-shi-dian/kl-san-du/"/>
-    <id>https://dazhipro.github.io/2023/07/02/2-ji-suan-ji-shi-jue/zhi-shi-dian/kl-san-du/</id>
-    <published>2023-07-02T02:21:26.000Z</published>
-    <updated>2023-07-16T03:44:11.062Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;ol&gt;
-&lt;li&gt;信息量&lt;br /&gt;
-理解：根据通俗理解去进行的定义，概率很多大的事件比如太阳东边升起，信息量为0，概率很小的事件信息量很大，比如张三中彩票了&lt;br /&gt;
-&lt;strong&gt;定义&lt;/strong&gt;： 随机变量X 发生事件x的信息量为 &lt;span</summary>
-        
-      
-    
-    
-    
-    <category term="知识点" scheme="https://dazhipro.github.io/categories/%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
-    
-    
-    <category term="知识点" scheme="https://dazhipro.github.io/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    <category term="动态规划" scheme="https://dazhipro.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
   </entry>
   

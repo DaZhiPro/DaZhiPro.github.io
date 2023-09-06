@@ -612,143 +612,95 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h2 id="问题"><a class="markdownIt-Anchor" href="#问题"></a> 问题</h2>
-<ul>
-<li>样本不均衡问题
-<ul>
+        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul>
+<li>样本不均衡问题<ul>
 <li>信用卡欺诈分类： 正常：欺诈=10000:1</li>
 </ul>
 </li>
-<li>敏感数据脱敏问题
-<ul>
+<li>敏感数据脱敏问题<ul>
 <li>某些医疗数据即时隐去姓名，还是有身高、体重等敏感信息，不能完全脱敏</li>
 </ul>
 </li>
 </ul>
-<h2 id="主要内容"><a class="markdownIt-Anchor" href="#主要内容"></a> 主要内容</h2>
-<p>用GAN进行数据增强解决上述两个问题</p>
+<h2 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h2><p>用GAN进行数据增强解决上述两个问题</p>
 <ul>
-<li>对于问题一使用GAN扩充样本少的类别，可避免过拟合问题，求得的分类模型更加准确
-<ul>
+<li>对于问题一使用GAN扩充样本少的类别，可避免过拟合问题，求得的分类模型更加准确<ul>
 <li>与两个现有的解决样本不均衡问题的方法SMOTE和ADASYN做对比</li>
 </ul>
 </li>
-<li>对于问题二使用初始敏感数据产生合成数据，合成数据既不是真实数据，不再敏感，同时又保留了样本的真实特征
-<ul>
-<li>初始数据 使用决策树分类，用GAN产生的合成数据使用决策树分类二者对比，发现效果一样甚至还优于原始数据</li>
+<li>对于问题二使用初始敏感数据产生合成数据，合成数据既不是真实数据，不再敏感，同时又保留了样本的真实特征<ul>
+<li>初始数据 使用决策树分类，用GAN产生的合成数据使用决策树分类二者对比，发现效果一样甚至还优于原始数据   </li>
 </ul>
 </li>
 </ul>
-<h3 id="gan"><a class="markdownIt-Anchor" href="#gan"></a> GAN</h3>
-<p>缺点： 很难train、需要很大的运算能力、不稳定、可能回过拟合</p>
-<h3 id="两个过采样方法-smote-和-adasyn"><a class="markdownIt-Anchor" href="#两个过采样方法-smote-和-adasyn"></a> 两个过采样方法 SMOTE 和 ADASYN</h3>
-<p>Synthetic Minority Over sampling Technique (SMOTE)：合成少数过采样技术<br />
-<img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230206205312157-2130737129.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230206205312157-2130737129.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<h3 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a>GAN</h3><p>缺点： 很难train、需要很大的运算能力、不稳定、可能回过拟合</p>
+<h3 id="两个过采样方法-SMOTE-和-ADASYN"><a href="#两个过采样方法-SMOTE-和-ADASYN" class="headerlink" title="两个过采样方法 SMOTE 和 ADASYN"></a>两个过采样方法 SMOTE 和 ADASYN</h3><p>Synthetic Minority Over sampling Technique (SMOTE)：合成少数过采样技术<br><img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230206205312157-2130737129.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230206205312157-2130737129.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
 <p>ADASYN：由SMOTE技术演变而来，就是原本新产生点是直接取中间值（某一个百分比值）改成了取中间值 + 一个偏移量</p>
-<h2 id="实验设计"><a class="markdownIt-Anchor" href="#实验设计"></a> 实验设计</h2>
-<ul>
-<li>
-<p>实验二：分别通过GAN、SMOTE、ADASYN三种方式扩充不平衡样本中的 小样本数据，然后看分类器的性能，其中不进行小样本扩充的原始数据集作为baseline</p>
-</li>
-<li>
-<p>实验一：对比原始数据集 和 不同 GAN 结构产生的fake数据集，目的是让这两个数据集上的分类器性能尽可能一致，这样以后需要训练一个模型，直接在fake数据集上训练就好了，从而解决数据脱敏问题</p>
-</li>
+<h2 id="实验设计"><a href="#实验设计" class="headerlink" title="实验设计"></a>实验设计</h2><ul>
+<li>实验二：分别通过GAN、SMOTE、ADASYN三种方式扩充不平衡样本中的 小样本数据，然后看分类器的性能，其中不进行小样本扩充的原始数据集作为baseline</li>
 </ul>
-<h3 id="数据集问题"><a class="markdownIt-Anchor" href="#数据集问题"></a> 数据集问题</h3>
-<p>总共有三个数据集</p>
+<ul>
+<li>实验一：对比原始数据集 和 不同 GAN 结构产生的fake数据集，目的是让这两个数据集上的分类器性能尽可能一致，这样以后需要训练一个模型，直接在fake数据集上训练就好了，从而解决数据脱敏问题</li>
+</ul>
+<h3 id="数据集问题"><a href="#数据集问题" class="headerlink" title="数据集问题"></a>数据集问题</h3><p>总共有三个数据集</p>
 <ol>
 <li>糖尿病</li>
 <li>乳腺癌</li>
-<li>信用卡欺诈<br />
-<img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230206214722087-1266128524.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230206214722087-1266128524.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></li>
+<li>信用卡欺诈<br><img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230206214722087-1266128524.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230206214722087-1266128524.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></li>
 </ol>
-<h3 id="六种不同的-gan-结构"><a class="markdownIt-Anchor" href="#六种不同的-gan-结构"></a> 六种不同的 GAN 结构</h3>
-<p>不同的GAN结构和它产生的数据集的命名<br />
-<img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230206214822755-1982019796.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230206214822755-1982019796.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
-<h3 id="实验一-完全用gan产生的数据集对糖尿病和癌症数据集进行分类"><a class="markdownIt-Anchor" href="#实验一-完全用gan产生的数据集对糖尿病和癌症数据集进行分类"></a> 实验一 完全用GAN产生的数据集对<em>糖尿病和癌症</em>数据集进行分类</h3>
-<p>Experiment 1: Training the classifier using fully synthetic data<br />
-To evaluate the creation of synthetic data the experiments were done using the following<br />
-steps:</p>
+<h3 id="六种不同的-GAN-结构"><a href="#六种不同的-GAN-结构" class="headerlink" title="六种不同的 GAN 结构"></a>六种不同的 GAN 结构</h3><p>不同的GAN结构和它产生的数据集的命名<br><img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230206214822755-1982019796.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230206214822755-1982019796.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
+<h3 id="实验一-完全用GAN产生的数据集对糖尿病和癌症数据集进行分类"><a href="#实验一-完全用GAN产生的数据集对糖尿病和癌症数据集进行分类" class="headerlink" title="实验一 完全用GAN产生的数据集对糖尿病和癌症数据集进行分类"></a>实验一 完全用GAN产生的数据集对<em>糖尿病和癌症</em>数据集进行分类</h3><p>Experiment 1: Training the classifier using fully synthetic data<br>To evaluate the creation of synthetic data the experiments were done using the following<br>steps:</p>
 <ol>
-<li>Trained the GAN using the full training subset of the original database for 1500<br />
-epochs.</li>
-<li>Used the newly trained GAN to generate a new synthetic data set with the exact size<br />
-of the original.</li>
-<li>Since the GANs generated the classification label as a continuous value between 0 and<br />
-1, this value has to be turned to a discrete by rounding it to the nearest integer.</li>
+<li>Trained the GAN using the full training subset of the original database for 1500<br>epochs.</li>
+<li>Used the newly trained GAN to generate a new synthetic data set with the exact size<br>of the original.</li>
+<li>Since the GANs generated the classification label as a continuous value between 0 and<br>1, this value has to be turned to a discrete by rounding it to the nearest integer.</li>
 <li>The new data set is used to train a classification tree.</li>
 <li>The tree is tested using the test subset of the original data set.</li>
 </ol>
-<p><img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207103815477-1503149782.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207103815477-1503149782.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
-<h4 id="结果分析"><a class="markdownIt-Anchor" href="#结果分析"></a> 结果分析</h4>
-<ol>
-<li>
-<p>某些<em><strong>属性</strong></em>下 产生的数据集和原始数据集的<em><strong>对比</strong></em><br />
-<img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207101331964-1557115178.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207101331964-1557115178.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<p><img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207103815477-1503149782.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207103815477-1503149782.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
+<h4 id="结果分析"><a href="#结果分析" class="headerlink" title="结果分析"></a>结果分析</h4><ol>
+<li><p>某些<strong><em>属性</em></strong>下 产生的数据集和原始数据集的<strong><em>对比</em></strong><br><img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207101331964-1557115178.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207101331964-1557115178.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
 </li>
-<li>
-<p><em><strong>癌症数据集的准确率</strong></em><br />
-<img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207101529852-626268011.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207101529852-626268011.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<li><p><strong><em>癌症数据集的准确率</em></strong><br><img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207101529852-626268011.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207101529852-626268011.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
 </li>
-<li>
-<p><em><strong>糖尿病数据集的准确率</strong></em><br />
-<img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207101557532-137282506.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207101557532-137282506.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<li><p><strong><em>糖尿病数据集的准确率</em></strong><br><img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207101557532-137282506.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207101557532-137282506.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
 </li>
-<li>
-<p>具体来说,准确度上来说癌症数据集中GAN产生的合成数据优于原始数据，糖尿病数据集GAN产生的合成数据接近原始数据，召回率上来说癌症数据集中GAN产生的合成数据接近于原始数据，糖尿病数据集GAN产生的合成数据优于原始数据，，总体来书256/512GAN结构产生的合成数据集可以代替原始数据集，同时产生的数据集和原始数据集的欧氏距离不小，不存在根据合成数据集推断出原始数据集中病人敏感信息的可能，所以GAN用于脱敏是可行的</p>
+<li><p>具体来说,准确度上来说癌症数据集中GAN产生的合成数据优于原始数据，糖尿病数据集GAN产生的合成数据接近原始数据，召回率上来说癌症数据集中GAN产生的合成数据接近于原始数据，糖尿病数据集GAN产生的合成数据优于原始数据，，总体来书256/512GAN结构产生的合成数据集可以代替原始数据集，同时产生的数据集和原始数据集的欧氏距离不小，不存在根据合成数据集推断出原始数据集中病人敏感信息的可能，所以GAN用于脱敏是可行的</p>
 </li>
 </ol>
 <p>注：在对医学数据进行分类时，我们更感兴趣的是召回率，而不是准确性，因为在决定患者是否需要治疗或进行某种诊断时，假阴性可能是灾难性的</p>
-<h3 id="实验二-对比扩充不平衡数据集-用三种不同的方式gan-smote-adasyn"><a class="markdownIt-Anchor" href="#实验二-对比扩充不平衡数据集-用三种不同的方式gan-smote-adasyn"></a> 实验二 对比扩充不平衡数据集 用三种不同的方式GAN、SMOTE、ADASYN</h3>
-<ol>
-<li>Separated the training set based on the target class (For example, the credit card<br />
-database was separated in non-frauds and frauds).</li>
-<li>Trained the GAN using only the minority class data. The label was included as an<br />
-attribute in the training.</li>
+<h3 id="实验二-对比扩充不平衡数据集-用三种不同的方式GAN、SMOTE、ADASYN"><a href="#实验二-对比扩充不平衡数据集-用三种不同的方式GAN、SMOTE、ADASYN" class="headerlink" title="实验二 对比扩充不平衡数据集 用三种不同的方式GAN、SMOTE、ADASYN"></a>实验二 对比扩充不平衡数据集 用三种不同的方式GAN、SMOTE、ADASYN</h3><ol>
+<li>Separated the training set based on the target class (For example, the credit card<br>database was separated in non-frauds and frauds).</li>
+<li>Trained the GAN using only the minority class data. The label was included as an<br>attribute in the training.</li>
 <li>Used the GAN to add new entries to the training data set until it becomes balanced.</li>
 <li>Used the newly balanced training data set to train the classifier.</li>
-<li>The classifier was tested on two databases: the original test set and a balanced version<br />
-of it obtained by undersampling the majority class.</li>
+<li>The classifier was tested on two databases: the original test set and a balanced version<br>of it obtained by undersampling the majority class.</li>
 </ol>
-<p><img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207171302043-1420549164.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207171302043-1420549164.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<p><img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207171302043-1420549164.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207171302043-1420549164.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
 <p><a target="_blank" rel="noopener" href="https://excalidraw.com/#json=NXZoGimteRBJj700IK7YI,o6vAua82rHVRPutLOTRRBg">原图链接</a></p>
-<h4 id="结果分析-2"><a class="markdownIt-Anchor" href="#结果分析-2"></a> 结果分析</h4>
-<ol>
-<li>
-<p>不平衡数据集上的测试结果<br />
-<img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207171808661-884420257.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207171808661-884420257.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="Classification results from testing on the imbalanced test set" /></p>
+<h4 id="结果分析-1"><a href="#结果分析-1" class="headerlink" title="结果分析"></a>结果分析</h4><ol>
+<li><p>不平衡数据集上的测试结果<br><img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207171808661-884420257.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207171808661-884420257.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="Classification results from testing on the imbalanced test set"></p>
 </li>
-<li>
-<p>平衡数据集上的测试结果<br />
-<img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207171927650-299671969.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207171927650-299671969.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<li><p>平衡数据集上的测试结果<br><img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207171927650-299671969.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207171927650-299671969.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
 </li>
-<li>
-<p>在不平衡数据集上应用 GAN、SMOTE、ADASYN 扩充少数样本都比不扩充强， GAN的方式扩充比其他两种方式能够获得更高的准确率和精确度（查准率），但是召回率（查全率）不如其他两种方式，欺诈检测的话更关注于检测出所有少出样本，所以更关注召回率（查全率），所以在这一方面，所列出的这六种GAN的结构是弱于 SMOTE和ADASYN的</p>
+<li><p>在不平衡数据集上应用 GAN、SMOTE、ADASYN 扩充少数样本都比不扩充强， GAN的方式扩充比其他两种方式能够获得更高的准确率和精确度（查准率），但是召回率（查全率）不如其他两种方式，欺诈检测的话更关注于检测出所有少出样本，所以更关注召回率（查全率），所以在这一方面，所列出的这六种GAN的结构是弱于 SMOTE和ADASYN的</p>
 </li>
 </ol>
-<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
-<p>总体来说，文章讲述了GAN的两大基本应用，一个是通过 GAN 在没有原始数据集的情况下可以训练一个分类器（解决敏感数据脱敏的问题，另一个是通过 GAN 扩充少数样本来解决样本不均衡的问题、<br />
-最终发现使用GAN合成的数据训练出来的分类器性能甚至更好，第一个方面对于数据脱敏问题有个很好的应用<br />
-在处理样本不均衡的问题上，使用GAN扩充少数样本比不扩充效果更好，但是不如SMOTE 和 ADASYN ，好处是比较简单，不需要定义任何约束和规则<br />
-最后本文知识研究了GAN基本架构，探讨了不同深度的变化，后续可以进行过更多研究</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总体来说，文章讲述了GAN的两大基本应用，一个是通过 GAN 在没有原始数据集的情况下可以训练一个分类器（解决敏感数据脱敏的问题，另一个是通过 GAN 扩充少数样本来解决样本不均衡的问题、<br>最终发现使用GAN合成的数据训练出来的分类器性能甚至更好，第一个方面对于数据脱敏问题有个很好的应用<br>在处理样本不均衡的问题上，使用GAN扩充少数样本比不扩充效果更好，但是不如SMOTE 和 ADASYN ，好处是比较简单，不需要定义任何约束和规则<br>最后本文知识研究了GAN基本架构，探讨了不同深度的变化，后续可以进行过更多研究</p>
 <ol>
 <li>优点：这篇论文的特别之处就是他并没有用 loss 有多低，有多接近样本去描述GAN的好坏，他直接用了简单的分类器，对比GAN产生的数据和原始数据上两个分类器性能的好坏，来评价GAN的好坏。某种意义上说可能 GAN 产生的数据在我们看来不太一样，但是在在计算机看来就是一样的，而且分类器性能更好，说明可能 GAN 抓住了本质，本质（某些特征）上一样，知识我们乍一看可能不一样</li>
 <li>缺点：文章中所实验的GAN的网络结构比较简单，可以使用不同的loss探索更多的可能。</li>
 </ol>
-<h4 id="补充知识"><a class="markdownIt-Anchor" href="#补充知识"></a> 补充知识</h4>
-<p>TP（True Positives)：真正例，预测为正例而且实际上也是正例；</p>
+<h4 id="补充知识"><a href="#补充知识" class="headerlink" title="补充知识"></a>补充知识</h4><p>TP（True Positives)：真正例，预测为正例而且实际上也是正例；</p>
 <p>FP（False Positives)：假正例，预测为正例然而实际上却是负例；</p>
 <p>FN（false Negatives)：假负例，预测为负例然而实际上却是正例；</p>
 <p>TN（True Negatives)：真负例，预测为负例而且实际上也是负例。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207163510581-1103619479.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207163510581-1103619479.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>
+<p><img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207163510581-1103619479.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230207163510581-1103619479.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
 <p>准确率：预测对的占比</p>
 <p>精确率（查准率）：在预测为正的样本中，实际是正样本的概率</p>
 <p>召回率：在实际的正样本中，预测为正样本的概率</p>
-<p>F1值：综合考虑精确率和召回率<br />
-具体参考链接 <a target="_blank" rel="noopener" href="https://blog.csdn.net/lhxez6868/article/details/108150777">https://blog.csdn.net/lhxez6868/article/details/108150777</a></p>
-<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
-<p>原文献：<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1904.09135.pdf">https://arxiv.org/pdf/1904.09135.pdf</a><br />
-代码：  <a target="_blank" rel="noopener" href="https://github.com/fhtanaka/directed_research_CS_2018">https://github.com/fhtanaka/directed_research_CS_2018</a></p>
+<p>F1值：综合考虑精确率和召回率<br>具体参考链接 <a target="_blank" rel="noopener" href="https://blog.csdn.net/lhxez6868/article/details/108150777">https://blog.csdn.net/lhxez6868/article/details/108150777</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>原文献：<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1904.09135.pdf">https://arxiv.org/pdf/1904.09135.pdf</a><br>代码：  <a target="_blank" rel="noopener" href="https://github.com/fhtanaka/directed_research_CS_2018">https://github.com/fhtanaka/directed_research_CS_2018</a></p>
 
       </div>
       <div class="post-tags-categories">
@@ -796,19 +748,17 @@ of it obtained by undersampling the majority class.</li>
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401114117952-475429918.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401114117952-475429918.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/2023/07/02/5-su-cha/matplotlib/" class="post-nav-link">
+    <a href="/2023/07/02/2-ji-suan-ji-shi-jue/bi-she/self-attentio/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">matplotlib 常用命令</div>
+        <div class="title-text">自注意力机制及代码实现</div>
       </div>
       
       <!-- <div class="content">
-        matplotlib 速查
-
-引入库 import matplotlib.pyplot as plt
-绘制散点图  pl
+        
+为什么要有自注意力机制？ 应用: 类似于机器翻译或者语音识别等需要seq2seq模型的场景 场景中模型的输出结果可能和
       </div> -->
     </a>
   </div>
@@ -819,16 +769,16 @@ of it obtained by undersampling the majority class.</li>
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
-    <a href="/2023/07/02/2-ji-suan-ji-shi-jue/gan/ren-yi-yang-ben-gu-zhang-zhen-duan-shu-ju-zeng-qiang-fu-zhu-xin-xi/" class="post-nav-link">
+    <a href="/2023/07/02/2-ji-suan-ji-shi-jue/zhi-shi-dian/kl-san-du/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">文献阅读笔记 Auxiliary Information-Guided Industrial Data Augmentation for Any-Shot Fault Learning and Diagnosis</div>
+        <div class="title-text">KL散度</div>
       </div>
       <!-- <div class="content">
-         原文
-Zhuo, Yue and Zhiqiang Ge. “Auxiliary Information-Guided
+        
+信息量理解：根据通俗理解去进行的定义，概率很多大的事件比如太阳东边升起，信息量为0，概率很小的事件信息量很大，比如张三
       </div> -->
     </a>
   </div>
@@ -1052,7 +1002,7 @@ Zhuo, Yue and Zhiqiang Ge. “Auxiliary Information-Guided
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-text"> 问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9"><span class="toc-text"> 主要内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#gan"><span class="toc-text"> GAN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E8%BF%87%E9%87%87%E6%A0%B7%E6%96%B9%E6%B3%95-smote-%E5%92%8C-adasyn"><span class="toc-text"> 两个过采样方法 SMOTE 和 ADASYN</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1"><span class="toc-text"> 实验设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E9%97%AE%E9%A2%98"><span class="toc-text"> 数据集问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AD%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84-gan-%E7%BB%93%E6%9E%84"><span class="toc-text"> 六种不同的 GAN 结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%B8%80-%E5%AE%8C%E5%85%A8%E7%94%A8gan%E4%BA%A7%E7%94%9F%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E5%AF%B9%E7%B3%96%E5%B0%BF%E7%97%85%E5%92%8C%E7%99%8C%E7%97%87%E6%95%B0%E6%8D%AE%E9%9B%86%E8%BF%9B%E8%A1%8C%E5%88%86%E7%B1%BB"><span class="toc-text"> 实验一 完全用GAN产生的数据集对糖尿病和癌症数据集进行分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90"><span class="toc-text"> 结果分析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%BA%8C-%E5%AF%B9%E6%AF%94%E6%89%A9%E5%85%85%E4%B8%8D%E5%B9%B3%E8%A1%A1%E6%95%B0%E6%8D%AE%E9%9B%86-%E7%94%A8%E4%B8%89%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E6%96%B9%E5%BC%8Fgan-smote-adasyn"><span class="toc-text"> 实验二 对比扩充不平衡数据集 用三种不同的方式GAN、SMOTE、ADASYN</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90-2"><span class="toc-text"> 结果分析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text"> 总结</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86"><span class="toc-text"> 补充知识</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-text"> 参考</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-text">问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9"><span class="toc-text">主要内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#GAN"><span class="toc-text">GAN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E8%BF%87%E9%87%87%E6%A0%B7%E6%96%B9%E6%B3%95-SMOTE-%E5%92%8C-ADASYN"><span class="toc-text">两个过采样方法 SMOTE 和 ADASYN</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1"><span class="toc-text">实验设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E9%97%AE%E9%A2%98"><span class="toc-text">数据集问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AD%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84-GAN-%E7%BB%93%E6%9E%84"><span class="toc-text">六种不同的 GAN 结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%B8%80-%E5%AE%8C%E5%85%A8%E7%94%A8GAN%E4%BA%A7%E7%94%9F%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E5%AF%B9%E7%B3%96%E5%B0%BF%E7%97%85%E5%92%8C%E7%99%8C%E7%97%87%E6%95%B0%E6%8D%AE%E9%9B%86%E8%BF%9B%E8%A1%8C%E5%88%86%E7%B1%BB"><span class="toc-text">实验一 完全用GAN产生的数据集对糖尿病和癌症数据集进行分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90"><span class="toc-text">结果分析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%BA%8C-%E5%AF%B9%E6%AF%94%E6%89%A9%E5%85%85%E4%B8%8D%E5%B9%B3%E8%A1%A1%E6%95%B0%E6%8D%AE%E9%9B%86-%E7%94%A8%E4%B8%89%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E6%96%B9%E5%BC%8FGAN%E3%80%81SMOTE%E3%80%81ADASYN"><span class="toc-text">实验二 对比扩充不平衡数据集 用三种不同的方式GAN、SMOTE、ADASYN</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90-1"><span class="toc-text">结果分析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86"><span class="toc-text">补充知识</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-text">参考</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1577,7 +1527,7 @@ Zhuo, Yue and Zhiqiang Ge. “Auxiliary Information-Guided
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/DaZhiPro">DaZhi</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
 
           </div>
         
