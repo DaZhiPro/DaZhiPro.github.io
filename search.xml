@@ -131,7 +131,7 @@
     
     
     <entry>
-      <title>分割等和子集</title>
+      <title>背包问题</title>
       <link href="/2023/09/04/3-suan-fa/dai-ma-sui-xiang-lu/bei-bao-wen-ti/"/>
       <url>/2023/09/04/3-suan-fa/dai-ma-sui-xiang-lu/bei-bao-wen-ti/</url>
       
@@ -219,23 +219,23 @@
     
     
     <entry>
-      <title>历史记</title>
-      <link href="/2023/07/02/4-ri-chang-sui-bi/li-shi-ji/"/>
-      <url>/2023/07/02/4-ri-chang-sui-bi/li-shi-ji/</url>
+      <title>《计算机视觉》 笔记</title>
+      <link href="/2023/07/02/2-ji-suan-ji-shi-jue/hui-gui-mo-xing/"/>
+      <url>/2023/07/02/2-ji-suan-ji-shi-jue/hui-gui-mo-xing/</url>
       
-        <content type="html"><![CDATA[<p><img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230204214028069-1851074439.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230204214028069-1851074439.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="第八章-回归模型"><a class="markdownIt-Anchor" href="#第八章-回归模型"></a> 第八章 回归模型</h1><p>定义：根据向量 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mo stretchy="false">[</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><msup><mo stretchy="false">]</mo><mi>T</mi></msup></mrow><annotation encoding="application/x-tex">x = [x_1,x_2,...,x_n]^T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.0913309999999998em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">T</span></span></span></span></span></span></span></span></span></span></span> 来估计全局状态 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi></mrow><annotation encoding="application/x-tex">w</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span></span></span></span>，就是说计算 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>w</mi><mi mathvariant="normal">∣</mi><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P(w|x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mord">∣</span><span class="mord mathnormal">x</span><span class="mclose">)</span></span></span></span></p><h2 id="线性回归"><a class="markdownIt-Anchor" href="#线性回归"></a> 线性回归</h2><ol><li>设 w 满足的概率分布，一般连续的就设 一元正态分布（离散的就设分类分布），这样的话只需要求出分布的参数，就能求某一个 w 的概率，但是还要和我们的数据扯上关系，所以 就设正态分布的参数 u 为数据 x 的线性函数 (u = <em>ax</em> + b，此时引入了超参 <em>a</em>,b)</li><li>只需要计算出参数<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span>（包括a,b,方差） 就能完美的描述数据 x 和 全局状态 w 之间的关系</li><li>使用极大似然估计方法 使得似然 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>w</mi><mi mathvariant="normal">∣</mi><mi>x</mi><mo separator="true">,</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P(w|x,\theta)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mord">∣</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span></span></span></span> 最大</li></ol><p>![img](<a href="https://img2023.cnblogs.com/blog/2851436/202301/2851436-20230131111542071-1844025411.png">https://img2023.cnblogs.com/blog/2851436/202301/2851436-20230131111542071-1844025411.png</a> =500x)</p><h2 id="贝叶斯回归"><a class="markdownIt-Anchor" href="#贝叶斯回归"></a> 贝叶斯回归</h2><p>正常是求最优的参数<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span>,然后用这个参数直接求新数据的预测概率，<br />贝叶斯方法是直接求参数<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span>的概率分布，然后预测的时候对它的每个可能的取值进行加权求和</p><h2 id="非线性回归"><a class="markdownIt-Anchor" href="#非线性回归"></a> 非线性回归</h2><h2 id="稀疏线性回归"><a class="markdownIt-Anchor" href="#稀疏线性回归"></a> 稀疏线性回归</h2>]]></content>
       
       
       <categories>
           
-          <category> 日常随笔 </category>
+          <category> 机器学习 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 历史 </tag>
+            <tag> 《计算机视觉》 </tag>
             
         </tags>
       
@@ -271,23 +271,23 @@
     
     
     <entry>
-      <title>《计算机视觉》 笔记</title>
-      <link href="/2023/07/02/2-ji-suan-ji-shi-jue/hui-gui-mo-xing/"/>
-      <url>/2023/07/02/2-ji-suan-ji-shi-jue/hui-gui-mo-xing/</url>
+      <title>历史记</title>
+      <link href="/2023/07/02/4-ri-chang-sui-bi/li-shi-ji/"/>
+      <url>/2023/07/02/4-ri-chang-sui-bi/li-shi-ji/</url>
       
-        <content type="html"><![CDATA[<h1 id="第八章-回归模型"><a class="markdownIt-Anchor" href="#第八章-回归模型"></a> 第八章 回归模型</h1><p>定义：根据向量 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mo stretchy="false">[</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><msup><mo stretchy="false">]</mo><mi>T</mi></msup></mrow><annotation encoding="application/x-tex">x = [x_1,x_2,...,x_n]^T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.0913309999999998em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">T</span></span></span></span></span></span></span></span></span></span></span> 来估计全局状态 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi></mrow><annotation encoding="application/x-tex">w</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span></span></span></span>，就是说计算 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>w</mi><mi mathvariant="normal">∣</mi><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P(w|x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mord">∣</span><span class="mord mathnormal">x</span><span class="mclose">)</span></span></span></span></p><h2 id="线性回归"><a class="markdownIt-Anchor" href="#线性回归"></a> 线性回归</h2><ol><li>设 w 满足的概率分布，一般连续的就设 一元正态分布（离散的就设分类分布），这样的话只需要求出分布的参数，就能求某一个 w 的概率，但是还要和我们的数据扯上关系，所以 就设正态分布的参数 u 为数据 x 的线性函数 (u = <em>ax</em> + b，此时引入了超参 <em>a</em>,b)</li><li>只需要计算出参数<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span>（包括a,b,方差） 就能完美的描述数据 x 和 全局状态 w 之间的关系</li><li>使用极大似然估计方法 使得似然 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>w</mi><mi mathvariant="normal">∣</mi><mi>x</mi><mo separator="true">,</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P(w|x,\theta)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mord">∣</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span></span></span></span> 最大</li></ol><p>![img](<a href="https://img2023.cnblogs.com/blog/2851436/202301/2851436-20230131111542071-1844025411.png">https://img2023.cnblogs.com/blog/2851436/202301/2851436-20230131111542071-1844025411.png</a> =500x)</p><h2 id="贝叶斯回归"><a class="markdownIt-Anchor" href="#贝叶斯回归"></a> 贝叶斯回归</h2><p>正常是求最优的参数<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span>,然后用这个参数直接求新数据的预测概率，<br />贝叶斯方法是直接求参数<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span>的概率分布，然后预测的时候对它的每个可能的取值进行加权求和</p><h2 id="非线性回归"><a class="markdownIt-Anchor" href="#非线性回归"></a> 非线性回归</h2><h2 id="稀疏线性回归"><a class="markdownIt-Anchor" href="#稀疏线性回归"></a> 稀疏线性回归</h2>]]></content>
+        <content type="html"><![CDATA[<p><img src="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230204214028069-1851074439.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202302/2851436-20230204214028069-1851074439.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p>]]></content>
       
       
       <categories>
           
-          <category> 机器学习 </category>
+          <category> 日常随笔 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 《计算机视觉》 </tag>
+            <tag> 历史 </tag>
             
         </tags>
       
@@ -313,35 +313,6 @@
         <tags>
             
             <tag> 速查 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>文献阅读笔记 Auxiliary Information-Guided Industrial Data Augmentation for Any-Shot Fault Learning and Diagnosis</title>
-      <link href="/2023/07/02/2-ji-suan-ji-shi-jue/gan/ren-yi-yang-ben-gu-zhang-zhen-duan-shu-ju-zeng-qiang-fu-zhu-xin-xi/"/>
-      <url>/2023/07/02/2-ji-suan-ji-shi-jue/gan/ren-yi-yang-ben-gu-zhang-zhen-duan-shu-ju-zeng-qiang-fu-zhu-xin-xi/</url>
-      
-        <content type="html"><![CDATA[<h4 id="原文"><a class="markdownIt-Anchor" href="#原文"></a> 原文</h4><p>Zhuo, Yue and Zhiqiang Ge. “Auxiliary Information-Guided Industrial Data Augmentation for Any-Shot Fault Learning and Diagnosis.” IEEE Transactions on Industrial Informatics 17 (2021): 7535-7545.</p><h4 id="简述"><a class="markdownIt-Anchor" href="#简述"></a> 简述</h4><p>文章主要是解决小样本或零样本时的故障诊断问题，文章基本的架构是ACGAN，这是GAN的一个变形，判别器除了区分真实数据和生成数据的同时还要判断到底是哪一种故障，同样生成器也要生成使得判别器分类尽可能准确的数据。<br />文章的创新点是提出了故障属性空间的概念，它是故障的进一步细分，原本一个故障比如说是反应器冷凝水入口温度发生突变，它分解为故障类型是阶跃，故障单元是冷凝器，故障前置单元是反应器，进的物料是啥等等，这样通过这些故障属性的随机组合就可以组合出原本未发现的故障从而可以处理零样本问题。<br />第二个创新点是优化了损失函数，加了一项triplet loss，使得生成的样本质量更高<br />最后文章还提到了微调技术，就是首先分类器在生成的数据+真实小样本数据上先训练，训练差不多后再只在小样本上训练（此时调低学习率）经过在真实小样本上的微调效果会更好</p><h4 id="fagan-fault-attributes-gan"><a class="markdownIt-Anchor" href="#fagan-fault-attributes-gan"></a> FAGAN ：fault attributes GAN</h4><h4 id="目的-解决故障诊断中的小样本问题和零样本问题"><a class="markdownIt-Anchor" href="#目的-解决故障诊断中的小样本问题和零样本问题"></a> 目的： 解决故障诊断中的小样本问题和零样本问题</h4><h4 id="数据-x温度压强-y故障号"><a class="markdownIt-Anchor" href="#数据-x温度压强-y故障号"></a> 数据： X：温度，压强。。。。   Y:故障号</h4><h4 id="方法"><a class="markdownIt-Anchor" href="#方法"></a> 方法：</h4><ol><li><p>数据预处理 embedding 降维度， 同时建立一个函数 X = f(Y),就是根据故障号，能生成故障属性</p></li><li><p>算每一类的中心</p></li><li><p>训练 D K次 D的优化目标 ： 鉴别出realdata和fakedata 同时 对data分类准确<br /><img src="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192411786-167486232.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192411786-167486232.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="D的优化目标" /></p></li><li><p>训练 G G的优化目标 ： 断过D的判别fakedata 同时是 D 对fakedata分类准确<br /><img src="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192732139-1961494944.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192732139-1961494944.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p><p><img src="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192741469-778150254.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192741469-778150254.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p><p>二者的和</p></li></ol><h4 id="创新点-故障属性空间-acgan-triplet-loss"><a class="markdownIt-Anchor" href="#创新点-故障属性空间-acgan-triplet-loss"></a> 创新点： 故障属性空间 + [ACGAN + Triplet Loss]</h4><h4 id="思考"><a class="markdownIt-Anchor" href="#思考"></a> 思考</h4><ol><li>什么是属性空间？ 原本一个故障比如说是反应器冷凝水入口温度发生突变，他分解为故障类型 阶跃，故障单元 冷凝器，故障前置单元 反应器 ， 进的物料 。。。 等等，拆解成更加细节的引起故障的原因，就是一个故障可能是由好几个地方的连续问题引起的，他进一步拆解！</li><li>引入的辅助信息又是什么？</li><li>三元组形式的辅助损失函数是什么？</li><li>两个数据集是哪两个？ 液压系统数据集  和  田纳西-伊斯曼（TE）仿真平台 得到的数据集</li><li>能概括核心内容的图找一下?</li><li>文章的主要贡献是什么<br />提出了故障属性这么一个概念？<br />ACGAN 基础基础上 引入了 Triplet loss损失 （这个之前就有，只不过是用于人脸识别的）<br />小样本问题使用了微调技术： 生成的数据+真实小样本数据 上先训练，训练差不多后再只在小样本上训练（此时调低学习率）</li></ol><h4 id="背景知识"><a class="markdownIt-Anchor" href="#背景知识"></a> 背景知识；</h4><ol><li>ACGAN：<br />ACGAN（Auxiliary Classifier GAN）是在CGAN基础上的扩展，通过对判别器进行改进实现了图像分类的功能。</li></ol><p><img src="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307190417164-995118726.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307190417164-995118726.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p><p>ACGAN 的 loss<br /><img src="https://images2017.cnblogs.com/blog/1259250/201711/1259250-20171121154808118-1393587170.png" class="lazyload placeholder" data-srcset="https://images2017.cnblogs.com/blog/1259250/201711/1259250-20171121154808118-1393587170.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p><p>D is trained to maximize LS + LC while G is trained to maximize LC -LS.</p><p><a href="https://www.cnblogs.com/punkcure/p/7873566.html">参考文章</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 机器学习 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 毕设 </tag>
-            
-            <tag> GAN </tag>
-            
-            <tag> 文献阅读笔记 </tag>
             
         </tags>
       
@@ -377,16 +348,16 @@
     
     
     <entry>
-      <title>自注意力机制及代码实现</title>
-      <link href="/2023/07/02/2-ji-suan-ji-shi-jue/bi-she/self-attentio/"/>
-      <url>/2023/07/02/2-ji-suan-ji-shi-jue/bi-she/self-attentio/</url>
+      <title>文献阅读笔记 Auxiliary Information-Guided Industrial Data Augmentation for Any-Shot Fault Learning and Diagnosis</title>
+      <link href="/2023/07/02/2-ji-suan-ji-shi-jue/gan/ren-yi-yang-ben-gu-zhang-zhen-duan-shu-ju-zeng-qiang-fu-zhu-xin-xi/"/>
+      <url>/2023/07/02/2-ji-suan-ji-shi-jue/gan/ren-yi-yang-ben-gu-zhang-zhen-duan-shu-ju-zeng-qiang-fu-zhu-xin-xi/</url>
       
-        <content type="html"><![CDATA[<ol><li>为什么要有自注意力机制？<br />应用: 类似于机器翻译或者语音识别等需要seq2seq模型的场景<br />场景中模型的输出结果可能和输入的向量序列中的某几部分相关性较强的，而对于其他部分（像语音识别中的没有说话的噪音部分）可能对结果的影响较小，所以整个自注意力机制的目的就是对于一个输入序列的部分施以不同的权重。</li><li>如何判断下序列中某一部分的重要程度呢？<br />如果说它和其他部分的相关性越高，那打分也越高</li><li>具体计算过程<ol><li>根据输入向量<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">a_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>得到不同向量打分值<br /><img src="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112339742-1056550260.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112339742-1056550260.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="根据输入向量得到不同向量打分值" /></li><li>根据输入向量序列a得到输出向量序列b的过程<br /><img src="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112116612-379883211.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112116612-379883211.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="根据输入向量序列a得到输出向量序列b的过程" /></li><li>前项传播矩阵化操作：<br /><img src="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112744723-38329950.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112744723-38329950.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></li><li>代码实现</li></ol> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SelfAttention</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, dim_q, dim_k, dim_v</span>):</span><br><span class="line">        <span class="built_in">super</span>(SelfAttention, self).__init__()</span><br><span class="line">        self.dim_q = dim_q</span><br><span class="line">        self.dim_k = dim_k</span><br><span class="line">        self.dim_v = dim_v</span><br><span class="line"></span><br><span class="line">        <span class="comment">#定义线性变换函数</span></span><br><span class="line">        self.linear_q = nn.Linear(dim_q, dim_k, bias=<span class="literal">False</span>)</span><br><span class="line">        self.linear_k = nn.Linear(dim_q, dim_k, bias=<span class="literal">False</span>)</span><br><span class="line">        self.linear_v = nn.Linear(dim_q, dim_v, bias=<span class="literal">False</span>)</span><br><span class="line">        self._norm_fact = <span class="number">1</span> / sqrt(dim_k)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">        <span class="comment"># x: batch, n, dim_q</span></span><br><span class="line">        <span class="comment">#根据文本获得相应的维度</span></span><br><span class="line"></span><br><span class="line">        batch, n, dim_q = x.shape</span><br><span class="line">        <span class="keyword">assert</span> dim_q == self.dim_q</span><br><span class="line"></span><br><span class="line">        q = self.linear_q(x)  <span class="comment"># batch, n, dim_k</span></span><br><span class="line">        k = self.linear_k(x)  <span class="comment"># batch, n, dim_k</span></span><br><span class="line">        v = self.linear_v(x)  <span class="comment"># batch, n, dim_v</span></span><br><span class="line">        <span class="comment">#q*k的转置 并*开根号后的dk</span></span><br><span class="line">        dist = torch.bmm(q, k.transpose(<span class="number">1</span>, <span class="number">2</span>)) * self._norm_fact  <span class="comment"># batch, n, n</span></span><br><span class="line">        <span class="comment">#归一化获得attention的相关系数</span></span><br><span class="line">        dist = torch.softmax(dist, dim=-<span class="number">1</span>)  <span class="comment"># batch, n, n</span></span><br><span class="line">        <span class="comment">#attention系数和v相乘，获得最终的得分</span></span><br><span class="line">        att = torch.bmm(dist, v)</span><br><span class="line">        <span class="keyword">return</span> att</span><br></pre></td></tr></table></figure></li><li>总结<br />它一般用于嵌入到一个网络模型中，本身并没有优化目标。如果单用的话优化目标可以设置为使得输出b尽量接近标签y</li></ol><p>参考链接</p><ol><li><a href="https://blog.csdn.net/weixin_44750512/article/details/124244915#:~:text=%E3%80%90%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E3%80%91Self-Attention%20%E5%8E%9F%E7%90%86%E4%B8%8E%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%201%201.%20Self-Attention%20%E7%BB%93%E6%9E%84%20%E5%9C%A8%E8%AE%A1%E7%AE%97%E7%9A%84%E6%97%B6%E5%80%99%E9%9C%80%E8%A6%81%E7%94%A8%E5%88%B0%E7%9F%A9%E9%98%B5%20Q,X%2C%20Q%2C%20K%2C%20V%20%E7%9A%84%E6%AF%8F%E4%B8%80%E8%A1%8C%E9%83%BD%E8%A1%A8%E7%A4%BA%E4%B8%80%E4%B8%AA%E5%8D%95%E8%AF%8D%E3%80%82%203%203.Self-Attention%20%E7%9A%84%E8%AE%A1%E7%AE%97">【深度学习】Self-Attention 原理与代码实现</a></li><li><a href="https://pan.baidu.com/s/1agZm-kXjF4aWH_4lRBv-Sg#list/path=%2Fsharelink3559016486-787064992912258%2F%E5%95%A5%E9%83%BD%E7%94%9F-%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%BA%90%EF%BC%88%E6%8C%81%E7%BB%AD%E7%BB%B4%E6%8A%A4%EF%BC%89%2F05%20%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%2F2021%20ML%2F03%20Self-Attention%2F%E8%AF%BE%E4%BB%B6&amp;parentPath=%2Fsharelink3559016486-787064992912258">李宏毅教程</a></li></ol>]]></content>
+        <content type="html"><![CDATA[<h4 id="原文"><a class="markdownIt-Anchor" href="#原文"></a> 原文</h4><p>Zhuo, Yue and Zhiqiang Ge. “Auxiliary Information-Guided Industrial Data Augmentation for Any-Shot Fault Learning and Diagnosis.” IEEE Transactions on Industrial Informatics 17 (2021): 7535-7545.</p><h4 id="简述"><a class="markdownIt-Anchor" href="#简述"></a> 简述</h4><p>文章主要是解决小样本或零样本时的故障诊断问题，文章基本的架构是ACGAN，这是GAN的一个变形，判别器除了区分真实数据和生成数据的同时还要判断到底是哪一种故障，同样生成器也要生成使得判别器分类尽可能准确的数据。<br />文章的创新点是提出了故障属性空间的概念，它是故障的进一步细分，原本一个故障比如说是反应器冷凝水入口温度发生突变，它分解为故障类型是阶跃，故障单元是冷凝器，故障前置单元是反应器，进的物料是啥等等，这样通过这些故障属性的随机组合就可以组合出原本未发现的故障从而可以处理零样本问题。<br />第二个创新点是优化了损失函数，加了一项triplet loss，使得生成的样本质量更高<br />最后文章还提到了微调技术，就是首先分类器在生成的数据+真实小样本数据上先训练，训练差不多后再只在小样本上训练（此时调低学习率）经过在真实小样本上的微调效果会更好</p><h4 id="fagan-fault-attributes-gan"><a class="markdownIt-Anchor" href="#fagan-fault-attributes-gan"></a> FAGAN ：fault attributes GAN</h4><h4 id="目的-解决故障诊断中的小样本问题和零样本问题"><a class="markdownIt-Anchor" href="#目的-解决故障诊断中的小样本问题和零样本问题"></a> 目的： 解决故障诊断中的小样本问题和零样本问题</h4><h4 id="数据-x温度压强-y故障号"><a class="markdownIt-Anchor" href="#数据-x温度压强-y故障号"></a> 数据： X：温度，压强。。。。   Y:故障号</h4><h4 id="方法"><a class="markdownIt-Anchor" href="#方法"></a> 方法：</h4><ol><li><p>数据预处理 embedding 降维度， 同时建立一个函数 X = f(Y),就是根据故障号，能生成故障属性</p></li><li><p>算每一类的中心</p></li><li><p>训练 D K次 D的优化目标 ： 鉴别出realdata和fakedata 同时 对data分类准确<br /><img src="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192411786-167486232.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192411786-167486232.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="D的优化目标" /></p></li><li><p>训练 G G的优化目标 ： 断过D的判别fakedata 同时是 D 对fakedata分类准确<br /><img src="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192732139-1961494944.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192732139-1961494944.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p><p><img src="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192741469-778150254.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307192741469-778150254.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p><p>二者的和</p></li></ol><h4 id="创新点-故障属性空间-acgan-triplet-loss"><a class="markdownIt-Anchor" href="#创新点-故障属性空间-acgan-triplet-loss"></a> 创新点： 故障属性空间 + [ACGAN + Triplet Loss]</h4><h4 id="思考"><a class="markdownIt-Anchor" href="#思考"></a> 思考</h4><ol><li>什么是属性空间？ 原本一个故障比如说是反应器冷凝水入口温度发生突变，他分解为故障类型 阶跃，故障单元 冷凝器，故障前置单元 反应器 ， 进的物料 。。。 等等，拆解成更加细节的引起故障的原因，就是一个故障可能是由好几个地方的连续问题引起的，他进一步拆解！</li><li>引入的辅助信息又是什么？</li><li>三元组形式的辅助损失函数是什么？</li><li>两个数据集是哪两个？ 液压系统数据集  和  田纳西-伊斯曼（TE）仿真平台 得到的数据集</li><li>能概括核心内容的图找一下?</li><li>文章的主要贡献是什么<br />提出了故障属性这么一个概念？<br />ACGAN 基础基础上 引入了 Triplet loss损失 （这个之前就有，只不过是用于人脸识别的）<br />小样本问题使用了微调技术： 生成的数据+真实小样本数据 上先训练，训练差不多后再只在小样本上训练（此时调低学习率）</li></ol><h4 id="背景知识"><a class="markdownIt-Anchor" href="#背景知识"></a> 背景知识；</h4><ol><li>ACGAN：<br />ACGAN（Auxiliary Classifier GAN）是在CGAN基础上的扩展，通过对判别器进行改进实现了图像分类的功能。</li></ol><p><img src="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307190417164-995118726.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202303/2851436-20230307190417164-995118726.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p><p>ACGAN 的 loss<br /><img src="https://images2017.cnblogs.com/blog/1259250/201711/1259250-20171121154808118-1393587170.png" class="lazyload placeholder" data-srcset="https://images2017.cnblogs.com/blog/1259250/201711/1259250-20171121154808118-1393587170.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></p><p>D is trained to maximize LS + LC while G is trained to maximize LC -LS.</p><p><a href="https://www.cnblogs.com/punkcure/p/7873566.html">参考文章</a></p>]]></content>
       
       
       <categories>
           
-          <category> 毕设 </category>
+          <category> 机器学习 </category>
           
       </categories>
       
@@ -395,9 +366,9 @@
             
             <tag> 毕设 </tag>
             
-            <tag> 李宏毅笔记 </tag>
+            <tag> GAN </tag>
             
-            <tag> 自注意力机制 </tag>
+            <tag> 文献阅读笔记 </tag>
             
         </tags>
       
@@ -448,6 +419,35 @@
         <tags>
             
             <tag> 动态规划 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>自注意力机制及代码实现</title>
+      <link href="/2023/07/02/2-ji-suan-ji-shi-jue/bi-she/self-attentio/"/>
+      <url>/2023/07/02/2-ji-suan-ji-shi-jue/bi-she/self-attentio/</url>
+      
+        <content type="html"><![CDATA[<ol><li>为什么要有自注意力机制？<br />应用: 类似于机器翻译或者语音识别等需要seq2seq模型的场景<br />场景中模型的输出结果可能和输入的向量序列中的某几部分相关性较强的，而对于其他部分（像语音识别中的没有说话的噪音部分）可能对结果的影响较小，所以整个自注意力机制的目的就是对于一个输入序列的部分施以不同的权重。</li><li>如何判断下序列中某一部分的重要程度呢？<br />如果说它和其他部分的相关性越高，那打分也越高</li><li>具体计算过程<ol><li>根据输入向量<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">a_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>得到不同向量打分值<br /><img src="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112339742-1056550260.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112339742-1056550260.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="根据输入向量得到不同向量打分值" /></li><li>根据输入向量序列a得到输出向量序列b的过程<br /><img src="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112116612-379883211.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112116612-379883211.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="根据输入向量序列a得到输出向量序列b的过程" /></li><li>前项传播矩阵化操作：<br /><img src="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112744723-38329950.png" class="lazyload placeholder" data-srcset="https://img2023.cnblogs.com/blog/2851436/202304/2851436-20230401112744723-38329950.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img" /></li><li>代码实现</li></ol> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SelfAttention</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, dim_q, dim_k, dim_v</span>):</span><br><span class="line">        <span class="built_in">super</span>(SelfAttention, self).__init__()</span><br><span class="line">        self.dim_q = dim_q</span><br><span class="line">        self.dim_k = dim_k</span><br><span class="line">        self.dim_v = dim_v</span><br><span class="line"></span><br><span class="line">        <span class="comment">#定义线性变换函数</span></span><br><span class="line">        self.linear_q = nn.Linear(dim_q, dim_k, bias=<span class="literal">False</span>)</span><br><span class="line">        self.linear_k = nn.Linear(dim_q, dim_k, bias=<span class="literal">False</span>)</span><br><span class="line">        self.linear_v = nn.Linear(dim_q, dim_v, bias=<span class="literal">False</span>)</span><br><span class="line">        self._norm_fact = <span class="number">1</span> / sqrt(dim_k)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">        <span class="comment"># x: batch, n, dim_q</span></span><br><span class="line">        <span class="comment">#根据文本获得相应的维度</span></span><br><span class="line"></span><br><span class="line">        batch, n, dim_q = x.shape</span><br><span class="line">        <span class="keyword">assert</span> dim_q == self.dim_q</span><br><span class="line"></span><br><span class="line">        q = self.linear_q(x)  <span class="comment"># batch, n, dim_k</span></span><br><span class="line">        k = self.linear_k(x)  <span class="comment"># batch, n, dim_k</span></span><br><span class="line">        v = self.linear_v(x)  <span class="comment"># batch, n, dim_v</span></span><br><span class="line">        <span class="comment">#q*k的转置 并*开根号后的dk</span></span><br><span class="line">        dist = torch.bmm(q, k.transpose(<span class="number">1</span>, <span class="number">2</span>)) * self._norm_fact  <span class="comment"># batch, n, n</span></span><br><span class="line">        <span class="comment">#归一化获得attention的相关系数</span></span><br><span class="line">        dist = torch.softmax(dist, dim=-<span class="number">1</span>)  <span class="comment"># batch, n, n</span></span><br><span class="line">        <span class="comment">#attention系数和v相乘，获得最终的得分</span></span><br><span class="line">        att = torch.bmm(dist, v)</span><br><span class="line">        <span class="keyword">return</span> att</span><br></pre></td></tr></table></figure></li><li>总结<br />它一般用于嵌入到一个网络模型中，本身并没有优化目标。如果单用的话优化目标可以设置为使得输出b尽量接近标签y</li></ol><p>参考链接</p><ol><li><a href="https://blog.csdn.net/weixin_44750512/article/details/124244915#:~:text=%E3%80%90%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E3%80%91Self-Attention%20%E5%8E%9F%E7%90%86%E4%B8%8E%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%201%201.%20Self-Attention%20%E7%BB%93%E6%9E%84%20%E5%9C%A8%E8%AE%A1%E7%AE%97%E7%9A%84%E6%97%B6%E5%80%99%E9%9C%80%E8%A6%81%E7%94%A8%E5%88%B0%E7%9F%A9%E9%98%B5%20Q,X%2C%20Q%2C%20K%2C%20V%20%E7%9A%84%E6%AF%8F%E4%B8%80%E8%A1%8C%E9%83%BD%E8%A1%A8%E7%A4%BA%E4%B8%80%E4%B8%AA%E5%8D%95%E8%AF%8D%E3%80%82%203%203.Self-Attention%20%E7%9A%84%E8%AE%A1%E7%AE%97">【深度学习】Self-Attention 原理与代码实现</a></li><li><a href="https://pan.baidu.com/s/1agZm-kXjF4aWH_4lRBv-Sg#list/path=%2Fsharelink3559016486-787064992912258%2F%E5%95%A5%E9%83%BD%E7%94%9F-%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%BA%90%EF%BC%88%E6%8C%81%E7%BB%AD%E7%BB%B4%E6%8A%A4%EF%BC%89%2F05%20%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%2F2021%20ML%2F03%20Self-Attention%2F%E8%AF%BE%E4%BB%B6&amp;parentPath=%2Fsharelink3559016486-787064992912258">李宏毅教程</a></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 毕设 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 李宏毅笔记 </tag>
+            
+            <tag> 毕设 </tag>
+            
+            <tag> 自注意力机制 </tag>
             
         </tags>
       
@@ -531,31 +531,6 @@
     
     
     <entry>
-      <title>离散化</title>
-      <link href="/2023/01/06/3-suan-fa/ji-chu-suan-fa/06-chi-san-hua/"/>
-      <url>/2023/01/06/3-suan-fa/ji-chu-suan-fa/06-chi-san-hua/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> 算法 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 离散化 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>双指针</title>
       <link href="/2023/01/06/3-suan-fa/ji-chu-suan-fa/05-shuang-zhi-zhen/"/>
       <url>/2023/01/06/3-suan-fa/ji-chu-suan-fa/05-shuang-zhi-zhen/</url>
@@ -573,6 +548,31 @@
         <tags>
             
             <tag> 双指针 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>离散化</title>
+      <link href="/2023/01/06/3-suan-fa/ji-chu-suan-fa/06-chi-san-hua/"/>
+      <url>/2023/01/06/3-suan-fa/ji-chu-suan-fa/06-chi-san-hua/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 离散化 </tag>
             
         </tags>
       
@@ -824,9 +824,9 @@
       
         <tags>
             
-            <tag> GAN </tag>
-            
             <tag> 李宏毅笔记 </tag>
+            
+            <tag> GAN </tag>
             
         </tags>
       
